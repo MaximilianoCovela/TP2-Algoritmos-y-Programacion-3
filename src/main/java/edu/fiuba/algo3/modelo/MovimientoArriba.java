@@ -5,6 +5,5 @@ public class MovimientoArriba implements Movimiento {
     public void calcularPosicionSiguiente(Posicion unaPosicion){
 
         unaPosicion.actualizarPosicion(0,1);
-
     }
 }

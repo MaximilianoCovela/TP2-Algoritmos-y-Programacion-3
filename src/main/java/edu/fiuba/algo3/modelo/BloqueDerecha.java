@@ -11,3 +11,4 @@ public class BloqueDerecha implements BloqueMovible{
 
     }
 }
+
