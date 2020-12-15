@@ -5,20 +5,20 @@ public class Personaje {
     private Posicion posicionActual;
     private Lapiz lapiz ;
 
-    Personaje(){
+    public Personaje(){
         posicionActual = new Posicion();
         lapiz = new Lapiz();
     }
 
 
-    public void Mover(Movimiento unMovimiento){
+    public void mover(Movimiento unMovimiento){
 
 
     }
 
-    public void Modificar_Posicion(Posicion unaPosicion) { }
+    public void modificarPosicion(Posicion unaPosicion) { }
 
-    public void Actualizar_EstadoLapiz() { }
+    public void actualizarEstadoLapiz() { }
 
 
 }
