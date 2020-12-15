@@ -29,8 +29,9 @@ public class Tablero {
     }
 
     public void reiniciarTablero (){
-
+        this.secuenciaAEjecutar.clear();
     }
+
 
     public void ejecutarSecuencia (){
 

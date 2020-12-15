@@ -44,25 +44,24 @@ public class TableroTest {
         expectedException.expect(BloqueNoEncontradoException.class);
 
         tablero.quitarBloque(bloqueIzquierda);
-
-       //throw new BloqueNoEncontradoException();
-        //assert(tablero.quitarBloque(bloqueDerecha));
-
     }
 
-/*
     @Test
-    public void quitarBloqueEnTableroVacioLanzaExcepcion() {
+    public void testAgregoBloqueDerechaYReinicioTableroYNoTengoBloquesEnElTablero(){
+        BloqueMovible bloqueDerecha = new BloqueDerecha();
 
-        LinkedList mockedList = mock(LinkedList.class);
+        Tablero tablero = new Tablero();
 
-        when(mockedList.get(1)).thenThrow(new RuntimeException());
+        tablero.agregarBloque(bloqueDerecha);
 
-        assertThrows(RuntimeException.class, () -> {
-            mockedList.get(1);
-        });
+        tablero.reiniciarTablero();
+
+        expectedException.expect(BloqueNoEncontradoException.class);
+
+        tablero.quitarBloque(bloqueDerecha);
+
     }
-
-    */
 }
+
+
 
