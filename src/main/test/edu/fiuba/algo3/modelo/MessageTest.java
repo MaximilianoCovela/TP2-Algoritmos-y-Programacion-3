@@ -11,3 +11,4 @@ public class MessageTest {
         assertEquals("Hello world!", message.greet());
     }
 }
+
