@@ -12,6 +12,7 @@ public class Personaje {
 
     public Posicion getPosicionActual() {
         return posicionActual;
+
     }
 
     public void mover(Movimiento unMovimiento){
