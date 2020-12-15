@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+
 public class Message {
     private final String content;
 
