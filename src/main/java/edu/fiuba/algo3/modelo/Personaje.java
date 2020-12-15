@@ -10,13 +10,22 @@ public class Personaje {
         lapiz = new Lapiz();
     }
 
+    public Posicion getPosicionActual() {
+        return posicionActual;
+    }
 
     public void mover(Movimiento unMovimiento){
 
+        unMovimiento.calcularPosicionSiguiente(this.posicionActual);
+
+        this.modificarPosicionLapiz(this.posicionActual);
 
     }
 
-    public void modificarPosicion(Posicion unaPosicion) { }
+    public void modificarPosicionLapiz(Posicion unaPosicion) {
+
+
+    }
 
     public void actualizarEstadoLapiz() { }
 
