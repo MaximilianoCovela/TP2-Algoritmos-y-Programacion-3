@@ -22,8 +22,10 @@ public class Tablero {
 
     public void quitarBloque (BloqueMovible unBloque){
 
+        if(!this.secuenciaAEjecutar.contains(unBloque)){
+            throw new BloqueNoEncontradoException();
+        }
         this.secuenciaAEjecutar.remove(unBloque);
-
     }
 
     public void reiniciarTablero (){

@@ -14,6 +14,7 @@ import org.junit.Test;
 import org.mockito.InOrder;
 
 public class TableroTest {
+   /*
     @Test
     public void testAgregarBloqueDerecha(){
         BloqueDerecha bloqueDerecha = new BloqueDerecha();
@@ -22,4 +23,20 @@ public class TableroTest {
 
         //assertEquals(1,)
     }
+
+
+    @Test
+    public void quitarBloqueEnTableroVacioLanzaExcepcion() {
+
+        LinkedList mockedList = mock(LinkedList.class);
+
+        when(mockedList.get(1)).thenThrow(new RuntimeException());
+
+        assertThrows(RuntimeException.class, () -> {
+            mockedList.get(1);
+        });
+    }
+
+    */
 }
+
