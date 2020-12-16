@@ -1,25 +1,28 @@
 package edu.fiuba.algo3.modelo;
 
 import org.junit.Test;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LapizTest {
-   /*
+
     @Test
-    public void creoUnLapizYVerificoQueEstadoSeaArriba(){
+    public void testCreoUnLapizYVerificoQueNoPuedoDibujarCuandoElEstadoDelLapizEsteArriba(){
         Lapiz lapiz = new Lapiz();
-        EstadoLapiz estadoLapiz = new LapizArriba();
-        assertEquals(estadoLapiz.getClass(), (lapiz.getEstadoLapiz()).getClass());
+
+        assertFalse(lapiz.esPosibleDibujarCamino());
     }
 
     @Test
-    public void cambioEstadoDeLapizYVerificoQueCambie(){
-        Lapiz lapiz = new Lapiz(); //Por defecto el estado de lapiz es arriba.
+    public void testCambioEstadoDeLapizYVerificoQueCambie(){
+        Lapiz lapiz = new Lapiz();
         EstadoLapiz estadoLapiz = new LapizAbajo();
+
         lapiz.modificarEstadoLapiz(estadoLapiz);
-        assertEquals(estadoLapiz.getClass(), (lapiz.getEstadoLapiz()).getClass());
+
+        assertTrue(lapiz.esPosibleDibujarCamino());
     }
-    */
 
     @Test
     public void testActualizaPosicionLapizYLaPosicionEsLaEsperada(){

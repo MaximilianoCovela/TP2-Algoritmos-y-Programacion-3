@@ -30,9 +30,9 @@ public class Lapiz {
         this.estadoLapiz = unEstadoLapiz;
     }
 
-    public EstadoLapiz getEstadoLapiz(){
+    public boolean esPosibleDibujarCamino(){
 
-        return this.estadoLapiz;
+        return this.estadoLapiz.sePuedeDibujarCamino();
     }
 
     public Posicion getPosicionLapiz(){
