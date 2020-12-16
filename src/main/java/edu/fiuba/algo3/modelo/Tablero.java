@@ -7,7 +7,7 @@ public class Tablero {
     private ArrayList <BloqueMovible> secuenciaAEjecutar;
     private Personaje unPersonaje;
 
-    Tablero(){
+    public Tablero(){
 
         unPersonaje = new Personaje();
         secuenciaAEjecutar = new ArrayList<>();

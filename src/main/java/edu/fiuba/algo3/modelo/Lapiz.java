@@ -5,7 +5,7 @@ public class Lapiz {
     private EstadoLapiz estadoLapiz;
     private Posicion posicionActual;
 
-    Lapiz(){
+    public Lapiz(){
         estadoLapiz = new LapizArriba();
         posicionActual = new Posicion();
     }

@@ -17,11 +17,7 @@ public class Personaje {
 
     public void mover(Movimiento unMovimiento){
         unMovimiento.calcularPosicionSiguiente(this.posicionActual);
-        this.modificarPosicionLapiz(this.posicionActual);
-    }
-
-    public void modificarPosicionLapiz(Posicion unaPosicion) {
-        this.lapiz.dibujarCamino(unaPosicion);
+        this.lapiz.dibujarCamino(this.posicionActual);
     }
 
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz) {
