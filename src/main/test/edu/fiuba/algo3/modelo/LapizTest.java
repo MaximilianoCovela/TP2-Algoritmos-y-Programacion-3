@@ -20,19 +20,19 @@ public class LapizTest {
         assertEquals(estadoLapiz.getClass(), (lapiz.getEstadoLapiz()).getClass());
     }
     */
-    /*
+
     @Test
-    public void testLapizEsCreadoConEstadoLapizArriba(){
+    public void testActualizaPosicionLapizYLaPosicionEsLaEsperada(){
         Lapiz lapiz = new Lapiz();
         Posicion posicion = new Posicion();
 
         posicion.actualizarPosicion(1,0);
 
-        assertEquals("El estado del lapiz es LapizArriba.", lapiz.dibujarCamino(posicion));
+        lapiz.actualizarPosicionLapiz(posicion);
+
+        assertEquals(posicion , (lapiz.getPosicionLapiz()));
     }
-    */
-    //@Test
-    //public void testDibujarCamino
+
 
 }
 

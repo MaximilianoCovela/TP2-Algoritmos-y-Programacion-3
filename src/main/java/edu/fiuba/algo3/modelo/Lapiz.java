@@ -11,13 +11,14 @@ public class Lapiz {
     }
 
     /*
-    Antes de actualizar la posición se dibuja el camino cuando implementemos la matriz.
+    Dentro del if hay que implementar el dibujar camino.
     */
     public void dibujarCamino(Posicion posicionNueva){
-        // DANGER
+    /*
         if(this.estadoLapiz.sePuedeDibujarCamino()){
-            this.estadoLapiz.dibujarCamino(this.posicionActual,posicionNueva);
+            //implementar el dibujar camino
         }
+    */
     }
 
     public void actualizarPosicionLapiz(Posicion posicionNueva){
