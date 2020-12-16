@@ -20,4 +20,11 @@ public class Lapiz {
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz){
         this.estadoLapiz = unEstadoLapiz;
     }
+
+    public EstadoLapiz getEstadoLapiz(){
+        return this.estadoLapiz;
+    }
+
 }
+
+
