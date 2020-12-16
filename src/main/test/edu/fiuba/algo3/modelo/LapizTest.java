@@ -31,5 +31,8 @@ public class LapizTest {
         assertEquals("El estado del lapiz es LapizArriba.", lapiz.dibujarCamino(posicion));
     }
     */
+    //@Test
+    //public void testDibujarCamino
+
 }
 

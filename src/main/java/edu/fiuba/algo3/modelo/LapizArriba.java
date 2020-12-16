@@ -6,4 +6,8 @@ public class LapizArriba implements EstadoLapiz {
         System.out.println("El estado del lapiz es LapizArriba.");
     }
 
+    public boolean sePuedeDibujarCamino(){
+        return true;
+    }
+
 }
