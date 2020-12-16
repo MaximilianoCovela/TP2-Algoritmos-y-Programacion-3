@@ -28,10 +28,6 @@ public class TableroTest {
         Tablero tablero = new Tablero();
         tablero.agregarBloque(bloqueDerecha);
 
-
-
-        //assert(tablero.quitarBloque(bloqueDerecha));
-
     }
 
     @Test
