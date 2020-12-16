@@ -41,4 +41,8 @@ public class Tablero {
         
     }
 
+    public Personaje getPersonaje(){
+        return unPersonaje;
+    }
+
 }
