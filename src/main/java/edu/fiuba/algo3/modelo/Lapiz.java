@@ -14,15 +14,22 @@ public class Lapiz {
     Antes de actualizar la posición se dibuja el camino cuando implementemos la matriz.
     */
     public void dibujarCamino(Posicion posicionNueva){
+        this.estadoLapiz.dibujarCamino(this.posicionActual,posicionNueva);
         this.posicionActual = posicionNueva;
     }
 
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz){
+
         this.estadoLapiz = unEstadoLapiz;
     }
 
     public EstadoLapiz getEstadoLapiz(){
+
         return this.estadoLapiz;
+    }
+
+    public Posicion getPosicionLapiz(){
+        return this.posicionActual;
     }
 
 }
