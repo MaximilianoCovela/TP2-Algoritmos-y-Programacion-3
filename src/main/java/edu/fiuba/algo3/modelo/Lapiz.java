@@ -6,7 +6,7 @@ public class Lapiz {
     private Posicion posicionActual;
 
     Lapiz(){
-        estadoLapiz = new LapizAbajo();
+        estadoLapiz = new LapizArriba();
         posicionActual = new Posicion();
     }
 
@@ -17,4 +17,7 @@ public class Lapiz {
         this.posicionActual = posicionNueva;
     }
 
+    public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz){
+        this.estadoLapiz = unEstadoLapiz;
+    }
 }

@@ -33,7 +33,7 @@ public class TableroTest {
     }
 
     @Test
-    public void testAgregoBloqueDerechaYIntentoQuitarBloqueIzquierda(){
+    public void testAgregoBloqueDerechaEIntentoQuitarBloqueIzquierda(){
         BloqueMovible bloqueIzquierda = new BloqueIzquierda();
         BloqueMovible bloqueDerecha = new BloqueDerecha();
 

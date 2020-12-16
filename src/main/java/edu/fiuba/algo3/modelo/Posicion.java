@@ -6,19 +6,21 @@ public class Posicion {
     private int valorVertical = 5;
 
     public void setPosicion(int x, int y){
-
         valorHorizontal = x;
         valorVertical = y;
-
     }
 
 
     public void actualizarPosicion(int posicionHorizontal, int posicionVertical){
-
         valorHorizontal = valorHorizontal + posicionHorizontal;
-
         valorVertical = valorVertical + posicionVertical;
-
     }
 
+    public int getValorHorizontal(){
+        return this.valorHorizontal;
+    }
+
+    public int getValorVertical(){
+        return this.valorVertical;
+    }
 }
