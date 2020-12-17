@@ -30,3 +30,4 @@ para representar al personaje junto a sus movimientos.
  graficamente la linea del trazado del mismo.
  
 ## Diagramas
+
