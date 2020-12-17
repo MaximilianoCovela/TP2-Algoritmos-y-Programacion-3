@@ -9,7 +9,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 ## Grupo 4
 
 * **Chacón Irina Ailén** - 104416 - [integrante1](https://github.com/iruchita)
-* **Dziuma Nicolás** -  - [integrante2](https://github.com/nicolasss1993)
+* **Dziuma Nicolás** - 100305  - [integrante2](https://github.com/nicolasss1993)
 * **Ré Gabriel** - 105095 - [integrante3](https://github.com/Gabriel-Re)
 * **Covela Maximiliano Gastón** - 102547 - [integrante4](https://github.com/MaximilianoCovela)
 
