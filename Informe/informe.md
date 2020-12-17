@@ -41,12 +41,12 @@ para representar al personaje junto a sus movimientos.
  
 ## Diagramas
 
-![Diagrama de clases general](https://raw.githubusercontent.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3/entrega1/Diagramas/DCGeneral.jpg?token=ARYFZCP24VH4FZ2KDPCFBD273N22M)
+![Diagrama de clases general](https://raw.githubusercontent.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3/entrega1/Diagramas/DCGeneral.jpg?token=ARYFZCIOQ4UDUJU6RFNMKAK73N5SS)
 Diagrama general de clases.
 
-![Diagrama de clase de los bloques](https://raw.githubusercontent.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3/entrega1/Diagramas/DCBloques.jpg?token=ARYFZCNKGJDYUZNUWR23NKK73N25W)
+![Diagrama de clase de los bloques](https://raw.githubusercontent.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3/entrega1/Diagramas/DCBloques.jpg?token=ARYFZCKAWVUC4KNNSWCBTH273N5WG)
 Diagrama de clase de los bloques.
 
-![Diagrama de Secuencia Movimiento a Derecha](https://raw.githubusercontent.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3/2ed2bdee0df343d7bc9084c5051d38157e659fc7/Diagramas/DSMoverADerecha.jpg?token=ARYFZCIJ2MQBP77CRQMSRRK73N2QA)
+![Diagrama de Secuencia Movimiento a Derecha](https://raw.githubusercontent.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3/entrega1/Diagramas/DSMoverADerecha.jpg?token=ARYFZCMXEYD4VNIXGM6XVPS73N5YG)
 Diagrama de secuencia MovimientoADerecha.
 
