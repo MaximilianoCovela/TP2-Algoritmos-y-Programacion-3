@@ -54,6 +54,5 @@ para representar al personaje junto a sus movimientos.
 -  Cuando se implementen los bloques, mover dentro de LapizArriba y LapizAbajo, lo único que hace es llamar a actualizarEstadoLapiz
  de Personaje, ya que no realizan ningún cambio en la posición del personaje, por lo que estos métodos no tendrían un propio Movimiento.
 - Para la clase Lapiz, el dibujarCamino no implementa el dibujar, ya que es necesario un modo de mostrar
- graficamente la linea del trazado del mismo
-- Para la clase Lapiz, el dibujarCamino no implementa el dibujar, ya que es necesario un modo de mostrar graficamente la linea del trazado del mismo,
-es decir crear la matriz.
+ graficamente la linea del trazado del mismo.
+ 
