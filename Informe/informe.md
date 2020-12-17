@@ -9,13 +9,23 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 ## Grupo 4
 
 * **Chacón Irina Ailén** - 104416 - [integrante1](https://github.com/iruchita)
-* **Dziuma Nicolás** - [integrante2](https://github.com/nicolasss1993)
-* **Ré Gabriel** - [integrante3](https://github.com/Gabriel-Re)
-* **Covela Maximiliano Gastón** - [integrante4](https://github.com/MaximilianoCovela)
+* **Dziuma Nicolás** -  - [integrante2](https://github.com/nicolasss1993)
+* **Ré Gabriel** - 105095 - [integrante3](https://github.com/Gabriel-Re)
+* **Covela Maximiliano Gastón** - 102547 - [integrante4](https://github.com/MaximilianoCovela)
 
 Corrector: Edson Justo
 
 ## Introducción
+
+La aplicación consiste en un juego que utiliza bloques visuales.
+Esta permitirá a un personaje moverse por la pantalla mientras dibuja con un lápiz, logrando realizar distintos diseños.
+La aplicación se compondrá de 3 secciones:
+- Tablero: el tablero comenzará siendo un espacio en blanco en el cual se colocará al personaje en su posición inicial.
+- Lista de bloques: la lista de bloques mostrará los bloques que el jugador tendrá disponibles para utilizar.
+- Algoritmo: el algoritmo comenzará en blanco, y el jugador podrá ir colocando bloques en esta sección, que luego se ejecutarán en forma secuencial.
+
+Una vez armado el algoritmo, el jugador podrá elegir “ejecutar” el mismo.
+En ese caso, cada bloque se irá procesando en forma secuencial, haciendo que el personaje realice la acción correspondiente.
 
 
 ## Supuestos para las Entregas 0 y 1
