@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2.svg?branch=master)](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2) [![codecov](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2/branch/master/graph/badge.svg)](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2)
+ue a[![Build Status](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2.svg?branch=master)](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2) [![codecov](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2/branch/master/graph/badge.svg)](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2)
 
 
 
@@ -44,3 +44,16 @@ Explicación de como ejecutar la aplicación
 ## Licencia
 
 Este repositorio está bajo la Licencia MIT
+
+## Supuestos para la Entrega 0
+
+- Posicion: Inicialmente se crea con valorHorizontal = 5 y valorVertical = 5.
+ Ya que empezaría en la mitad de la matriz si esta tiene 10 filas y 10 columnas.
+Este aspecto va a ser modificable cuando creemos la matriz en sí,
+para representar al personaje junto a sus movimientos.
+-  Cuando se implementen los bloques, mover dentro de LapizArriba y LapizAbajo, lo único que hace es llamar a actualizarEstadoLapiz
+ de Personaje, ya que no realizan ningún cambio en la posición del personaje, por lo que estos métodos no tendrían un propio Movimiento.
+- Para la clase Lapiz, el dibujarCamino no implementa el dibujar, ya que es necesario un modo de mostrar
+ graficamente la linea del trazado del mismo
+- Para la clase Lapiz, el dibujarCamino no implementa el dibujar, ya que es necesario un modo de mostrar graficamente la linea del trazado del mismo,
+es decir crear la matriz.
