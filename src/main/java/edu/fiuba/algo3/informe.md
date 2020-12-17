@@ -18,7 +18,7 @@ Corrector: Edson Justo
 ## Introducción
 
 
-## Supuestos para la Entrega 0
+## Supuestos para las Entregas 0 y 1
 
 - Posicion: Inicialmente se crea con valorHorizontal = 5 y valorVertical = 5.
  Ya que empezaría en la mitad de la matriz si esta tiene 10 filas y 10 columnas.
