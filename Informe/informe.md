@@ -41,12 +41,12 @@ para representar al personaje junto a sus movimientos.
  
 ## Diagramas
 
-![Diagrama de clases general](https://raw.githubusercontent.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3/entrega1/Diagramas/DCGeneral.jpg?token=ARYFZCIOQ4UDUJU6RFNMKAK73N5SS)
+![Diagrama de clases general](https://i.imgur.com/C4XWM8i.jpg)
 Diagrama general de clases.
 
-![Diagrama de clase de los bloques](https://raw.githubusercontent.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3/entrega1/Diagramas/DCBloques.jpg?token=ARYFZCKAWVUC4KNNSWCBTH273N5WG)
+![Diagrama de clase de los bloques](https://i.imgur.com/TGiY8ql.jpg)
 Diagrama de clase de los bloques.
 
-![Diagrama de Secuencia Movimiento a Derecha](https://raw.githubusercontent.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3/entrega1/Diagramas/DSMoverADerecha.jpg?token=ARYFZCMXEYD4VNIXGM6XVPS73N5YG)
+![Diagrama de Secuencia Movimiento a Derecha](https://i.imgur.com/5I1aALB.jpg)
 Diagrama de secuencia MovimientoADerecha.
 
