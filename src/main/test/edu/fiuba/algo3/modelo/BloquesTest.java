@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,7 +10,7 @@ public class BloquesTest {
 
     @Test
     public void testCreoUnBloqueAbajoYCreaUnMovimientoQueMueveAlPersonajeAbajo(){
-        BloqueMovible bloqueAbajo = new BloqueAbajo();
+        Bloque bloqueAbajo = new Bloque(new MovimientoAbajo());
         Personaje unPersonaje = new Personaje();
 
         bloqueAbajo.aplicarMovimiento(unPersonaje);
@@ -21,7 +22,7 @@ public class BloquesTest {
 
     @Test
     public void testCreoUnBloqueArribaYCreaUnMovimientoQueMueveAlPersonajeArriba(){
-        BloqueMovible bloqueArriba = new BloqueArriba();
+        Bloque bloqueArriba = new Bloque(new MovimientoArriba());
         Personaje unPersonaje = new Personaje();
 
         bloqueArriba.aplicarMovimiento(unPersonaje);
@@ -33,7 +34,7 @@ public class BloquesTest {
 
     @Test
     public void testCreoUnBloqueDerechaYCreaUnMovimientoQueMueveAlPersonajeALaDerecha(){
-        BloqueMovible bloqueDerecha = new BloqueDerecha();
+        Bloque bloqueDerecha = new Bloque(new MovimientoDerecha());
         Personaje unPersonaje = new Personaje();
 
         bloqueDerecha.aplicarMovimiento(unPersonaje);
@@ -45,7 +46,7 @@ public class BloquesTest {
 
     @Test
     public void testCreoUnBloqueIzquierdaYCreaUnMovimientoQueMueveAlPersonajeALaIzquierda(){
-        BloqueMovible bloqueIzquierda = new BloqueIzquierda();
+        Bloque bloqueIzquierda = new Bloque(new MovimientoIzquierda());
         Personaje unPersonaje = new Personaje();
 
         bloqueIzquierda.aplicarMovimiento(unPersonaje);
@@ -53,6 +54,28 @@ public class BloquesTest {
         assertEquals(4, (unPersonaje.getPosicionActual().getValorHorizontal()));
         assertEquals(5, (unPersonaje.getPosicionActual().getValorVertical()));
 
+    }
+
+    @Test
+    public void testAplicoUnBloqueConEstadoLapizAbajoYVerificoQueElLapizEsteAbajo(){
+        Personaje unPersonaje = new Personaje();
+        Bloque bloqueBajarLapiz = new Bloque(new LapizAbajo());
+        bloqueBajarLapiz.modificarEstadoLapiz(unPersonaje);
+
+        Lapiz unLapiz = unPersonaje.getLapiz();
+        assertTrue(unLapiz.esPosibleDibujarCamino());
+    }
+
+    @Test
+    public void testAplicoBloqueBajarLapizYLuegoBloqueSubirLapizYVerificoQueElLapizEsteArriba(){
+        Personaje unPersonaje = new Personaje();
+        Bloque bloqueBajarLapiz = new Bloque(new LapizAbajo());
+        bloqueBajarLapiz.modificarEstadoLapiz(unPersonaje);
+        Bloque bloqueSubirLapiz = new Bloque(new LapizArriba());
+        bloqueSubirLapiz.modificarEstadoLapiz(unPersonaje);
+
+        Lapiz unLapiz = unPersonaje.getLapiz();
+        assertFalse(unLapiz.esPosibleDibujarCamino());
     }
 
 }
