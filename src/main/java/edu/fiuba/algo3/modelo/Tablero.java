@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Tablero {
 
-    private ArrayList <BloqueMovible> secuenciaAEjecutar;
+    private ArrayList <Bloque> secuenciaAEjecutar;
     private Personaje unPersonaje;
 
     public Tablero(){
@@ -14,13 +14,13 @@ public class Tablero {
 
     }
 
-    public void agregarBloque(BloqueMovible unBloque){
+    public void agregarBloque(Bloque unBloque){
 
         this.secuenciaAEjecutar.add(unBloque);
 
     }
 
-    public void quitarBloque (BloqueMovible unBloque){
+    public void quitarBloque (Bloque unBloque){
 
         if(!this.secuenciaAEjecutar.contains(unBloque)){
             throw new BloqueNoEncontradoException();
@@ -35,7 +35,7 @@ public class Tablero {
 
     public void ejecutarSecuencia (){
 
-        for (BloqueMovible b: secuenciaAEjecutar){
+        for (Bloque b: secuenciaAEjecutar){
             b.aplicarMovimiento(this.unPersonaje);
         }
         

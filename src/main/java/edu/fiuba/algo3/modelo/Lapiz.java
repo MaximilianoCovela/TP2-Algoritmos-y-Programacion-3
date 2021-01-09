@@ -3,11 +3,9 @@ package edu.fiuba.algo3.modelo;
 public class Lapiz {
 
     private EstadoLapiz estadoLapiz;
-    private Posicion posicionActual;
 
     public Lapiz(){
         estadoLapiz = new LapizArriba();
-        posicionActual = new Posicion();
     }
 
     /*
@@ -21,10 +19,6 @@ public class Lapiz {
     */
     }
 
-    public void actualizarPosicionLapiz(Posicion posicionNueva){
-        this.posicionActual = posicionNueva;
-    }
-
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz){
 
         this.estadoLapiz = unEstadoLapiz;
@@ -33,10 +27,6 @@ public class Lapiz {
     public boolean esPosibleDibujarCamino(){
 
         return this.estadoLapiz.sePuedeDibujarCamino();
-    }
-
-    public Posicion getPosicionLapiz(){
-        return this.posicionActual;
     }
 
 }

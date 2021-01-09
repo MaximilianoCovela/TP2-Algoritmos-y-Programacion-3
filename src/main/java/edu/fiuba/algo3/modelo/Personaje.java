@@ -15,15 +15,21 @@ public class Personaje {
 
     }
 
-    public void mover(Movimiento unMovimiento){
-        unMovimiento.calcularPosicionSiguiente(this.posicionActual);
+    public void actualizarPosicion(Movimiento unMovimiento){
+        unMovimiento.modificarAPosicionSiguiente(this.posicionActual);
         this.lapiz.dibujarCamino(this.posicionActual);
-        this.lapiz.actualizarPosicionLapiz(this.posicionActual);
     }
 
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz) {
         this.lapiz.modificarEstadoLapiz(unEstadoLapiz);
     }
 
+    public Lapiz getLapiz(){
+        return this.lapiz;
+    }
+
+    public boolean enPosicion(Posicion unaPosicion){
+        return this.posicionActual.esIgualA(unaPosicion);
+    }
 
 }

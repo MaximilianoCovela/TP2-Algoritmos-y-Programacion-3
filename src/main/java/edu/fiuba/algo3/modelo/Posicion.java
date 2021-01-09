@@ -23,4 +23,8 @@ public class Posicion {
     public int getValorVertical(){
         return this.valorVertical;
     }
+
+    public boolean esIgualA(Posicion unaPosicion) {
+        return unaPosicion.getValorVertical() == this.valorVertical && unaPosicion.getValorHorizontal() == this.valorHorizontal;
+    }
 }

@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class MovimientosTest {
 
@@ -11,10 +11,11 @@ public class MovimientosTest {
         Movimiento movimientoAbajo = new MovimientoAbajo();
         Personaje unPersonaje = new Personaje();
 
-        movimientoAbajo.calcularPosicionSiguiente(unPersonaje.getPosicionActual());
+        movimientoAbajo.modificarAPosicionSiguiente(unPersonaje.getPosicionActual());
+        Posicion unaPosicion = new Posicion();
+        unaPosicion.setPosicion(5, 4);
 
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(4, (unPersonaje.getPosicionActual().getValorVertical()));
+        assertTrue(unPersonaje.enPosicion(unaPosicion));
 
     }
 
@@ -23,10 +24,11 @@ public class MovimientosTest {
         Movimiento movimientoArriba = new MovimientoArriba();
         Personaje unPersonaje = new Personaje();
 
-        movimientoArriba.calcularPosicionSiguiente(unPersonaje.getPosicionActual());
+        movimientoArriba.modificarAPosicionSiguiente(unPersonaje.getPosicionActual());
+        Posicion unaPosicion = new Posicion();
+        unaPosicion.setPosicion(5, 6);
 
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(6, (unPersonaje.getPosicionActual().getValorVertical()));
+        assertTrue(unPersonaje.enPosicion(unaPosicion));
 
     }
 
@@ -35,10 +37,11 @@ public class MovimientosTest {
         Movimiento movimientoDerecha = new MovimientoDerecha();
         Personaje unPersonaje = new Personaje();
 
-        movimientoDerecha.calcularPosicionSiguiente(unPersonaje.getPosicionActual());
+        movimientoDerecha.modificarAPosicionSiguiente(unPersonaje.getPosicionActual());
+        Posicion unaPosicion = new Posicion();
+        unaPosicion.setPosicion(6, 5);
 
-        assertEquals(6, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorVertical()));
+        assertTrue(unPersonaje.enPosicion(unaPosicion));
 
     }
 
@@ -47,10 +50,11 @@ public class MovimientosTest {
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
         Personaje unPersonaje = new Personaje();
 
-        movimientoIzquierda.calcularPosicionSiguiente(unPersonaje.getPosicionActual());
+        movimientoIzquierda.modificarAPosicionSiguiente(unPersonaje.getPosicionActual());
+        Posicion unaPosicion = new Posicion();
+        unaPosicion.setPosicion(4, 5);
 
-        assertEquals(4, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorVertical()));
+        assertTrue(unPersonaje.enPosicion(unaPosicion));
 
     }
 }

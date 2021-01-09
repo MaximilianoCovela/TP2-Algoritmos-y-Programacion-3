@@ -9,7 +9,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
         Movimiento movimiento = new MovimientoAbajo();
 
-        personaje.mover(movimiento);
+        personaje.actualizarPosicion(movimiento);
 
         assertEquals(5, (personaje.getPosicionActual().getValorHorizontal()));
 
@@ -22,7 +22,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
         Movimiento movimiento = new MovimientoArriba();
 
-        personaje.mover(movimiento);
+        personaje.actualizarPosicion(movimiento);
 
         assertEquals(5, (personaje.getPosicionActual().getValorHorizontal()));
 
@@ -35,7 +35,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
         Movimiento movimiento = new MovimientoDerecha();
 
-        personaje.mover(movimiento);
+        personaje.actualizarPosicion(movimiento);
 
         assertEquals(6, (personaje.getPosicionActual().getValorHorizontal()));
 
@@ -48,7 +48,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
         Movimiento movimiento = new MovimientoIzquierda();
 
-        personaje.mover(movimiento);
+        personaje.actualizarPosicion(movimiento);
 
         assertEquals(4, (personaje.getPosicionActual().getValorHorizontal()));
 

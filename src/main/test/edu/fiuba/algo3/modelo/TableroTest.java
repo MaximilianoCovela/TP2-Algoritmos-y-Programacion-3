@@ -1,21 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
-//import static org.mockito.Mockito.atLeast;
-//import static org.mockito.Mockito.atLeastOnce;
-//import static org.mockito.Mockito.atMost;
-//import static org.mockito.Mockito.inOrder;
-//import static org.mockito.Mockito.mock;
-//import static org.mockito.Mockito.never;
-//import static org.mockito.Mockito.times;
-//import static org.mockito.Mockito.verify;
-//import static org.mockito.Mockito.when;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-//import org.mockito.InOrder;
 
 public class TableroTest {
 
@@ -24,7 +13,7 @@ public class TableroTest {
 
     @Test
     public void testAgregarBloqueDerecha(){
-        BloqueDerecha bloqueDerecha = new BloqueDerecha();
+        Bloque bloqueDerecha = new Bloque(new MovimientoDerecha());
         Tablero tablero = new Tablero();
         tablero.agregarBloque(bloqueDerecha);
 
@@ -32,8 +21,8 @@ public class TableroTest {
 
     @Test
     public void testAgregoBloqueDerechaEIntentoQuitarBloqueInexistente(){
-        BloqueMovible bloqueIzquierda = new BloqueIzquierda();
-        BloqueMovible bloqueDerecha = new BloqueDerecha();
+        Bloque bloqueIzquierda = new Bloque(new MovimientoIzquierda());
+        Bloque bloqueDerecha = new Bloque(new MovimientoDerecha());
 
         Tablero tablero = new Tablero();
 
@@ -46,7 +35,7 @@ public class TableroTest {
 
     @Test
     public void testAgregoBloqueDerechaYReinicioTableroYNoTengoBloquesEnElTablero(){
-        BloqueMovible bloqueDerecha = new BloqueDerecha();
+        Bloque bloqueDerecha = new Bloque(new MovimientoDerecha());
 
         Tablero tablero = new Tablero();
 
@@ -62,7 +51,7 @@ public class TableroTest {
 
     @Test
     public void testAgregoBloqueAIzquierdaEjecutoLaSecuenciaYElPersonajeSeMueveAIzquierda(){
-        BloqueMovible unBloqueAIzquierda = new BloqueIzquierda();
+        Bloque unBloqueAIzquierda = new Bloque(new MovimientoIzquierda());
 
         Tablero tablero = new Tablero();
 
@@ -76,7 +65,7 @@ public class TableroTest {
 
     @Test
     public void testAgregoBloqueADerechaEjecutoLaSecuenciaYElPersonajeSeMueveADerecha(){
-        BloqueMovible unBloqueADerecha = new BloqueDerecha();
+        Bloque unBloqueADerecha = new Bloque(new MovimientoDerecha());
 
         Tablero tablero = new Tablero();
 
@@ -90,7 +79,7 @@ public class TableroTest {
 
     @Test
     public void testAgregoBloqueAArribaEjecutoLaSecuenciaYElPersonajeSeMueveAArriba(){
-        BloqueMovible unBloqueAArriba = new BloqueArriba();
+        Bloque unBloqueAArriba = new Bloque(new MovimientoArriba());
 
         Tablero tablero = new Tablero();
 
@@ -104,7 +93,7 @@ public class TableroTest {
 
     @Test
     public void testAgregoBloqueAAbajoEjecutoLaSecuenciaYElPersonajeSeMueveAAbajo(){
-        BloqueMovible unBloqueAAbajo = new BloqueAbajo();
+        Bloque unBloqueAAbajo = new Bloque(new MovimientoAbajo());
 
         Tablero tablero = new Tablero();
 
@@ -119,11 +108,11 @@ public class TableroTest {
     @Test
     public void testAgregoBloquesEjecutoLaSecuenciaYSeModificaLaPosicionDelPersonaje(){
 
-        BloqueMovible unBloqueADerecha = new BloqueDerecha();
-        BloqueMovible unBloqueAIzquierda = new BloqueIzquierda();
-        BloqueMovible unBloqueAAbajo = new BloqueAbajo();
-        BloqueMovible otroBloqueAAbajo = new BloqueAbajo();
-        BloqueMovible unBloqueAArriba = new BloqueArriba();
+        Bloque unBloqueADerecha = new Bloque(new MovimientoDerecha());
+        Bloque unBloqueAIzquierda = new Bloque(new MovimientoIzquierda());
+        Bloque unBloqueAAbajo = new Bloque(new MovimientoAbajo());
+        Bloque otroBloqueAAbajo = new Bloque(new MovimientoAbajo());
+        Bloque unBloqueAArriba = new Bloque(new MovimientoArriba());
 
         Tablero tablero = new Tablero();
 
