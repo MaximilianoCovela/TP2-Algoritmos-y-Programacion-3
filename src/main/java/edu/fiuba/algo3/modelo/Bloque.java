@@ -13,11 +13,16 @@ public class Bloque {
     }
 
     void aplicarMovimiento(Personaje unPersonaje){
-        unPersonaje.actualizarPosicion(this.unMovimiento);
+        // unPersonaje.actualizarPosicion(unPersonaje.getPosicionActual());
+
+        this.unMovimiento.aplicarMovimiento(unPersonaje);
+
+
     }
 
-    void modificarEstadoLapiz(Personaje unPersonaje){
+    /*void modificarEstadoLapiz(Personaje unPersonaje){
         unPersonaje.modificarEstadoLapiz(this.unEstadoLapiz);
     }
-
+    */
+    //esto ya no va a estar porque le mandan el movimiento MovimientoLapizArriba y el MovimientoLapizAbajo
 }

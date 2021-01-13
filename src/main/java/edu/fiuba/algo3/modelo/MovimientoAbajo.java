@@ -2,8 +2,13 @@ package edu.fiuba.algo3.modelo;
 
 public class MovimientoAbajo implements Movimiento {
 
-    public void modificarAPosicionSiguiente(Posicion unaPosicion){
+    public void aplicarMovimiento(Personaje unPersonaje){
 
-        unaPosicion.actualizarPosicion(0,-1);
+        Posicion unaPosicion = new Posicion();
+
+        unaPosicion.setPosicion(0, -1);
+
+        unPersonaje.actualizarPosicion(unaPosicion);
+
     }
 }

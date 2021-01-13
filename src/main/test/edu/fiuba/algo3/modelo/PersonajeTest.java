@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PersonajeTest {
     @Test
-    public void testMuevePersonajeHaciaAbajo(){
+    /*public void testMuevePersonajeHaciaAbajo(){
         Personaje personaje = new Personaje();
         Movimiento movimiento = new MovimientoAbajo();
 
@@ -15,11 +15,22 @@ public class PersonajeTest {
 
         assertEquals(4, (personaje.getPosicionActual().getValorVertical()));
 
+    } */
+
+    public void testCreoUnBloqueIzquierdaYCreaUnMovimientoQueMueveAlPersonajeALaIzquierda(){
+        Bloque bloqueIzquierda = new Bloque(new MovimientoIzquierda());
+        Personaje unPersonaje = new Personaje();
+
+        bloqueIzquierda.aplicarMovimiento(unPersonaje);
+
+        assertEquals(4, (unPersonaje.getPosicionActual().getValorHorizontal()));
+        assertEquals(5, (unPersonaje.getPosicionActual().getValorVertical()));
+
     }
 
     @Test
     public void testMuevePersonajeHaciaArriba(){
-        Personaje personaje = new Personaje();
+    /*    Personaje personaje = new Personaje();
         Movimiento movimiento = new MovimientoArriba();
 
         personaje.actualizarPosicion(movimiento);
@@ -27,12 +38,12 @@ public class PersonajeTest {
         assertEquals(5, (personaje.getPosicionActual().getValorHorizontal()));
 
         assertEquals(6, (personaje.getPosicionActual().getValorVertical()));
-
+    */
     }
 
     @Test
     public void testMuevePersonajeHaciaLaDerecha(){
-        Personaje personaje = new Personaje();
+    /*    Personaje personaje = new Personaje();
         Movimiento movimiento = new MovimientoDerecha();
 
         personaje.actualizarPosicion(movimiento);
@@ -40,12 +51,12 @@ public class PersonajeTest {
         assertEquals(6, (personaje.getPosicionActual().getValorHorizontal()));
 
         assertEquals(5, (personaje.getPosicionActual().getValorVertical()));
-
+     */
     }
 
     @Test
     public void testMuevePersonajeHaciaLaIzquierda(){
-        Personaje personaje = new Personaje();
+    /*    Personaje personaje = new Personaje();
         Movimiento movimiento = new MovimientoIzquierda();
 
         personaje.actualizarPosicion(movimiento);
@@ -53,7 +64,7 @@ public class PersonajeTest {
         assertEquals(4, (personaje.getPosicionActual().getValorHorizontal()));
 
         assertEquals(5, (personaje.getPosicionActual().getValorVertical()));
-
+     */
     }
 }
 
