@@ -11,11 +11,6 @@ public class Posicion {
     }
 
 
-    public void actualizarPosicion(int posicionHorizontal, int posicionVertical){
-        valorHorizontal = valorHorizontal + posicionHorizontal;
-        valorVertical = valorVertical + posicionVertical;
-    }
-
     public int getValorHorizontal(){
         return this.valorHorizontal;
     }
@@ -27,4 +22,18 @@ public class Posicion {
     public boolean esIgualA(Posicion unaPosicion) {
         return unaPosicion.getValorVertical() == this.valorVertical && unaPosicion.getValorHorizontal() == this.valorHorizontal;
     }
+
+    public Posicion actualizarPosicion(Posicion unaPosicionNueva){ // aca le pasamos la 0 , 1 (las de movimientos)
+
+        valorHorizontal = valorHorizontal + unaPosicionNueva.getValorHorizontal();
+        valorVertical = valorVertical + unaPosicionNueva.getValorVertical();
+
+        Posicion posicionActualizada = new Posicion();
+
+        posicionActualizada.setPosicion(valorHorizontal,valorVertical);
+
+        return posicionActualizada;
+
+    }
+
 }

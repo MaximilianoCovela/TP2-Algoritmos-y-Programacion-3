@@ -15,24 +15,13 @@ public class Personaje {
 
     }
 // recibia un movimiento en lo que hicieron masi y nico
-    public void actualizarPosicion(Posicion unaPosicion){
-        /*
-        unMovimiento.modificarAPosicionSiguiente(this.posicionActual);
-        this.lapiz.dibujarCamino(this.posicionActual);
-        */
+    public void actualizarPosicion(Posicion unaPosicion){ // la del 0 1 y bla
 
-        // recibe una posicion que tiene 1 0 o 0 1 y bla. y le suma en actualizar posicion la posicion anterior,
-        // que tenia almacenada el personaje. Así se usa la posicion que creamos en movimiento y gg, la anterior
-        // queda guardada en la matriz de después.
+        // primero guardamos la posicion anterior en el array. la actual posicionActual
 
-        unaPosicion.actualizarPosicion(this.posicionActual.getValorHorizontal(),
-                this.posicionActual.getValorVertical());
+        posicionActual = posicionActual.actualizarPosicion(unaPosicion); // esto no esta chequeado
 
-        posicionActual = unaPosicion;
 
-        // y aca en algun momento tengo que llamar a guardar posicion actual en la matriz, cuando exista supongo xd
-        // eso equivaldria a un dibujar en el lapiz seria un marcar posicion actual, pasarle eso al lapiz,
-        // y que el lapiz delegue eso en una matriz. no se como hacerlooooooo
     }
 
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz) {
