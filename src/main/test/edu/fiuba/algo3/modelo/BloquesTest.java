@@ -58,28 +58,26 @@ public class BloquesTest {
 
     @Test
     public void testAplicoUnBloqueConEstadoLapizAbajoYVerificoQueElLapizEsteAbajo(){
-       /* Personaje unPersonaje = new Personaje();
-        Bloque bloqueBajarLapiz = new Bloque(new LapizAbajo());
-        bloqueBajarLapiz.modificarEstadoLapiz(unPersonaje);
+        Personaje unPersonaje = new Personaje();
+        Bloque bloqueBajarLapiz = new Bloque(new MovimientoLapizAbajo());
+        bloqueBajarLapiz.aplicarMovimiento(unPersonaje);
 
         Lapiz unLapiz = unPersonaje.getLapiz();
         assertTrue(unLapiz.esPosibleDibujarCamino());
 
-
-        */
     }
 
     @Test
     public void testAplicoBloqueBajarLapizYLuegoBloqueSubirLapizYVerificoQueElLapizEsteArriba(){
-    /*    Personaje unPersonaje = new Personaje();
-        Bloque bloqueBajarLapiz = new Bloque(new LapizAbajo());
-        bloqueBajarLapiz.modificarEstadoLapiz(unPersonaje);
-        Bloque bloqueSubirLapiz = new Bloque(new LapizArriba());
-        bloqueSubirLapiz.modificarEstadoLapiz(unPersonaje);
+        Personaje unPersonaje = new Personaje();
+        Bloque bloqueBajarLapiz = new Bloque(new MovimientoLapizAbajo());
+        bloqueBajarLapiz.aplicarMovimiento(unPersonaje);
+        Bloque bloqueSubirLapiz = new Bloque(new MovimientoLapizArriba());
+        bloqueSubirLapiz.aplicarMovimiento(unPersonaje);
 
         Lapiz unLapiz = unPersonaje.getLapiz();
         assertFalse(unLapiz.esPosibleDibujarCamino());
-    */
+
     }
 
 

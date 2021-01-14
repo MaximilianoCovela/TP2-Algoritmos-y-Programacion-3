@@ -18,6 +18,10 @@ public class Lapiz {
 
         this.estadoLapiz = unEstadoLapiz;
     }
+    public boolean esPosibleDibujarCamino(){
+
+        return this.estadoLapiz.sePuedeDibujarCamino();
+    }
 
 }
 

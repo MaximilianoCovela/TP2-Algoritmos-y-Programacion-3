@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-public class MovimientoLapizArriba {
+public class MovimientoLapizArriba implements Movimiento{
 
     public void aplicarMovimiento(Personaje unPersonaje){
 

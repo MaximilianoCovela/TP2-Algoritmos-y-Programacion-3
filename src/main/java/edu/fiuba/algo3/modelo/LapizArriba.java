@@ -6,4 +6,8 @@ public class LapizArriba implements EstadoLapiz {
         Dibujo unDibujo = new Vacio();
         return (new Figura(unaPosicion, unDibujo));
     }
+
+    public boolean sePuedeDibujarCamino(){
+        return false;
+    }
 }
