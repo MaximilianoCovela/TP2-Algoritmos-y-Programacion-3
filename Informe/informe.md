@@ -32,21 +32,24 @@ En ese caso, cada bloque se irá procesando en forma secuencial, haciendo que el
 
 - Posicion: Inicialmente se crea con valorHorizontal = 5 y valorVertical = 5.
  Ya que empezaría en la mitad de la matriz si esta tiene 10 filas y 10 columnas.
-Este aspecto va a ser modificable cuando creemos la matriz en sí,
-para representar al personaje junto a sus movimientos.
--  Cuando se implementen los bloques, mover dentro de LapizArriba y LapizAbajo, lo único que hace es llamar a actualizarEstadoLapiz
- de Personaje, ya que no realizan ningún cambio en la posición del personaje, por lo que estos métodos no tendrían un propio Movimiento.
-- Para la clase Lapiz, el dibujarCamino no implementa el dibujar, ya que es necesario un modo de mostrar
- graficamente la linea del trazado del mismo.
+
+-  Dibujar dentro de LapizArriba y LapizAbajo, lo que hace es crear una Figura cuyos métodos no implementamos; estas figuras las
+ almacenará el SectorDibujo en la segunda entrega.
  
+- El Dibujo abstrae si la figura que contiene una posición determinada, 
+puede ser dibujada o no, en base al estado del lápiz.
+
 ## Diagramas
 
-![Diagrama de clases general](https://i.imgur.com/C4XWM8i.jpg)
+![Diagrama de clases general](https://i.imgur.com/h186fSlh.jpg)
 Diagrama general de clases.
 
-![Diagrama de clase de los bloques](https://i.imgur.com/TGiY8ql.jpg)
-Diagrama de clase de los bloques.
+![Diagrama de clase del Estado Lapiz](https://i.imgur.com/GH7045V.png)
+Diagrama de clase del Estado Lapiz.
 
-![Diagrama de Secuencia Movimiento a Derecha](https://i.imgur.com/5I1aALB.jpg)
+![Diagrama de clase de los Movimientos](https://i.imgur.com/x2XYyIf.png)
+Diagrama de clase de los Movimientos.
+
+![Diagrama de Secuencia Movimiento a Derecha](https://i.imgur.com/DOv0h60.png)
 Diagrama de secuencia MovimientoADerecha.
 
