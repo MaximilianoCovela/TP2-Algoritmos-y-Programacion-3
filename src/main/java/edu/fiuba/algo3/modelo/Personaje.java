@@ -19,7 +19,10 @@ public class Personaje {
 
         // primero guardamos la posicion anterior en el array. la actual posicionActual
 
+
+
         posicionActual = posicionActual.actualizarPosicion(unaPosicion); // esto no esta chequeado
+
 
 
     }
