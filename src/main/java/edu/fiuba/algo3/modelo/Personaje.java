@@ -14,15 +14,12 @@ public class Personaje {
         return posicionActual;
 
     }
-// recibia un movimiento en lo que hicieron masi y nico
-    public void actualizarPosicion(Posicion unaPosicion){ // la del 0 1 y bla
 
+    public void actualizarPosicion(Posicion unaPosicion){ // la del 0 1 y bla
+        this.lapiz.dibujarCamino(this.posicionActual);
         // primero guardamos la posicion anterior en el array. la actual posicionActual
 
-
-
-        posicionActual = posicionActual.actualizarPosicion(unaPosicion); // esto no esta chequeado
-
+        posicionActual = posicionActual.actualizarPosicion(unaPosicion);
 
 
     }
@@ -38,5 +35,7 @@ public class Personaje {
     public boolean enPosicion(Posicion unaPosicion){
         return this.posicionActual.esIgualA(unaPosicion);
     }
+
+
 
 }
