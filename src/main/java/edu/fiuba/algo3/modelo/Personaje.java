@@ -15,12 +15,10 @@ public class Personaje {
 
     }
 
-    public void actualizarPosicion(Posicion unaPosicion){ // la del 0 1 y bla
+    public void actualizarPosicion(Posicion unaPosicion){
         this.lapiz.dibujarCamino(this.posicionActual);
-        // primero guardamos la posicion anterior en el array. la actual posicionActual
 
         posicionActual = posicionActual.actualizarPosicion(unaPosicion);
-
 
     }
 
@@ -35,7 +33,6 @@ public class Personaje {
     public boolean enPosicion(Posicion unaPosicion){
         return this.posicionActual.esIgualA(unaPosicion);
     }
-
 
 
 }

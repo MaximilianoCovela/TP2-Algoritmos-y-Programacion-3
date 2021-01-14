@@ -10,7 +10,6 @@ public class Posicion {
         valorVertical = y;
     }
 
-
     public int getValorHorizontal(){
         return this.valorHorizontal;
     }
