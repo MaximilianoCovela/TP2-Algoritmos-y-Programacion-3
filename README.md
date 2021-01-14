@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2.svg?branch=master)](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2) [![codecov](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2/branch/master/graph/badge.svg)](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2)
+ue a[![Build Status](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2.svg?branch=master)](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2) [![codecov](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2/branch/master/graph/badge.svg)](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2)
 
 
 
@@ -10,7 +10,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 
 * **Chacón Irina Ailén** - [integrante1](https://github.com/iruchita)
 * **Dziuma Nicolás** - [integrante2](https://github.com/nicolasss1993)
-* **Re Gabriel** - [integrante3](https://github.com/Gabriel-Re)
+* **Ré Gabriel** - [integrante3](https://github.com/Gabriel-Re)
 * **Covela Maximiliano Gastón** - [integrante4](https://github.com/MaximilianoCovela)
 
 Corrector: Edson Justo

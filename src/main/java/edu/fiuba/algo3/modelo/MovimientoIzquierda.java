@@ -1,0 +1,15 @@
+package edu.fiuba.algo3.modelo;
+
+public class MovimientoIzquierda implements Movimiento {
+
+    public void aplicarMovimiento(Personaje unPersonaje){
+
+        Posicion unaPosicion = new Posicion();
+
+        unaPosicion.setPosicion(-1, 0);
+
+        unPersonaje.actualizarPosicion(unaPosicion);
+
+    }
+
+}
