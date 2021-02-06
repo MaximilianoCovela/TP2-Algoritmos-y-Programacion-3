@@ -12,13 +12,12 @@ public class Personaje {
 
     public Posicion getPosicionActual() {
         return posicionActual;
-
     }
 
     public void actualizarPosicion(Posicion unaPosicion){
-        this.lapiz.dibujarCamino(this.posicionActual);
-
+        Posicion antiguaPosicion = this.posicionActual;
         posicionActual = posicionActual.actualizarPosicion(unaPosicion);
+        this.lapiz.dibujarCamino(antiguaPosicion, posicionActual);
 
     }
 

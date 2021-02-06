@@ -9,8 +9,8 @@ public class Lapiz {
     }
 
 
-    public void dibujarCamino(Posicion unaPosicion){
-        this.estadoLapiz.dibujar(unaPosicion);
+    public void dibujarCamino(Posicion antiguaPosicion,Posicion nuevaPosicion){
+        this.estadoLapiz.dibujar(antiguaPosicion,nuevaPosicion);
 
     }
 
