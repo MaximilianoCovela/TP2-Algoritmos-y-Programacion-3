@@ -6,6 +6,7 @@ public class Tablero {
 
     private ArrayList <Bloque> secuenciaAEjecutar;
     private Personaje unPersonaje;
+    private SectorDibujo sectorDibujo;
 
     public Tablero(){
 

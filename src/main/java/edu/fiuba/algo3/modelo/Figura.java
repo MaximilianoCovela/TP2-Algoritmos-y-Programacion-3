@@ -11,4 +11,7 @@ public class Figura {
         this.unDibujo = nuevoDibujo;
     }
 
+    public boolean seHaDibujado(){
+        return this.unDibujo.mostrarDibujo();
+    }
 }
