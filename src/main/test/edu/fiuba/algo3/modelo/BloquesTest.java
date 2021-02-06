@@ -80,5 +80,46 @@ public class BloquesTest {
 
     }
 
+    @Test
+    public void testCreoUnBloqueRepetirDosVecesYRepiteLaSecuenciaDosVeces(){
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2); // a chequear
+        Personaje unPersonaje = new Personaje();
+        Movimiento movimientoIzquierda = new MovimientoIzquierda();
+        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba = new MovimientoArriba();
+
+        unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
+        unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
+        unMovimientoRepetir.agregarMovimiento(movimientoArriba);
+
+        Bloque bloqueRepetir = new Bloque( unMovimientoRepetir);
+
+        bloqueRepetir.aplicarMovimiento(unPersonaje);
+
+        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
+        assertEquals(7, (unPersonaje.getPosicionActual().getValorVertical()));
+
+    }
+
+    @Test
+    public void testCreoUnBloqueRepetirTresVecesYRepiteLaSecuenciaTresVeces(){
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(3); //aca tmb
+        Personaje unPersonaje = new Personaje();
+        Movimiento movimientoIzquierda = new MovimientoIzquierda();
+        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba = new MovimientoArriba();
+
+        unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
+        unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
+        unMovimientoRepetir.agregarMovimiento(movimientoArriba);
+
+        Bloque bloqueRepetir = new Bloque( unMovimientoRepetir);
+
+        bloqueRepetir.aplicarMovimiento(unPersonaje);
+
+        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
+        assertEquals(8, (unPersonaje.getPosicionActual().getValorVertical()));
+
+    }
 
 }

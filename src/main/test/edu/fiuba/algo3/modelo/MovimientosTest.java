@@ -54,5 +54,25 @@ public class MovimientosTest {
 
     }
 
+    @Test
+    public void testCreoUnMovimientoRepetirDosVecesYRepiteLaSecuenciaDosVeces(){
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
+        Personaje unPersonaje = new Personaje();
+        Movimiento movimientoIzquierda = new MovimientoIzquierda();
+        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba = new MovimientoArriba();
+
+        unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
+        unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
+        unMovimientoRepetir.agregarMovimiento(movimientoArriba);
+
+        unMovimientoRepetir.aplicarMovimiento(unPersonaje);
+
+        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
+        assertEquals(7, (unPersonaje.getPosicionActual().getValorVertical()));
+
+    }
+
+
 
 }
