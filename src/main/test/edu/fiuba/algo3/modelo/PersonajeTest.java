@@ -65,7 +65,7 @@ public class PersonajeTest {
 
         assertEquals(5, (personaje.getPosicionActual().getValorVertical()));
 
-    }
+}
 
     @Test
     public void testSeCreaSecuenciaDeBloquesYSeCompruebaQueElPersonajeSeMuevaCorrectamente() {

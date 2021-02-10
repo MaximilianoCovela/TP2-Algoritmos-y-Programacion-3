@@ -39,17 +39,22 @@ En ese caso, cada bloque se irá procesando en forma secuencial, haciendo que el
 - El Dibujo abstrae si la figura que contiene una posición determinada, 
 puede ser dibujada o no, en base al estado del lápiz.
 
+## Supuestos para las Entregas 2
+
+- En Dibujo, Vacío y Linea tienen un método booleano para poder 
+comprobar si se actualiza el estado del lápiz correctamente.
+
 ## Diagramas
 
-![Diagrama de clases general](https://i.imgur.com/h186fSlh.jpg)
+![Diagrama de clases general](https://i.imgur.com/x095J6H.jpg)
 Diagrama general de clases.
 
-![Diagrama de clase del Estado Lapiz](https://i.imgur.com/GH7045V.png)
+![Diagrama de clase del Estado Lapiz](https://i.imgur.com/IYTxSVn.jpg)
 Diagrama de clase del Estado Lapiz.
 
-![Diagrama de clase de los Movimientos](https://i.imgur.com/x2XYyIf.png)
+![Diagrama de clase de los Movimientos](https://i.imgur.com/3oPVhnf.jpg)
 Diagrama de clase de los Movimientos.
 
-![Diagrama de Secuencia Movimiento a Derecha](https://i.imgur.com/DOv0h60.png)
+![Diagrama de Secuencia Movimiento a Derecha](https://i.imgur.com/H7ytPFm.jpg)
 Diagrama de secuencia MovimientoADerecha.
 

@@ -14,4 +14,6 @@ public class SectorDibujo {
         return this.listaDeFiguras;
     }
 
+
+
 }
