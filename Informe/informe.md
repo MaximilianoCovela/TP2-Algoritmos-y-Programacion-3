@@ -39,7 +39,7 @@ En ese caso, cada bloque se irá procesando en forma secuencial, haciendo que el
 - El Dibujo abstrae si la figura que contiene una posición determinada, 
 puede ser dibujada o no, en base al estado del lápiz.
 
-## Supuestos para las Entregas 2
+## Supuestos para la Entrega 2
 
 - En Dibujo, Vacío y Linea tienen un método booleano para poder 
 comprobar si se actualiza el estado del lápiz correctamente.
