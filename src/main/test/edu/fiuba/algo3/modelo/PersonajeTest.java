@@ -84,6 +84,35 @@ public class PersonajeTest {
         Figura figura2 = arregloSectorDibujo.get(1);
         assertTrue(figura2.seHaDibujado());
     }
+
+    @Test
+    public void testCreoUnMovimientoRepetirDosVecesYRepiteLaSecuenciaDosVeces(){
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
+        Personaje unPersonaje = new Personaje();
+        Movimiento movimientoIzquierda = new MovimientoIzquierda();
+        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba = new MovimientoArriba();
+        Movimiento movimientoLapizAbajo = new MovimientoLapizAbajo();
+        Movimiento otroMovimientoArriba = new MovimientoArriba();
+
+        unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
+        unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
+        unMovimientoRepetir.agregarMovimiento(movimientoArriba);
+
+        unMovimientoRepetir.aplicarMovimiento(unPersonaje);
+        movimientoLapizAbajo.aplicarMovimiento(unPersonaje);
+        otroMovimientoArriba.aplicarMovimiento(unPersonaje);
+
+        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
+        assertEquals(8, (unPersonaje.getPosicionActual().getValorVertical()));
+
+        ArrayList<Figura> arregloSectorDibujo = unPersonaje.getLapiz().mostrarSectorDibujo().mostrarFiguras();
+        Figura figura1 = arregloSectorDibujo.get(0);
+        assertFalse(figura1.seHaDibujado());
+
+        Figura figura2 = arregloSectorDibujo.get((arregloSectorDibujo.size())-1);
+        assertTrue(figura2.seHaDibujado());
+    }
 }
 
 
