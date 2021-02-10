@@ -26,6 +26,9 @@ public class Lapiz {
         return this.estadoLapiz.sePuedeDibujarCamino();
     }
 
+    public SectorDibujo mostrarSectorDibujo(){
+        return this.sectorDibujo;
+    }
 }
 
 

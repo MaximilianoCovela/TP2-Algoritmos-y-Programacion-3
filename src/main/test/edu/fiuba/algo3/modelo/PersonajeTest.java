@@ -1,7 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonajeTest {
     @Test
@@ -64,6 +67,23 @@ public class PersonajeTest {
 
     }
 
+    @Test
+    public void seCreaSecuenciaDeBloquesYSeCompruebaQueElPersonajeSeMuevaCorrectamente() {
+        Personaje unPersonaje = new Personaje();
+        Posicion unaPosicion = new Posicion();
+        unaPosicion.setPosicion(1,0);
+        unPersonaje.actualizarPosicion(unaPosicion);
+        EstadoLapiz unEstadoLapizAbajo = new LapizAbajo();
+        unPersonaje.getLapiz().modificarEstadoLapiz(unEstadoLapizAbajo);
+        Posicion nuevaPosicion = new Posicion();
+        nuevaPosicion.setPosicion(0, 1);
+        unPersonaje.actualizarPosicion(nuevaPosicion);
+        ArrayList<Figura> arregloSectorDibujo = unPersonaje.getLapiz().mostrarSectorDibujo().mostrarFiguras();
+        Figura figura1 = arregloSectorDibujo.get(0);
+        assertFalse(figura1.seHaDibujado());
+        Figura figura2 = arregloSectorDibujo.get(1);
+        assertTrue(figura2.seHaDibujado());
     }
+}
 
 

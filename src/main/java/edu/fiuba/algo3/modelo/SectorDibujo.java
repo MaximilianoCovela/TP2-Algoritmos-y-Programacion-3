@@ -10,4 +10,8 @@ public class SectorDibujo {
         this.listaDeFiguras.add(unaFigura);
     }
 
+    public ArrayList<Figura> mostrarFiguras(){
+        return this.listaDeFiguras;
+    }
+
 }
