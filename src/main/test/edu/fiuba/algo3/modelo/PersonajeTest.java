@@ -86,7 +86,7 @@ public class PersonajeTest {
     }
 
     @Test
-    public void testCreoUnMovimientoRepetirDosVecesYRepiteLaSecuenciaDosVeces(){
+    public void testSeMuevePersonajeConMovimientosDeRepeticionYSeChequeaQueSeMuevaCorrectamente(){
         MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
         Personaje unPersonaje = new Personaje();
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
