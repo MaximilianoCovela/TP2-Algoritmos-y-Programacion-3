@@ -4,7 +4,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TableroTest {
 
@@ -126,6 +128,63 @@ public class TableroTest {
         assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
         assertEquals(4,tablero.getPersonaje().getPosicionActual().getValorVertical());
 
+    }
+
+    @Test
+    public void testSeCreaBloqueRepetirYSeVerificaLaPosicionDelPersonaje(){
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
+        Movimiento movimientoIzquierda = new MovimientoIzquierda();
+        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba = new MovimientoArriba();
+
+        unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
+        unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
+        unMovimientoRepetir.agregarMovimiento(movimientoArriba);
+
+        Tablero unTablero = new Tablero();
+
+        Bloque unBloqueRepetir = new Bloque(unMovimientoRepetir);
+
+        unTablero.agregarBloque(unBloqueRepetir);
+
+        unTablero.ejecutarSecuencia();
+
+        assertEquals(5, (unTablero.getPersonaje().getPosicionActual().getValorHorizontal()));
+        assertEquals(7, (unTablero.getPersonaje().getPosicionActual().getValorVertical()));
+
+    }
+
+    @Test
+    public void testSeCreanBloquesYSeVerificaElEstadoLapiz(){
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
+        Movimiento movimientoIzquierda = new MovimientoIzquierda();
+        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba = new MovimientoArriba();
+        Movimiento movimientoLapizAbajo = new MovimientoLapizAbajo();
+        Movimiento otroMovimientoArriba = new MovimientoArriba();
+
+        unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
+        unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
+        unMovimientoRepetir.agregarMovimiento(movimientoArriba);
+
+        Tablero unTablero = new Tablero();
+
+        Bloque unBloqueRepetir = new Bloque(unMovimientoRepetir);
+        Bloque unBloqueLapizAbajo = new Bloque(movimientoLapizAbajo);
+        Bloque unBloqueArriba = new Bloque(otroMovimientoArriba);
+
+        unTablero.agregarBloque(unBloqueRepetir);
+        unTablero.agregarBloque(unBloqueLapizAbajo);
+        unTablero.agregarBloque(unBloqueArriba);
+
+        unTablero.ejecutarSecuencia();
+
+        ArrayList<Figura> arregloSectorDibujo = unTablero.getPersonaje().getLapiz().mostrarSectorDibujo().mostrarFiguras();
+        Figura figura1 = arregloSectorDibujo.get(0);
+        assertFalse(figura1.seHaDibujado());
+
+        Figura figura2 = arregloSectorDibujo.get((arregloSectorDibujo.size())-1);
+        assertTrue(figura2.seHaDibujado());
     }
 }
 

@@ -68,7 +68,7 @@ public class PersonajeTest {
     }
 
     @Test
-    public void seCreaSecuenciaDeBloquesYSeCompruebaQueElPersonajeSeMuevaCorrectamente() {
+    public void testSeCreaSecuenciaDeBloquesYSeCompruebaQueElPersonajeSeMuevaCorrectamente() {
         Personaje unPersonaje = new Personaje();
         Posicion unaPosicion = new Posicion();
         unaPosicion.setPosicion(1,0);
