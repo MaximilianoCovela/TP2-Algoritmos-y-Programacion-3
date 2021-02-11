@@ -82,7 +82,7 @@ public class BloquesTest {
 
     @Test
     public void testCreoUnBloqueRepetirDosVecesYRepiteLaSecuenciaDosVeces(){
-        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2); // a chequear
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
         Personaje unPersonaje = new Personaje();
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
         Movimiento movimientoDerecha = new MovimientoDerecha();
@@ -103,7 +103,7 @@ public class BloquesTest {
 
     @Test
     public void testCreoUnBloqueRepetirTresVecesYRepiteLaSecuenciaTresVeces(){
-        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(3); //aca tmb
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(3);
         Personaje unPersonaje = new Personaje();
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
         Movimiento movimientoDerecha = new MovimientoDerecha();
