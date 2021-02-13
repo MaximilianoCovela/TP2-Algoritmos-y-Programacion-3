@@ -13,6 +13,8 @@ public class Vacio implements Dibujo{
         return false;
     }
 
-
+    public boolean posicionVacioEsIgualA(Posicion unaPosicion){
+        return (nuevaPosicion.esIgualA(unaPosicion));
+    }
 
 }

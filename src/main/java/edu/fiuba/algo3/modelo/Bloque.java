@@ -12,6 +12,5 @@ public class Bloque {
     void aplicarMovimiento(Personaje unPersonaje){
 
         this.unMovimiento.aplicarMovimiento(unPersonaje);
-
     }
 }

@@ -31,15 +31,16 @@ public class LapizTest {
     public void seVerificaQueLaFiguraSeGuardeConEstadoLapizAbajo() {
         Lapiz unLapiz = new Lapiz();
         Posicion antiguaPosicion = new Posicion();
-        Posicion nuevaPosicion = new Posicion(1,0);
+        Posicion nuevaPosicion = new Posicion(6,5);
 
         EstadoLapiz unEstadoLapizAbajo = new LapizAbajo();
         unLapiz.modificarEstadoLapiz(unEstadoLapizAbajo);
         unLapiz.dibujarCamino(antiguaPosicion, nuevaPosicion);
 
         ArrayList<Dibujo> arregloSectorDibujo = unLapiz.mostrarSectorDibujo().mostrarDibujos();
-        Dibujo dibujo1 = arregloSectorDibujo.get(0);
+        Linea dibujo1 = (Linea) arregloSectorDibujo.get(0);
         Assertions.assertTrue(dibujo1.mostrarDibujo());
+        Assertions.assertTrue(dibujo1.posicionLineaEsIgualA(antiguaPosicion, nuevaPosicion));
     }
 
     @Test
@@ -51,8 +52,9 @@ public class LapizTest {
         unLapiz.dibujarCamino(antiguaPosicion, nuevaPosicion);
 
         ArrayList<Dibujo> arregloSectorDibujo = unLapiz.mostrarSectorDibujo().mostrarDibujos();
-        Dibujo dibujo1 = arregloSectorDibujo.get(0);
+        Vacio dibujo1 = (Vacio) arregloSectorDibujo.get(0);
         Assertions.assertFalse(dibujo1.mostrarDibujo());
+        Assertions.assertTrue(dibujo1.posicionVacioEsIgualA(nuevaPosicion));
     }
 }
 
