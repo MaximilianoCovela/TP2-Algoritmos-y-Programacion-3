@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 public class Figura {
-    private Posicion antiguaPosicion;
+   /* private Posicion antiguaPosicion;
     private Posicion nuevaPosicion;
     private Dibujo unDibujo;
 
@@ -13,5 +13,5 @@ public class Figura {
 
     public boolean seHaDibujado(){
         return this.unDibujo.mostrarDibujo();
-    }
+    } */
 }

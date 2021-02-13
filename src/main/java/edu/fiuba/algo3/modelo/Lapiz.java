@@ -13,8 +13,8 @@ public class Lapiz {
 
 
     public void dibujarCamino(Posicion antiguaPosicion,Posicion nuevaPosicion){
-        Figura unaFigura = this.estadoLapiz.dibujar(antiguaPosicion,nuevaPosicion);
-        this.sectorDibujo.agregarFigura(unaFigura);
+        Dibujo unDibujo = this.estadoLapiz.dibujar(antiguaPosicion,nuevaPosicion);
+        this.sectorDibujo.agregarDibujo(unDibujo);
     }
 
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz){

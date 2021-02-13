@@ -4,16 +4,14 @@ import java.util.ArrayList;
 
 public class SectorDibujo {
 
-    private ArrayList<Figura> listaDeFiguras = new ArrayList<Figura>();
+    private ArrayList<Dibujo> listaDeDibujos = new ArrayList<Dibujo>();
 
-    public void agregarFigura(Figura unaFigura){
-        this.listaDeFiguras.add(unaFigura);
-    }
-
-    public ArrayList<Figura> mostrarFiguras(){
-        return this.listaDeFiguras;
+    public ArrayList<Dibujo> mostrarDibujos(){
+        return this.listaDeDibujos;
     }
 
 
-
+    public void agregarDibujo(Dibujo unDibujo) {
+        this.listaDeDibujos.add(unDibujo);
+    }
 }
