@@ -15,7 +15,7 @@ public class BloquesTest {
 
         Posicion posicionEsperada = new Posicion();
         posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
-                unPersonaje.getPosicionActual().getValorHorizontal()-1);
+                unPersonaje.getPosicionActual().getValorVertical()-1);
 
         bloqueAbajo.aplicarMovimiento(unPersonaje);
 
@@ -30,7 +30,7 @@ public class BloquesTest {
 
         Posicion posicionEsperada = new Posicion();
         posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
-                unPersonaje.getPosicionActual().getValorHorizontal()+1);
+                unPersonaje.getPosicionActual().getValorVertical()+1);
 
         bloqueArriba.aplicarMovimiento(unPersonaje);
 
@@ -46,7 +46,7 @@ public class BloquesTest {
         Posicion posicionEsperada = new Posicion();
 
         posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal()+1,
-                unPersonaje.getPosicionActual().getValorHorizontal());
+                unPersonaje.getPosicionActual().getValorVertical());
 
         bloqueDerecha.aplicarMovimiento(unPersonaje);
 
@@ -60,7 +60,7 @@ public class BloquesTest {
 
         Posicion posicionEsperada = new Posicion();
         posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal()-1,
-                unPersonaje.getPosicionActual().getValorHorizontal());
+                unPersonaje.getPosicionActual().getValorVertical());
 
         bloqueIzquierda.aplicarMovimiento(unPersonaje);
 
@@ -106,7 +106,7 @@ public class BloquesTest {
 
         Posicion posicionEsperada = new Posicion();
         posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
-                unPersonaje.getPosicionActual().getValorHorizontal()+2);
+                unPersonaje.getPosicionActual().getValorVertical()+2);
 
         Bloque bloqueRepetir = new Bloque( unMovimientoRepetir);
 
@@ -130,7 +130,7 @@ public class BloquesTest {
 
         Posicion posicionEsperada = new Posicion();
         posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
-                unPersonaje.getPosicionActual().getValorHorizontal()+3);
+                unPersonaje.getPosicionActual().getValorVertical()+3);
 
         Bloque bloqueRepetir = new Bloque( unMovimientoRepetir);
 
