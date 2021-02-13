@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class PosicionTest{
 
     @Test
-    public void testModificaLaPosicionYSeActualizaCorrectamente(){
+    public void testModificaLaPosicionHaciaLaDerechaYSeActualizaCorrectamente(){
         Posicion posicion = new Posicion();
 
         Posicion posicionADerecha= new Posicion(1,0);
@@ -21,7 +21,7 @@ public class PosicionTest{
     }
 
     @Test
-    public void testModificaLaPosicionYSeActualizaCorrectamente2(){
+    public void testModificaLaPosicionHaciaArribaYSeActualizaCorrectamente(){
 
         Posicion posicion = new Posicion();
 
