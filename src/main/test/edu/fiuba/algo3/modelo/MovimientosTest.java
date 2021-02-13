@@ -18,7 +18,7 @@ public class MovimientosTest {
 
         movimientoAbajo.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
 
     }
 
@@ -35,7 +35,7 @@ public class MovimientosTest {
 
         movimientoArriba.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class MovimientosTest {
 
         movimientoDerecha.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
 
     }
 
@@ -62,7 +62,7 @@ public class MovimientosTest {
 
         movimientoIzquierda.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
     }
 
     @Test
@@ -83,7 +83,7 @@ public class MovimientosTest {
 
         unMovimientoRepetir.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
 
     }
 

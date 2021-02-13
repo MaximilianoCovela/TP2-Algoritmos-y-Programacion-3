@@ -19,7 +19,7 @@ public class BloquesTest {
 
         bloqueAbajo.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
 
     }
 
@@ -34,7 +34,7 @@ public class BloquesTest {
 
         bloqueArriba.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
 
     }
 
@@ -50,7 +50,7 @@ public class BloquesTest {
 
         bloqueDerecha.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
     }
 
     @Test
@@ -64,7 +64,7 @@ public class BloquesTest {
 
         bloqueIzquierda.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
 
     }
 
@@ -112,7 +112,7 @@ public class BloquesTest {
 
         bloqueRepetir.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
 
     }
 
@@ -136,7 +136,7 @@ public class BloquesTest {
 
         bloqueRepetir.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
 
     }
 

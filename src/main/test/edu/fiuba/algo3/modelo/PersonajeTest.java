@@ -21,7 +21,7 @@ public class PersonajeTest {
 
         personaje.actualizarPosicion(unaPosicion);
 
-        assertTrue(personaje.getPosicionActual().esIgualA(unaPosicionEsperada));
+        assertTrue(personaje.enPosicion(unaPosicionEsperada));
 
     }
 
@@ -39,7 +39,7 @@ public class PersonajeTest {
 
         personaje.actualizarPosicion(unaPosicion);
 
-        assertTrue(personaje.getPosicionActual().esIgualA(unaPosicionEsperada));
+        assertTrue(personaje.enPosicion(unaPosicionEsperada));
     }
 
     @Test
@@ -56,7 +56,7 @@ public class PersonajeTest {
 
         personaje.actualizarPosicion(unaPosicion);
 
-        assertTrue(personaje.getPosicionActual().esIgualA(unaPosicionEsperada));
+        assertTrue(personaje.enPosicion(unaPosicionEsperada));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class PersonajeTest {
 
         personaje.actualizarPosicion(unaPosicion);
 
-        assertTrue(personaje.getPosicionActual().esIgualA(unaPosicionEsperada));
+        assertTrue(personaje.enPosicion(unaPosicionEsperada));
 
 }
 
@@ -122,7 +122,7 @@ public class PersonajeTest {
         movimientoLapizAbajo.aplicarMovimiento(unPersonaje);
         otroMovimientoArriba.aplicarMovimiento(unPersonaje);
 
-        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
 
     }
 

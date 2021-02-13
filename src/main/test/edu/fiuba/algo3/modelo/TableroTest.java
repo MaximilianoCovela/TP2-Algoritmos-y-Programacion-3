@@ -65,7 +65,7 @@ public class TableroTest {
 
         tablero.ejecutarSecuencia();
 
-        assertTrue(tablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(tablero.getPersonaje().enPosicion(posicionEsperada));
     }
 
     @Test
@@ -82,7 +82,7 @@ public class TableroTest {
 
         tablero.ejecutarSecuencia();
 
-        assertTrue(tablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(tablero.getPersonaje().enPosicion(posicionEsperada));
     }
 
     @Test
@@ -99,7 +99,7 @@ public class TableroTest {
 
         tablero.ejecutarSecuencia();
 
-        assertTrue(tablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(tablero.getPersonaje().enPosicion(posicionEsperada));
     }
 
     @Test
@@ -116,7 +116,7 @@ public class TableroTest {
 
         tablero.ejecutarSecuencia();
 
-        assertTrue(tablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(tablero.getPersonaje().enPosicion(posicionEsperada));
     }
 
     @Test
@@ -143,7 +143,7 @@ public class TableroTest {
 
         tablero.ejecutarSecuencia();
 
-        assertTrue(tablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(tablero.getPersonaje().enPosicion(posicionEsperada));
     }
 
     @Test
@@ -169,7 +169,7 @@ public class TableroTest {
 
         unTablero.ejecutarSecuencia();
 
-        assertTrue(unTablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
+        assertTrue(unTablero.getPersonaje().enPosicion(posicionEsperada));
 
     }
 
