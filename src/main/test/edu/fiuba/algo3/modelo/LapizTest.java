@@ -31,8 +31,7 @@ public class LapizTest {
     public void seVerificaQueLaFiguraSeGuardeConEstadoLapizAbajo() {
         Lapiz unLapiz = new Lapiz();
         Posicion antiguaPosicion = new Posicion();
-        Posicion nuevaPosicion = new Posicion();
-        nuevaPosicion.setPosicion(1,0);
+        Posicion nuevaPosicion = new Posicion(1,0);
         EstadoLapiz unEstadoLapizAbajo = new LapizAbajo();
         unLapiz.modificarEstadoLapiz(unEstadoLapizAbajo);
         unLapiz.dibujarCamino(antiguaPosicion, nuevaPosicion);
@@ -45,8 +44,7 @@ public class LapizTest {
     public void seVerificaQueLaFiguraSeGuardeConEstadoLapizArriba() {
         Lapiz unLapiz = new Lapiz();
         Posicion antiguaPosicion = new Posicion();
-        Posicion nuevaPosicion = new Posicion();
-        nuevaPosicion.setPosicion(1,0);
+        Posicion nuevaPosicion = new Posicion(1,0);
         unLapiz.dibujarCamino(antiguaPosicion, nuevaPosicion);
         ArrayList<Figura> arregloSectorDibujo = unLapiz.mostrarSectorDibujo().mostrarFiguras();
         Figura figura1 = arregloSectorDibujo.get(0);

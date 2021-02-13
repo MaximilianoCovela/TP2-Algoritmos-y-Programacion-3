@@ -12,8 +12,7 @@ public class MovimientosTest {
 
         Movimiento movimientoAbajo = new MovimientoAbajo();
         Personaje unPersonaje = new Personaje();
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
+        Posicion posicionEsperada = new Posicion(unPersonaje.getPosicionActual().getValorHorizontal(),
                 unPersonaje.getPosicionActual().getValorVertical()-1);
 
         movimientoAbajo.aplicarMovimiento(unPersonaje);
@@ -29,8 +28,7 @@ public class MovimientosTest {
         Movimiento movimientoArriba = new MovimientoArriba();
         Personaje unPersonaje = new Personaje();
 
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
+        Posicion posicionEsperada = new Posicion(unPersonaje.getPosicionActual().getValorHorizontal(),
                 unPersonaje.getPosicionActual().getValorVertical()+1);
 
         movimientoArriba.aplicarMovimiento(unPersonaje);
@@ -42,8 +40,8 @@ public class MovimientosTest {
     public void testCreoUnMovimientoDerechaYMueveAlPersonajeALaDerecha(){
         Movimiento movimientoDerecha = new MovimientoDerecha();
         Personaje unPersonaje = new Personaje();
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal()+1,
+
+        Posicion posicionEsperada = new Posicion(unPersonaje.getPosicionActual().getValorHorizontal()+1,
                 unPersonaje.getPosicionActual().getValorVertical());
 
         movimientoDerecha.aplicarMovimiento(unPersonaje);
@@ -56,8 +54,7 @@ public class MovimientosTest {
     public void testCreoUnMovimientoIzquierdaYMueveAlPersonajeALaIzquierda(){
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
         Personaje unPersonaje = new Personaje();
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal()-1,
+        Posicion posicionEsperada = new Posicion(unPersonaje.getPosicionActual().getValorHorizontal()-1,
                 unPersonaje.getPosicionActual().getValorVertical());
 
         movimientoIzquierda.aplicarMovimiento(unPersonaje);
@@ -73,8 +70,7 @@ public class MovimientosTest {
         Movimiento movimientoDerecha = new MovimientoDerecha();
         Movimiento movimientoArriba = new MovimientoArriba();
 
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
+        Posicion posicionEsperada = new Posicion(unPersonaje.getPosicionActual().getValorHorizontal(),
                 unPersonaje.getPosicionActual().getValorVertical()+2);
 
         unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);

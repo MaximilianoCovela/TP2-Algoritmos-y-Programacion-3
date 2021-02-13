@@ -59,8 +59,7 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueAIzquierda);
 
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal()-1,
+        Posicion posicionEsperada = new Posicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal()-1,
                 tablero.getPersonaje().getPosicionActual().getValorVertical());
 
         tablero.ejecutarSecuencia();
@@ -76,8 +75,7 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueADerecha);
 
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal()+1,
+        Posicion posicionEsperada = new Posicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal()+1,
                 tablero.getPersonaje().getPosicionActual().getValorVertical());
 
         tablero.ejecutarSecuencia();
@@ -93,8 +91,7 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueAArriba);
 
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+        Posicion posicionEsperada = new Posicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
                 tablero.getPersonaje().getPosicionActual().getValorVertical()+1);
 
         tablero.ejecutarSecuencia();
@@ -110,8 +107,7 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueAAbajo);
 
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+        Posicion posicionEsperada = new Posicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
                 tablero.getPersonaje().getPosicionActual().getValorVertical()-1);
 
         tablero.ejecutarSecuencia();
@@ -136,10 +132,8 @@ public class TableroTest {
         tablero.agregarBloque(otroBloqueAAbajo);
         tablero.agregarBloque(unBloqueAArriba);
 
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+        Posicion posicionEsperada = new Posicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
                 tablero.getPersonaje().getPosicionActual().getValorVertical()-1);
-
 
         tablero.ejecutarSecuencia();
 
@@ -163,8 +157,7 @@ public class TableroTest {
 
         unTablero.agregarBloque(unBloqueRepetir);
 
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(unTablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+        Posicion posicionEsperada = new Posicion(unTablero.getPersonaje().getPosicionActual().getValorHorizontal(),
                 unTablero.getPersonaje().getPosicionActual().getValorVertical()+2);
 
         unTablero.ejecutarSecuencia();

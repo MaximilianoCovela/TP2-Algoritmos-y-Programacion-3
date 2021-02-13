@@ -10,13 +10,9 @@ public class PersonajeTest {
     @Test
     public void testMuevePersonajeHaciaAbajo(){
         Personaje personaje = new Personaje();
-        Posicion unaPosicion = new Posicion();
+        Posicion unaPosicion = new Posicion(0,-1);
 
-        unaPosicion.setPosicion(0,-1);
-
-        Posicion unaPosicionEsperada = new Posicion();
-
-        unaPosicionEsperada.setPosicion(personaje.getPosicionActual().getValorHorizontal(),
+        Posicion unaPosicionEsperada = new Posicion(personaje.getPosicionActual().getValorHorizontal(),
                 personaje.getPosicionActual().getValorVertical()-1);
 
         personaje.actualizarPosicion(unaPosicion);
@@ -28,13 +24,9 @@ public class PersonajeTest {
     @Test
     public void testMuevePersonajeHaciaIzquierda(){
         Personaje personaje = new Personaje();
-        Posicion unaPosicion = new Posicion();
+        Posicion unaPosicion = new Posicion(-1,0);
 
-        unaPosicion.setPosicion(-1,0);
-
-        Posicion unaPosicionEsperada = new Posicion();
-
-        unaPosicionEsperada.setPosicion(personaje.getPosicionActual().getValorHorizontal()-1,
+        Posicion unaPosicionEsperada = new Posicion(personaje.getPosicionActual().getValorHorizontal()-1,
                 personaje.getPosicionActual().getValorVertical());
 
         personaje.actualizarPosicion(unaPosicion);
@@ -45,13 +37,9 @@ public class PersonajeTest {
     @Test
     public void testMuevePersonajeHaciaArriba(){
         Personaje personaje = new Personaje();
-        Posicion unaPosicion = new Posicion();
+        Posicion unaPosicion = new Posicion(0,1);
 
-        unaPosicion.setPosicion(0,1);
-
-        Posicion unaPosicionEsperada = new Posicion();
-
-        unaPosicionEsperada.setPosicion(personaje.getPosicionActual().getValorHorizontal(),
+        Posicion unaPosicionEsperada = new Posicion(personaje.getPosicionActual().getValorHorizontal(),
                 personaje.getPosicionActual().getValorVertical()+1);
 
         personaje.actualizarPosicion(unaPosicion);
@@ -62,13 +50,9 @@ public class PersonajeTest {
     @Test
     public void testMuevePersonajeHaciaLaDerecha(){
         Personaje personaje = new Personaje();
-        Posicion unaPosicion = new Posicion();
+        Posicion unaPosicion = new Posicion(1,0);
 
-        unaPosicion.setPosicion(1,0);
-
-        Posicion unaPosicionEsperada = new Posicion();
-
-        unaPosicionEsperada.setPosicion(personaje.getPosicionActual().getValorHorizontal()+1,
+        Posicion unaPosicionEsperada = new Posicion(personaje.getPosicionActual().getValorHorizontal()+1,
                 personaje.getPosicionActual().getValorVertical());
 
         personaje.actualizarPosicion(unaPosicion);
@@ -80,16 +64,14 @@ public class PersonajeTest {
     @Test
     public void testSeCreaSecuenciaDeBloquesYSeCompruebaQueElPersonajeSeMuevaCorrectamente() {
         Personaje unPersonaje = new Personaje();
-        Posicion unaPosicion = new Posicion();
-        unaPosicion.setPosicion(1,0);
+        Posicion unaPosicion = new Posicion(1,0);
 
         unPersonaje.actualizarPosicion(unaPosicion);
 
         EstadoLapiz unEstadoLapizAbajo = new LapizAbajo();
         unPersonaje.getLapiz().modificarEstadoLapiz(unEstadoLapizAbajo);
 
-        Posicion nuevaPosicion = new Posicion();
-        nuevaPosicion.setPosicion(0, 1);
+        Posicion nuevaPosicion = new Posicion(0,1);
 
         unPersonaje.actualizarPosicion(nuevaPosicion);
         ArrayList<Figura> arregloSectorDibujo = unPersonaje.getLapiz().mostrarSectorDibujo().mostrarFiguras();
@@ -110,8 +92,7 @@ public class PersonajeTest {
         Movimiento movimientoLapizAbajo = new MovimientoLapizAbajo();
         Movimiento otroMovimientoArriba = new MovimientoArriba();
 
-        Posicion posicionEsperada = new Posicion();
-        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
+        Posicion posicionEsperada = new Posicion(unPersonaje.getPosicionActual().getValorHorizontal(),
                 unPersonaje.getPosicionActual().getValorVertical()+3);
 
         unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);

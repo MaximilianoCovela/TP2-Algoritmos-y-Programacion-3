@@ -9,27 +9,30 @@ public class PosicionTest{
     @Test
     public void testModificaLaPosicionYSeActualizaCorrectamente(){
         Posicion posicion = new Posicion();
-        Posicion posicionEsperada = new Posicion();
 
-        Posicion posicionADerecha= new Posicion();
-        posicionADerecha.setPosicion(1,0);
+        Posicion posicionADerecha= new Posicion(1,0);
 
-        posicionEsperada.setPosicion(posicion.getValorHorizontal()+1, posicion.getValorVertical());
+        Posicion posicionEsperada = new Posicion(posicion.getValorHorizontal()+1, posicion.getValorVertical());
 
         posicion.actualizarPosicion(posicionADerecha);
 
         assertTrue(posicion.esIgualA(posicionEsperada));
 
-        Posicion posicionAArriba = new Posicion();
-        posicionAArriba.setPosicion(0,1);
+    }
 
-        posicionEsperada.setPosicion(posicion.getValorHorizontal(), posicion.getValorVertical()+1);
+    @Test
+    public void testModificaLaPosicionYSeActualizaCorrectamente2(){
+
+        Posicion posicion = new Posicion();
+
+        Posicion posicionAArriba = new Posicion(0,1);
+
+        Posicion posicionEsperada = new Posicion(posicion.getValorHorizontal(), posicion.getValorVertical() + 1);
 
         posicion.actualizarPosicion(posicionAArriba);
 
         assertTrue(posicion.esIgualA(posicionEsperada));
 
     }
-
 
 }
