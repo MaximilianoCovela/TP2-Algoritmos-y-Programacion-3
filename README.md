@@ -1,5 +1,4 @@
-ue a[![Build Status](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2.svg?branch=master)](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2) [![codecov](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2/branch/master/graph/badge.svg)](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2)
-
+[![Build Status](https://travis-ci.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3.svg?token=8p3LVprDT88QtJXQyPCK&branch=main)](https://travis-ci.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3)
 
 
 # TP2 Algoritmos 3: AlgoBlocks
