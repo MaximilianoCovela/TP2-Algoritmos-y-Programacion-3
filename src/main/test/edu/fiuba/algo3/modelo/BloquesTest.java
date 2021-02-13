@@ -13,10 +13,13 @@ public class BloquesTest {
         Bloque bloqueAbajo = new Bloque(new MovimientoAbajo());
         Personaje unPersonaje = new Personaje();
 
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
+                unPersonaje.getPosicionActual().getValorHorizontal()-1);
+
         bloqueAbajo.aplicarMovimiento(unPersonaje);
 
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(4, (unPersonaje.getPosicionActual().getValorVertical()));
+        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
 
     }
 
@@ -25,10 +28,13 @@ public class BloquesTest {
         Bloque bloqueArriba = new Bloque(new MovimientoArriba());
         Personaje unPersonaje = new Personaje();
 
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
+                unPersonaje.getPosicionActual().getValorHorizontal()+1);
+
         bloqueArriba.aplicarMovimiento(unPersonaje);
 
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(6, (unPersonaje.getPosicionActual().getValorVertical()));
+        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
 
     }
 
@@ -37,11 +43,14 @@ public class BloquesTest {
         Bloque bloqueDerecha = new Bloque(new MovimientoDerecha());
         Personaje unPersonaje = new Personaje();
 
+        Posicion posicionEsperada = new Posicion();
+
+        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal()+1,
+                unPersonaje.getPosicionActual().getValorHorizontal());
+
         bloqueDerecha.aplicarMovimiento(unPersonaje);
 
-        assertEquals(6, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorVertical()));
-
+        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
     }
 
     @Test
@@ -49,10 +58,13 @@ public class BloquesTest {
         Bloque bloqueIzquierda = new Bloque(new MovimientoIzquierda());
         Personaje unPersonaje = new Personaje();
 
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal()-1,
+                unPersonaje.getPosicionActual().getValorHorizontal());
+
         bloqueIzquierda.aplicarMovimiento(unPersonaje);
 
-        assertEquals(4, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorVertical()));
+        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
 
     }
 
@@ -92,12 +104,15 @@ public class BloquesTest {
         unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
         unMovimientoRepetir.agregarMovimiento(movimientoArriba);
 
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
+                unPersonaje.getPosicionActual().getValorHorizontal()+2);
+
         Bloque bloqueRepetir = new Bloque( unMovimientoRepetir);
 
         bloqueRepetir.aplicarMovimiento(unPersonaje);
 
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(7, (unPersonaje.getPosicionActual().getValorVertical()));
+        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
 
     }
 
@@ -113,12 +128,15 @@ public class BloquesTest {
         unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
         unMovimientoRepetir.agregarMovimiento(movimientoArriba);
 
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
+                unPersonaje.getPosicionActual().getValorHorizontal()+3);
+
         Bloque bloqueRepetir = new Bloque( unMovimientoRepetir);
 
         bloqueRepetir.aplicarMovimiento(unPersonaje);
 
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(8, (unPersonaje.getPosicionActual().getValorVertical()));
+        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
 
     }
 

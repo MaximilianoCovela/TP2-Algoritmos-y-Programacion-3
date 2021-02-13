@@ -22,7 +22,7 @@ public class Posicion {
         return unaPosicion.getValorVertical() == this.valorVertical && unaPosicion.getValorHorizontal() == this.valorHorizontal;
     }
 
-    public Posicion actualizarPosicion(Posicion unaPosicionNueva){ // aca le pasamos la 0 , 1 (las de movimientos)
+    public Posicion actualizarPosicion(Posicion unaPosicionNueva){
 
         valorHorizontal = valorHorizontal + unaPosicionNueva.getValorHorizontal();
         valorVertical = valorVertical + unaPosicionNueva.getValorVertical();

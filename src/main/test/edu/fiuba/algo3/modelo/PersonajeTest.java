@@ -14,11 +14,14 @@ public class PersonajeTest {
 
         unaPosicion.setPosicion(0,-1);
 
+        Posicion unaPosicionEsperada = new Posicion();
+
+        unaPosicionEsperada.setPosicion(personaje.getPosicionActual().getValorHorizontal(),
+                personaje.getPosicionActual().getValorVertical()-1);
+
         personaje.actualizarPosicion(unaPosicion);
 
-        assertEquals(5, (personaje.getPosicionActual().getValorHorizontal()));
-
-        assertEquals(4, (personaje.getPosicionActual().getValorVertical()));
+        assertTrue(personaje.getPosicionActual().esIgualA(unaPosicionEsperada));
 
     }
 
@@ -29,12 +32,14 @@ public class PersonajeTest {
 
         unaPosicion.setPosicion(-1,0);
 
+        Posicion unaPosicionEsperada = new Posicion();
+
+        unaPosicionEsperada.setPosicion(personaje.getPosicionActual().getValorHorizontal()-1,
+                personaje.getPosicionActual().getValorVertical());
+
         personaje.actualizarPosicion(unaPosicion);
 
-        assertEquals(4, (personaje.getPosicionActual().getValorHorizontal()));
-
-        assertEquals(5, (personaje.getPosicionActual().getValorVertical()));
-
+        assertTrue(personaje.getPosicionActual().esIgualA(unaPosicionEsperada));
     }
 
     @Test
@@ -44,12 +49,14 @@ public class PersonajeTest {
 
         unaPosicion.setPosicion(0,1);
 
+        Posicion unaPosicionEsperada = new Posicion();
+
+        unaPosicionEsperada.setPosicion(personaje.getPosicionActual().getValorHorizontal(),
+                personaje.getPosicionActual().getValorVertical()+1);
+
         personaje.actualizarPosicion(unaPosicion);
 
-        assertEquals(5, (personaje.getPosicionActual().getValorHorizontal()));
-
-        assertEquals(6, (personaje.getPosicionActual().getValorVertical()));
-
+        assertTrue(personaje.getPosicionActual().esIgualA(unaPosicionEsperada));
     }
 
     @Test
@@ -59,11 +66,14 @@ public class PersonajeTest {
 
         unaPosicion.setPosicion(1,0);
 
+        Posicion unaPosicionEsperada = new Posicion();
+
+        unaPosicionEsperada.setPosicion(personaje.getPosicionActual().getValorHorizontal()+1,
+                personaje.getPosicionActual().getValorVertical());
+
         personaje.actualizarPosicion(unaPosicion);
 
-        assertEquals(6, (personaje.getPosicionActual().getValorHorizontal()));
-
-        assertEquals(5, (personaje.getPosicionActual().getValorVertical()));
+        assertTrue(personaje.getPosicionActual().esIgualA(unaPosicionEsperada));
 
 }
 
@@ -100,6 +110,10 @@ public class PersonajeTest {
         Movimiento movimientoLapizAbajo = new MovimientoLapizAbajo();
         Movimiento otroMovimientoArriba = new MovimientoArriba();
 
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(unPersonaje.getPosicionActual().getValorHorizontal(),
+                unPersonaje.getPosicionActual().getValorVertical()+3);
+
         unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
         unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
         unMovimientoRepetir.agregarMovimiento(movimientoArriba);
@@ -108,8 +122,7 @@ public class PersonajeTest {
         movimientoLapizAbajo.aplicarMovimiento(unPersonaje);
         otroMovimientoArriba.aplicarMovimiento(unPersonaje);
 
-        assertEquals(5, (unPersonaje.getPosicionActual().getValorHorizontal()));
-        assertEquals(8, (unPersonaje.getPosicionActual().getValorVertical()));
+        assertTrue(unPersonaje.getPosicionActual().esIgualA(posicionEsperada));
 
     }
 

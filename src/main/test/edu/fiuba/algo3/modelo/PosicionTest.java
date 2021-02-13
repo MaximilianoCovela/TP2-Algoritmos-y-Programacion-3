@@ -2,41 +2,32 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PosicionTest{
 
     @Test
-    public void testCreaPosicionYChequeoQueSeCreeEnLaPosicionInicialEsperada(){
-        Posicion posicion = new Posicion();
-
-        assertEquals(5, (posicion.getValorHorizontal()));
-
-        assertEquals(5, (posicion.getValorVertical()));
-
-    }
-
-
-    @Test
     public void testModificaLaPosicionYSeActualizaCorrectamente(){
         Posicion posicion = new Posicion();
-
-        Posicion posicionAArriba = new Posicion();
-        posicionAArriba.setPosicion(0,1);
+        Posicion posicionEsperada = new Posicion();
 
         Posicion posicionADerecha= new Posicion();
         posicionADerecha.setPosicion(1,0);
 
+        posicionEsperada.setPosicion(posicion.getValorHorizontal()+1, posicion.getValorVertical());
+
         posicion.actualizarPosicion(posicionADerecha);
 
-        assertEquals(6, (posicion.getValorHorizontal()));
+        assertTrue(posicion.esIgualA(posicionEsperada));
 
-        assertEquals(5, (posicion.getValorVertical()));
+        Posicion posicionAArriba = new Posicion();
+        posicionAArriba.setPosicion(0,1);
+
+        posicionEsperada.setPosicion(posicion.getValorHorizontal(), posicion.getValorVertical()+1);
 
         posicion.actualizarPosicion(posicionAArriba);
 
-        assertEquals(6, (posicion.getValorHorizontal()));
-
-        assertEquals(6, (posicion.getValorVertical()));
+        assertTrue(posicion.esIgualA(posicionEsperada));
 
     }
 

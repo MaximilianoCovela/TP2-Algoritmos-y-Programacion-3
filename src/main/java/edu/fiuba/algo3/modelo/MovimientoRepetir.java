@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class MovimientoRepetir implements Movimiento{
 
@@ -22,16 +23,8 @@ public class MovimientoRepetir implements Movimiento{
 
     public void aplicarMovimiento(Personaje unPersonaje){
 
-        for(int i = 0; i < cantidad; i++){
-
-            for (int x = 0; x < this.listaDeMovimientos.size(); x++){
-
-                (this.listaDeMovimientos.get(x)).aplicarMovimiento(unPersonaje);
-
-
-            }
-
-        }
+        IntStream.range(0, cantidad).flatMap(i -> IntStream.range(0, this.listaDeMovimientos.size())).
+                forEach(x -> (this.listaDeMovimientos.get(x)).aplicarMovimiento(unPersonaje));
 
     }
 

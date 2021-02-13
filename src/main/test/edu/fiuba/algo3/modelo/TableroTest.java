@@ -59,10 +59,13 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueAIzquierda);
 
-        tablero.ejecutarSecuencia();
-        assertEquals(4,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
-        assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorVertical());
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal()-1,
+                tablero.getPersonaje().getPosicionActual().getValorVertical());
 
+        tablero.ejecutarSecuencia();
+
+        assertTrue(tablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
     }
 
     @Test
@@ -73,10 +76,13 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueADerecha);
 
-        tablero.ejecutarSecuencia();
-        assertEquals(6,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
-        assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorVertical());
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal()+1,
+                tablero.getPersonaje().getPosicionActual().getValorVertical());
 
+        tablero.ejecutarSecuencia();
+
+        assertTrue(tablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
     }
 
     @Test
@@ -87,10 +93,13 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueAArriba);
 
-        tablero.ejecutarSecuencia();
-        assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
-        assertEquals(6,tablero.getPersonaje().getPosicionActual().getValorVertical());
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+                tablero.getPersonaje().getPosicionActual().getValorVertical()+1);
 
+        tablero.ejecutarSecuencia();
+
+        assertTrue(tablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
     }
 
     @Test
@@ -101,10 +110,13 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueAAbajo);
 
-        tablero.ejecutarSecuencia();
-        assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
-        assertEquals(4,tablero.getPersonaje().getPosicionActual().getValorVertical());
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+                tablero.getPersonaje().getPosicionActual().getValorVertical()-1);
 
+        tablero.ejecutarSecuencia();
+
+        assertTrue(tablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
     }
 
     @Test
@@ -124,10 +136,14 @@ public class TableroTest {
         tablero.agregarBloque(otroBloqueAAbajo);
         tablero.agregarBloque(unBloqueAArriba);
 
-        tablero.ejecutarSecuencia();
-        assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
-        assertEquals(4,tablero.getPersonaje().getPosicionActual().getValorVertical());
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+                tablero.getPersonaje().getPosicionActual().getValorVertical()-1);
 
+
+        tablero.ejecutarSecuencia();
+
+        assertTrue(tablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
     }
 
     @Test
@@ -147,10 +163,13 @@ public class TableroTest {
 
         unTablero.agregarBloque(unBloqueRepetir);
 
+        Posicion posicionEsperada = new Posicion();
+        posicionEsperada.setPosicion(unTablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+                unTablero.getPersonaje().getPosicionActual().getValorVertical()+2);
+
         unTablero.ejecutarSecuencia();
 
-        assertEquals(5, (unTablero.getPersonaje().getPosicionActual().getValorHorizontal()));
-        assertEquals(7, (unTablero.getPersonaje().getPosicionActual().getValorVertical()));
+        assertTrue(unTablero.getPersonaje().getPosicionActual().esIgualA(posicionEsperada));
 
     }
 
