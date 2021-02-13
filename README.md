@@ -1,9 +1,10 @@
 [![Build Status](https://travis-ci.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3.svg?token=8p3LVprDT88QtJXQyPCK&branch=main)](https://travis-ci.com/MaximilianoCovela/TP2-Algoritmos-y-Programacion-3)
 
 
+
 # TP2 Algoritmos 3: AlgoBlocks
 
-Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
+Trabajo práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
 ## Grupo 4
 
