@@ -62,7 +62,7 @@ public class PersonajeTest {
 }
 
     @Test
-    public void testSeCreaSecuenciaDeBloquesYSeCompruebaQueElPersonajeSeMuevaCorrectamente() {
+    public void testSeMuevePersonajeConLapizArribaYLapizAbajoYSeCompruebaQueDibujeCorrectamente() {
         Personaje unPersonaje = new Personaje();
         Posicion unaPosicion = new Posicion(1,0);
 
