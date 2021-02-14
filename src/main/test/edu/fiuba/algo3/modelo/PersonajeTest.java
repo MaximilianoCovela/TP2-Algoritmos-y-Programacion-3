@@ -74,11 +74,11 @@ public class PersonajeTest {
         Posicion nuevaPosicion = new Posicion(0,1);
 
         unPersonaje.actualizarPosicion(nuevaPosicion);
-        ArrayList<Dibujo> arregloSectorDibujo = unPersonaje.getLapiz().mostrarSectorDibujo().mostrarDibujos();
+        ArrayList<Dibujo> arregloDibujos = unPersonaje.obtenerDibujos();
 
-        Dibujo dibujo1 = arregloSectorDibujo.get(0);
+        Dibujo dibujo1 = arregloDibujos.get(0);
         assertFalse(dibujo1.mostrarDibujo());
-        Dibujo dibujo2 = arregloSectorDibujo.get(1);
+        Dibujo dibujo2 = arregloDibujos.get(1);
         assertTrue(dibujo2.mostrarDibujo());
     }
 
@@ -125,14 +125,14 @@ public class PersonajeTest {
         movimientoLapizAbajo.aplicarMovimiento(unPersonaje);
         otroMovimientoArriba.aplicarMovimiento(unPersonaje);
 
-        ArrayList<Dibujo> arregloSectorDibujo = unPersonaje.getLapiz().mostrarSectorDibujo().mostrarDibujos();
-        Dibujo dibujo1 = arregloSectorDibujo.get(0);
+        ArrayList<Dibujo> arregloDibujos = unPersonaje.obtenerDibujos();
+        Dibujo dibujo1 = arregloDibujos.get(0);
         assertFalse(dibujo1.mostrarDibujo());
 
-        Dibujo dibujo2 = arregloSectorDibujo.get(1);
+        Dibujo dibujo2 = arregloDibujos.get(1);
         assertFalse(dibujo2.mostrarDibujo());
 
-        Dibujo ultimoDibujo = arregloSectorDibujo.get((arregloSectorDibujo.size())-1);
+        Dibujo ultimoDibujo = arregloDibujos.get((arregloDibujos.size())-1);
         assertTrue(ultimoDibujo.mostrarDibujo());
     }
 

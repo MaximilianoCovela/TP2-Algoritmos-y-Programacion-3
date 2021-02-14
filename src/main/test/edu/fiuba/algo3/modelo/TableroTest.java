@@ -191,7 +191,7 @@ public class TableroTest {
 
         unTablero.ejecutarSecuencia();
 
-        ArrayList<Dibujo> arregloSectorDibujo = unTablero.getPersonaje().getLapiz().mostrarSectorDibujo().mostrarDibujos();
+        ArrayList<Dibujo> arregloSectorDibujo = unTablero.mostrarSectorDibujo().mostrarDibujos();
         Dibujo dibujo1 = arregloSectorDibujo.get(0);
         assertFalse(dibujo1.mostrarDibujo());
 

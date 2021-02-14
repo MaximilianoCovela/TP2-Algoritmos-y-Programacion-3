@@ -35,12 +35,10 @@ public class LapizTest {
 
         EstadoLapiz unEstadoLapizAbajo = new LapizAbajo();
         unLapiz.modificarEstadoLapiz(unEstadoLapizAbajo);
-        unLapiz.dibujarCamino(antiguaPosicion, nuevaPosicion);
+        Linea unDibujo = (Linea) unLapiz.dibujarCamino(antiguaPosicion, nuevaPosicion);
 
-        ArrayList<Dibujo> arregloSectorDibujo = unLapiz.mostrarSectorDibujo().mostrarDibujos();
-        Linea dibujo1 = (Linea) arregloSectorDibujo.get(0);
-        Assertions.assertTrue(dibujo1.mostrarDibujo());
-        Assertions.assertTrue(dibujo1.posicionLineaEsIgualA(antiguaPosicion, nuevaPosicion));
+        Assertions.assertTrue(unDibujo.mostrarDibujo());
+        Assertions.assertTrue((unDibujo).posicionLineaEsIgualA(antiguaPosicion, nuevaPosicion));
     }
 
     @Test
@@ -49,12 +47,10 @@ public class LapizTest {
         Posicion antiguaPosicion = new Posicion();
         Posicion nuevaPosicion = new Posicion(1,0);
 
-        unLapiz.dibujarCamino(antiguaPosicion, nuevaPosicion);
+        Vacio unDibujo = (Vacio) unLapiz.dibujarCamino(antiguaPosicion, nuevaPosicion);
 
-        ArrayList<Dibujo> arregloSectorDibujo = unLapiz.mostrarSectorDibujo().mostrarDibujos();
-        Vacio dibujo1 = (Vacio) arregloSectorDibujo.get(0);
-        Assertions.assertFalse(dibujo1.mostrarDibujo());
-        Assertions.assertTrue(dibujo1.posicionVacioEsIgualA(nuevaPosicion));
+        Assertions.assertFalse(unDibujo.mostrarDibujo());
+        Assertions.assertTrue(unDibujo.posicionVacioEsIgualA(nuevaPosicion));
     }
 }
 
