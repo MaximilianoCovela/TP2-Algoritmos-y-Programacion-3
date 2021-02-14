@@ -28,7 +28,7 @@ public class LapizTest {
     }
 
     @Test
-    public void seVerificaQueLaFiguraSeGuardeConEstadoLapizAbajo() {
+    public void seVerificaQueElDibujoSeGuardeConEstadoLapizAbajo() {
         Lapiz unLapiz = new Lapiz();
         Posicion antiguaPosicion = new Posicion();
         Posicion nuevaPosicion = new Posicion(6,5);
@@ -44,7 +44,7 @@ public class LapizTest {
     }
 
     @Test
-    public void seVerificaQueLaFiguraSeGuardeConEstadoLapizArriba() {
+    public void seVerificaQueElDibujoSeGuardeConEstadoLapizArriba() {
         Lapiz unLapiz = new Lapiz();
         Posicion antiguaPosicion = new Posicion();
         Posicion nuevaPosicion = new Posicion(1,0);
