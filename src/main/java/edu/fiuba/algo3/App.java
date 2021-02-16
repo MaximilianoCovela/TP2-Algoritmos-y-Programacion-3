@@ -3,6 +3,7 @@ package edu.fiuba.algo3;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -59,44 +60,62 @@ public class App extends Application {
 
         // VBox
         VBox vb = new VBox();
-        vb.setPadding(new Insets(10, 50, 50, 50));
+        vb.setPadding(new Insets(10, 0, 0, 10));
         vb.setSpacing(10);
 
-        Label lbl = new Label("Bloques");
-        lbl.setFont(Font.font("Amble CN", FontWeight.BOLD, 24));
-        vb.getChildren().add(lbl);
+        //Label lbl = new Label("Bloques");
+        //lbl.setFont(Font.font("Amble CN", FontWeight.BOLD, 24));
+        //vb.getChildren().add(lbl);
 
         // Buttons
         Button btn1 = new Button();
         btn1.setText("Arriba");
+        btn1.setPrefHeight(70.0);
+        btn1.setPrefWidth(140.0);
         vb.getChildren().add(btn1);
+            //<Button defaultButton="true" layoutX="14.0" layoutY="412.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="140.0" text="Arriba" />
+
 
         Button btn2 = new Button();
         btn2.setText("Abajo");
+        btn2.setPrefHeight(70.0);
+        btn2.setPrefWidth(140.0);
         vb.getChildren().add(btn2);
 
         Button btn3 = new Button();
         btn3.setText("Derecha");
+        btn3.setPrefHeight(70.0);
+        btn3.setPrefWidth(140.0);
         vb.getChildren().add(btn3);
 
         Button btn4 = new Button();
         btn4.setText("Izquierda");
+        btn4.setPrefHeight(70.0);
+        btn4.setPrefWidth(140.0);
         vb.getChildren().add(btn4);
 
         Button btn5 = new Button();
-        btn5.setText("Repetir2");
+        btn5.setText("Repetir x2");
+        btn5.setPrefHeight(70.0);
+        btn5.setPrefWidth(140.0);
         vb.getChildren().add(btn5);
 
         Button btn6 = new Button();
-        btn6.setText("Repetir3");
+        btn6.setText("Repetir x3");
+        btn6.setPrefHeight(70.0);
+        btn6.setPrefWidth(140.0);
         vb.getChildren().add(btn6);
 
         Button btn7 = new Button();
         btn7.setText("Invertir");
+        btn7.setPrefHeight(70.0);
+        btn7.setPrefWidth(140.0);
         vb.getChildren().add(btn7);
 
         Button btn8 = new Button();
         btn8.setText("Personalizado");
+        btn8.setPrefHeight(70.0);
+        btn8.setPrefWidth(140.0);
         vb.getChildren().add(btn8);
 
         vb.setPrefHeight(438.0);
