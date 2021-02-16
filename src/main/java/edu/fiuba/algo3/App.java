@@ -7,6 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -46,6 +47,16 @@ public class App extends Application {
         panelTablero.setPrefWidth(804.0);
         panelTablero.setStyle("-fx-background-color: lightblue");
 
+        Label textoDescriptivoMovimientos = new Label();
+        textoDescriptivoMovimientos.setLayoutX(622.0);
+        textoDescriptivoMovimientos.setLayoutY(479.0);
+        textoDescriptivoMovimientos.prefHeight(63.0);
+        textoDescriptivoMovimientos.prefWidth(164.0);
+        textoDescriptivoMovimientos.setText("Arrastra tus movimientos aquí");
+        textoDescriptivoMovimientos.setEffect(new ColorAdjust(0,0,0.5,0));
+                panelTablero.getChildren().add(textoDescriptivoMovimientos);
+
+
         Pane panelSectorDibujo = new Pane();
         panelSectorDibujo.setLayoutX(3.0);
         panelSectorDibujo.setLayoutY(4.0);
@@ -53,8 +64,6 @@ public class App extends Application {
         panelSectorDibujo.setPrefWidth(375.0);
         panelSectorDibujo.setStyle("-fx-background-color: linear-gradient(to bottom right, derive(skyblue, 20%), derive(palegreen, -40%));");
 
-        //Image background = new Image();
-        //panelSectorDibujo.getChildren().add(background);
         ImageView imagenVista = new ImageView(new Image("https://i.imgur.com/r0jDjwZ.png"));
         panelSectorDibujo.getChildren().add(imagenVista);
 
@@ -63,18 +72,12 @@ public class App extends Application {
         vb.setPadding(new Insets(10, 0, 0, 10));
         vb.setSpacing(10);
 
-        //Label lbl = new Label("Bloques");
-        //lbl.setFont(Font.font("Amble CN", FontWeight.BOLD, 24));
-        //vb.getChildren().add(lbl);
-
         // Buttons
         Button btn1 = new Button();
         btn1.setText("Arriba");
         btn1.setPrefHeight(70.0);
         btn1.setPrefWidth(140.0);
         vb.getChildren().add(btn1);
-            //<Button defaultButton="true" layoutX="14.0" layoutY="412.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="140.0" text="Arriba" />
-
 
         Button btn2 = new Button();
         btn2.setText("Abajo");
@@ -125,40 +128,15 @@ public class App extends Application {
 
         panelBloquesDisponibles.setLayoutX(412.0);
         panelBloquesDisponibles.setLayoutY(25.0);
-        String pathDeImagen = "https://p4.wallpaperbetter.com/wallpaper/933/827/743/pokemon-pixel-art-wallpaper-preview.jpg";
-        ImageView imagenVistaScrollPanel1 = new ImageView(new Image(pathDeImagen));
-        vb.getChildren().addAll(imagenVistaScrollPanel1);
+        //String pathDeImagen = "https://p4.wallpaperbetter.com/wallpaper/933/827/743/pokemon-pixel-art-wallpaper-preview.jpg";
+        //ImageView imagenVistaScrollPanel1 = new ImageView(new Image(pathDeImagen));
+        //vb.getChildren().addAll(imagenVistaScrollPanel1);
 
         panelBloquesDisponibles.setMaxSize(172, 438);
         vb.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 
-        panelBloquesDisponibles.setContent(imagenVistaScrollPanel1);
+        //panelBloquesDisponibles.setContent(imagenVistaScrollPanel1);
         panelBloquesDisponibles.setContent(vb);
-
-        /*
-        Button botonMovimientoArriba = new Button();
-        Button botonMovimientoAbajo = new Button();
-        Button botonMovimientoDerecha = new Button();
-        Button botonMovimientoIzquierda = new Button();
-        Button botonMovimientoRepetir2Veces = new Button();
-        Button botonMovimientoRepetir3Veces = new Button();
-
-
-
-        botonMovimientoArriba.setText("Arriba");
-        botonMovimientoAbajo.setText("Abajo");
-        botonMovimientoDerecha.setText("Derecha");
-        botonMovimientoIzquierda.setText("Izquierda");
-        botonMovimientoRepetir2Veces.setText("Repetir 2 veces");
-        botonMovimientoRepetir3Veces.setText("Repetir 3 veces");
-
-        panelBloquesDisponibles.getChildren().add(botonMovimientoArriba);
-        panelBloquesDisponibles.getChildren().add(botonMovimientoAbajo);
-        panelBloquesDisponibles.getChildren().add(botonMovimientoDerecha);
-        panelBloquesDisponibles.getChildren().add(botonMovimientoIzquierda);
-        panelBloquesDisponibles.getChildren().add(botonMovimientoRepetir2Veces);
-        panelBloquesDisponibles.getChildren().add(botonMovimientoRepetir3Veces);
-        */
 
         Button botonPlay = new Button();
         botonPlay.setText("Play");
@@ -179,14 +157,11 @@ public class App extends Application {
         ScrollPane panelBloquesSeleccionados = new ScrollPane();
         panelBloquesSeleccionados.setLayoutX(618.0);
         panelBloquesSeleccionados.setLayoutY(25.0);
-        //cambiar la imagen a una que sea el fondo del scrollpanel
-        //String imagePath = "https://p4.wallpaperbetter.com/wallpaper/933/827/743/pokemon-pixel-art-wallpaper-preview.jpg";
-        //ImageView imageView = new ImageView(new Image(imagePath));
         panelBloquesSeleccionados.setMaxSize(172, 438);
         VBox vb2 = new VBox();
         vb2.setPrefHeight(438.0);
         vb2.setPrefWidth(172);
-        //vb2.setBackground(new Background(new BackgroundFill(Color.rgb(250, 250, 250), CornerRadii.EMPTY, Insets.EMPTY)));
+
         vb2.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 
         panelBloquesSeleccionados.setContent(vb2);
@@ -194,8 +169,6 @@ public class App extends Application {
         panelTablero.getChildren().add(panelSectorDibujo);
         panelTablero.getChildren().add(panelBloquesDisponibles);
         panelTablero.getChildren().add(panelBloquesSeleccionados);
-
-
 
         Scene scene = new Scene(panelTablero);
 
