@@ -37,7 +37,6 @@ public class App extends Application {
 
         Pane panelTablero = new Pane();
 
-
         panelTablero.setPrefHeight(553.0);
         panelTablero.setPrefWidth(804.0);
         panelTablero.setStyle("-fx-background-color: lightblue");
@@ -47,15 +46,12 @@ public class App extends Application {
         panelSectorDibujo.setLayoutY(4.0);
         panelSectorDibujo.setPrefHeight(491.0);
         panelSectorDibujo.setPrefWidth(375.0);
-        panelSectorDibujo.setStyle("-fx-background-color: white");
+        panelSectorDibujo.setStyle("-fx-background-color: linear-gradient(to bottom right, derive(skyblue, 20%), derive(palegreen, -40%));");
 
-        /*
-        Image background = new Image();
-        Image personaje = new Image();
-
-        panelSectorDibujo.getChildren().add(background);
-        panelSectorDibujo.getChildren().add(personaje); // para agregar los objetos a los paneles
-        */
+        //Image background = new Image();
+        //panelSectorDibujo.getChildren().add(background);
+        ImageView imagenVista = new ImageView(new Image("https://i.imgur.com/r0jDjwZ.png"));
+        panelSectorDibujo.getChildren().add(imagenVista);
 
         ScrollPane panelBloquesDisponibles = new ScrollPane();
 
@@ -105,6 +101,7 @@ public class App extends Application {
 
         panelTablero.getChildren().add(botonPlay);
         panelTablero.getChildren().add(botonReiniciar);
+
 
         ScrollPane panelBloquesSeleccionados = new ScrollPane();
         panelBloquesSeleccionados.setLayoutX(618.0);
