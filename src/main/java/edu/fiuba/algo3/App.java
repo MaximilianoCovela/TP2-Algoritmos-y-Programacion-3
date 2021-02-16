@@ -127,6 +127,8 @@ public class App extends Application {
         panelBloquesDisponibles.setLayoutY(25.0);
         String pathDeImagen = "https://p4.wallpaperbetter.com/wallpaper/933/827/743/pokemon-pixel-art-wallpaper-preview.jpg";
         ImageView imagenVistaScrollPanel1 = new ImageView(new Image(pathDeImagen));
+        vb.getChildren().addAll(imagenVistaScrollPanel1);
+
         panelBloquesDisponibles.setMaxSize(172, 438);
         vb.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 
