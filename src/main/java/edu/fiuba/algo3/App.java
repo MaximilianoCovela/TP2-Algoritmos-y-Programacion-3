@@ -21,6 +21,16 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
+import edu.fiuba.algo3.Vista.BotonMovimientoAbajo;
+import edu.fiuba.algo3.Vista.BotonMovimientoArriba;
+import edu.fiuba.algo3.Vista.BotonMovimientoDerecha;
+import edu.fiuba.algo3.Vista.BotonMovimientoIzquierda;
+import edu.fiuba.algo3.Vista.BotonMovimientoInvertir;
+import edu.fiuba.algo3.Vista.BotonMovimientoRepetir2Veces;
+import edu.fiuba.algo3.Vista.BotonMovimientoRepetir3Veces;
+import edu.fiuba.algo3.Vista.BotonMovimientoPersonalizado;
+
+
 
 /**
  * JavaFX App
@@ -73,52 +83,28 @@ public class App extends Application {
         vb.setSpacing(10);
 
         // Buttons
-        Button btn1 = new Button();
-        btn1.setText("Arriba");
-        btn1.setPrefHeight(70.0);
-        btn1.setPrefWidth(140.0);
+        BotonMovimientoArriba btn1 = new BotonMovimientoArriba();
         vb.getChildren().add(btn1);
 
-        Button btn2 = new Button();
-        btn2.setText("Abajo");
-        btn2.setPrefHeight(70.0);
-        btn2.setPrefWidth(140.0);
+        BotonMovimientoAbajo btn2 = new BotonMovimientoAbajo();
         vb.getChildren().add(btn2);
 
-        Button btn3 = new Button();
-        btn3.setText("Derecha");
-        btn3.setPrefHeight(70.0);
-        btn3.setPrefWidth(140.0);
+        BotonMovimientoDerecha btn3 = new BotonMovimientoDerecha();
         vb.getChildren().add(btn3);
 
-        Button btn4 = new Button();
-        btn4.setText("Izquierda");
-        btn4.setPrefHeight(70.0);
-        btn4.setPrefWidth(140.0);
+        BotonMovimientoIzquierda btn4 = new BotonMovimientoIzquierda();
         vb.getChildren().add(btn4);
 
-        Button btn5 = new Button();
-        btn5.setText("Repetir x2");
-        btn5.setPrefHeight(70.0);
-        btn5.setPrefWidth(140.0);
+        BotonMovimientoRepetir2Veces btn5 = new BotonMovimientoRepetir2Veces();
         vb.getChildren().add(btn5);
 
-        Button btn6 = new Button();
-        btn6.setText("Repetir x3");
-        btn6.setPrefHeight(70.0);
-        btn6.setPrefWidth(140.0);
+        BotonMovimientoRepetir3Veces btn6 = new BotonMovimientoRepetir3Veces();
         vb.getChildren().add(btn6);
 
-        Button btn7 = new Button();
-        btn7.setText("Invertir");
-        btn7.setPrefHeight(70.0);
-        btn7.setPrefWidth(140.0);
+        BotonMovimientoInvertir btn7 = new BotonMovimientoInvertir();
         vb.getChildren().add(btn7);
 
-        Button btn8 = new Button();
-        btn8.setText("Personalizado");
-        btn8.setPrefHeight(70.0);
-        btn8.setPrefWidth(140.0);
+        BotonMovimientoPersonalizado btn8 = new BotonMovimientoPersonalizado();
         vb.getChildren().add(btn8);
 
         vb.setPrefHeight(438.0);

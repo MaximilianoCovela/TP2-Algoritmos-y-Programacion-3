@@ -8,7 +8,8 @@ public class BotonMovimientoInvertir extends Button {
     public BotonMovimientoInvertir(){
         super();
         this.setText("Invertir");
-        this.setMinHeight(20);
+        this.setPrefHeight(70.0);
+        this.setPrefWidth(140.0);
         this.setOnAction(new HandlerBotonMovimientoInvertir());
     }
 }

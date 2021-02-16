@@ -7,8 +7,9 @@ public class BotonMovimientoRepetir3Veces extends Button {
 
     public BotonMovimientoRepetir3Veces(){
         super();
-        this.setText("Repetir3Veces");
-        this.setMinHeight(20);
+        this.setText("Repetir x3");
+        this.setPrefHeight(70.0);
+        this.setPrefWidth(140.0);
         this.setOnAction(new HandlerBotonMovimientoRepetir3Veces());
     }
 }

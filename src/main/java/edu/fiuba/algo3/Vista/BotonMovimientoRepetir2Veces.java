@@ -7,8 +7,9 @@ public class BotonMovimientoRepetir2Veces extends Button {
 
     public BotonMovimientoRepetir2Veces(){
         super();
-        this.setText("Repetir2Veces");
-        this.setMinHeight(20);
+        this.setText("Repetir x2");
+        this.setPrefHeight(70.0);
+        this.setPrefWidth(140.0);
         this.setOnAction(new HandlerBotonMovimientoRepetir2Veces());
     }
 }
