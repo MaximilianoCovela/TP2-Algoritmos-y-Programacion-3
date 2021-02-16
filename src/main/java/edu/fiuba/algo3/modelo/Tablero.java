@@ -8,6 +8,9 @@ public class Tablero {
     private Personaje unPersonaje;
     private SectorDibujo sectorDibujo;
 
+    private static final int heigth = 10;
+    private static final int width = 10;
+
     public Tablero(){
 
         unPersonaje = new Personaje();
@@ -48,6 +51,14 @@ public class Tablero {
 
     public SectorDibujo mostrarSectorDibujo(){
         return this.sectorDibujo;
+    }
+
+    public int getHeigth() {
+        return this.heigth;
+    }
+
+    public int getWidth() {
+        return this.width;
     }
 
 }
