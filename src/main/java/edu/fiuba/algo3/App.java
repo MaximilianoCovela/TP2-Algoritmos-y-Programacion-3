@@ -8,12 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.scene.layout.GridPane;
+
 import java.io.FileInputStream;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
@@ -111,6 +109,7 @@ public class App extends Application {
         String pathDeImagen = "https://p4.wallpaperbetter.com/wallpaper/933/827/743/pokemon-pixel-art-wallpaper-preview.jpg";
         ImageView imagenVistaScrollPanel1 = new ImageView(new Image(pathDeImagen));
         panelBloquesDisponibles.setMaxSize(172, 438);
+        vb.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 
         panelBloquesDisponibles.setContent(imagenVistaScrollPanel1);
         panelBloquesDisponibles.setContent(vb);
@@ -166,11 +165,15 @@ public class App extends Application {
         VBox vb2 = new VBox();
         vb2.setPrefHeight(438.0);
         vb2.setPrefWidth(172);
+        //vb2.setBackground(new Background(new BackgroundFill(Color.rgb(250, 250, 250), CornerRadii.EMPTY, Insets.EMPTY)));
+        vb2.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+
         panelBloquesSeleccionados.setContent(vb2);
 
         panelTablero.getChildren().add(panelSectorDibujo);
         panelTablero.getChildren().add(panelBloquesDisponibles);
         panelTablero.getChildren().add(panelBloquesSeleccionados);
+
 
 
         Scene scene = new Scene(panelTablero);
