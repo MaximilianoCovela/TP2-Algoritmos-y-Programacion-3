@@ -6,6 +6,6 @@ import javafx.event.ActionEvent;
 
 public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
     public void handle(ActionEvent event) {
-        System.out.println("Mov Arriba");
+        System.out.println("Movimiento Arriba");
     }
 }

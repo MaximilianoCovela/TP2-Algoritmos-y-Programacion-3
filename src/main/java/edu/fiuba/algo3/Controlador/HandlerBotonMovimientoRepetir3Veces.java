@@ -5,6 +5,6 @@ import javafx.event.EventHandler;
 
 public class HandlerBotonMovimientoRepetir3Veces implements EventHandler<ActionEvent>{
     public void handle(ActionEvent event) {
-        System.out.println("Mov Repetir3");
+        System.out.println("Movimiento Repetir X3");
     }
 }

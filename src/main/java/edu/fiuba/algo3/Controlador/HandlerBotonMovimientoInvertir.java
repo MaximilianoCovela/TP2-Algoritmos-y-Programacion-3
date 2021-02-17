@@ -5,6 +5,6 @@ import javafx.event.EventHandler;
 
 public class HandlerBotonMovimientoInvertir implements EventHandler<ActionEvent>{
     public void handle(ActionEvent event) {
-        System.out.println("Mov Invertir");
+        System.out.println("Movimiento Invertir");
     }
 }

@@ -5,6 +5,6 @@ import javafx.event.EventHandler;
 
 public class HandlerBotonMovimientoPersonalizado implements EventHandler<ActionEvent>{
     public void handle(ActionEvent event) {
-        System.out.println("Mov Personalizado");
+        System.out.println("Movimiento Personalizado");
     }
 }
