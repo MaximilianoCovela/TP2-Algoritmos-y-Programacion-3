@@ -46,7 +46,7 @@ comprobar si se actualiza el estado del lápiz correctamente.
 
 ## Diagramas
 
-![Diagrama de clases general](https://i.imgur.com/9ruLwIr.png)
+![Diagrama de clases general](https://i.imgur.com/qdTf3mX.png)
 Diagrama general de clases.
 
 ![Diagrama de clase del Estado Lapiz](https://i.imgur.com/4w9Ozp7.png)
