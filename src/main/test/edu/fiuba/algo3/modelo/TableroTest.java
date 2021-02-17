@@ -4,7 +4,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TableroTest {
 
@@ -57,10 +59,12 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueAIzquierda);
 
-        tablero.ejecutarSecuencia();
-        assertEquals(4,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
-        assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorVertical());
+        Posicion posicionEsperada = new Posicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal()-1,
+                tablero.getPersonaje().getPosicionActual().getValorVertical());
 
+        tablero.ejecutarSecuencia();
+
+        assertTrue(tablero.getPersonaje().enPosicion(posicionEsperada));
     }
 
     @Test
@@ -71,10 +75,12 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueADerecha);
 
-        tablero.ejecutarSecuencia();
-        assertEquals(6,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
-        assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorVertical());
+        Posicion posicionEsperada = new Posicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal()+1,
+                tablero.getPersonaje().getPosicionActual().getValorVertical());
 
+        tablero.ejecutarSecuencia();
+
+        assertTrue(tablero.getPersonaje().enPosicion(posicionEsperada));
     }
 
     @Test
@@ -85,10 +91,12 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueAArriba);
 
-        tablero.ejecutarSecuencia();
-        assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
-        assertEquals(6,tablero.getPersonaje().getPosicionActual().getValorVertical());
+        Posicion posicionEsperada = new Posicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+                tablero.getPersonaje().getPosicionActual().getValorVertical()+1);
 
+        tablero.ejecutarSecuencia();
+
+        assertTrue(tablero.getPersonaje().enPosicion(posicionEsperada));
     }
 
     @Test
@@ -99,10 +107,12 @@ public class TableroTest {
 
         tablero.agregarBloque(unBloqueAAbajo);
 
-        tablero.ejecutarSecuencia();
-        assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
-        assertEquals(4,tablero.getPersonaje().getPosicionActual().getValorVertical());
+        Posicion posicionEsperada = new Posicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+                tablero.getPersonaje().getPosicionActual().getValorVertical()-1);
 
+        tablero.ejecutarSecuencia();
+
+        assertTrue(tablero.getPersonaje().enPosicion(posicionEsperada));
     }
 
     @Test
@@ -122,10 +132,71 @@ public class TableroTest {
         tablero.agregarBloque(otroBloqueAAbajo);
         tablero.agregarBloque(unBloqueAArriba);
 
-        tablero.ejecutarSecuencia();
-        assertEquals(5,tablero.getPersonaje().getPosicionActual().getValorHorizontal());
-        assertEquals(4,tablero.getPersonaje().getPosicionActual().getValorVertical());
+        Posicion posicionEsperada = new Posicion(tablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+                tablero.getPersonaje().getPosicionActual().getValorVertical()-1);
 
+        tablero.ejecutarSecuencia();
+
+        assertTrue(tablero.getPersonaje().enPosicion(posicionEsperada));
+    }
+
+    @Test
+    public void testSeCreaBloqueRepetirYSeVerificaLaPosicionDelPersonaje(){
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
+        Movimiento movimientoIzquierda = new MovimientoIzquierda();
+        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba = new MovimientoArriba();
+
+        unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
+        unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
+        unMovimientoRepetir.agregarMovimiento(movimientoArriba);
+
+        Tablero unTablero = new Tablero();
+
+        Bloque unBloqueRepetir = new Bloque(unMovimientoRepetir);
+
+        unTablero.agregarBloque(unBloqueRepetir);
+
+        Posicion posicionEsperada = new Posicion(unTablero.getPersonaje().getPosicionActual().getValorHorizontal(),
+                unTablero.getPersonaje().getPosicionActual().getValorVertical()+2);
+
+        unTablero.ejecutarSecuencia();
+
+        assertTrue(unTablero.getPersonaje().enPosicion(posicionEsperada));
+
+    }
+
+    @Test
+    public void testSeCreanBloquesYSeVerificaElEstadoLapiz(){
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
+        Movimiento movimientoIzquierda = new MovimientoIzquierda();
+        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba = new MovimientoArriba();
+        Movimiento movimientoLapizAbajo = new MovimientoLapizAbajo();
+        Movimiento otroMovimientoArriba = new MovimientoArriba();
+
+        unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
+        unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
+        unMovimientoRepetir.agregarMovimiento(movimientoArriba);
+
+        Tablero unTablero = new Tablero();
+
+        Bloque unBloqueRepetir = new Bloque(unMovimientoRepetir);
+        Bloque unBloqueLapizAbajo = new Bloque(movimientoLapizAbajo);
+        Bloque unBloqueArriba = new Bloque(otroMovimientoArriba);
+
+        unTablero.agregarBloque(unBloqueRepetir);
+        unTablero.agregarBloque(unBloqueLapizAbajo);
+        unTablero.agregarBloque(unBloqueArriba);
+
+        unTablero.ejecutarSecuencia();
+
+        ArrayList<Dibujo> arregloSectorDibujo = unTablero.mostrarSectorDibujo().mostrarDibujos();
+        Dibujo dibujo1 = arregloSectorDibujo.get(0);
+        assertFalse(dibujo1.mostrarDibujo());
+
+        Dibujo dibujo2 = arregloSectorDibujo.get((arregloSectorDibujo.size())-1);
+        assertTrue(dibujo2.mostrarDibujo());
     }
 }
 

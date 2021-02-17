@@ -2,9 +2,10 @@ package edu.fiuba.algo3.modelo;
 
 public class LapizAbajo implements EstadoLapiz {
 
-    public Figura dibujar(Posicion unaPosicion){
-        Dibujo unDibujo = new Linea();
-        return (new Figura(unaPosicion, unDibujo));
+    public Dibujo dibujar(Posicion antiguaPosicion,Posicion nuevaPosicion){
+
+        return (new Linea(antiguaPosicion,nuevaPosicion));
+
     }
 
     public boolean sePuedeDibujarCamino(){

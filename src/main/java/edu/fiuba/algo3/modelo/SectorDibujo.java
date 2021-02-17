@@ -1,0 +1,16 @@
+package edu.fiuba.algo3.modelo;
+
+import java.util.ArrayList;
+
+public class SectorDibujo {
+
+    private ArrayList<Dibujo> listaDeDibujos = new ArrayList<>();
+
+    public ArrayList<Dibujo> mostrarDibujos(){
+        return this.listaDeDibujos;
+    }
+
+    public void agregarDibujos(ArrayList<Dibujo> unaListaDeDibujos) {
+        this.listaDeDibujos = unaListaDeDibujos;
+    }
+}

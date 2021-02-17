@@ -4,14 +4,14 @@ public class Lapiz {
 
     private EstadoLapiz estadoLapiz;
 
+
     public Lapiz(){
         estadoLapiz = new LapizArriba();
     }
 
 
-    public void dibujarCamino(Posicion unaPosicion){
-        this.estadoLapiz.dibujar(unaPosicion);
-
+    public Dibujo dibujarCamino(Posicion antiguaPosicion,Posicion nuevaPosicion){
+        return (this.estadoLapiz.dibujar(antiguaPosicion,nuevaPosicion));
     }
 
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz){

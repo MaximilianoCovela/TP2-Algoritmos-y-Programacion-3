@@ -6,12 +6,13 @@ public class Tablero {
 
     private ArrayList <Bloque> secuenciaAEjecutar;
     private Personaje unPersonaje;
+    private SectorDibujo sectorDibujo;
 
     public Tablero(){
 
         unPersonaje = new Personaje();
         secuenciaAEjecutar = new ArrayList<>();
-
+        sectorDibujo = new SectorDibujo();
     }
 
     public void agregarBloque(Bloque unBloque){
@@ -38,11 +39,15 @@ public class Tablero {
         for (Bloque b: secuenciaAEjecutar){
             b.aplicarMovimiento(this.unPersonaje);
         }
-        
+        this.sectorDibujo.agregarDibujos(this.unPersonaje.obtenerDibujos());
     }
 
     public Personaje getPersonaje(){
         return unPersonaje;
+    }
+
+    public SectorDibujo mostrarSectorDibujo(){
+        return this.sectorDibujo;
     }
 
 }
