@@ -46,15 +46,15 @@ comprobar si se actualiza el estado del lápiz correctamente.
 
 ## Diagramas
 
-![Diagrama de clases general](https://i.imgur.com/x095J6H.jpg)
+![Diagrama de clases general](https://i.imgur.com/RqHMnS8.png)
 Diagrama general de clases.
 
-![Diagrama de clase del Estado Lapiz](https://i.imgur.com/IYTxSVn.jpg)
+![Diagrama de clase del Estado Lapiz](https://i.imgur.com/hshDPBr.png)
 Diagrama de clase del Estado Lapiz.
 
-![Diagrama de clase de los Movimientos](https://i.imgur.com/3oPVhnf.jpg)
+![Diagrama de clase de los Movimientos](https://i.imgur.com/aGoYEV0.png)
 Diagrama de clase de los Movimientos.
 
-![Diagrama de Secuencia Movimiento a Derecha](https://i.imgur.com/H7ytPFm.jpg)
+![Diagrama de Secuencia Movimiento a Derecha](https://i.imgur.com/vyozdGs.png)
 Diagrama de secuencia MovimientoADerecha.
 
