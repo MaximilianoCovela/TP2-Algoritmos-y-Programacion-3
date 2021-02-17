@@ -10,4 +10,9 @@ public class MovimientoLapizArriba implements Movimiento{
 
     }
 
+    public void invertirMovimiento(Personaje unPersonaje) {
+        EstadoLapiz unEstadoLapiz = new LapizAbajo();
+        unPersonaje.modificarEstadoLapiz(unEstadoLapiz);
+    }
+
 }

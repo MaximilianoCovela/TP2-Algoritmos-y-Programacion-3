@@ -10,7 +10,7 @@ public class SectorDibujo {
         return this.listaDeDibujos;
     }
 
-    public void agregarDibujos(ArrayList<Dibujo> unaListaDeDibujos) {
+    public void actualizarDibujos(ArrayList<Dibujo> unaListaDeDibujos) {
         this.listaDeDibujos = unaListaDeDibujos;
     }
 }

@@ -42,7 +42,7 @@ public class Tablero {
         for (Bloque b: secuenciaAEjecutar){
             b.aplicarMovimiento(this.unPersonaje);
         }
-        this.sectorDibujo.agregarDibujos(this.unPersonaje.obtenerDibujos());
+        this.sectorDibujo.actualizarDibujos(this.unPersonaje.obtenerDibujos());
     }
 
     public Personaje getPersonaje(){
@@ -53,12 +53,8 @@ public class Tablero {
         return this.sectorDibujo;
     }
 
-    public int getHeigth() {
-        return this.heigth;
-    }
-
-    public int getWidth() {
-        return this.width;
+    public ArrayList<Bloque> getSecuencia() {
+        return this.secuenciaAEjecutar;
     }
 
 }
