@@ -1,9 +1,7 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -14,12 +12,8 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.io.FileInputStream;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 
 import edu.fiuba.algo3.Vista.BotonMovimientoAbajo;
 import edu.fiuba.algo3.Vista.BotonMovimientoArriba;
@@ -29,7 +23,8 @@ import edu.fiuba.algo3.Vista.BotonMovimientoInvertir;
 import edu.fiuba.algo3.Vista.BotonMovimientoRepetir2Veces;
 import edu.fiuba.algo3.Vista.BotonMovimientoRepetir3Veces;
 import edu.fiuba.algo3.Vista.BotonMovimientoPersonalizado;
-
+import edu.fiuba.algo3.Vista.BotonMovimientoLapizAbajo;
+import edu.fiuba.algo3.Vista.BotonMovimientoLapizArriba;
 
 
 /**
@@ -106,6 +101,12 @@ public class App extends Application {
 
         BotonMovimientoPersonalizado btn8 = new BotonMovimientoPersonalizado();
         vb.getChildren().add(btn8);
+
+        BotonMovimientoLapizAbajo botonLapizAbajo = new BotonMovimientoLapizAbajo();
+        vb.getChildren().add(botonLapizAbajo);
+
+        BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba();
+        vb.getChildren().add(botonLapizArriba);
 
         vb.setPrefHeight(438.0);
         vb.setPrefWidth(172);
