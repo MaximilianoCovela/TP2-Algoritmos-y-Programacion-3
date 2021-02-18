@@ -5,9 +5,9 @@ import java.util.stream.IntStream;
 
 public class MovimientoRepetir implements Movimiento{
 
-    private int cantidad;
+    private final int cantidad;
 
-    private ArrayList<Movimiento> listaDeMovimientos = new ArrayList<Movimiento>();
+    private ArrayList<Movimiento> listaDeMovimientos = new ArrayList<>();
 
     MovimientoRepetir(int unaCantidad){
 
@@ -26,6 +26,11 @@ public class MovimientoRepetir implements Movimiento{
         IntStream.range(0, cantidad).flatMap(i -> IntStream.range(0, this.listaDeMovimientos.size())).
                 forEach(x -> (this.listaDeMovimientos.get(x)).aplicarMovimiento(unPersonaje));
 
+    }
+
+    public void invertirMovimiento(Personaje unPersonaje) {
+        IntStream.range(0, cantidad).flatMap(i -> IntStream.range(0, this.listaDeMovimientos.size())).
+                forEach(x -> (this.listaDeMovimientos.get(x)).invertirMovimiento(unPersonaje));
     }
 
 }

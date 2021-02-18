@@ -10,4 +10,9 @@ public class MovimientoIzquierda implements Movimiento {
 
     }
 
+    public void invertirMovimiento(Personaje unPersonaje) {
+        Posicion unaPosicion = new Posicion(1, 0);
+        unPersonaje.actualizarPosicion(unaPosicion);
+    }
+
 }

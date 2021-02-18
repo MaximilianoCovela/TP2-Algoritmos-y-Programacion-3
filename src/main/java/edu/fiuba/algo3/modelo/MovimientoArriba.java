@@ -10,4 +10,9 @@ public class MovimientoArriba implements Movimiento {
 
     }
 
+    public void invertirMovimiento(Personaje unPersonaje) {
+        Posicion unaPosicion = new Posicion(0, -1);
+        unPersonaje.actualizarPosicion(unaPosicion);
+    }
+
 }

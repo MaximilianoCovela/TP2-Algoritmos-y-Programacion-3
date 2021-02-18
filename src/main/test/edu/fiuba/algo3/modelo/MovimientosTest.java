@@ -83,5 +83,58 @@ public class MovimientosTest {
 
     }
 
+    @Test
+    public void testCreoUnMovimientoPersonalizadoConMovimientosSimplesYSeMueveCorrectamenteElPersonaje(){
+        MovimientoPersonalizado unMovimientoPersonalizado = new MovimientoPersonalizado();
+        Personaje unPersonaje = new Personaje();
+        Movimiento movimientoIzquierda = new MovimientoIzquierda();
+        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba = new MovimientoArriba();
+
+        Posicion posicionEsperada = new Posicion(unPersonaje.getPosicionActual().getValorHorizontal(),
+                unPersonaje.getPosicionActual().getValorVertical()+1);
+
+        unMovimientoPersonalizado.agregarMovimiento(movimientoIzquierda);
+        unMovimientoPersonalizado.agregarMovimiento(movimientoDerecha);
+        unMovimientoPersonalizado.agregarMovimiento(movimientoArriba);
+
+        unMovimientoPersonalizado.aplicarMovimiento(unPersonaje);
+
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
+
+    }
+
+    @Test
+    public void testCreoUnMovimientoPersonalizadoConMovimientosSimplesYAvanzadosYSeMueveCorrectamenteElPersonaje(){
+        MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
+        MovimientoInvertir unMovimientoInvertir = new MovimientoInvertir();
+        MovimientoPersonalizado unMovimientoPersonalizado = new MovimientoPersonalizado();
+        Personaje unPersonaje = new Personaje();
+        Movimiento movimientoIzquierda = new MovimientoIzquierda();
+        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento otroMovimientoIzquierda = new MovimientoIzquierda();
+        Movimiento otroMovimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba = new MovimientoArriba();
+        Movimiento otroMovimientoArriba = new MovimientoArriba();
+
+        Posicion posicionEsperada = new Posicion(unPersonaje.getPosicionActual().getValorHorizontal()+3,
+                unPersonaje.getPosicionActual().getValorVertical()-1);
+
+        unMovimientoInvertir.agregarMovimiento(movimientoIzquierda);
+        unMovimientoInvertir.agregarMovimiento(movimientoDerecha);
+        unMovimientoInvertir.agregarMovimiento(otroMovimientoIzquierda);
+        unMovimientoInvertir.agregarMovimiento(movimientoArriba);
+
+        unMovimientoRepetir.agregarMovimiento(unMovimientoInvertir);
+
+        unMovimientoPersonalizado.agregarMovimiento(otroMovimientoDerecha);
+        unMovimientoPersonalizado.agregarMovimiento(otroMovimientoArriba);
+        unMovimientoPersonalizado.agregarMovimiento(unMovimientoRepetir);
+
+        unMovimientoPersonalizado.aplicarMovimiento(unPersonaje);
+
+        assertTrue(unPersonaje.enPosicion(posicionEsperada));
+
+    }
 
 }

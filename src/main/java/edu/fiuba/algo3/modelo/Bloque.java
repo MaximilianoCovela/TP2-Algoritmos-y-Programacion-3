@@ -13,4 +13,9 @@ public class Bloque {
 
         this.unMovimiento.aplicarMovimiento(unPersonaje);
     }
+
+    public Movimiento getMovimiento() {
+        return this.unMovimiento;
+    }
+
 }

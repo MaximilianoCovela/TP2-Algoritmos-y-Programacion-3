@@ -41,4 +41,5 @@ public class Personaje {
         return this.listaDeDibujos;
     }
 
+
 }
