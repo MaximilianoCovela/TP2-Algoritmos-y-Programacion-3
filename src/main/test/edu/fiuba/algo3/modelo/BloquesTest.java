@@ -211,6 +211,37 @@ public class BloquesTest {
     }
 
     @Test
+    public void testCreoBloqueInvertirEInviertoBloqueLapizAbajo(){
+        MovimientoInvertir unMovimientoInvertir = new MovimientoInvertir();
+        Personaje unPersonaje = new Personaje();
+        Movimiento movimientoLapizAbajo = new MovimientoLapizAbajo();
+
+        unMovimientoInvertir.agregarMovimiento(movimientoLapizAbajo);
+
+        Bloque bloqueInvertir = new Bloque(unMovimientoInvertir);
+        bloqueInvertir.aplicarMovimiento(unPersonaje);
+
+        assertFalse((unPersonaje.getLapiz()).esPosibleDibujarCamino());
+
+    }
+
+    @Test
+    public void testCreoBloqueInvertirEInviertoBloqueLapizArriba(){
+        MovimientoInvertir unMovimientoInvertir = new MovimientoInvertir();
+        Personaje unPersonaje = new Personaje();
+        Movimiento movimientoLapizArriba = new MovimientoLapizArriba();
+
+        unMovimientoInvertir.agregarMovimiento(movimientoLapizArriba);
+
+        Bloque bloqueInvertir = new Bloque(unMovimientoInvertir);
+        bloqueInvertir.aplicarMovimiento(unPersonaje);
+
+        assertTrue((unPersonaje.getLapiz()).esPosibleDibujarCamino());
+
+    }
+
+
+    @Test
     public void testCreoBloquePersonalizadoConMovimientosSimples(){
         MovimientoPersonalizado unMovimientoPersonalizado = new MovimientoPersonalizado();
         Personaje unPersonaje = new Personaje();
