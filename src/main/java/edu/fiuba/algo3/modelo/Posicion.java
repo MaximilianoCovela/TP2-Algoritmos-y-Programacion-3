@@ -28,14 +28,10 @@ public class Posicion {
     }
 
     public Posicion actualizarPosicion(Posicion unaPosicionNueva){
-
         valorHorizontal = valorHorizontal + unaPosicionNueva.getValorHorizontal();
         valorVertical = valorVertical + unaPosicionNueva.getValorVertical();
-
         Posicion posicionActualizada = new Posicion(valorHorizontal,valorVertical);
-
         return posicionActualizada;
-
     }
 
 }

@@ -6,13 +6,11 @@ public class Linea implements Dibujo{
     Posicion posicionFinal;
 
     public Linea(Posicion posicionInicial, Posicion posicionFinal){
-
         this.posicionInicial = posicionInicial;
         this.posicionFinal = posicionFinal;
-
     }
 
-    public boolean mostrarDibujo() {
+    public boolean mostrarDibujo(){
         return true;
     }
 

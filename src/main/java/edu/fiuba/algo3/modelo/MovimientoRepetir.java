@@ -10,25 +10,19 @@ public class MovimientoRepetir implements Movimiento{
     private ArrayList<Movimiento> listaDeMovimientos = new ArrayList<>();
 
     MovimientoRepetir(int unaCantidad){
-
         this.cantidad = unaCantidad;
-
     }
 
     public void agregarMovimiento(Movimiento unMovimiento){
-
         this.listaDeMovimientos.add(unMovimiento);
-
     }
 
     public void aplicarMovimiento(Personaje unPersonaje){
-
         IntStream.range(0, cantidad).flatMap(i -> IntStream.range(0, this.listaDeMovimientos.size())).
                 forEach(x -> (this.listaDeMovimientos.get(x)).aplicarMovimiento(unPersonaje));
-
     }
 
-    public void invertirMovimiento(Personaje unPersonaje) {
+    public void invertirMovimiento(Personaje unPersonaje){
         IntStream.range(0, cantidad).flatMap(i -> IntStream.range(0, this.listaDeMovimientos.size())).
                 forEach(x -> (this.listaDeMovimientos.get(x)).invertirMovimiento(unPersonaje));
     }

@@ -5,17 +5,15 @@ import java.util.ArrayList;
 public class Personaje {
 
     private Posicion posicionActual;
-    private Lapiz lapiz ;
-    private ArrayList<Dibujo> listaDeDibujos;
+    private Lapiz lapiz = new Lapiz();
+    private ArrayList<Dibujo> listaDeDibujos = new ArrayList<>();
 
     public Personaje(){
-        posicionActual = new Posicion();
-        lapiz = new Lapiz();
-        listaDeDibujos = new ArrayList<>();
+        this.posicionActual = new Posicion(5, 5);
     }
 
-    public Posicion getPosicionActual() {
-        return posicionActual;
+    public Personaje(Posicion unaPosicion){
+        this.posicionActual = unaPosicion;
     }
 
     public void actualizarPosicion(Posicion unaPosicion){
@@ -25,7 +23,7 @@ public class Personaje {
         this.listaDeDibujos.add(unDibujo);
     }
 
-    public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz) {
+    public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz){
         this.lapiz.modificarEstadoLapiz(unEstadoLapiz);
     }
 
@@ -40,6 +38,5 @@ public class Personaje {
     public ArrayList<Dibujo> obtenerDibujos(){
         return this.listaDeDibujos;
     }
-
 
 }

@@ -6,7 +6,6 @@ public class Vacio implements Dibujo{
 
     public Vacio(Posicion nuevaPosicion){
         this.nuevaPosicion = nuevaPosicion;
-
     }
 
     public boolean mostrarDibujo() {

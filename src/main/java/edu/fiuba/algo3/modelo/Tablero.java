@@ -4,28 +4,26 @@ import java.util.ArrayList;
 
 public class Tablero {
 
-    private ArrayList <Bloque> secuenciaAEjecutar;
+    private ArrayList <Bloque> secuenciaAEjecutar = new ArrayList<>();
     private Personaje unPersonaje;
-    private SectorDibujo sectorDibujo;
+    private SectorDibujo sectorDibujo = new SectorDibujo();
 
     private static final int heigth = 10;
     private static final int width = 10;
 
     public Tablero(){
+        this.unPersonaje = new Personaje();
+    }
 
-        unPersonaje = new Personaje();
-        secuenciaAEjecutar = new ArrayList<>();
-        sectorDibujo = new SectorDibujo();
+    public Tablero(Personaje unPersonaje){
+        this.unPersonaje = unPersonaje;
     }
 
     public void agregarBloque(Bloque unBloque){
-
         this.secuenciaAEjecutar.add(unBloque);
-
     }
 
     public void quitarBloque (Bloque unBloque){
-
         if(!this.secuenciaAEjecutar.contains(unBloque)){
             throw new BloqueNoEncontradoException();
         }
@@ -36,9 +34,7 @@ public class Tablero {
         this.secuenciaAEjecutar.clear();
     }
 
-
     public void ejecutarSecuencia (){
-
         for (Bloque b: secuenciaAEjecutar){
             b.aplicarMovimiento(this.unPersonaje);
         }
@@ -53,7 +49,7 @@ public class Tablero {
         return this.sectorDibujo;
     }
 
-    public ArrayList<Bloque> getSecuencia() {
+    public ArrayList<Bloque> getSecuencia(){
         return this.secuenciaAEjecutar;
     }
 

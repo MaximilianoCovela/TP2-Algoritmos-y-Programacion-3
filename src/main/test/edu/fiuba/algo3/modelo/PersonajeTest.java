@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PersonajeTest {
     @Test
     public void testMuevePersonajeHaciaAbajo(){
-        Personaje personaje = new Personaje();
+        Posicion posicionInicial = new Posicion(5, 5);
+        Personaje personaje = new Personaje(posicionInicial);
         Posicion unaPosicion = new Posicion(0,-1);
 
-        Posicion unaPosicionEsperada = new Posicion(personaje.getPosicionActual().getValorHorizontal(),
-                personaje.getPosicionActual().getValorVertical()-1);
+        Posicion unaPosicionEsperada = new Posicion(5, 4);
 
         personaje.actualizarPosicion(unaPosicion);
 
@@ -23,11 +23,11 @@ public class PersonajeTest {
 
     @Test
     public void testMuevePersonajeHaciaIzquierda(){
-        Personaje personaje = new Personaje();
+        Posicion posicionInicial = new Posicion(5, 5);
+        Personaje personaje = new Personaje(posicionInicial);
         Posicion unaPosicion = new Posicion(-1,0);
 
-        Posicion unaPosicionEsperada = new Posicion(personaje.getPosicionActual().getValorHorizontal()-1,
-                personaje.getPosicionActual().getValorVertical());
+        Posicion unaPosicionEsperada = new Posicion(4, 5);
 
         personaje.actualizarPosicion(unaPosicion);
 
@@ -36,11 +36,11 @@ public class PersonajeTest {
 
     @Test
     public void testMuevePersonajeHaciaArriba(){
-        Personaje personaje = new Personaje();
+        Posicion posicionInicial = new Posicion(5, 5);
+        Personaje personaje = new Personaje(posicionInicial);
         Posicion unaPosicion = new Posicion(0,1);
 
-        Posicion unaPosicionEsperada = new Posicion(personaje.getPosicionActual().getValorHorizontal(),
-                personaje.getPosicionActual().getValorVertical()+1);
+        Posicion unaPosicionEsperada = new Posicion(5, 6);
 
         personaje.actualizarPosicion(unaPosicion);
 
@@ -49,11 +49,11 @@ public class PersonajeTest {
 
     @Test
     public void testMuevePersonajeHaciaLaDerecha(){
-        Personaje personaje = new Personaje();
+        Posicion posicionInicial = new Posicion(5, 5);
+        Personaje personaje = new Personaje(posicionInicial);
         Posicion unaPosicion = new Posicion(1,0);
 
-        Posicion unaPosicionEsperada = new Posicion(personaje.getPosicionActual().getValorHorizontal()+1,
-                personaje.getPosicionActual().getValorVertical());
+        Posicion unaPosicionEsperada = new Posicion(6, 5);
 
         personaje.actualizarPosicion(unaPosicion);
 
@@ -85,15 +85,15 @@ public class PersonajeTest {
     @Test
     public void testSeMuevePersonajeConMovimientosDeRepeticionYSeChequeaQueSeMuevaCorrectamente(){
         MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
-        Personaje unPersonaje = new Personaje();
+        Posicion posicionInicial = new Posicion(5, 5);
+        Personaje unPersonaje = new Personaje(posicionInicial);
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
         Movimiento movimientoDerecha = new MovimientoDerecha();
         Movimiento movimientoArriba = new MovimientoArriba();
         Movimiento movimientoLapizAbajo = new MovimientoLapizAbajo();
         Movimiento otroMovimientoArriba = new MovimientoArriba();
 
-        Posicion posicionEsperada = new Posicion(unPersonaje.getPosicionActual().getValorHorizontal(),
-                unPersonaje.getPosicionActual().getValorVertical()+3);
+        Posicion posicionEsperada = new Posicion(5, 8);
 
         unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
         unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
