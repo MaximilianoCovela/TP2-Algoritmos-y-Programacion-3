@@ -19,7 +19,9 @@ public class MovimientoPersonalizado implements Movimiento {
         this.listaDeMovimientos.forEach((movimiento) -> movimiento.invertirMovimiento(unPersonaje));
     }
 
-    //Se llama a esta función cuando se apreta "Guardar algoritmo" en la interfaz.
+    /*
+    Se llama a esta función cuando se apreta botón "Guardar algoritmo" en la interfaz.
+    */
     public void guardarAlgoritmo(Tablero tablero, String unNombre){
         this.nombreAlgoritmo = unNombre;
         tablero.getSecuencia().forEach((bloque) -> this.listaDeMovimientos.add(bloque.getMovimiento()));
