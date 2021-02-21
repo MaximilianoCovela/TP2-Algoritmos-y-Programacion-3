@@ -12,4 +12,12 @@ public class BotonMovimientoArriba extends Button {
         this.setPrefWidth(140.0);
         this.setOnAction(new HandlerBotonMovimientoArriba());
     }
+
+    public BotonMovimientoArriba(VboxBotonesSeleccionados vboxbotonesseleccionados){
+        super();
+        this.setText("Arriba");
+        this.setPrefHeight(70.0);
+        this.setPrefWidth(140.0);
+        this.setOnAction(new HandlerBotonMovimientoArriba(vboxbotonesseleccionados));
+    }
 }

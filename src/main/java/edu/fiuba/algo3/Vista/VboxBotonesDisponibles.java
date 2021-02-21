@@ -9,29 +9,29 @@ import javafx.scene.paint.Color;
 
 public class VboxBotonesDisponibles extends VBox{
 
-    public VboxBotonesDisponibles(){
+    public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxbotonesseleccionados){
         this.setPadding(new Insets(10, 0, 0, 10));
         this.setSpacing(10);
 
-        BotonMovimientoArriba botonArriba = new BotonMovimientoArriba();
+        BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(vboxbotonesseleccionados);
 
-        BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo();
+        BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(vboxbotonesseleccionados);
 
-        BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha();
+        BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(vboxbotonesseleccionados);
 
-        BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda();
+        BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(vboxbotonesseleccionados);
 
-        BotonMovimientoRepetir2Veces botonRepetir2Veces = new BotonMovimientoRepetir2Veces();
+        BotonMovimientoRepetir2Veces botonRepetir2Veces = new BotonMovimientoRepetir2Veces(vboxbotonesseleccionados);
 
-        BotonMovimientoRepetir3Veces botonRepetir3Veces = new BotonMovimientoRepetir3Veces();
+        BotonMovimientoRepetir3Veces botonRepetir3Veces = new BotonMovimientoRepetir3Veces(vboxbotonesseleccionados);
 
-        BotonMovimientoInvertir botonInvertir = new BotonMovimientoInvertir();
+        BotonMovimientoInvertir botonInvertir = new BotonMovimientoInvertir(vboxbotonesseleccionados);
 
-        BotonMovimientoPersonalizado botonPersonalizado = new BotonMovimientoPersonalizado();
+        BotonMovimientoPersonalizado botonPersonalizado = new BotonMovimientoPersonalizado(vboxbotonesseleccionados);
 
-        BotonMovimientoLapizAbajo botonLapizAbajo = new BotonMovimientoLapizAbajo();
+        BotonMovimientoLapizAbajo botonLapizAbajo = new BotonMovimientoLapizAbajo(vboxbotonesseleccionados);
 
-        BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba();
+        BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba(vboxbotonesseleccionados);
 
         this.getChildren().addAll(botonArriba, botonAbajo, botonDerecha, botonIzquierda, botonRepetir2Veces, botonRepetir3Veces,
                 botonInvertir, botonPersonalizado, botonLapizAbajo, botonLapizArriba);

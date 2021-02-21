@@ -12,4 +12,12 @@ public class BotonMovimientoDerecha extends Button {
         this.setPrefWidth(140.0);
         this.setOnAction(new HandlerBotonMovimientoDerecha());
     }
+
+    public BotonMovimientoDerecha(VboxBotonesSeleccionados vboxbotonesseleccionados){
+        super();
+        this.setText("Derecha");
+        this.setPrefHeight(70.0);
+        this.setPrefWidth(140.0);
+        this.setOnAction(new HandlerBotonMovimientoDerecha(vboxbotonesseleccionados));
+    }
 }

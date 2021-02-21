@@ -5,6 +5,14 @@ import javafx.scene.control.Button;
 
 public class BotonMovimientoLapizArriba extends Button {
 
+    public BotonMovimientoLapizArriba(VboxBotonesSeleccionados vboxbotonesseleccionados){
+        super();
+        this.setText("Lapiz Arriba");
+        this.setPrefHeight(70.0);
+        this.setPrefWidth(140.0);
+        this.setOnAction(new HandlerBotonMovimientoLapizArriba(vboxbotonesseleccionados));
+    }
+
     public BotonMovimientoLapizArriba(){
         super();
         this.setText("Lapiz Arriba");

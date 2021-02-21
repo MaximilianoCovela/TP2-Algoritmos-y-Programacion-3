@@ -12,4 +12,12 @@ public class BotonMovimientoAbajo extends Button {
         this.setPrefWidth(140.0);
         this.setOnAction(new HandlerBotonMovimientoAbajo());
     }
+
+    public BotonMovimientoAbajo(VboxBotonesSeleccionados vboxbotonesseleccionados){
+        super();
+        this.setText("Abajo");
+        this.setPrefHeight(70.0);
+        this.setPrefWidth(140.0);
+        this.setOnAction(new HandlerBotonMovimientoAbajo(vboxbotonesseleccionados));
+    }
 }

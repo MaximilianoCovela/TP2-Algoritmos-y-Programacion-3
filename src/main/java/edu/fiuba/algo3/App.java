@@ -1,8 +1,6 @@
 package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.Vista.*;
-import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.Tablero;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -21,25 +19,21 @@ public class App extends Application {
 
         stage.setTitle("AlgoBlocks");
 
-        Tablero unTablero = new Tablero();
-        tableroView = new TableroView(unTablero);
-
-        Personaje unPersonaje = new Personaje();
-        personajeView = new PersonajeView(unTablero, unPersonaje);
-
         PanelSectorDibujo panelSectorDibujo = new PanelSectorDibujo();
-
-        VboxBotonesDisponibles vb = new VboxBotonesDisponibles();
-
-        PanelBloquesDisponibles panelBloquesDisponibles = new PanelBloquesDisponibles(vb);
 
         VboxBotonesSeleccionados vb2 = new VboxBotonesSeleccionados();
 
         PanelBloquesSeleccionados panelBloquesSeleccionados = new PanelBloquesSeleccionados(vb2);
 
+        VboxBotonesDisponibles vb = new VboxBotonesDisponibles(vb2);
+
+        PanelBloquesDisponibles panelBloquesDisponibles = new PanelBloquesDisponibles(vb);
+
         PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados, panelSectorDibujo);
 
-        Scene scene = new Scene(panelTablero);
+        PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles, panelBloquesSeleccionados, panelSectorDibujo);
+
+        Scene scene = new Scene(panelJuego);
 
         stage.setScene(scene);
 

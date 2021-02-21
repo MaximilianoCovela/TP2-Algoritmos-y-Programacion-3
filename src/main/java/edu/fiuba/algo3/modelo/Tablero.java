@@ -8,9 +8,6 @@ public class Tablero {
     private Personaje unPersonaje;
     private SectorDibujo sectorDibujo = new SectorDibujo();
 
-    private static final int heigth = 10;
-    private static final int width = 10;
-
     public Tablero(){
         this.unPersonaje = new Personaje();
     }

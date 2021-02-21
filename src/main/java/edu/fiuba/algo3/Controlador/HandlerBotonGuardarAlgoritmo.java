@@ -24,7 +24,7 @@ public class HandlerBotonGuardarAlgoritmo implements EventHandler<ActionEvent>{
         if (!texto.isEmpty() && texto.get().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setContentText(null);
+            alert.setHeaderText(null);
             alert.setContentText("Debe ingresar un nombre para su algoritmo.");
             alert.showAndWait();
         }
