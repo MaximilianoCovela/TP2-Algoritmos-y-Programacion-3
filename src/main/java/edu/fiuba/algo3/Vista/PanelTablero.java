@@ -1,24 +1,8 @@
 package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.Tablero;
-import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.Group;
-import javafx.scene.Node;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class PanelTablero extends Pane {
 
@@ -36,10 +20,13 @@ public class PanelTablero extends Pane {
         textoDescriptivoMovimientos.setEffect(new ColorAdjust(0,0,0.5,0));
         this.getChildren().add(textoDescriptivoMovimientos);
 
+        BotonGuardarAlgoritmo botonGuardarAlgoritmo = new BotonGuardarAlgoritmo();
+
         BotonJugar botonPlay = new BotonJugar();
 
         BotonReiniciar botonReiniciar = new BotonReiniciar();
 
+        this.getChildren().add(botonGuardarAlgoritmo);
         this.getChildren().add(botonPlay);
         this.getChildren().add(botonReiniciar);
 

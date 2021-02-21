@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 public class BotonJugar extends Button {
 
     public BotonJugar(){
-        this.setText("Jugar");
+        this.setText("Ejecutar");
         this.setLayoutX(68.0);
         this.setLayoutY(510.0);
         this.prefHeight(25.0);
