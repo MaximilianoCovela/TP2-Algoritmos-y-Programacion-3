@@ -21,10 +21,11 @@ public class PanelSectorDibujo extends GridPane {
 
             }
         }
+
         this.setGridLinesVisible(true);
 
-        //ImageView imagenVista = new ImageView(new Image("https://i.imgur.com/r0jDjwZ.png"));
-        //this.getChildren().add(imagenVista);
+        ImageView imagenVista = new ImageView(new Image("https://i.imgur.com/rcT26Fo.png"));
+        this.add(imagenVista,4,4);
 
     }
 }
