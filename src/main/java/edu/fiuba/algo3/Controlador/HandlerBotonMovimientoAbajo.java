@@ -5,6 +5,8 @@ import edu.fiuba.algo3.Vista.PersonajeView;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
@@ -29,6 +31,7 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
         }else{
             // aca hacemos lo de moverse, hardcodeado
             vistaPersonaje.actualizarPosicion(0,1);
+            vistaPersonaje.actualizarImagen(new Image("https://i.imgur.com/rcT26Fo.png"));
         }
 
     }

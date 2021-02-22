@@ -5,6 +5,7 @@ import edu.fiuba.algo3.Vista.PersonajeView;
 import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.image.Image;
 
 public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent>{
 
@@ -27,6 +28,7 @@ public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent
             this.vboxbotonesseleccionados.getChildren().add(botonIzquierda);
         }else{
             vistaPersonaje.actualizarPosicion(-1,0);
+            vistaPersonaje.actualizarImagen(new Image("https://imgur.com/npbSGMe.png"));
         }
     }
 }

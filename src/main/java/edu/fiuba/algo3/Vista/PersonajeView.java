@@ -22,6 +22,10 @@ public class PersonajeView {
         this.sectorDibujo.agregarImagenInicial(imagenPersonaje);
     }
 
+    public void actualizarImagen(Image unaImagen){
+        imagenPersonaje.setImage(unaImagen);
+    }
+
     public void actualizarPosicion(int posicionHorizontalNueva, int posicionVerticalNueva){
         // ahora hacemos la suma, despues cuando le pasemos la posicion nueva posta del personaje, simplemente
         // le asignamos la posicion que viene por parametro en x en la posicion de personaje en x y con y
