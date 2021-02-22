@@ -21,11 +21,15 @@ public class App extends Application {
 
         PanelSectorDibujo panelSectorDibujo = new PanelSectorDibujo();
 
+
+        PersonajeView vistaPersonaje = new PersonajeView(panelSectorDibujo);
+
+
         VboxBotonesSeleccionados vb2 = new VboxBotonesSeleccionados();
 
         PanelBloquesSeleccionados panelBloquesSeleccionados = new PanelBloquesSeleccionados(vb2);
 
-        VboxBotonesDisponibles vb = new VboxBotonesDisponibles(vb2);
+        VboxBotonesDisponibles vb = new VboxBotonesDisponibles(vb2, vistaPersonaje);
 
         PanelBloquesDisponibles panelBloquesDisponibles = new PanelBloquesDisponibles(vb);
 

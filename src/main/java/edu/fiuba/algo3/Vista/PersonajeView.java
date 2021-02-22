@@ -2,15 +2,35 @@ package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.Tablero;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class PersonajeView {
 
-    private Tablero unTablero;
-    private Personaje unPersonaje;
+    private int posicionHorizontal;
+    private int posicionVertical;
+    private ImageView imagenPersonaje;
+    private PanelSectorDibujo sectorDibujo;
 
-    public PersonajeView(Tablero unTablero, Personaje unPersonaje) {
-        this.unTablero = unTablero;
-        this.unPersonaje = unPersonaje;
+
+    public PersonajeView(PanelSectorDibujo panelSectorDibujo) {
+
+        this.posicionHorizontal = 4;
+        this.posicionVertical = 4;
+        this.imagenPersonaje = new ImageView(new Image("https://i.imgur.com/rcT26Fo.png"));
+        this.sectorDibujo = panelSectorDibujo;
+        this.sectorDibujo.agregarImagenInicial(imagenPersonaje);
     }
 
+    public void actualizarPosicion(int posicionHorizontalNueva, int posicionVerticalNueva){
+        // ahora hacemos la suma, despues cuando le pasemos la posicion nueva posta del personaje, simplemente
+        // le asignamos la posicion que viene por parametro en x en la posicion de personaje en x y con y
+        // lo mismo.
+        this.posicionHorizontal = this.posicionHorizontal + posicionHorizontalNueva;
+        this.posicionVertical = this.posicionVertical + posicionVerticalNueva;
+
+        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(this.posicionHorizontal,
+                this.posicionVertical, imagenPersonaje);
+        // crear imagen nueva con ifs seguro si ynueva < yvieja.. bla
+    }
 }

@@ -23,9 +23,18 @@ public class PanelSectorDibujo extends GridPane {
         }
 
         this.setGridLinesVisible(true);
+    }
 
-        ImageView imagenVista = new ImageView(new Image("https://i.imgur.com/rcT26Fo.png"));
-        this.add(imagenVista,4,4);
+    public void agregarImagenInicial(ImageView imagen){
+
+        this.add(imagen, 4,4);
+    }
+
+
+    public void actualizarVistaPersonajeEnSectorDibujo(int posicionHorizontal, int posicionVertical, ImageView imagenPersonaje) {
+
+        //this.add(imagenPersonaje, posicionHorizontal, posicionVertical); // hay que ver que la horizontal sea la que va primero
+        this.setRowIndex(imagenPersonaje, posicionVertical);
 
     }
 }

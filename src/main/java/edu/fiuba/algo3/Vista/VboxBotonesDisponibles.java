@@ -9,13 +9,13 @@ import javafx.scene.paint.Color;
 
 public class VboxBotonesDisponibles extends VBox{
 
-    public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxbotonesseleccionados){
+    public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxbotonesseleccionados, PersonajeView vistaPersonaje){
         this.setPadding(new Insets(10, 0, 0, 10));
         this.setSpacing(10);
 
         BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(vboxbotonesseleccionados);
 
-        BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(vboxbotonesseleccionados);
+        BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(vboxbotonesseleccionados, vistaPersonaje);
 
         BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(vboxbotonesseleccionados);
 
