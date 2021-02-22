@@ -13,13 +13,13 @@ public class VboxBotonesDisponibles extends VBox{
         this.setPadding(new Insets(10, 0, 0, 10));
         this.setSpacing(10);
 
-        BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(vboxbotonesseleccionados);
+        BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(vboxbotonesseleccionados, vistaPersonaje);
 
         BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(vboxbotonesseleccionados, vistaPersonaje);
 
-        BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(vboxbotonesseleccionados);
+        BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(vboxbotonesseleccionados, vistaPersonaje);
 
-        BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(vboxbotonesseleccionados);
+        BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(vboxbotonesseleccionados, vistaPersonaje);
 
         BotonMovimientoRepetir2Veces botonRepetir2Veces = new BotonMovimientoRepetir2Veces(vboxbotonesseleccionados);
 

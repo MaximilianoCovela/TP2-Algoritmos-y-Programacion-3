@@ -26,11 +26,18 @@ public class PersonajeView {
         // ahora hacemos la suma, despues cuando le pasemos la posicion nueva posta del personaje, simplemente
         // le asignamos la posicion que viene por parametro en x en la posicion de personaje en x y con y
         // lo mismo.
-        this.posicionHorizontal = this.posicionHorizontal + posicionHorizontalNueva;
-        this.posicionVertical = this.posicionVertical + posicionVerticalNueva;
 
-        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(this.posicionHorizontal,
-                this.posicionVertical, imagenPersonaje);
+        int posicionActualizadaHorizontal = this.posicionHorizontal + posicionHorizontalNueva;
+        int posicionActualizadaVertical = this.posicionVertical + posicionVerticalNueva;
+
+        if ((posicionActualizadaHorizontal >= 0 && posicionActualizadaHorizontal < 9) &&
+                (posicionActualizadaVertical < 9 && posicionActualizadaVertical >= 0)){
+
+            this.posicionHorizontal = posicionActualizadaHorizontal;
+            this.posicionVertical = posicionActualizadaVertical;
+
         // crear imagen nueva con ifs seguro si ynueva < yvieja.. bla
-    }
+        }
+        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(this.posicionHorizontal, this.posicionVertical, imagenPersonaje);        }
+
 }

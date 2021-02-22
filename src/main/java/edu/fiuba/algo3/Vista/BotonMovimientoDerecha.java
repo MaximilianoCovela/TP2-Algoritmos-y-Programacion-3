@@ -5,19 +5,19 @@ import javafx.scene.control.Button;
 
 public class BotonMovimientoDerecha extends Button {
 
-    public BotonMovimientoDerecha(){
+    public BotonMovimientoDerecha(PersonajeView unaVistaPersonaje){
         super();
         this.setText("Derecha");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.setOnAction(new HandlerBotonMovimientoDerecha());
+        this.setOnAction(new HandlerBotonMovimientoDerecha( unaVistaPersonaje));
     }
 
-    public BotonMovimientoDerecha(VboxBotonesSeleccionados vboxbotonesseleccionados){
+    public BotonMovimientoDerecha(VboxBotonesSeleccionados vboxbotonesseleccionados, PersonajeView unaVistaPersonaje){
         super();
         this.setText("Derecha");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.setOnAction(new HandlerBotonMovimientoDerecha(vboxbotonesseleccionados));
+        this.setOnAction(new HandlerBotonMovimientoDerecha(vboxbotonesseleccionados, unaVistaPersonaje));
     }
 }

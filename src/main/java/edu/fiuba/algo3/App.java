@@ -21,9 +21,7 @@ public class App extends Application {
 
         PanelSectorDibujo panelSectorDibujo = new PanelSectorDibujo();
 
-
         PersonajeView vistaPersonaje = new PersonajeView(panelSectorDibujo);
-
 
         VboxBotonesSeleccionados vb2 = new VboxBotonesSeleccionados();
 

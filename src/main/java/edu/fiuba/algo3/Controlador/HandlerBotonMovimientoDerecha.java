@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Controlador;
 import edu.fiuba.algo3.Vista.BotonMovimientoDerecha;
+import edu.fiuba.algo3.Vista.PersonajeView;
 import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -7,21 +8,24 @@ import javafx.event.EventHandler;
 public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
+    private final PersonajeView vistaPersonaje;
 
-    public HandlerBotonMovimientoDerecha(VboxBotonesSeleccionados vbox){
+    public HandlerBotonMovimientoDerecha(VboxBotonesSeleccionados vbox, PersonajeView unaVistaPersonaje){
         this.vboxbotonesseleccionados = vbox;
+        this.vistaPersonaje = unaVistaPersonaje;
     }
 
-    public HandlerBotonMovimientoDerecha(){
+    public HandlerBotonMovimientoDerecha(PersonajeView unaVistaPersonaje){
         this.vboxbotonesseleccionados = null;
+        this.vistaPersonaje = unaVistaPersonaje;
     }
 
     public void handle(ActionEvent event) {
         if(this.vboxbotonesseleccionados != null){
-            BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha();
+            BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(this.vistaPersonaje);
             this.vboxbotonesseleccionados.getChildren().add(botonDerecha);
         }else{
-            System.out.println("Movimiento Derecha");
+            vistaPersonaje.actualizarPosicion(1,0);
         }
     }
 }

@@ -35,6 +35,6 @@ public class PanelSectorDibujo extends GridPane {
 
         //this.add(imagenPersonaje, posicionHorizontal, posicionVertical); // hay que ver que la horizontal sea la que va primero
         this.setRowIndex(imagenPersonaje, posicionVertical);
-
+        this.setColumnIndex(imagenPersonaje, posicionHorizontal);
     }
 }
