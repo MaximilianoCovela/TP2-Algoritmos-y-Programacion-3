@@ -7,9 +7,11 @@ public class BotonReiniciar extends Button {
 
     public BotonReiniciar(){
         this.setText("Reiniciar");
-        this.setLayoutX(216.0);
-        this.setLayoutY(510.0);
+        this.setLayoutX(302.0);
+        this.setLayoutY(555.0);
         this.setOnAction(new HandlerBotonReiniciar());
+
+
     }
 
 }

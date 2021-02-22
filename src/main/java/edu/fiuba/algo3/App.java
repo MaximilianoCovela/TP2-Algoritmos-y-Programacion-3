@@ -36,7 +36,7 @@ public class App extends Application {
         Scene scene = new Scene(panelJuego);
 
         stage.setScene(scene);
-
+        stage.setResizable(false);
         stage.show();
     }
 

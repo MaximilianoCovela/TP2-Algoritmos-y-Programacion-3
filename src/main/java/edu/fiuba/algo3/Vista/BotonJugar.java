@@ -7,11 +7,12 @@ public class BotonJugar extends Button {
 
     public BotonJugar(){
         this.setText("Ejecutar");
-        this.setLayoutX(68.0);
-        this.setLayoutY(510.0);
+        this.setLayoutX(118.0);
+        this.setLayoutY(555.0);
         this.prefHeight(25.0);
         this.prefWidth(61.0);
         this.setOnAction(new HandlerBotonJugar());
+
     }
 
 }

@@ -12,8 +12,8 @@ public class PanelJuego extends Pane{
 
     public PanelJuego(PanelTablero panelTablero, PanelBloquesDisponibles panelBloquesDisponibles, PanelBloquesSeleccionados panelBloquesSeleccionados,
                       PanelSectorDibujo panelSectorDibujo){
-        this.setPrefHeight(553.0);
-        this.setPrefWidth(804.0);
+        this.setPrefHeight(604.0);
+        this.setPrefWidth(946.0);
         this.setStyle("-fx-background-color: lightblue");
 
         this.Tablero = panelTablero;
