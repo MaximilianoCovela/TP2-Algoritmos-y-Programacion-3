@@ -15,9 +15,10 @@ public class PanelSectorDibujo extends GridPane {
         this.setPrefWidth(456.0);
         this.setStyle("-fx-background-color: linear-gradient(to bottom right, derive(skyblue, 20%), derive(palegreen, -40%));");
 
-        for(int i = 0; i < 11; i++){
-            for(int j = 0; j < 11; j++){
-                this.add(new Rectangle(45.2,41.5, Color.TRANSPARENT),i,j);
+        for(int i = 0; i < 9; i++){
+            for(int j = 0; j < 9; j++){
+                this.add(new Rectangle(50.6,55.8, Color.TRANSPARENT),i,j);
+
             }
         }
         this.setGridLinesVisible(true);
