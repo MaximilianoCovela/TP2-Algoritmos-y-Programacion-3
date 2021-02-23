@@ -23,8 +23,17 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
         this.vistaPersonaje = unaVistaPersonaje;
     }
 
-    public void handle(ActionEvent event) {
+    public void mover(){
+        vistaPersonaje.actualizarPosicion(0,1);
+        vistaPersonaje.actualizarImagen(new Image("https://i.imgur.com/rcT26Fo.png"));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void handle(ActionEvent event) {
         if(this.vboxbotonesseleccionados != null){
             BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(this.vistaPersonaje);
             this.vboxbotonesseleccionados.getChildren().add(botonAbajo);

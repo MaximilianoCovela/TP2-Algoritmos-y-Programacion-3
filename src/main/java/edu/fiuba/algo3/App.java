@@ -31,7 +31,7 @@ public class App extends Application {
 
         PanelBloquesDisponibles panelBloquesDisponibles = new PanelBloquesDisponibles(vb);
 
-        PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados, sectorDibujoView, vb2);
+        PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados, sectorDibujoView, vb2, vistaPersonaje);
 
         PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles, panelBloquesSeleccionados, sectorDibujoView);
 

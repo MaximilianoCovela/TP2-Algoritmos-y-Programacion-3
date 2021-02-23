@@ -21,6 +21,16 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
         this.vistaPersonaje = unaVistaPersonaje;
     }
 
+    public void mover(){
+        vistaPersonaje.actualizarPosicion(1,0);
+        vistaPersonaje.actualizarImagen(new Image("https://imgur.com/N3gBRlL.png"));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void handle(ActionEvent event) {
         if(this.vboxbotonesseleccionados != null){
             BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(this.vistaPersonaje);
