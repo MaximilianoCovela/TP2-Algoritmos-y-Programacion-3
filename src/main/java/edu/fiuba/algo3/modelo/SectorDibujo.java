@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import java.util.ArrayList;
 
-public class SectorDibujo {
+public class SectorDibujo extends Observable{
 
     private ArrayList<Dibujo> listaDeDibujos = new ArrayList<>();
 
@@ -14,4 +14,9 @@ public class SectorDibujo {
         this.listaDeDibujos = unaListaDeDibujos;
     }
 
+    public void ejecutarMovimientosDelPersonaje(Personaje unPersonaje){
+        for( Dibujo unDibujo : listaDeDibujos){
+            notifyObservers(unDibujo);
+        }
+    }
 }

@@ -6,8 +6,8 @@ public class Posicion {
     private int valorVertical;
 
     public Posicion(){
-        this.valorHorizontal = 5;
-        this.valorVertical = 5;
+        this.valorHorizontal = 4;
+        this.valorVertical = 4;
     }
 
     public Posicion(int posicionHorizontal, int posicionVertical){

@@ -10,6 +10,8 @@ public class Linea implements Dibujo{
         this.posicionFinal = posicionFinal;
     }
 
+    public Posicion getPosicionFinal(){ return this.posicionFinal; }
+
     public boolean mostrarDibujo(){
         return true;
     }

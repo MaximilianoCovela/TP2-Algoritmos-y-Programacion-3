@@ -36,6 +36,7 @@ public class Tablero {
             b.aplicarMovimiento(this.unPersonaje);
         }
         this.sectorDibujo.actualizarDibujos(this.unPersonaje.obtenerDibujos());
+        this.sectorDibujo.ejecutarMovimientosDelPersonaje(unPersonaje);
     }
 
     public Personaje getPersonaje(){

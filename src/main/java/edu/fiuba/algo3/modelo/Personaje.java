@@ -2,14 +2,14 @@ package edu.fiuba.algo3.modelo;
 
 import java.util.ArrayList;
 
-public class Personaje {
+public class Personaje extends Observable {
 
     private Posicion posicionActual;
     private Lapiz lapiz = new Lapiz();
     private ArrayList<Dibujo> listaDeDibujos = new ArrayList<>();
 
     public Personaje(){
-        this.posicionActual = new Posicion(5, 5);
+        this.posicionActual = new Posicion(4, 4);
     }
 
     public Personaje(Posicion unaPosicion){

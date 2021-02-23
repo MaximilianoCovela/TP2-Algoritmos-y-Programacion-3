@@ -4,4 +4,6 @@ public interface Dibujo {
 
     public boolean mostrarDibujo();
 
+    Posicion getPosicionFinal();
+
 }

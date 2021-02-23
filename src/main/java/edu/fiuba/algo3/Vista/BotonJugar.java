@@ -5,13 +5,13 @@ import javafx.scene.control.Button;
 
 public class BotonJugar extends Button {
 
-    public BotonJugar(){
+    public BotonJugar(VboxBotonesSeleccionados vb2){
         this.setText("Ejecutar");
         this.setLayoutX(118.0);
         this.setLayoutY(555.0);
         this.prefHeight(25.0);
         this.prefWidth(61.0);
-        this.setOnAction(new HandlerBotonJugar());
+        this.setOnAction(new HandlerBotonJugar(vb2));
 
     }
 

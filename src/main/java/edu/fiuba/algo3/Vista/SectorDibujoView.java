@@ -1,14 +1,16 @@
 package edu.fiuba.algo3.Vista;
 
+import edu.fiuba.algo3.modelo.Observer;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import edu.fiuba.algo3.modelo.Dibujo;
 
-public class PanelSectorDibujo extends GridPane {
+public class SectorDibujoView extends GridPane implements Observer {
 
-    public PanelSectorDibujo(){
+    public SectorDibujoView(){
         this.setLayoutX(22.0);
         this.setLayoutY(21.0);
         this.setPrefHeight(503.0);
@@ -36,5 +38,8 @@ public class PanelSectorDibujo extends GridPane {
         //this.add(imagenPersonaje, posicionHorizontal, posicionVertical); // hay que ver que la horizontal sea la que va primero
         this.setRowIndex(imagenPersonaje, posicionVertical);
         this.setColumnIndex(imagenPersonaje, posicionHorizontal);
+    }
+    public void update(Dibujo unDibujo){
+
     }
 }

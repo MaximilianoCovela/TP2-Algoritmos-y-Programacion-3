@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 public class App extends Application {
 
-    private TableroView tableroView;
+    private SectorDibujoView sectorDibujoView;
     private PersonajeView personajeView;
 
     public static void main(String[] args) {
@@ -19,9 +19,9 @@ public class App extends Application {
 
         stage.setTitle("AlgoBlocks");
 
-        PanelSectorDibujo panelSectorDibujo = new PanelSectorDibujo();
+        SectorDibujoView sectorDibujoView = new SectorDibujoView();
 
-        PersonajeView vistaPersonaje = new PersonajeView(panelSectorDibujo);
+        PersonajeView vistaPersonaje = new PersonajeView(sectorDibujoView);
 
         VboxBotonesSeleccionados vb2 = new VboxBotonesSeleccionados();
 
@@ -31,9 +31,9 @@ public class App extends Application {
 
         PanelBloquesDisponibles panelBloquesDisponibles = new PanelBloquesDisponibles(vb);
 
-        PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados, panelSectorDibujo);
+        PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados, sectorDibujoView, vb2);
 
-        PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles, panelBloquesSeleccionados, panelSectorDibujo);
+        PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles, panelBloquesSeleccionados, sectorDibujoView);
 
         Scene scene = new Scene(panelJuego);
 

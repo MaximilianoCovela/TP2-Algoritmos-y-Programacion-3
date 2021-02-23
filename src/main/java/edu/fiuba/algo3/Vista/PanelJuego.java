@@ -7,11 +7,11 @@ public class PanelJuego extends Pane{
     private PanelTablero Tablero;
     private PanelBloquesDisponibles BloquesDisponibles;
     private PanelBloquesSeleccionados BloquesSeleccionados;
-    private PanelSectorDibujo SectorDibujo;
+    private SectorDibujoView SectorDibujo;
 
 
     public PanelJuego(PanelTablero panelTablero, PanelBloquesDisponibles panelBloquesDisponibles, PanelBloquesSeleccionados panelBloquesSeleccionados,
-                      PanelSectorDibujo panelSectorDibujo){
+                      SectorDibujoView sectorDibujoView){
         this.setPrefHeight(604.0);
         this.setPrefWidth(946.0);
         this.setStyle("-fx-background-color: lightblue");
@@ -19,7 +19,7 @@ public class PanelJuego extends Pane{
         this.Tablero = panelTablero;
         this.BloquesDisponibles = panelBloquesDisponibles;
         this.BloquesSeleccionados = panelBloquesSeleccionados;
-        this.SectorDibujo = panelSectorDibujo;
+        this.SectorDibujo = sectorDibujoView;
 
         this.getChildren().add(this.Tablero);
         this.getChildren().add(this.BloquesDisponibles);
