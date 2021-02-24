@@ -2,15 +2,9 @@ package edu.fiuba.algo3.modelo;
 
 import java.util.ArrayList;
 
-public abstract class Observable {
+public interface Observable {
 
-    private ArrayList<Observer> observers;
+    void addObserver(Observer observador);
 
-    public Observable() { this.observers = new ArrayList<>(); }
-
-    public void addObserver(Observer observador) { this.observers.add(observador); }
-
-    public void notifyObservers(Dibujo unDibujo){
-        this.observers.stream().forEach(observer -> observer.update(unDibujo));
-    }
+    void notifyObservers(Dibujo unDibujo);
 }

@@ -32,7 +32,7 @@ public class Tablero {
     }
 
     public void ejecutarSecuencia (){
-        for (Bloque b: secuenciaAEjecutar){
+        for (Bloque b: secuenciaAEjecutar) {
             b.aplicarMovimiento(this.unPersonaje);
         }
         this.sectorDibujo.actualizarDibujos(this.unPersonaje.obtenerDibujos());

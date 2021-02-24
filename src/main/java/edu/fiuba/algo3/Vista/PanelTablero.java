@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Vista;
 
+import edu.fiuba.algo3.modelo.Tablero;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.layout.Pane;
@@ -7,7 +8,8 @@ import javafx.scene.layout.Pane;
 public class PanelTablero extends Pane {
 
     public PanelTablero(PanelBloquesDisponibles panelBloquesDisponibles, PanelBloquesSeleccionados panelBloquesSeleccionados,
-                        SectorDibujoView sectorDibujoView, VboxBotonesSeleccionados vb2, PersonajeView vistaPersonaje){
+                        SectorDibujoView sectorDibujoView, VboxBotonesSeleccionados vb2,
+                        PersonajeView vistaPersonaje, Tablero unTablero){
         this.setPrefHeight(604.0);
         this.setPrefWidth(946.0);
         this.setStyle("-fx-background-color: lightblue");
@@ -32,7 +34,7 @@ public class PanelTablero extends Pane {
 
         BotonGuardarAlgoritmo botonGuardarAlgoritmo = new BotonGuardarAlgoritmo();
 
-        BotonJugar botonPlay = new BotonJugar(vb2,vistaPersonaje);
+        BotonJugar botonPlay = new BotonJugar(vb2,vistaPersonaje, unTablero);
 
         BotonReiniciar botonReiniciar = new BotonReiniciar();
 

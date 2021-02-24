@@ -1,6 +1,7 @@
 package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.Vista.*;
+import edu.fiuba.algo3.modelo.Tablero;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -9,6 +10,7 @@ public class App extends Application {
 
     private SectorDibujoView sectorDibujoView;
     private PersonajeView personajeView;
+    private Tablero unTablero = new Tablero();
 
     public static void main(String[] args) {
         launch(args);
@@ -27,13 +29,15 @@ public class App extends Application {
 
         PanelBloquesSeleccionados panelBloquesSeleccionados = new PanelBloquesSeleccionados(vb2);
 
-        VboxBotonesDisponibles vb = new VboxBotonesDisponibles(vb2, vistaPersonaje);
+        VboxBotonesDisponibles vb = new VboxBotonesDisponibles(vb2, vistaPersonaje, unTablero);
 
         PanelBloquesDisponibles panelBloquesDisponibles = new PanelBloquesDisponibles(vb);
+        unTablero.mostrarSectorDibujo().addObserver(vistaPersonaje);
+        PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados,
+                sectorDibujoView, vb2, vistaPersonaje, unTablero);
 
-        PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados, sectorDibujoView, vb2, vistaPersonaje);
-
-        PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles, panelBloquesSeleccionados, sectorDibujoView);
+        PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles,
+                panelBloquesSeleccionados, sectorDibujoView);
 
         Scene scene = new Scene(panelJuego);
 

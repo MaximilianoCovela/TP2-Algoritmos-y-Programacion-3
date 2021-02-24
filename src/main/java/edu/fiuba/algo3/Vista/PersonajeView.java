@@ -32,23 +32,30 @@ public class PersonajeView implements Observer {
         // le asignamos la posicion que viene por parametro en x en la posicion de personaje en x y con y
         // lo mismo.
 
-        int posicionActualizadaHorizontal = this.posicionHorizontal + posicionHorizontalNueva;
-        int posicionActualizadaVertical = this.posicionVertical + posicionVerticalNueva;
+        //int posicionActH = this.posicionHorizontal; + posicionHorizontalNueva;
+        //int posicionActV = this.posicionVertical; + posicionVerticalNueva;
 
-        if ((posicionActualizadaHorizontal >= 0 && posicionActualizadaHorizontal < 9) &&
-                (posicionActualizadaVertical < 9 && posicionActualizadaVertical >= 0)) {
+        //if ((posicionActH >= 0 && posicionActH < 9) &&
+         //       (posicionActV < 9 && posicionActV >= 0)) {
 
-            this.posicionHorizontal = posicionActualizadaHorizontal;
-            this.posicionVertical = posicionActualizadaVertical;
+         //   this.posicionHorizontal = posicionActH;
+         //   this.posicionVertical = posicionActV;
 
             // crear imagen nueva con ifs seguro si ynueva < yvieja.. bla
-        }
-        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(this.posicionHorizontal, this.posicionVertical, imagenPersonaje);
+        //}
+
+       // this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(posicionHorizontalNueva,
+   // posicionVerticalNueva, imagenPersonaje);
     }
 
     @Override
     public void update(Dibujo unDibujo) {
+        System.out.println("Llegue aca");
         Posicion nuevaPosicion = unDibujo.getPosicionFinal();
+        System.out.println(nuevaPosicion.getValorHorizontal());
+        System.out.println( nuevaPosicion.getValorVertical());
+        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(nuevaPosicion.getValorHorizontal(),
+                nuevaPosicion.getValorVertical(),imagenPersonaje);
         actualizarPosicion(nuevaPosicion.getValorHorizontal(), nuevaPosicion.getValorVertical());
     }
 }

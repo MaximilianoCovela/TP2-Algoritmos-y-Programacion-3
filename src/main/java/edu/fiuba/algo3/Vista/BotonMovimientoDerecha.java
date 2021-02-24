@@ -2,6 +2,7 @@ package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoAbajo;
 import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoDerecha;
+import edu.fiuba.algo3.modelo.Tablero;
 import javafx.scene.control.Button;
 
 public class BotonMovimientoDerecha extends Button implements Boton {
@@ -15,7 +16,8 @@ public class BotonMovimientoDerecha extends Button implements Boton {
         this.setOnAction(accion);
     }
 
-    public BotonMovimientoDerecha(VboxBotonesSeleccionados vboxbotonesseleccionados, PersonajeView unaVistaPersonaje){
+    public BotonMovimientoDerecha(VboxBotonesSeleccionados vboxbotonesseleccionados,
+                                  PersonajeView unaVistaPersonaje, Tablero unTablero){
         super();
         this.setText("Derecha");
         this.setPrefHeight(70.0);
