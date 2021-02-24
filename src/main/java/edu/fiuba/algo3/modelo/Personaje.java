@@ -23,6 +23,10 @@ public class Personaje {
         this.listaDeDibujos.add(unDibujo);
     }
 
+    public void reiniciarPosicion(){
+        this.posicionActual = new Posicion(4,4);
+    }
+
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz){
         this.lapiz.modificarEstadoLapiz(unEstadoLapiz);
     }

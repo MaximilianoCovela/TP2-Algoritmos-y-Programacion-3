@@ -80,14 +80,6 @@ public class PersonajeView implements Observer {
 
         System.out.println("Posicion Horizontal:" + nuevaPosicion.getValorHorizontal());
         System.out.println("Posicion Vertical:" + nuevaPosicion.getValorVertical());
-        /*
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(7), actionEvent -> {
-            System.out.println("Ya terminó de actualizar");
-            this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(nuevaPosicion.getValorHorizontal(),
-                    nuevaPosicion.getValorVertical(),imagenPersonaje);
-        }));
-        timeline.play();
-        */
 
         this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(nuevaPosicion.getValorHorizontal(),
                 nuevaPosicion.getValorVertical(),imagenPersonaje);

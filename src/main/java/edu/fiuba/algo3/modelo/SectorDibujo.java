@@ -27,16 +27,15 @@ public class SectorDibujo implements Observable{
 
     public void ejecutarMovimientosDelPersonaje(Personaje unPersonaje){
         System.out.println("Modelo : SectorDibujo EjecutarMov");
-        System.out.println("Modelo : Con una lista de" + this.listaDeDibujos.size());
+        System.out.println("Modelo : Con una lista de " + this.listaDeDibujos.size());
+        int i = 1;
 
         for( Dibujo unDibujo : listaDeDibujos){
-
-            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), actionEvent -> {
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(i), actionEvent -> {
                 notifyObservers(unDibujo);
             }));
             timeline.play();
-
-            //notifyObservers(unDibujo);
+            i++;
         }
     }
 }

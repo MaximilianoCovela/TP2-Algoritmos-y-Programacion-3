@@ -1,12 +1,15 @@
 package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.modelo.Observer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import edu.fiuba.algo3.modelo.Dibujo;
+import javafx.util.Duration;
 
 public class SectorDibujoView extends GridPane implements Observer {
 
@@ -34,9 +37,10 @@ public class SectorDibujoView extends GridPane implements Observer {
 
 
     public void actualizarVistaPersonajeEnSectorDibujo(int posicionHorizontal, int posicionVertical, ImageView imagenPersonaje) {
-
+        
         this.setRowIndex(imagenPersonaje, posicionVertical);
         this.setColumnIndex(imagenPersonaje, posicionHorizontal);
+
     }
     public void update(Dibujo unDibujo){
 
