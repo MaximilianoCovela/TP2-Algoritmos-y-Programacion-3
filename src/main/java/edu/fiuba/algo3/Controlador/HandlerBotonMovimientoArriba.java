@@ -21,11 +21,7 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
     public void mover(){
         vistaPersonaje.actualizarPosicion(0,-1);
         vistaPersonaje.actualizarImagen(new Image("https://imgur.com/N3gBRlL.png"));
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
     public HandlerBotonMovimientoArriba(PersonajeView unaVistaPersonaje){
         this.vboxbotonesseleccionados = null;

@@ -24,11 +24,7 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
     public void mover(){
         vistaPersonaje.actualizarPosicion(1,0);
         vistaPersonaje.actualizarImagen(new Image("https://imgur.com/N3gBRlL.png"));
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
     public void handle(ActionEvent event) {
