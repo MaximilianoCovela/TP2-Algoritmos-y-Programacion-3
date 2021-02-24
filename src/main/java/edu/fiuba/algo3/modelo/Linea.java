@@ -10,7 +10,12 @@ public class Linea implements Dibujo{
         this.posicionFinal = posicionFinal;
     }
 
-    public Posicion getPosicionFinal(){ return this.posicionFinal; }
+    public Posicion getPosicionFinal(){
+        Posicion nuevaPosicion = this.posicionFinal;
+        System.out.println("Posicion Linea Horizontal:" + nuevaPosicion.getValorHorizontal());
+        System.out.println("Posicion Linea Vertical:" + nuevaPosicion.getValorVertical());
+
+        return this.posicionFinal; }
 
     public boolean mostrarDibujo(){
         return true;

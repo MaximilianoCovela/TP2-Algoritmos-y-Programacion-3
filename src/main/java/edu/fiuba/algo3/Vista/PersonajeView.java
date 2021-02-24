@@ -1,11 +1,14 @@
 package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.modelo.Observer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import edu.fiuba.algo3.modelo.Dibujo;
 import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.Linea;
+import javafx.util.Duration;
+
 public class PersonajeView implements Observer {
 
     private int posicionHorizontal;
@@ -50,13 +53,46 @@ public class PersonajeView implements Observer {
 
     @Override
     public void update(Dibujo unDibujo) {
-        System.out.println("Llegue aca");
+
+    System.out.println("Llegue aca");
+    System.out.println("Llegue aca");
+    System.out.println("Llegue aca");
+
         Posicion nuevaPosicion = unDibujo.getPosicionFinal();
-        System.out.println(nuevaPosicion.getValorHorizontal());
-        System.out.println( nuevaPosicion.getValorVertical());
+
+        /*
+        switch(){
+            case(){
+
+            }
+            case(){
+
+            }
+            case(){
+
+            }
+            case(){
+
+            }
+
+        }
+        */
+
+        System.out.println("Posicion Horizontal:" + nuevaPosicion.getValorHorizontal());
+        System.out.println("Posicion Vertical:" + nuevaPosicion.getValorVertical());
+        /*
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(7), actionEvent -> {
+            System.out.println("Ya terminó de actualizar");
+            this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(nuevaPosicion.getValorHorizontal(),
+                    nuevaPosicion.getValorVertical(),imagenPersonaje);
+        }));
+        timeline.play();
+        */
+
         this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(nuevaPosicion.getValorHorizontal(),
                 nuevaPosicion.getValorVertical(),imagenPersonaje);
-        actualizarPosicion(nuevaPosicion.getValorHorizontal(), nuevaPosicion.getValorVertical());
+
+        //actualizarPosicion(nuevaPosicion.getValorHorizontal(), nuevaPosicion.getValorVertical());
     }
 }
 

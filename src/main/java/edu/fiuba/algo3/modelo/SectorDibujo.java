@@ -1,5 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
+
 import java.util.ArrayList;
 
 public class SectorDibujo implements Observable{
@@ -23,10 +27,16 @@ public class SectorDibujo implements Observable{
 
     public void ejecutarMovimientosDelPersonaje(Personaje unPersonaje){
         System.out.println("Modelo : SectorDibujo EjecutarMov");
-        System.out.println("Modelo : Con una lista de");
-        System.out.println(this.listaDeDibujos.size());
+        System.out.println("Modelo : Con una lista de" + this.listaDeDibujos.size());
+
         for( Dibujo unDibujo : listaDeDibujos){
-            notifyObservers(unDibujo);
+
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), actionEvent -> {
+                notifyObservers(unDibujo);
+            }));
+            timeline.play();
+
+            //notifyObservers(unDibujo);
         }
     }
 }
