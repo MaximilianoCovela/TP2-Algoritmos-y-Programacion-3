@@ -34,7 +34,8 @@ public class App extends Application {
         PanelBloquesDisponibles panelBloquesDisponibles = new PanelBloquesDisponibles(vb);
 
         unTablero.mostrarSectorDibujo().addObserver(vistaPersonaje);
-
+        //vamos a agregar al SectorDibujoView como observador tambien, asi ahi implementamos lo de la logica
+        // de que el lapiz esté arriba u abajo. (pintar las casillas)
         PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados,
                 sectorDibujoView, unTablero, vistaPersonaje); // aca hay parámetros de más
 

@@ -22,6 +22,7 @@ public class PersonajeView implements Observer {
         this.posicionHorizontal = 4;
         this.posicionVertical = 4;
         this.imagenPersonaje = new ImageView(new Image("https://i.imgur.com/rcT26Fo.png"));
+        imagenPersonaje.toFront();
         this.sectorDibujo = sectorDibujoView;
         this.sectorDibujo.agregarImagenInicial(imagenPersonaje);
 
@@ -31,9 +32,13 @@ public class PersonajeView implements Observer {
 
         Posicion posicionInicial = new Posicion();
 
+        this.sectorDibujo.borrarCaminosRealizados(imagenPersonaje);
+
         this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(posicionInicial.getValorHorizontal(),
                 posicionInicial.getValorVertical(),imagenPersonaje);
 
+        this.posicionHorizontal = posicionInicial.getValorHorizontal();
+        this.posicionVertical = posicionInicial.getValorVertical();
     }
 
     public void actualizarImagen(Image unaImagen) {
@@ -91,9 +96,13 @@ public class PersonajeView implements Observer {
         System.out.println("Posicion Horizontal:" + nuevaPosicion.getValorHorizontal());
         System.out.println("Posicion Vertical:" + nuevaPosicion.getValorVertical());
 
+        this.sectorDibujo.marcarCelda(this.posicionHorizontal, this.posicionVertical,unDibujo); // esto lo puede hacer el update de sector dibujo y listo
+
         this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(nuevaPosicion.getValorHorizontal(),
                 nuevaPosicion.getValorVertical(),imagenPersonaje);
 
+        this.posicionHorizontal = nuevaPosicion.getValorHorizontal();
+        this.posicionVertical = nuevaPosicion.getValorVertical();
         //actualizarPosicion(nuevaPosicion.getValorHorizontal(), nuevaPosicion.getValorVertical());
     }
 }

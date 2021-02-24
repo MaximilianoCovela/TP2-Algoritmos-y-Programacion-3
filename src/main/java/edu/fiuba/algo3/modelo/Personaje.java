@@ -25,6 +25,7 @@ public class Personaje {
 
     public void reiniciarPosicion(){
         this.posicionActual = new Posicion(4,4);
+        this.modificarEstadoLapiz(new LapizArriba());
     }
 
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz){
