@@ -35,6 +35,7 @@ public class Tablero {
     }
 
     public void ejecutarSecuencia (){
+
         for (Bloque b: secuenciaAEjecutar) {
             b.aplicarMovimiento(this.unPersonaje);
         }
