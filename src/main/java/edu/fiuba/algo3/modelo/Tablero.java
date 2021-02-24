@@ -29,6 +29,9 @@ public class Tablero {
 
     public void reiniciarTablero (){
         this.secuenciaAEjecutar.clear();
+        this.unPersonaje.obtenerDibujos().clear();
+        this.unPersonaje.actualizarPosicion(new Posicion());
+        ejecutarSecuencia();
     }
 
     public void ejecutarSecuencia (){

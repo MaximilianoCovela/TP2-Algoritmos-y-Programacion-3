@@ -8,8 +8,7 @@ import javafx.scene.layout.Pane;
 public class PanelTablero extends Pane {
 
     public PanelTablero(PanelBloquesDisponibles panelBloquesDisponibles, PanelBloquesSeleccionados panelBloquesSeleccionados,
-                        SectorDibujoView sectorDibujoView, VboxBotonesSeleccionados vb2,
-                        PersonajeView vistaPersonaje, Tablero unTablero){
+                        SectorDibujoView sectorDibujoView, Tablero unTablero){
         this.setPrefHeight(604.0);
         this.setPrefWidth(946.0);
         this.setStyle("-fx-background-color: lightblue");
@@ -34,9 +33,9 @@ public class PanelTablero extends Pane {
 
         BotonGuardarAlgoritmo botonGuardarAlgoritmo = new BotonGuardarAlgoritmo();
 
-        BotonJugar botonPlay = new BotonJugar(vb2,vistaPersonaje, unTablero);
+        BotonJugar botonPlay = new BotonJugar(unTablero);
 
-        BotonReiniciar botonReiniciar = new BotonReiniciar();
+        BotonReiniciar botonReiniciar = new BotonReiniciar(unTablero);
 
         this.getChildren().add(botonGuardarAlgoritmo);
         this.getChildren().add(botonPlay);

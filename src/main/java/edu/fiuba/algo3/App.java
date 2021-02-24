@@ -32,9 +32,11 @@ public class App extends Application {
         VboxBotonesDisponibles vb = new VboxBotonesDisponibles(vb2, vistaPersonaje, unTablero);
 
         PanelBloquesDisponibles panelBloquesDisponibles = new PanelBloquesDisponibles(vb);
+
         unTablero.mostrarSectorDibujo().addObserver(vistaPersonaje);
+
         PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados,
-                sectorDibujoView, vb2, vistaPersonaje, unTablero);
+                sectorDibujoView, unTablero);
 
         PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles,
                 panelBloquesSeleccionados, sectorDibujoView);

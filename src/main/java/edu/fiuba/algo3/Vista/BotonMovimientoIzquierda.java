@@ -14,15 +14,16 @@ public class BotonMovimientoIzquierda extends Button implements Boton {
         this.setText("Izquierda");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.setOnAction(new HandlerBotonMovimientoIzquierda(vboxbotonesseleccionados, unaVistaPersonaje));
+        this.setOnAction(new HandlerBotonMovimientoIzquierda(vboxbotonesseleccionados, unaVistaPersonaje,
+                unTablero));
     }
 
-    public BotonMovimientoIzquierda(PersonajeView unaVistaPersonaje){
+    public BotonMovimientoIzquierda(PersonajeView unaVistaPersonaje, Tablero unTablero){
         super();
         this.setText("Izquierda");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.accion = new HandlerBotonMovimientoIzquierda( unaVistaPersonaje);
+        this.accion = new HandlerBotonMovimientoIzquierda( unaVistaPersonaje, unTablero);
         this.setOnAction(accion);
     }
 

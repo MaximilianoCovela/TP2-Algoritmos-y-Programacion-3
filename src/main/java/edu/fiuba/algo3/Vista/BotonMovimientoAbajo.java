@@ -2,8 +2,6 @@ package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoAbajo;
 import edu.fiuba.algo3.modelo.Tablero;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 
 public class BotonMovimientoAbajo extends Button implements Boton {

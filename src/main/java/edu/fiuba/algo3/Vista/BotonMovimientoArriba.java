@@ -8,12 +8,12 @@ import javafx.scene.control.Button;
 public class BotonMovimientoArriba extends Button implements Boton {
     private HandlerBotonMovimientoArriba accion;
 
-    public BotonMovimientoArriba(PersonajeView unaVistaPersonaje){
+    public BotonMovimientoArriba(PersonajeView unaVistaPersonaje, Tablero unTablero){
         super();
         this.setText("Arriba");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.accion = new HandlerBotonMovimientoArriba(unaVistaPersonaje);
+        this.accion = new HandlerBotonMovimientoArriba(unaVistaPersonaje, unTablero);
         this.setOnAction(accion);
     }
 
@@ -23,7 +23,8 @@ public class BotonMovimientoArriba extends Button implements Boton {
         this.setText("Arriba");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.setOnAction(new HandlerBotonMovimientoArriba(vboxbotonesseleccionados, unaVistaPersonaje));
+        this.setOnAction(new HandlerBotonMovimientoArriba(vboxbotonesseleccionados, unaVistaPersonaje,
+        unTablero));
     }
 
     public void ejecutarAccion(PersonajeView unaVistaPersonaje) {

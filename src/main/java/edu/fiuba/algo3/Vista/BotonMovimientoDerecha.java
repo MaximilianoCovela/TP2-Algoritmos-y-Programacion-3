@@ -7,12 +7,12 @@ import javafx.scene.control.Button;
 
 public class BotonMovimientoDerecha extends Button implements Boton {
     private HandlerBotonMovimientoDerecha accion;
-    public BotonMovimientoDerecha(PersonajeView unaVistaPersonaje){
+    public BotonMovimientoDerecha(PersonajeView unaVistaPersonaje, Tablero unTablero){
         super();
         this.setText("Derecha");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.accion = new HandlerBotonMovimientoDerecha( unaVistaPersonaje);
+        this.accion = new HandlerBotonMovimientoDerecha( unaVistaPersonaje, unTablero);
         this.setOnAction(accion);
     }
 
@@ -22,7 +22,8 @@ public class BotonMovimientoDerecha extends Button implements Boton {
         this.setText("Derecha");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.setOnAction(new HandlerBotonMovimientoDerecha(vboxbotonesseleccionados, unaVistaPersonaje));
+        this.setOnAction(new HandlerBotonMovimientoDerecha(vboxbotonesseleccionados, unaVistaPersonaje,
+                unTablero));
     }
 
     public void ejecutarAccion(PersonajeView unaVistaPersonaje) {
