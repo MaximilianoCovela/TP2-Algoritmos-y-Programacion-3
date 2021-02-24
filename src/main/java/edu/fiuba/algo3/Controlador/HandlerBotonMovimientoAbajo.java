@@ -17,39 +17,28 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
     private final PersonajeView vistaPersonaje;
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
     private Tablero unTablero;
+    private BotonMovimientoAbajo unBotonAbajo;
 
     public HandlerBotonMovimientoAbajo(VboxBotonesSeleccionados vbox, PersonajeView unaVistaPersonaje,
-                                       Tablero unTablero){
+                                       Tablero unTablero, BotonMovimientoAbajo botonAbajo){
         this.vboxbotonesseleccionados = vbox;
         this.vistaPersonaje = unaVistaPersonaje;
         this.unTablero = unTablero;
+        this.unBotonAbajo = botonAbajo;
     }
 
-    public HandlerBotonMovimientoAbajo(PersonajeView unaVistaPersonaje, Tablero unTablero){
-        this.vboxbotonesseleccionados = null;
-        this.unTablero = unTablero;
-        this.vistaPersonaje = unaVistaPersonaje;
-    }
-
-    public void mover(){
-        vistaPersonaje.actualizarPosicion(0,1);
-        vistaPersonaje.actualizarImagen(new Image("https://i.imgur.com/rcT26Fo.png"));
-
-    }
 
     public void handle(ActionEvent event) {
-        if(this.vboxbotonesseleccionados != null){
-            this.vboxbotonesseleccionados.getChildren().add(new BotonMovimientoAbajo(this.vistaPersonaje,
-                    this.unTablero));
+        if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonAbajo)){
+            BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(this.vboxbotonesseleccionados,
+                    this.vistaPersonaje, this.unTablero);
+            this.vboxbotonesseleccionados.getChildren().add(botonAbajo);
+            System.out.println("handle btn Abajo");
+            MovimientoAbajo movAbajo = new MovimientoAbajo();
+            Bloque unBloque = new Bloque(movAbajo);
+            this.unTablero.agregarBloque(unBloque);
         }else{
-            // aca hacemos lo de moverse, hardcodeado
-            //vistaPersonaje.actualizarPosicion(0,1);
-            //vistaPersonaje.actualizarImagen(new Image("https://i.imgur.com/rcT26Fo.png"));
+            this.vboxbotonesseleccionados.getChildren().remove(this.unBotonAbajo);
         }
-        System.out.println("handle btn Abajo");
-        MovimientoAbajo movAbajo = new MovimientoAbajo();
-        Bloque unBloque = new Bloque(movAbajo);
-        this.unTablero.agregarBloque(unBloque);
-
     }
 }

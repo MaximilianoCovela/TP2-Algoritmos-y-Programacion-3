@@ -18,36 +18,30 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
     private final PersonajeView vistaPersonaje;
     private Tablero unTablero;
+    private BotonMovimientoArriba unBotonArriba;
 
     public HandlerBotonMovimientoArriba(VboxBotonesSeleccionados vbox, PersonajeView unaVistaPersonaje,
-                                        Tablero unTablero){
+                                        Tablero unTablero, BotonMovimientoArriba botonArriba){
         this.vboxbotonesseleccionados = vbox;
         this.vistaPersonaje = unaVistaPersonaje;
         this.unTablero = unTablero;
+        this.unBotonArriba = botonArriba;
     }
-    public void mover(){
-        vistaPersonaje.actualizarPosicion(0,-1);
-        vistaPersonaje.actualizarImagen(new Image("https://imgur.com/N3gBRlL.png"));
 
-    }
-    public HandlerBotonMovimientoArriba(PersonajeView unaVistaPersonaje, Tablero unTablero){
-        this.vboxbotonesseleccionados = null;
-        this.vistaPersonaje = unaVistaPersonaje;
-        this.unTablero = unTablero;
-    }
+
 
 
     public void handle(ActionEvent event) {
 
-        if(this.vboxbotonesseleccionados != null){
-            this.vboxbotonesseleccionados.getChildren().add(new BotonMovimientoArriba(this.vistaPersonaje,
-                    this.unTablero));
+        if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonArriba)){
+            BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(this.vboxbotonesseleccionados,
+                    this.vistaPersonaje, this.unTablero);
+            this.vboxbotonesseleccionados.getChildren().add(botonArriba);
+            MovimientoArriba movArriba = new MovimientoArriba();
+            Bloque unBloque = new Bloque(movArriba);
+            this.unTablero.agregarBloque(unBloque);
         }else{
-            vistaPersonaje.actualizarPosicion(0,-1);
-            vistaPersonaje.actualizarImagen(new Image("https://imgur.com/N3gBRlL.png"));
+            this.vboxbotonesseleccionados.getChildren().remove(this.unBotonArriba);
         }
-        MovimientoArriba movArriba = new MovimientoArriba();
-        Bloque unBloque = new Bloque(movArriba);
-        this.unTablero.agregarBloque(unBloque);
     }
 }

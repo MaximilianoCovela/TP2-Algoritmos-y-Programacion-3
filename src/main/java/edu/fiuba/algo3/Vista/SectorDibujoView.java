@@ -35,7 +35,6 @@ public class SectorDibujoView extends GridPane implements Observer {
 
     public void actualizarVistaPersonajeEnSectorDibujo(int posicionHorizontal, int posicionVertical, ImageView imagenPersonaje) {
 
-        //this.add(imagenPersonaje, posicionHorizontal, posicionVertical); // hay que ver que la horizontal sea la que va primero
         this.setRowIndex(imagenPersonaje, posicionVertical);
         this.setColumnIndex(imagenPersonaje, posicionHorizontal);
     }

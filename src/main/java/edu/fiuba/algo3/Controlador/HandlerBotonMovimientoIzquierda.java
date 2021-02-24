@@ -16,38 +16,28 @@ public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
     private final PersonajeView vistaPersonaje;
     private Tablero unTablero;
+    private BotonMovimientoIzquierda unBotonIzquierda;
 
     public HandlerBotonMovimientoIzquierda(VboxBotonesSeleccionados vbox, PersonajeView unaVistaPersonaje,
-                                           Tablero unTablero){
+                                           Tablero unTablero, BotonMovimientoIzquierda botonIzquierda){
         this.vboxbotonesseleccionados = vbox;
         this.vistaPersonaje = unaVistaPersonaje;
         this.unTablero = unTablero;
+        this.unBotonIzquierda = botonIzquierda;
     }
 
-    public HandlerBotonMovimientoIzquierda(PersonajeView unaVistaPersonaje, Tablero unTablero){
-        this.vboxbotonesseleccionados = null;
-        this.vistaPersonaje = unaVistaPersonaje;
-        this.unTablero = unTablero;
-    }
-
-    public void mover(){
-        vistaPersonaje.actualizarPosicion(-1,0);
-        vistaPersonaje.actualizarImagen(new Image("https://imgur.com/npbSGMe.png"));
-
-    }
 
 
     public void handle(ActionEvent event) {
-        if(this.vboxbotonesseleccionados != null){
-            BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(this.vistaPersonaje,
-                    this.unTablero);
+        if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonIzquierda)){
+            BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(this.vboxbotonesseleccionados,
+                    this.vistaPersonaje, this.unTablero);
             this.vboxbotonesseleccionados.getChildren().add(botonIzquierda);
+            MovimientoIzquierda movIzquierda = new MovimientoIzquierda();
+            Bloque unBloque = new Bloque(movIzquierda);
+            this.unTablero.agregarBloque(unBloque);
         }else{
-            vistaPersonaje.actualizarPosicion(-1,0);
-            vistaPersonaje.actualizarImagen(new Image("https://imgur.com/npbSGMe.png"));
+            this.vboxbotonesseleccionados.getChildren().remove(this.unBotonIzquierda);
         }
-        MovimientoIzquierda movIzquierda = new MovimientoIzquierda();
-        Bloque unBloque = new Bloque(movIzquierda);
-        this.unTablero.agregarBloque(unBloque);
     }
 }
