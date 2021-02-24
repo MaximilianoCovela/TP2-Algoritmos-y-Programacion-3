@@ -43,7 +43,7 @@ public class VboxBotonesDisponibles extends VBox{
                 new BotonMovimientoLapizAbajo(vboxbotonesseleccionados, vistaPersonaje, unTablero);
 
         BotonMovimientoLapizArriba botonLapizArriba =
-                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero);
+                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, vistaPersonaje, unTablero);
 
         this.getChildren().addAll(botonArriba, botonAbajo, botonDerecha, botonIzquierda, botonRepetir2Veces, botonRepetir3Veces,
                 botonInvertir, botonPersonalizado, botonLapizAbajo, botonLapizArriba);
