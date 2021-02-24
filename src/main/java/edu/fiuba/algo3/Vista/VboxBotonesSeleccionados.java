@@ -14,4 +14,10 @@ public class VboxBotonesSeleccionados extends VBox {
         this.setPrefWidth(172);
         this.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
     }
+
+    public void vaciarBotonesSeleccionados(){
+
+        this.getChildren().clear();
+
+    }
 }

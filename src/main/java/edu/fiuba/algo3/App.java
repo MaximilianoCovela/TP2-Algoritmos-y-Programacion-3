@@ -36,7 +36,7 @@ public class App extends Application {
         unTablero.mostrarSectorDibujo().addObserver(vistaPersonaje);
 
         PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados,
-                sectorDibujoView, unTablero);
+                sectorDibujoView, unTablero, vistaPersonaje); // aca hay parámetros de más
 
         PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles,
                 panelBloquesSeleccionados, sectorDibujoView);

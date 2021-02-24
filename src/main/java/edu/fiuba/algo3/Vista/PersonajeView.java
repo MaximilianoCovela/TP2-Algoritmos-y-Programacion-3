@@ -24,6 +24,16 @@ public class PersonajeView implements Observer {
         this.imagenPersonaje = new ImageView(new Image("https://i.imgur.com/rcT26Fo.png"));
         this.sectorDibujo = sectorDibujoView;
         this.sectorDibujo.agregarImagenInicial(imagenPersonaje);
+
+    }
+
+    public void reiniciarVistaPersonaje(){
+
+        Posicion posicionInicial = new Posicion();
+
+        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(posicionInicial.getValorHorizontal(),
+                posicionInicial.getValorVertical(),imagenPersonaje);
+
     }
 
     public void actualizarImagen(Image unaImagen) {

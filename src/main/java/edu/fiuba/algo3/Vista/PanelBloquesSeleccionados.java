@@ -5,11 +5,19 @@ import javafx.scene.layout.VBox;
 
 public class PanelBloquesSeleccionados extends ScrollPane {
 
-    public PanelBloquesSeleccionados(VBox bloquesSeleccionados){
+    VboxBotonesSeleccionados bloquesSeleccionados;
+
+    public PanelBloquesSeleccionados(VboxBotonesSeleccionados bloquesSeleccionados){
         this.setLayoutX(738.0);
         this.setLayoutY(48.0);
         this.setMaxSize(172, 438);
         this.setContent(bloquesSeleccionados);
+        this.bloquesSeleccionados = bloquesSeleccionados;
+    }
+
+    public VboxBotonesSeleccionados obtenerVBoxBotones(){
+
+        return this.bloquesSeleccionados;
 
     }
 

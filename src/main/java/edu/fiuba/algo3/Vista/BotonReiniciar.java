@@ -6,11 +6,11 @@ import javafx.scene.control.Button;
 
 public class BotonReiniciar extends Button {
 
-    public BotonReiniciar(Tablero unTablero){
+    public BotonReiniciar(Tablero unTablero, VboxBotonesSeleccionados vboxBotones,PersonajeView vistaPersonaje){
         this.setText("Reiniciar");
         this.setLayoutX(302.0);
         this.setLayoutY(555.0);
-        this.setOnAction(new HandlerBotonReiniciar(unTablero));
+        this.setOnAction(new HandlerBotonReiniciar(unTablero, vboxBotones,vistaPersonaje));
 
 
     }
