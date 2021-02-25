@@ -43,7 +43,7 @@ public class SectorDibujoView extends GridPane implements Observer {
 
             System.out.println(posicionHorizontal);
             System.out.println(posicionVertical);
-            System.out.println("entró a este if");// eseperemos que sea el orden correcto
+            System.out.println("entró a este if");
         }
 
     }
@@ -72,8 +72,8 @@ public class SectorDibujoView extends GridPane implements Observer {
 
     public void actualizarVistaPersonajeEnSectorDibujo(int posicionHorizontal, int posicionVertical, ImageView imagenPersonaje) {
         
-        this.setRowIndex(imagenPersonaje, posicionVertical);
-        this.setColumnIndex(imagenPersonaje, posicionHorizontal);
+        setRowIndex(imagenPersonaje, posicionVertical);
+        setColumnIndex(imagenPersonaje, posicionHorizontal);
 
     }
     public void update(Dibujo unDibujo){

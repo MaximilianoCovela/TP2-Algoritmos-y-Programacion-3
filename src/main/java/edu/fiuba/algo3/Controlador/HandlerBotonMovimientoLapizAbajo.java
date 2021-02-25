@@ -14,16 +14,6 @@ public class HandlerBotonMovimientoLapizAbajo implements EventHandler<ActionEven
     private Tablero unTablero;
     private BotonMovimientoLapizAbajo unBotonLapizAbajo;
 
-    /*
-    public HandlerBotonMovimientoLapizAbajo(VboxBotonesSeleccionados vbox){
-        this.vboxbotonesseleccionados = vbox;
-    }
-
-    public HandlerBotonMovimientoLapizAbajo(){
-        this.vboxbotonesseleccionados = null;
-    }
-    */
-
     public HandlerBotonMovimientoLapizAbajo(VboxBotonesSeleccionados vbox, PersonajeView unaVistaPersonaje,
                                         Tablero unTablero, BotonMovimientoLapizAbajo botonLapizAbajo){
         this.vboxbotonesseleccionados = vbox;

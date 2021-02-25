@@ -29,19 +29,17 @@ public class Posicion {
 
     public Posicion actualizarPosicion(Posicion unaPosicionNueva){
 
-
         int posicionActH = valorHorizontal + unaPosicionNueva.getValorHorizontal();
         int posicionActV = valorVertical + unaPosicionNueva.getValorVertical();
 
         if ((posicionActH >= 0 && posicionActH < 9) &&
                (posicionActV < 9 && posicionActV >= 0)){
+
             valorHorizontal = valorHorizontal + unaPosicionNueva.getValorHorizontal();
             valorVertical = valorVertical + unaPosicionNueva.getValorVertical();
-            Posicion posicionActualizada = new Posicion(valorHorizontal,valorVertical);
-            return posicionActualizada;
+
+            return new Posicion(valorHorizontal,valorVertical);
         }
-
-
 
         return this;
     }

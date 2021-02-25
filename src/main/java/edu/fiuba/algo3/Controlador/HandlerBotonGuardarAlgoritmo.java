@@ -21,7 +21,7 @@ public class HandlerBotonGuardarAlgoritmo implements EventHandler<ActionEvent>{
         /*
         Si selecciona Aceptar sin haber ingresado un nombre lanza alerta.
         */
-        if (!texto.isEmpty() && texto.get().isEmpty()) {
+        if (texto.isPresent() && texto.get().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -32,10 +32,10 @@ public class HandlerBotonGuardarAlgoritmo implements EventHandler<ActionEvent>{
         /*
         Si pone un nombre y selecciona aceptar se guarda el algoritmo en un bloque personalizado.
         */
-        else if (!texto.isEmpty()) {
-            // Acá se llamaría a guardarAlgoritmo() de MovimientoPersonalizado pasándole el nombre que ingresó.
+        else if (texto.isPresent()) {
+
             MovimientoPersonalizado unMovimientoPersonalizado = new MovimientoPersonalizado();
-            unMovimientoPersonalizado.guardarAlgoritmo(new Tablero(), texto.get()); // ¿Cómo pasamos el tablero?
+            unMovimientoPersonalizado.guardarAlgoritmo(new Tablero(), texto.get());
         }
     }
 }

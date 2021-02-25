@@ -27,7 +27,6 @@ public class PanelJuego extends Pane{
         this.getChildren().add(this.SectorDibujo );
 
 
-
     }
 
 }

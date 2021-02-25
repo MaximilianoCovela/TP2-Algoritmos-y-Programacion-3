@@ -45,27 +45,6 @@ public class PersonajeView implements Observer {
         imagenPersonaje.setImage(unaImagen);
     }
 
-    public void actualizarPosicion(int posicionHorizontalNueva, int posicionVerticalNueva) {
-        // ahora hacemos la suma, despues cuando le pasemos la posicion nueva posta del personaje, simplemente
-        // le asignamos la posicion que viene por parametro en x en la posicion de personaje en x y con y
-        // lo mismo.
-
-        //int posicionActH = this.posicionHorizontal; + posicionHorizontalNueva;
-        //int posicionActV = this.posicionVertical; + posicionVerticalNueva;
-
-        //if ((posicionActH >= 0 && posicionActH < 9) &&
-         //       (posicionActV < 9 && posicionActV >= 0)) {
-
-         //   this.posicionHorizontal = posicionActH;
-         //   this.posicionVertical = posicionActV;
-
-            // crear imagen nueva con ifs seguro si ynueva < yvieja.. bla
-        //}
-
-       // this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(posicionHorizontalNueva,
-   // posicionVerticalNueva, imagenPersonaje);
-    }
-
     @Override
     public void update(Dibujo unDibujo) {
 
@@ -103,7 +82,6 @@ public class PersonajeView implements Observer {
 
         this.posicionHorizontal = nuevaPosicion.getValorHorizontal();
         this.posicionVertical = nuevaPosicion.getValorVertical();
-        //actualizarPosicion(nuevaPosicion.getValorHorizontal(), nuevaPosicion.getValorVertical());
     }
 }
 

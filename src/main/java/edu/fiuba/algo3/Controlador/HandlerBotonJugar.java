@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.Controlador;
 
-import edu.fiuba.algo3.Vista.PersonajeView;
-import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

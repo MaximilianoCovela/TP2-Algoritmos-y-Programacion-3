@@ -31,7 +31,6 @@ public class HandlerBotonMovimientoLapizArriba implements EventHandler<ActionEve
             BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba(this.vboxbotonesseleccionados,
                     this.vistaPersonaje, this.unTablero);
             this.vboxbotonesseleccionados.getChildren().add(botonLapizArriba);
-            System.out.println("handle btn lapiz arriba");
 
             MovimientoLapizArriba movimientoLapizArriba = new MovimientoLapizArriba();
             Bloque unBloque = new Bloque(movimientoLapizArriba);

@@ -27,7 +27,6 @@ public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent
     }
 
 
-
     public void handle(ActionEvent event) {
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonIzquierda)){
             BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(this.vboxbotonesseleccionados,

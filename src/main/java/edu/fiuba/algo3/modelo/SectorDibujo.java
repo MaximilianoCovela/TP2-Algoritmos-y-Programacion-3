@@ -17,7 +17,6 @@ public class SectorDibujo implements Observable{
     public void addObserver(Observer observador) { this.observers.add(observador); }
 
     public void notifyObservers(Dibujo unDibujo){
-        System.out.println("Observalbe : Notificacion");
         this.observers.forEach(observer -> observer.update(unDibujo));
     }
 
@@ -31,9 +30,7 @@ public class SectorDibujo implements Observable{
         int i = 1;
 
         for( Dibujo unDibujo : listaDeDibujos){
-            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(i), actionEvent -> {
-                notifyObservers(unDibujo);
-            }));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(i), actionEvent -> notifyObservers(unDibujo)));
             timeline.play();
             i++;
         }

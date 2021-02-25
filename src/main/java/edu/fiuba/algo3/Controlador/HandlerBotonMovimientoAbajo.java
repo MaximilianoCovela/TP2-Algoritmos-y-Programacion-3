@@ -30,13 +30,15 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
     public void handle(ActionEvent event) {
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonAbajo)){
+
             BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(this.vboxbotonesseleccionados,
                     this.vistaPersonaje, this.unTablero);
+
             this.vboxbotonesseleccionados.getChildren().add(botonAbajo);
-            System.out.println("handle btn Abajo");
             MovimientoAbajo movAbajo = new MovimientoAbajo();
             Bloque unBloque = new Bloque(movAbajo);
             this.unTablero.agregarBloque(unBloque);
+
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonAbajo);
         }

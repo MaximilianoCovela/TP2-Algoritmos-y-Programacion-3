@@ -20,7 +20,6 @@ public class HandlerBotonReiniciar implements EventHandler<ActionEvent>{
     }
 
     public void handle(ActionEvent event) {
-        //System.out.println("Reiniciar");
         vboxBotones.vaciarBotonesSeleccionados();
         unTablero.reiniciarTablero();
         vistaPersonaje.reiniciarVistaPersonaje();
