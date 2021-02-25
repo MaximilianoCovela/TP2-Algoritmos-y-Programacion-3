@@ -48,10 +48,6 @@ public class PersonajeView implements Observer {
     @Override
     public void update(Dibujo unDibujo) {
 
-    System.out.println("Llegue aca");
-    System.out.println("Llegue aca");
-    System.out.println("Llegue aca");
-
         Posicion nuevaPosicion = unDibujo.getPosicionFinal();
 
         /*
@@ -75,7 +71,7 @@ public class PersonajeView implements Observer {
         System.out.println("Posicion Horizontal:" + nuevaPosicion.getValorHorizontal());
         System.out.println("Posicion Vertical:" + nuevaPosicion.getValorVertical());
 
-        this.sectorDibujo.marcarCelda(this.posicionHorizontal, this.posicionVertical,unDibujo); // esto lo puede hacer el update de sector dibujo y listo
+        this.sectorDibujo.marcarCelda(this.posicionHorizontal, this.posicionVertical,unDibujo);
 
         this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(nuevaPosicion.getValorHorizontal(),
                 nuevaPosicion.getValorVertical(),imagenPersonaje);
