@@ -28,16 +28,33 @@ public class VboxBotonesDisponibles extends VBox{
                 new BotonMovimientoIzquierda(vboxbotonesseleccionados, unTablero,index);
 
         BotonMovimientoRepetir2Veces botonRepetir2Veces =
-                new BotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero);
+                new BotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero,index);
 
         BotonMovimientoRepetir3Veces botonRepetir3Veces =
                 new BotonMovimientoRepetir3Veces(vboxbotonesseleccionados, unTablero);
+        /*
+        BotonMovimientoLapizArriba botonLapizArriba =
+                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero,index);
+                Cerrar repetir
+         */
 
         BotonMovimientoInvertir botonInvertir =
                 new BotonMovimientoInvertir(vboxbotonesseleccionados, unTablero);
 
+        /*
+        BotonMovimientoLapizArriba botonLapizArriba =
+                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero,index);
+                Cerrar Invertir
+         */
+
         BotonMovimientoPersonalizado botonPersonalizado =
                 new BotonMovimientoPersonalizado(vboxbotonesseleccionados, unTablero);
+
+        /*
+        BotonMovimientoLapizArriba botonLapizArriba =
+                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero,index);
+                Cerrar Personalizado
+         */
 
         BotonMovimientoLapizAbajo botonLapizAbajo =
                 new BotonMovimientoLapizAbajo(vboxbotonesseleccionados, unTablero,index);
