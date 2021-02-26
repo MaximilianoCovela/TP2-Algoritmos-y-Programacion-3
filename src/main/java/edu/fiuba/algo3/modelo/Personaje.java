@@ -9,7 +9,7 @@ public class Personaje {
     private ArrayList<Dibujo> listaDeDibujos = new ArrayList<>();
 
     public Personaje(){
-        this.posicionActual = new Posicion(5, 5);
+        this.posicionActual = new Posicion(4, 4);
     }
 
     public Personaje(Posicion unaPosicion){
@@ -21,6 +21,11 @@ public class Personaje {
         posicionActual = posicionActual.actualizarPosicion(unaPosicion);
         Dibujo unDibujo = this.lapiz.dibujarCamino(antiguaPosicion, posicionActual);
         this.listaDeDibujos.add(unDibujo);
+    }
+
+    public void reiniciarPosicion(){
+        this.posicionActual = new Posicion(4,4);
+        this.modificarEstadoLapiz(new LapizArriba());
     }
 
     public void modificarEstadoLapiz(EstadoLapiz unEstadoLapiz){

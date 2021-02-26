@@ -1,47 +1,85 @@
 package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.Tablero;
+import edu.fiuba.algo3.modelo.Observer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import edu.fiuba.algo3.modelo.Dibujo;
+import edu.fiuba.algo3.modelo.Posicion;
+import javafx.util.Duration;
 
-public class PersonajeView {
+public class PersonajeView implements Observer {
 
     private int posicionHorizontal;
     private int posicionVertical;
     private ImageView imagenPersonaje;
-    private PanelSectorDibujo sectorDibujo;
+    private SectorDibujoView sectorDibujo;
 
 
-    public PersonajeView(PanelSectorDibujo panelSectorDibujo) {
+    public PersonajeView(SectorDibujoView sectorDibujoView) {
 
         this.posicionHorizontal = 4;
         this.posicionVertical = 4;
         this.imagenPersonaje = new ImageView(new Image("https://i.imgur.com/rcT26Fo.png"));
-        this.sectorDibujo = panelSectorDibujo;
+        imagenPersonaje.toFront();
+        this.sectorDibujo = sectorDibujoView;
         this.sectorDibujo.agregarImagenInicial(imagenPersonaje);
+
     }
 
-    public void actualizarImagen(Image unaImagen){
+    public void reiniciarVistaPersonaje(){
+
+        Posicion posicionInicial = new Posicion();
+
+        this.sectorDibujo.borrarCaminosRealizados(imagenPersonaje);
+
+        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(posicionInicial.getValorHorizontal(),
+                posicionInicial.getValorVertical(),imagenPersonaje);
+
+        this.posicionHorizontal = posicionInicial.getValorHorizontal();
+        this.posicionVertical = posicionInicial.getValorVertical();
+    }
+
+    public void actualizarImagen(Image unaImagen) {
         imagenPersonaje.setImage(unaImagen);
     }
 
-    public void actualizarPosicion(int posicionHorizontalNueva, int posicionVerticalNueva){
-        // ahora hacemos la suma, despues cuando le pasemos la posicion nueva posta del personaje, simplemente
-        // le asignamos la posicion que viene por parametro en x en la posicion de personaje en x y con y
-        // lo mismo.
+    @Override
+    public void update(Dibujo unDibujo) {
 
-        int posicionActualizadaHorizontal = this.posicionHorizontal + posicionHorizontalNueva;
-        int posicionActualizadaVertical = this.posicionVertical + posicionVerticalNueva;
+        Posicion nuevaPosicion = unDibujo.getPosicionFinal();
 
-        if ((posicionActualizadaHorizontal >= 0 && posicionActualizadaHorizontal < 9) &&
-                (posicionActualizadaVertical < 9 && posicionActualizadaVertical >= 0)){
+        /*
+        switch(){
+            case(){
 
-            this.posicionHorizontal = posicionActualizadaHorizontal;
-            this.posicionVertical = posicionActualizadaVertical;
+            }
+            case(){
 
-        // crear imagen nueva con ifs seguro si ynueva < yvieja.. bla
+            }
+            case(){
+
+            }
+            case(){
+
+            }
+
         }
-        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(this.posicionHorizontal, this.posicionVertical, imagenPersonaje);        }
+        */
 
+        System.out.println("Posicion Horizontal:" + nuevaPosicion.getValorHorizontal());
+        System.out.println("Posicion Vertical:" + nuevaPosicion.getValorVertical());
+
+        this.sectorDibujo.marcarCelda(this.posicionHorizontal, this.posicionVertical,unDibujo);
+
+        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(nuevaPosicion.getValorHorizontal(),
+                nuevaPosicion.getValorVertical(),imagenPersonaje);
+
+        this.posicionHorizontal = nuevaPosicion.getValorHorizontal();
+        this.posicionVertical = nuevaPosicion.getValorVertical();
+        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(this.posicionHorizontal,this.posicionVertical,this.imagenPersonaje);
+
+    }
 }
+

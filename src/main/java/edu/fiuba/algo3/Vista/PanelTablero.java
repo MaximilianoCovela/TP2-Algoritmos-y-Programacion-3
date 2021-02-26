@@ -1,12 +1,14 @@
 package edu.fiuba.algo3.Vista;
 
+import edu.fiuba.algo3.modelo.Tablero;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.layout.Pane;
 
 public class PanelTablero extends Pane {
 
-    public PanelTablero(PanelBloquesDisponibles panelBloquesDisponibles, PanelBloquesSeleccionados panelBloquesSeleccionados, PanelSectorDibujo panelSectorDibujo){
+    public PanelTablero(PanelBloquesDisponibles panelBloquesDisponibles, PanelBloquesSeleccionados panelBloquesSeleccionados,
+                        SectorDibujoView sectorDibujoView, Tablero unTablero, PersonajeView vistaPersonaje){
         this.setPrefHeight(604.0);
         this.setPrefWidth(946.0);
         this.setStyle("-fx-background-color: lightblue");
@@ -31,15 +33,16 @@ public class PanelTablero extends Pane {
 
         BotonGuardarAlgoritmo botonGuardarAlgoritmo = new BotonGuardarAlgoritmo();
 
-        BotonJugar botonPlay = new BotonJugar();
+        BotonJugar botonPlay = new BotonJugar(unTablero, vistaPersonaje);
 
-        BotonReiniciar botonReiniciar = new BotonReiniciar();
+        BotonReiniciar botonReiniciar = new BotonReiniciar(unTablero, panelBloquesSeleccionados.obtenerVBoxBotones(),
+                vistaPersonaje);
 
         this.getChildren().add(botonGuardarAlgoritmo);
         this.getChildren().add(botonPlay);
         this.getChildren().add(botonReiniciar);
 
-        this.getChildren().add(panelSectorDibujo);
+        this.getChildren().add(sectorDibujoView);
         this.getChildren().add(panelBloquesDisponibles);
         this.getChildren().add(panelBloquesSeleccionados);
     }

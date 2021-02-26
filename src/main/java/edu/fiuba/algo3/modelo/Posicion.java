@@ -6,8 +6,8 @@ public class Posicion {
     private int valorVertical;
 
     public Posicion(){
-        this.valorHorizontal = 5;
-        this.valorVertical = 5;
+        this.valorHorizontal = 4;
+        this.valorVertical = 4;
     }
 
     public Posicion(int posicionHorizontal, int posicionVertical){
@@ -28,10 +28,20 @@ public class Posicion {
     }
 
     public Posicion actualizarPosicion(Posicion unaPosicionNueva){
-        valorHorizontal = valorHorizontal + unaPosicionNueva.getValorHorizontal();
-        valorVertical = valorVertical + unaPosicionNueva.getValorVertical();
-        Posicion posicionActualizada = new Posicion(valorHorizontal,valorVertical);
-        return posicionActualizada;
+
+        int posicionActH = valorHorizontal + unaPosicionNueva.getValorHorizontal();
+        int posicionActV = valorVertical + unaPosicionNueva.getValorVertical();
+
+        if ((posicionActH >= 0 && posicionActH < 9) &&
+               (posicionActV < 9 && posicionActV >= 0)){
+
+            valorHorizontal = valorHorizontal + unaPosicionNueva.getValorHorizontal();
+            valorVertical = valorVertical + unaPosicionNueva.getValorVertical();
+
+            return new Posicion(valorHorizontal,valorVertical);
+        }
+
+        return this;
     }
 
 }

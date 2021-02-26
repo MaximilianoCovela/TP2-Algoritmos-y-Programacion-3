@@ -27,15 +27,28 @@ public class Tablero {
         this.secuenciaAEjecutar.remove(unBloque);
     }
 
+    public void eliminarBloques(int index){
+        for(int i=index; i < this.secuenciaAEjecutar.size();){
+            this.secuenciaAEjecutar.remove(i);
+            if (this.unPersonaje.obtenerDibujos().size() != 0) {this.unPersonaje.obtenerDibujos().remove(i);}
+        }
+    }
+
     public void reiniciarTablero (){
         this.secuenciaAEjecutar.clear();
+        this.unPersonaje.obtenerDibujos().clear();
+        this.unPersonaje.reiniciarPosicion();
+        ejecutarSecuencia();
     }
 
     public void ejecutarSecuencia (){
-        for (Bloque b: secuenciaAEjecutar){
+        this.unPersonaje.reiniciarPosicion();
+        for (Bloque b: secuenciaAEjecutar) {
             b.aplicarMovimiento(this.unPersonaje);
         }
         this.sectorDibujo.actualizarDibujos(this.unPersonaje.obtenerDibujos());
+        this.sectorDibujo.ejecutarMovimientosDelPersonaje(unPersonaje);
+        this.unPersonaje.obtenerDibujos().clear();
     }
 
     public Personaje getPersonaje(){

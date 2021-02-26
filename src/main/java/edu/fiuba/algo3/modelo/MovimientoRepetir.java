@@ -9,7 +9,7 @@ public class MovimientoRepetir implements Movimiento{
 
     private ArrayList<Movimiento> listaDeMovimientos = new ArrayList<>();
 
-    MovimientoRepetir(int unaCantidad){
+    public MovimientoRepetir(int unaCantidad){
         this.cantidad = unaCantidad;
     }
 

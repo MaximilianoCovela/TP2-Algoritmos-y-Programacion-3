@@ -1,14 +1,16 @@
 package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.Vista.*;
+import edu.fiuba.algo3.modelo.Tablero;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
-    private TableroView tableroView;
+    private SectorDibujoView sectorDibujoView;
     private PersonajeView personajeView;
+    private Tablero unTablero = new Tablero();
 
     public static void main(String[] args) {
         launch(args);
@@ -19,21 +21,25 @@ public class App extends Application {
 
         stage.setTitle("AlgoBlocks");
 
-        PanelSectorDibujo panelSectorDibujo = new PanelSectorDibujo();
+        SectorDibujoView sectorDibujoView = new SectorDibujoView();
 
-        PersonajeView vistaPersonaje = new PersonajeView(panelSectorDibujo);
+        PersonajeView vistaPersonaje = new PersonajeView(sectorDibujoView);
 
         VboxBotonesSeleccionados vb2 = new VboxBotonesSeleccionados();
 
         PanelBloquesSeleccionados panelBloquesSeleccionados = new PanelBloquesSeleccionados(vb2);
 
-        VboxBotonesDisponibles vb = new VboxBotonesDisponibles(vb2, vistaPersonaje);
+        VboxBotonesDisponibles vb = new VboxBotonesDisponibles(vb2, vistaPersonaje, unTablero);
 
         PanelBloquesDisponibles panelBloquesDisponibles = new PanelBloquesDisponibles(vb);
 
-        PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados, panelSectorDibujo);
+        unTablero.mostrarSectorDibujo().addObserver(vistaPersonaje);
 
-        PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles, panelBloquesSeleccionados, panelSectorDibujo);
+        PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados,
+                sectorDibujoView, unTablero, vistaPersonaje);
+
+        PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles,
+                panelBloquesSeleccionados, sectorDibujoView);
 
         Scene scene = new Scene(panelJuego);
 

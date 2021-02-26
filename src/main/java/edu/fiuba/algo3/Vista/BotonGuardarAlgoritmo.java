@@ -11,6 +11,7 @@ public class BotonGuardarAlgoritmo extends Button {
         this.setLayoutX(766);
         this.setLayoutY(555.0);
         this.setOnAction(new HandlerBotonGuardarAlgoritmo());
+
     }
 
 }

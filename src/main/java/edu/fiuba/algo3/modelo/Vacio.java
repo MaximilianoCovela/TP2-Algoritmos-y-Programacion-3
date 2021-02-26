@@ -12,6 +12,10 @@ public class Vacio implements Dibujo{
         return false;
     }
 
+    public Posicion getPosicionFinal(){
+        return this.nuevaPosicion;
+    }
+
     public boolean posicionVacioEsIgualA(Posicion unaPosicion){
         return (nuevaPosicion.esIgualA(unaPosicion));
     }
