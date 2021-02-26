@@ -78,6 +78,8 @@ public class PersonajeView implements Observer {
 
         this.posicionHorizontal = nuevaPosicion.getValorHorizontal();
         this.posicionVertical = nuevaPosicion.getValorVertical();
+        this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(this.posicionHorizontal,this.posicionVertical,this.imagenPersonaje);
+
     }
 }
 
