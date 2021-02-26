@@ -33,7 +33,7 @@ public class PanelTablero extends Pane {
 
         BotonGuardarAlgoritmo botonGuardarAlgoritmo = new BotonGuardarAlgoritmo();
 
-        BotonJugar botonPlay = new BotonJugar(unTablero);
+        BotonJugar botonPlay = new BotonJugar(unTablero, vistaPersonaje);
 
         BotonReiniciar botonReiniciar = new BotonReiniciar(unTablero, panelBloquesSeleccionados.obtenerVBoxBotones(),
                 vistaPersonaje);
