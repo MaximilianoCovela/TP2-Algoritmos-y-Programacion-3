@@ -14,18 +14,18 @@ public class VboxBotonesDisponibles extends VBox{
                                   PersonajeView vistaPersonaje, Tablero unTablero){
         this.setPadding(new Insets(10, 0, 0, 10));
         this.setSpacing(10);
-
+        int index = 0;
         BotonMovimientoArriba botonArriba =
-                new BotonMovimientoArriba(vboxbotonesseleccionados, vistaPersonaje, unTablero);
+                new BotonMovimientoArriba(vboxbotonesseleccionados, unTablero, index);
 
         BotonMovimientoAbajo botonAbajo =
-                new BotonMovimientoAbajo(vboxbotonesseleccionados, vistaPersonaje, unTablero);
+                new BotonMovimientoAbajo(vboxbotonesseleccionados, unTablero,index);
 
         BotonMovimientoDerecha botonDerecha =
-                new BotonMovimientoDerecha(vboxbotonesseleccionados, vistaPersonaje, unTablero);
+                new BotonMovimientoDerecha(vboxbotonesseleccionados, unTablero,index);
 
         BotonMovimientoIzquierda botonIzquierda =
-                new BotonMovimientoIzquierda(vboxbotonesseleccionados, vistaPersonaje, unTablero);
+                new BotonMovimientoIzquierda(vboxbotonesseleccionados, unTablero,index);
 
         BotonMovimientoRepetir2Veces botonRepetir2Veces =
                 new BotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero);
@@ -40,10 +40,10 @@ public class VboxBotonesDisponibles extends VBox{
                 new BotonMovimientoPersonalizado(vboxbotonesseleccionados, unTablero);
 
         BotonMovimientoLapizAbajo botonLapizAbajo =
-                new BotonMovimientoLapizAbajo(vboxbotonesseleccionados, vistaPersonaje, unTablero);
+                new BotonMovimientoLapizAbajo(vboxbotonesseleccionados, unTablero,index);
 
         BotonMovimientoLapizArriba botonLapizArriba =
-                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, vistaPersonaje, unTablero);
+                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero,index);
 
         this.getChildren().addAll(botonArriba, botonAbajo, botonDerecha, botonIzquierda, botonRepetir2Veces, botonRepetir3Veces,
                 botonInvertir, botonPersonalizado, botonLapizAbajo, botonLapizArriba);

@@ -20,4 +20,8 @@ public class VboxBotonesSeleccionados extends VBox {
         this.getChildren().clear();
 
     }
+
+    public void actualizarIndex(int index){
+
+    }
 }

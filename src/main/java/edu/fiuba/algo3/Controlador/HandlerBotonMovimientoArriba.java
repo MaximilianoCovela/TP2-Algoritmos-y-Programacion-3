@@ -16,30 +16,37 @@ import javafx.scene.image.Image;
 public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
-    private final PersonajeView vistaPersonaje;
     private Tablero unTablero;
     private BotonMovimientoArriba unBotonArriba;
+    private int index;
 
-    public HandlerBotonMovimientoArriba(VboxBotonesSeleccionados vbox, PersonajeView unaVistaPersonaje,
-                                        Tablero unTablero, BotonMovimientoArriba botonArriba){
+    public HandlerBotonMovimientoArriba(VboxBotonesSeleccionados vbox,
+                                        Tablero unTablero, BotonMovimientoArriba botonArriba,int index){
         this.vboxbotonesseleccionados = vbox;
-        this.vistaPersonaje = unaVistaPersonaje;
         this.unTablero = unTablero;
         this.unBotonArriba = botonArriba;
+        this.index = index;
+
     }
 
+    public int obtenerIndice(){
+        return this.index;
+    }
 
     public void handle(ActionEvent event) {
 
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonArriba)){
+            this.index = (this.vboxbotonesseleccionados.getChildren()).size();
             BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(this.vboxbotonesseleccionados,
-                    this.vistaPersonaje, this.unTablero);
+                    this.unTablero, this.index);
+
             this.vboxbotonesseleccionados.getChildren().add(botonArriba);
             MovimientoArriba movArriba = new MovimientoArriba();
             Bloque unBloque = new Bloque(movArriba);
             this.unTablero.agregarBloque(unBloque);
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonArriba);
+            this.unTablero.eliminarBloques(this.index);
         }
     }
 }

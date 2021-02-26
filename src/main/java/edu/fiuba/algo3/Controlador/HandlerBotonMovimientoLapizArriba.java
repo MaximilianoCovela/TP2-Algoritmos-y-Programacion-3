@@ -12,24 +12,28 @@ import javafx.event.EventHandler;
 
 public class HandlerBotonMovimientoLapizArriba implements EventHandler<ActionEvent>{
 
-    private final PersonajeView vistaPersonaje;
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
     private Tablero unTablero;
     private BotonMovimientoLapizArriba unBotonLapizArriba;
+    private int index;
 
-    public HandlerBotonMovimientoLapizArriba(VboxBotonesSeleccionados vbox, PersonajeView unaVistaPersonaje,
-                                            Tablero unTablero, BotonMovimientoLapizArriba botonLapizAbajo){
+    public HandlerBotonMovimientoLapizArriba(VboxBotonesSeleccionados vbox,Tablero unTablero,
+                                             BotonMovimientoLapizArriba botonLapizAbajo,int index){
         this.vboxbotonesseleccionados = vbox;
-        this.vistaPersonaje = unaVistaPersonaje;
         this.unTablero = unTablero;
         this.unBotonLapizArriba = botonLapizAbajo;
+        this.index = index;
+    }
+
+    public int obtenerIndice(){
+        return this.index;
     }
 
     public void handle(ActionEvent event) {
 
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonLapizArriba)){
             BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba(this.vboxbotonesseleccionados,
-                    this.vistaPersonaje, this.unTablero);
+                    this.unTablero,this.index);
             this.vboxbotonesseleccionados.getChildren().add(botonLapizArriba);
 
             MovimientoLapizArriba movimientoLapizArriba = new MovimientoLapizArriba();
@@ -38,6 +42,7 @@ public class HandlerBotonMovimientoLapizArriba implements EventHandler<ActionEve
             this.unTablero.agregarBloque(unBloque);
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonLapizArriba);
+            this.unTablero.eliminarBloques(this.index);
         }
     }
 

@@ -27,6 +27,13 @@ public class Tablero {
         this.secuenciaAEjecutar.remove(unBloque);
     }
 
+    public void eliminarBloques(int index){
+        for(int i=index; i < this.secuenciaAEjecutar.size();){
+            this.secuenciaAEjecutar.remove(i);
+            if (this.unPersonaje.obtenerDibujos().size() != 0) {this.unPersonaje.obtenerDibujos().remove(i);}
+        }
+    }
+
     public void reiniciarTablero (){
         this.secuenciaAEjecutar.clear();
         this.unPersonaje.obtenerDibujos().clear();

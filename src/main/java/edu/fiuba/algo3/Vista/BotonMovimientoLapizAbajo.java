@@ -11,14 +11,14 @@ public class BotonMovimientoLapizAbajo extends Button {
     private HandlerBotonMovimientoLapizAbajo accion;
 
     public BotonMovimientoLapizAbajo(VboxBotonesSeleccionados vboxbotonesseleccionados,
-                                     PersonajeView unaVistaPersonaje, Tablero unTablero){
+                                     Tablero unTablero, int index){
 
         super();
         this.setText("Lapiz Abajo");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.accion = new HandlerBotonMovimientoLapizAbajo(vboxbotonesseleccionados, unaVistaPersonaje,
-                unTablero, this);
+        this.accion = new HandlerBotonMovimientoLapizAbajo(vboxbotonesseleccionados,
+                unTablero, this, index);
         this.setOnAction(accion);
     }
 

@@ -14,26 +14,28 @@ import  edu.fiuba.algo3.modelo.Bloque;
 
 public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
-    private final PersonajeView vistaPersonaje;
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
     private Tablero unTablero;
     private BotonMovimientoAbajo unBotonAbajo;
+    private int index;
 
-    public HandlerBotonMovimientoAbajo(VboxBotonesSeleccionados vbox, PersonajeView unaVistaPersonaje,
-                                       Tablero unTablero, BotonMovimientoAbajo botonAbajo){
+    public HandlerBotonMovimientoAbajo(VboxBotonesSeleccionados vbox,
+                                       Tablero unTablero, BotonMovimientoAbajo botonAbajo, int index){
         this.vboxbotonesseleccionados = vbox;
-        this.vistaPersonaje = unaVistaPersonaje;
         this.unTablero = unTablero;
         this.unBotonAbajo = botonAbajo;
+        this.index = index;
     }
 
+    public int obtenerIndice(){
+        return this.index;
+    }
 
     public void handle(ActionEvent event) {
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonAbajo)){
-
+            this.index = (this.vboxbotonesseleccionados.getChildren()).size();
             BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(this.vboxbotonesseleccionados,
-                    this.vistaPersonaje, this.unTablero);
-
+                    this.unTablero, this.index);
             this.vboxbotonesseleccionados.getChildren().add(botonAbajo);
             MovimientoAbajo movAbajo = new MovimientoAbajo();
             Bloque unBloque = new Bloque(movAbajo);
@@ -41,6 +43,7 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonAbajo);
+            this.unTablero.eliminarBloques(this.index);
         }
     }
 }

@@ -9,13 +9,13 @@ public class BotonMovimientoDerecha extends Button{
     private HandlerBotonMovimientoDerecha accion;
 
     public BotonMovimientoDerecha(VboxBotonesSeleccionados vboxbotonesseleccionados,
-                                  PersonajeView unaVistaPersonaje, Tablero unTablero){
+                                  Tablero unTablero, int index){
         super();
         this.setText("Derecha");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.accion = new HandlerBotonMovimientoDerecha(vboxbotonesseleccionados, unaVistaPersonaje,
-                unTablero, this);
+        this.accion = new HandlerBotonMovimientoDerecha(vboxbotonesseleccionados,
+                unTablero, this, index);
         this.setOnAction(accion);
     }
 

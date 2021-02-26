@@ -13,29 +13,36 @@ import javafx.scene.image.Image;
 public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
-    private final PersonajeView vistaPersonaje;
     private Tablero unTablero;
     private BotonMovimientoDerecha unBotonDerecha;
+    private int index;
 
-    public HandlerBotonMovimientoDerecha(VboxBotonesSeleccionados vbox, PersonajeView unaVistaPersonaje,
-                                         Tablero unTablero, BotonMovimientoDerecha botonDerecha){
+    public HandlerBotonMovimientoDerecha(VboxBotonesSeleccionados vbox,
+                                         Tablero unTablero, BotonMovimientoDerecha botonDerecha, int index){
         this.vboxbotonesseleccionados = vbox;
-        this.vistaPersonaje = unaVistaPersonaje;
         this.unTablero = unTablero;
         this.unBotonDerecha = botonDerecha;
+        this.index = index;
+    }
+
+    public int obtenerIndice(){
+        return this.index;
     }
 
 
     public void handle(ActionEvent event) {
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonDerecha)){
+            this.index = (this.vboxbotonesseleccionados.getChildren()).size();
             BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(this.vboxbotonesseleccionados,
-                    this.vistaPersonaje, this.unTablero);
+                    this.unTablero,this.index);
+
             this.vboxbotonesseleccionados.getChildren().add(botonDerecha);
             MovimientoDerecha movDerecha = new MovimientoDerecha();
             Bloque unBloque = new Bloque(movDerecha);
             this.unTablero.agregarBloque(unBloque);
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonDerecha);
+            this.unTablero.eliminarBloques(this.index);
         }
     }
 }

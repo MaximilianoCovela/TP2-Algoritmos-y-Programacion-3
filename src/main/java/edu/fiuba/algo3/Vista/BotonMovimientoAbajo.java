@@ -8,14 +8,14 @@ public class BotonMovimientoAbajo extends Button {
 
     private HandlerBotonMovimientoAbajo accion;
 
-    public BotonMovimientoAbajo(VboxBotonesSeleccionados vboxbotonesseleccionados,
-                                PersonajeView unaVistaPersonaje, Tablero unTablero){
+    public BotonMovimientoAbajo(VboxBotonesSeleccionados vboxbotonesseleccionados, Tablero unTablero,
+                                int index){
         super();
         this.setText("Abajo");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.accion = new HandlerBotonMovimientoAbajo(vboxbotonesseleccionados, unaVistaPersonaje,
-                unTablero, this);
+        this.accion = new HandlerBotonMovimientoAbajo(vboxbotonesseleccionados,
+                unTablero, this, index);
         this.setOnAction(accion);
     }
 
