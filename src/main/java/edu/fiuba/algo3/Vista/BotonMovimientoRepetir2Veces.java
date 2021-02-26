@@ -8,11 +8,11 @@ import javafx.scene.control.Button;
 public class BotonMovimientoRepetir2Veces extends Button {
 
     public BotonMovimientoRepetir2Veces(VboxBotonesSeleccionados vboxbotonesseleccionados, Tablero unTablero,
-                                        int index){
+                                        int index, VboxBotonesDisponibles vbd){
         super();
         this.setText("Repetir x2");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.setOnAction(new HandlerBotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero, this, index));
+        this.setOnAction(new HandlerBotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero, this, index, vbd));
     }
 }

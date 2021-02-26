@@ -5,12 +5,17 @@ import javafx.scene.layout.VBox;
 
 public class PanelBloquesDisponibles extends ScrollPane {
 
-    public PanelBloquesDisponibles(VBox panelBloquesDisponibles){
+    private VboxBotonesDisponibles vboxBotonesDisponibles;
+
+    public PanelBloquesDisponibles(VboxBotonesDisponibles panelBloquesDisponibles){
         this.setLayoutX(530.0);
         this.setLayoutY(48.0);
         this.setMaxSize(172, 438);
         this.setContent(panelBloquesDisponibles);
+        this.vboxBotonesDisponibles = panelBloquesDisponibles;
+    }
 
-
+    public VboxBotonesDisponibles obtenerVBox(){
+        return this.vboxBotonesDisponibles;
     }
 }

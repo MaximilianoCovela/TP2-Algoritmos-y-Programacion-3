@@ -12,6 +12,7 @@ public class MovimientoPersonalizado implements Movimiento {
     }
 
     public void aplicarMovimiento(Personaje unPersonaje){
+        System.out.println("ESTOY EN APLICAR MOV PERSONALIZADO");
         this.listaDeMovimientos.forEach((movimiento) -> movimiento.aplicarMovimiento(unPersonaje));
     }
 
@@ -25,6 +26,7 @@ public class MovimientoPersonalizado implements Movimiento {
     public void guardarAlgoritmo(Tablero tablero, String unNombre){
         this.nombreAlgoritmo = unNombre;
         tablero.getSecuencia().forEach((bloque) -> this.listaDeMovimientos.add(bloque.getMovimiento()));
+        System.out.println("Cantidad: " + listaDeMovimientos.size());
         tablero.reiniciarTablero();
     }
 

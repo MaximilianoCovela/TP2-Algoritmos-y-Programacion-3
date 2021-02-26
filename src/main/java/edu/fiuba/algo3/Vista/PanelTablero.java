@@ -30,15 +30,11 @@ public class PanelTablero extends Pane {
         textoDescriptivoMovimientosDisponibles.setText("Movimientos Disponibles");
         this.getChildren().add(textoDescriptivoMovimientosDisponibles);
 
-
-        BotonGuardarAlgoritmo botonGuardarAlgoritmo = new BotonGuardarAlgoritmo();
-
         BotonJugar botonPlay = new BotonJugar(unTablero, vistaPersonaje);
 
         BotonReiniciar botonReiniciar = new BotonReiniciar(unTablero, panelBloquesSeleccionados.obtenerVBoxBotones(),
-                vistaPersonaje);
+                vistaPersonaje, panelBloquesDisponibles.obtenerVBox());
 
-        this.getChildren().add(botonGuardarAlgoritmo);
         this.getChildren().add(botonPlay);
         this.getChildren().add(botonReiniciar);
 

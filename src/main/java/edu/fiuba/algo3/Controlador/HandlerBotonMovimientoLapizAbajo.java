@@ -10,16 +10,19 @@ import javafx.event.EventHandler;
 public class HandlerBotonMovimientoLapizAbajo implements EventHandler<ActionEvent>{
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
+    private VboxBotonesDisponibles vboxBotonesDisponibles;
     private Tablero unTablero;
     private BotonMovimientoLapizAbajo unBotonLapizAbajo;
     private int index;
 
     public HandlerBotonMovimientoLapizAbajo(VboxBotonesSeleccionados vbox,Tablero unTablero,
-                                            BotonMovimientoLapizAbajo botonLapizAbajo,int index){
+                                            BotonMovimientoLapizAbajo botonLapizAbajo,int index,
+                                            VboxBotonesDisponibles vboxdisponibles){
         this.vboxbotonesseleccionados = vbox;
         this.unTablero = unTablero;
         this.unBotonLapizAbajo = botonLapizAbajo;
         this.index = index;
+        this.vboxBotonesDisponibles = vboxdisponibles;
     }
 
     public int obtenerIndice(){
@@ -31,9 +34,8 @@ public class HandlerBotonMovimientoLapizAbajo implements EventHandler<ActionEven
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonLapizAbajo)){
             this.index = (this.vboxbotonesseleccionados.getChildren()).size();
             BotonMovimientoLapizAbajo botonLapizAbajo = new BotonMovimientoLapizAbajo(this.vboxbotonesseleccionados,
-                    this.unTablero,this.index);
+                    this.unTablero,this.index, this.vboxBotonesDisponibles);
             this.vboxbotonesseleccionados.getChildren().add(botonLapizAbajo);
-            System.out.println("handle btn lapiz Abajo");
 
             MovimientoLapizAbajo movimientoLapizAbajo = new MovimientoLapizAbajo();
             Bloque unBloque = new Bloque(movimientoLapizAbajo);
@@ -44,6 +46,7 @@ public class HandlerBotonMovimientoLapizAbajo implements EventHandler<ActionEven
             this.vboxbotonesseleccionados.actualizarVista(this.index);
             this.unTablero.eliminarBloques(this.index);
         }
+        vboxBotonesDisponibles.verificar();
     }
 
 }

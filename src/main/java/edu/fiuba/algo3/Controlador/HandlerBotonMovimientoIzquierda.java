@@ -2,6 +2,7 @@ package edu.fiuba.algo3.Controlador;
 
 import edu.fiuba.algo3.Vista.BotonMovimientoIzquierda;
 import edu.fiuba.algo3.Vista.PersonajeView;
+import edu.fiuba.algo3.Vista.VboxBotonesDisponibles;
 import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
 import edu.fiuba.algo3.modelo.Bloque;
 import edu.fiuba.algo3.modelo.MovimientoDerecha;
@@ -14,16 +15,19 @@ import javafx.scene.image.Image;
 public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent>{
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
+    private VboxBotonesDisponibles vboxBotonesDisponibles;
     private Tablero unTablero;
     private BotonMovimientoIzquierda unBotonIzquierda;
     private int index;
 
     public HandlerBotonMovimientoIzquierda(VboxBotonesSeleccionados vbox,Tablero unTablero,
-                                           BotonMovimientoIzquierda botonIzquierda, int index){
+                                           BotonMovimientoIzquierda botonIzquierda, int index,
+                                           VboxBotonesDisponibles vboxdisponibles){
         this.vboxbotonesseleccionados = vbox;
         this.unTablero = unTablero;
         this.unBotonIzquierda = botonIzquierda;
         this.index = index;
+        this.vboxBotonesDisponibles = vboxdisponibles;
     }
 
     public int obtenerIndice(){
@@ -34,7 +38,7 @@ public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonIzquierda)){
             this.index = (this.vboxbotonesseleccionados.getChildren()).size();
             BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(this.vboxbotonesseleccionados,
-                    this.unTablero,this.index);
+                    this.unTablero,this.index, this.vboxBotonesDisponibles);
 
             this.vboxbotonesseleccionados.getChildren().add(botonIzquierda);
             MovimientoIzquierda movIzquierda = new MovimientoIzquierda();
@@ -45,5 +49,6 @@ public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent
             this.vboxbotonesseleccionados.actualizarVista(this.index);
             this.unTablero.eliminarBloques(this.index);
         }
+        vboxBotonesDisponibles.verificar();
     }
 }

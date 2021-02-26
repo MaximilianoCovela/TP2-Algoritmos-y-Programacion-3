@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Controlador;
 import edu.fiuba.algo3.Vista.BotonMovimientoDerecha;
 import edu.fiuba.algo3.Vista.PersonajeView;
+import edu.fiuba.algo3.Vista.VboxBotonesDisponibles;
 import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
 import edu.fiuba.algo3.modelo.Bloque;
 import edu.fiuba.algo3.modelo.MovimientoAbajo;
@@ -13,16 +14,19 @@ import javafx.scene.image.Image;
 public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
+    private VboxBotonesDisponibles vboxBotonesDisponibles;
     private Tablero unTablero;
     private BotonMovimientoDerecha unBotonDerecha;
     private int index;
 
     public HandlerBotonMovimientoDerecha(VboxBotonesSeleccionados vbox,
-                                         Tablero unTablero, BotonMovimientoDerecha botonDerecha, int index){
+                                         Tablero unTablero, BotonMovimientoDerecha botonDerecha, int index,
+                                         VboxBotonesDisponibles vboxdisponibles){
         this.vboxbotonesseleccionados = vbox;
         this.unTablero = unTablero;
         this.unBotonDerecha = botonDerecha;
         this.index = index;
+        this.vboxBotonesDisponibles = vboxdisponibles;
     }
 
     public int obtenerIndice(){
@@ -34,7 +38,7 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonDerecha)){
             this.index = (this.vboxbotonesseleccionados.getChildren()).size();
             BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(this.vboxbotonesseleccionados,
-                    this.unTablero,this.index);
+                    this.unTablero,this.index, this.vboxBotonesDisponibles);
 
             this.vboxbotonesseleccionados.getChildren().add(botonDerecha);
             MovimientoDerecha movDerecha = new MovimientoDerecha();
@@ -45,5 +49,6 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
             this.vboxbotonesseleccionados.actualizarVista(this.index);
             this.unTablero.eliminarBloques(this.index);
         }
+        vboxBotonesDisponibles.verificar();
     }
 }
