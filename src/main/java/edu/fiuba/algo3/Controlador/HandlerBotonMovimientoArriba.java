@@ -46,6 +46,7 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
             this.unTablero.agregarBloque(unBloque);
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonArriba);
+            this.vboxbotonesseleccionados.actualizarVista(this.index);
             this.unTablero.eliminarBloques(this.index);
         }
     }

@@ -43,6 +43,7 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonAbajo);
+            this.vboxbotonesseleccionados.actualizarVista(this.index);
             this.unTablero.eliminarBloques(this.index);
         }
     }

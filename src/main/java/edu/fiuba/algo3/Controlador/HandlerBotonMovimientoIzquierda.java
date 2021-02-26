@@ -42,6 +42,7 @@ public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent
             this.unTablero.agregarBloque(unBloque);
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonIzquierda);
+            this.vboxbotonesseleccionados.actualizarVista(this.index);
             this.unTablero.eliminarBloques(this.index);
         }
     }

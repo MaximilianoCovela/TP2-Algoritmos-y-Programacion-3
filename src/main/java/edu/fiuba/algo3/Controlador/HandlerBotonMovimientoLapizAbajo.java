@@ -29,6 +29,7 @@ public class HandlerBotonMovimientoLapizAbajo implements EventHandler<ActionEven
     public void handle(ActionEvent event) {
 
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonLapizAbajo)){
+            this.index = (this.vboxbotonesseleccionados.getChildren()).size();
             BotonMovimientoLapizAbajo botonLapizAbajo = new BotonMovimientoLapizAbajo(this.vboxbotonesseleccionados,
                     this.unTablero,this.index);
             this.vboxbotonesseleccionados.getChildren().add(botonLapizAbajo);
@@ -40,6 +41,7 @@ public class HandlerBotonMovimientoLapizAbajo implements EventHandler<ActionEven
             this.unTablero.agregarBloque(unBloque);
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonLapizAbajo);
+            this.vboxbotonesseleccionados.actualizarVista(this.index);
             this.unTablero.eliminarBloques(this.index);
         }
     }

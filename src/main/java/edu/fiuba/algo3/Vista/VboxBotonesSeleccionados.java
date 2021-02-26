@@ -21,7 +21,9 @@ public class VboxBotonesSeleccionados extends VBox {
 
     }
 
-    public void actualizarIndex(int index){
-
+    public void actualizarVista(int index){
+        while(index < this.getChildren().size()){
+            this.getChildren().remove(index);
+        }
     }
 }
