@@ -43,7 +43,7 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
         if(!this.vBoxBotones.getChildren().contains(this.unBotonArriba)){
             MovimientoArriba movArriba = new MovimientoArriba();
 
-            VBoxBotones primerVBox = (VBoxBotones) this.vBoxBotones.getChildren().get(0); // es bloques seleccionados
+            VBoxBotones primerVBox = (VBoxBotones) this.listaDeVBox.get(0); // es bloques seleccionados
 
             VBoxBotones actualVBox = (VBoxBotones) this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 

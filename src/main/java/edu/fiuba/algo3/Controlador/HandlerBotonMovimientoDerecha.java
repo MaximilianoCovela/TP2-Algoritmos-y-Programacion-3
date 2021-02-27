@@ -40,7 +40,7 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
         if(!this.vBoxBotones.getChildren().contains(this.unBotonDerecha)){
             MovimientoDerecha movDerecha = new MovimientoDerecha();
 
-            VBoxBotones primerVBox = (VBoxBotones) this.vBoxBotones.getChildren().get(0); // es bloques seleccionados
+            VBoxBotones primerVBox = (VBoxBotones) this.listaDeVBox.get(0); // es bloques seleccionados
 
             VBoxBotones actualVBox = (VBoxBotones) this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
