@@ -32,8 +32,15 @@ public class VboxBotonesDisponibles extends VBox{
         BotonMovimientoRepetir2Veces botonRepetir2Veces =
                 new BotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero,index, this);
 
+        BotonMovimientoPararRepetir2Veces botonPararRepetir2Veces =
+                new BotonMovimientoPararRepetir2Veces(vboxbotonesseleccionados, unTablero,index);
+
         BotonMovimientoRepetir3Veces botonRepetir3Veces =
                 new BotonMovimientoRepetir3Veces(vboxbotonesseleccionados, unTablero);
+
+        BotonMovimientoPararRepetir2Veces botonPararRepetir3Veces =
+                new BotonMovimientoPararRepetir2Veces(vboxbotonesseleccionados, unTablero,index);
+
         /*
         BotonMovimientoLapizArriba botonLapizArriba =
                 new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero,index);
