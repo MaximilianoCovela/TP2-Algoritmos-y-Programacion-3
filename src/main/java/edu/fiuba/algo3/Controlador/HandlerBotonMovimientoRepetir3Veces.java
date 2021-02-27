@@ -1,29 +1,44 @@
 package edu.fiuba.algo3.Controlador;
 
-import edu.fiuba.algo3.Vista.BotonMovimientoRepetir3Veces;
-import edu.fiuba.algo3.Vista.VboxBotonesDisponibles;
-import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
+import edu.fiuba.algo3.Vista.*;
+import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class HandlerBotonMovimientoRepetir3Veces implements EventHandler<ActionEvent>{
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
+    private VboxBotonesDisponibles vboxBotonesDisponibles;
+    private Tablero unTablero;
+    private BotonMovimientoRepetir3Veces unBotonRepetir3Veces;
+    private int index;
+    private VBoxMovimientoRepetir3Veces vBoxDeRepetir;
 
-    public HandlerBotonMovimientoRepetir3Veces(VboxBotonesSeleccionados vbox){
+    public HandlerBotonMovimientoRepetir3Veces(VboxBotonesSeleccionados vbox,
+                                               Tablero unTablero, BotonMovimientoRepetir3Veces botonRepetir3Veces, int index,
+                                               VboxBotonesDisponibles vboxdisponibles){
         this.vboxbotonesseleccionados = vbox;
-    }
-
-    public HandlerBotonMovimientoRepetir3Veces(){
-        this.vboxbotonesseleccionados = null;
+        this.unTablero = unTablero;
+        this.unBotonRepetir3Veces = botonRepetir3Veces;
+        this.index = index;
+        this.vboxBotonesDisponibles = vboxdisponibles;
+        this.vBoxDeRepetir = new VBoxMovimientoRepetir3Veces();
     }
 
     public void handle(ActionEvent event) {
-        if(this.vboxbotonesseleccionados != null){
-            BotonMovimientoRepetir3Veces botonRepetir3Veces = new BotonMovimientoRepetir3Veces();
-            this.vboxbotonesseleccionados.getChildren().add(botonRepetir3Veces);
+
+        if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonRepetir3Veces)){
+            this.index = (this.vboxbotonesseleccionados.getChildren()).size();
+            BotonMovimientoRepetir3Veces botonMovimientoRepetir3Veces = new BotonMovimientoRepetir3Veces(this.vboxbotonesseleccionados,
+                    this.unTablero, this.index, vboxBotonesDisponibles);
+            this.vboxbotonesseleccionados.getChildren().add(vBoxDeRepetir);
+
         }else{
-            System.out.println("Movimiento Repetir X3");
+            this.vboxbotonesseleccionados.getChildren().remove(this.vBoxDeRepetir);
+            this.vboxbotonesseleccionados.actualizarVista(this.index);
+            this.vBoxDeRepetir.actualizarTablero();
         }
+        vboxBotonesDisponibles.verificar();
+
     }
 }

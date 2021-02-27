@@ -12,6 +12,7 @@ public class VboxBotonesSeleccionados extends VBox {
     public VboxBotonesSeleccionados(){
         this.setPrefHeight(438.0);
         this.setPrefWidth(172);
+        this.setSpacing(5);
         this.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
     }
 

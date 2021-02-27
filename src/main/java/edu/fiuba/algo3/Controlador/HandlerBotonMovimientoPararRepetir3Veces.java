@@ -7,8 +7,9 @@ import edu.fiuba.algo3.modelo.Bloque;
 import edu.fiuba.algo3.modelo.MovimientoLapizArriba;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
-public class HandlerBotonMovimientoPararRepetir3Veces {
+public class HandlerBotonMovimientoPararRepetir3Veces implements EventHandler<ActionEvent> {
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
     private Tablero unTablero;

@@ -4,8 +4,6 @@ import edu.fiuba.algo3.Vista.BotonMovimientoRepetir2Veces;
 import edu.fiuba.algo3.Vista.VBoxMovimientoRepetir2Veces;
 import edu.fiuba.algo3.Vista.VboxBotonesDisponibles;
 import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
-import edu.fiuba.algo3.modelo.Bloque;
-import edu.fiuba.algo3.modelo.MovimientoRepetir;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
