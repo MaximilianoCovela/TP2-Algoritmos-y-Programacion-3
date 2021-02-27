@@ -9,14 +9,14 @@ import java.util.ArrayList;
 public class BotonMovimientoAbajo extends Button {
 
     private HandlerBotonMovimientoAbajo accion;
-
-    public BotonMovimientoAbajo(VboxBotonesSeleccionados vboxbotonesseleccionados, Tablero unTablero,
+// antes decia VboxBotonesSeleccionados vboxbotonesseleccionados en el 1er parametro
+    public BotonMovimientoAbajo(VBoxBotones vBoxBotones, Tablero unTablero,
                                 int index, VboxBotonesDisponibles vboxbotonesdisponibles, ArrayList listaDeVBox){
         super();
         this.setText("Abajo");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.accion = new HandlerBotonMovimientoAbajo(vboxbotonesseleccionados,
+        this.accion = new HandlerBotonMovimientoAbajo(vBoxBotones,
                 unTablero, this, index, vboxbotonesdisponibles, listaDeVBox);
         this.setOnAction(accion);
     }

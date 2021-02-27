@@ -9,13 +9,13 @@ import java.util.ArrayList;
 
 public class BotonMovimientoRepetir2Veces extends Button {
 
-    public BotonMovimientoRepetir2Veces(VboxBotonesSeleccionados vboxbotonesseleccionados, Tablero unTablero,
+    public BotonMovimientoRepetir2Veces(VBoxBotones vBoxBotones, Tablero unTablero,
                                         int index, VboxBotonesDisponibles vbd, ArrayList listaDeVBox){
         super();
         this.setText("Repetir x2");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.setOnAction(new HandlerBotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero, this,
+        this.setOnAction(new HandlerBotonMovimientoRepetir2Veces(vBoxBotones, unTablero, this,
                 index, vbd, listaDeVBox));
     }
 }

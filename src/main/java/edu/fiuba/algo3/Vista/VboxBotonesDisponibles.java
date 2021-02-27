@@ -12,71 +12,77 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 public class VboxBotonesDisponibles extends VBox{
+
     private VboxBotonesSeleccionados vbs;
+
     private ArrayList<VBox> listaDeVBox = new ArrayList<>();
 
-    public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxbotonesseleccionados,
+    public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxBotonesSeleccionados,
                                   PersonajeView vistaPersonaje, Tablero unTablero){
-        this.vbs = vboxbotonesseleccionados;
+        this.vbs = vboxBotonesSeleccionados;
+        // aca agregamos al array la vbox principal
+        this.listaDeVBox.add(vboxBotonesSeleccionados);
+
         this.setPadding(new Insets(10, 0, 0, 10));
         this.setSpacing(10);
         int index = 0;
 
         //Botones simples
 
+        // despues solo le vamos a pasar el array, y la posicion 0 en listaDeVBox va a ser Vbox botones disponibles
         BotonMovimientoArriba botonArriba =
-                new BotonMovimientoArriba(vboxbotonesseleccionados, unTablero, index, this,
+                new BotonMovimientoArriba(vboxBotonesSeleccionados, unTablero, index, this,
                         listaDeVBox);
 
         BotonMovimientoAbajo botonAbajo =
-                new BotonMovimientoAbajo(vboxbotonesseleccionados, unTablero,index, this,
+                new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this,
                         listaDeVBox);
 
         BotonMovimientoDerecha botonDerecha =
-                new BotonMovimientoDerecha(vboxbotonesseleccionados, unTablero,index, this,
+                new BotonMovimientoDerecha(vboxBotonesSeleccionados, unTablero,index, this,
                         listaDeVBox);
 
         BotonMovimientoIzquierda botonIzquierda =
-                new BotonMovimientoIzquierda(vboxbotonesseleccionados, unTablero,index, this,
+                new BotonMovimientoIzquierda(vboxBotonesSeleccionados, unTablero,index, this,
                         listaDeVBox);
 
 
         //Botones mas complejos
 
         BotonMovimientoRepetir2Veces botonRepetir2Veces =
-                new BotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero,index, this,
+                new BotonMovimientoRepetir2Veces(vboxBotonesSeleccionados, unTablero,index, this,
                         listaDeVBox);
 
         BotonMovimientoPararRepetir2Veces botonPararRepetir2Veces =
-                new BotonMovimientoPararRepetir2Veces(vboxbotonesseleccionados, unTablero,index,
+                new BotonMovimientoPararRepetir2Veces(vboxBotonesSeleccionados, unTablero,index,
                         listaDeVBox);
 
 
         BotonMovimientoRepetir3Veces botonRepetir3Veces =
-                new BotonMovimientoRepetir3Veces(vboxbotonesseleccionados, unTablero,index,this);
+                new BotonMovimientoRepetir3Veces(vboxBotonesSeleccionados, unTablero,index,this);
 
         BotonMovimientoPararRepetir2Veces botonPararRepetir3Veces =
-                new BotonMovimientoPararRepetir2Veces(vboxbotonesseleccionados, unTablero,index, listaDeVBox);
+                new BotonMovimientoPararRepetir2Veces(vboxBotonesSeleccionados, unTablero,index, listaDeVBox);
 
 
         //Invertir
 
         BotonMovimientoInvertir botonInvertir =
-                new BotonMovimientoInvertir(vboxbotonesseleccionados, unTablero);
+                new BotonMovimientoInvertir(vboxBotonesSeleccionados, unTablero);
 
 
         //Guardar algoritmo
 
         BotonGuardarAlgoritmo botonGuardarAlgoritmo =
-                new BotonGuardarAlgoritmo(vboxbotonesseleccionados, this, unTablero, index);
+                new BotonGuardarAlgoritmo(vboxBotonesSeleccionados, this, unTablero, index);
 
         //Lapiz
 
         BotonMovimientoLapizAbajo botonLapizAbajo =
-                new BotonMovimientoLapizAbajo(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoLapizAbajo(vboxBotonesSeleccionados, unTablero,index, this);
 
         BotonMovimientoLapizArriba botonLapizArriba =
-                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoLapizArriba(vboxBotonesSeleccionados, unTablero,index, this);
 
 
 

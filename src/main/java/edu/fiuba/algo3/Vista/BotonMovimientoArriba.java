@@ -10,13 +10,13 @@ import java.util.ArrayList;
 public class BotonMovimientoArriba extends Button {
     private HandlerBotonMovimientoArriba accion;
 
-    public BotonMovimientoArriba(VboxBotonesSeleccionados vboxbotonesseleccionados, Tablero unTablero,
+    public BotonMovimientoArriba(VBoxBotones vBoxBotones, Tablero unTablero,
                                  int index, VboxBotonesDisponibles vbd, ArrayList listaDeVBox){
         super();
         this.setText("Arriba");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.accion = new HandlerBotonMovimientoArriba(vboxbotonesseleccionados,
+        this.accion = new HandlerBotonMovimientoArriba(vBoxBotones,
                 unTablero, this,index, vbd, listaDeVBox);
         this.setOnAction(accion);
     }

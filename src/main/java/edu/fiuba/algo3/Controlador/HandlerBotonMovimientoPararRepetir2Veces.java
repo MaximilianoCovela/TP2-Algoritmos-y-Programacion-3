@@ -1,9 +1,6 @@
 package edu.fiuba.algo3.Controlador;
 
-import edu.fiuba.algo3.Vista.BotonMovimientoLapizArriba;
-import edu.fiuba.algo3.Vista.BotonMovimientoPararRepetir2Veces;
-import edu.fiuba.algo3.Vista.VboxBotonesDisponibles;
-import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
+import edu.fiuba.algo3.Vista.*;
 import edu.fiuba.algo3.modelo.Bloque;
 import edu.fiuba.algo3.modelo.MovimientoLapizArriba;
 import edu.fiuba.algo3.modelo.Tablero;
@@ -14,17 +11,17 @@ import java.util.ArrayList;
 
 public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<ActionEvent> {
 
-    private VboxBotonesSeleccionados vboxbotonesseleccionados;
+    private final VBoxBotones vBoxBotones;
     private Tablero unTablero;
     private BotonMovimientoPararRepetir2Veces unBotonPararRepetir;
     private int index;
     private ArrayList listaDeVBox;
 
 
-    public HandlerBotonMovimientoPararRepetir2Veces(VboxBotonesSeleccionados vbox, Tablero unTablero,
+    public HandlerBotonMovimientoPararRepetir2Veces(VBoxBotones vbox, Tablero unTablero,
                                                     BotonMovimientoPararRepetir2Veces botonPararRepetir, int index,
-                                                    ArrayList listaDeVBox){
-        this.vboxbotonesseleccionados = vbox;
+                                                    ArrayList<VBoxMovimientoRepetir2Veces> listaDeVBox){
+        this.vBoxBotones = vbox;
         this.unTablero = unTablero;
         this.unBotonPararRepetir = botonPararRepetir;
         this.index = index;
@@ -37,17 +34,25 @@ public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<Ac
 
     public void handle(ActionEvent event) {
 
-        if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonPararRepetir)){
-            this.index = (this.vboxbotonesseleccionados.getChildren()).size();
-            BotonMovimientoPararRepetir2Veces botonParar = new BotonMovimientoPararRepetir2Veces(this.vboxbotonesseleccionados,
+        if(!this.vBoxBotones.getChildren().contains(this.unBotonPararRepetir)){
+            this.index = (this.vBoxBotones.getChildren()).size();
+            BotonMovimientoPararRepetir2Veces botonParar = new BotonMovimientoPararRepetir2Veces(this.vBoxBotones,
                     this.unTablero,this.index, this.listaDeVBox);
-            this.vboxbotonesseleccionados.getChildren().add(botonParar);
+            // suponiendo que existe una vbox
+            if(listaDeVBox.size() > 0){
 
+                VBoxMovimientoRepetir2Veces vbox;
+                vbox = (VBoxMovimientoRepetir2Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
+                vbox.agregarBloqueATablero();
+
+                this.listaDeVBox.remove(listaDeVBox.size()-1); // la borramos del array, no de la vista la vbox
+
+            }
         }else{
             // por ahora esto funciona como si fuera una x para borrar la vbox que se creo con botones repetir
-            this.vboxbotonesseleccionados.getChildren().clear();
-            //this.vboxbotonesseleccionados.getChildren().remove(this.unBotonPararRepetir);
-            //this.vboxbotonesseleccionados.actualizarVista(this.index);
+            this.vBoxBotones.getChildren().clear();
+            //this.vBoxBotones.getChildren().remove(this.unBotonPararRepetir);
+            //this.vBoxBotones.actualizarVista(this.index);
             //this.unTablero.eliminarBloques(this.index);
         }
     }

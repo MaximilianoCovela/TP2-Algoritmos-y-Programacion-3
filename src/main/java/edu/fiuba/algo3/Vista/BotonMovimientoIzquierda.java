@@ -10,13 +10,13 @@ import java.util.ArrayList;
 public class BotonMovimientoIzquierda extends Button {
     private HandlerBotonMovimientoIzquierda accion;
 
-    public BotonMovimientoIzquierda(VboxBotonesSeleccionados vboxbotonesseleccionados,
+    public BotonMovimientoIzquierda(VBoxBotones vBoxBotones,
                                     Tablero unTablero, int index, VboxBotonesDisponibles vbd, ArrayList listaDeVBox){
         super();
         this.setText("Izquierda");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.accion = new HandlerBotonMovimientoIzquierda(vboxbotonesseleccionados,
+        this.accion = new HandlerBotonMovimientoIzquierda( vBoxBotones,
                 unTablero, this, index, vbd, listaDeVBox);
         this.setOnAction(accion);
     }
