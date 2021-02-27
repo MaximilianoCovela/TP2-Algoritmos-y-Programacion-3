@@ -61,12 +61,11 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
                 return;
 
             }
-            VBoxBotones vbox;
-            vbox = (VBoxMovimientoRepetir2Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
-            vbox.guardarMovimiento(movArriba);
-            BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(vbox,
+
+            actualVBox.guardarMovimiento(movArriba);
+            BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-            vbox.getChildren().add(botonArriba);
+            actualVBox.getChildren().add(botonArriba);
 
 
             System.out.println("indice:"+ index);

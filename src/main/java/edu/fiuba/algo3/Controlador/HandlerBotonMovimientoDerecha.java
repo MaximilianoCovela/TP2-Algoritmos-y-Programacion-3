@@ -59,12 +59,11 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
 
             }
 
-            VBoxBotones vbox;
-            vbox = (VBoxMovimientoRepetir2Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
-            vbox.guardarMovimiento(movDerecha);
-            BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(vbox,
+
+            actualVBox.guardarMovimiento(movDerecha);
+            BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-            vbox.getChildren().add(botonDerecha);
+            actualVBox.getChildren().add(botonDerecha);
 
             System.out.println("indice:"+ index);
 

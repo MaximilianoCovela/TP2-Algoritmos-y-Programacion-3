@@ -62,12 +62,15 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
             }
 
+            /*
             VBoxBotones vbox;
             vbox = (VBoxMovimientoRepetir2Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
-            vbox.guardarMovimiento(movAbajo);
-            BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(vbox,
+            */
+
+            actualVBox.guardarMovimiento(movAbajo);
+            BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-            vbox.getChildren().add(botonAbajo);
+            actualVBox.getChildren().add(botonAbajo);
 
             System.out.println("indice:"+ index);
 
