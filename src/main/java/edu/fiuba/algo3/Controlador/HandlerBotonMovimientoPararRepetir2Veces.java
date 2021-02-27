@@ -10,19 +10,25 @@ import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+import java.util.ArrayList;
+
 public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<ActionEvent> {
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
     private Tablero unTablero;
     private BotonMovimientoPararRepetir2Veces unBotonPararRepetir;
     private int index;
+    private ArrayList listaDeVBox;
+
 
     public HandlerBotonMovimientoPararRepetir2Veces(VboxBotonesSeleccionados vbox, Tablero unTablero,
-                                                    BotonMovimientoPararRepetir2Veces botonPararRepetir, int index){
+                                                    BotonMovimientoPararRepetir2Veces botonPararRepetir, int index,
+                                                    ArrayList listaDeVBox){
         this.vboxbotonesseleccionados = vbox;
         this.unTablero = unTablero;
         this.unBotonPararRepetir = botonPararRepetir;
         this.index = index;
+        this.listaDeVBox = listaDeVBox;
     }
 
     public int obtenerIndice(){
@@ -34,7 +40,7 @@ public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<Ac
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonPararRepetir)){
             this.index = (this.vboxbotonesseleccionados.getChildren()).size();
             BotonMovimientoPararRepetir2Veces botonParar = new BotonMovimientoPararRepetir2Veces(this.vboxbotonesseleccionados,
-                    this.unTablero,this.index);
+                    this.unTablero,this.index, this.listaDeVBox);
             this.vboxbotonesseleccionados.getChildren().add(botonParar);
 
         }else{

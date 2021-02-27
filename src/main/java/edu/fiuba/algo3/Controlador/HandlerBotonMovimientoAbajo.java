@@ -13,6 +13,8 @@ import javafx.scene.image.ImageView;
 import edu.fiuba.algo3.modelo.MovimientoAbajo;
 import  edu.fiuba.algo3.modelo.Bloque;
 
+import java.util.ArrayList;
+
 public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
@@ -20,15 +22,18 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
     private Tablero unTablero;
     private BotonMovimientoAbajo unBotonAbajo;
     private int index;
+    private ArrayList listaDeVBox;
+
 
     public HandlerBotonMovimientoAbajo(VboxBotonesSeleccionados vbox,
                                        Tablero unTablero, BotonMovimientoAbajo botonAbajo, int index,
-                                       VboxBotonesDisponibles vboxdisponibles){
+                                       VboxBotonesDisponibles vboxdisponibles, ArrayList listaDeVBox){
         this.vboxbotonesseleccionados = vbox;
         this.unTablero = unTablero;
         this.unBotonAbajo = botonAbajo;
         this.index = index;
         this.vboxBotonesDisponibles = vboxdisponibles;
+        this.listaDeVBox = listaDeVBox;
     }
 
     public int obtenerIndice(){
@@ -40,7 +45,7 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
             this.index = (this.vboxbotonesseleccionados.getChildren()).size();
 
             BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(this.vboxbotonesseleccionados,
-                    this.unTablero, this.index, this.vboxBotonesDisponibles);
+                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             this.vboxbotonesseleccionados.getChildren().add(botonAbajo);
             MovimientoAbajo movAbajo = new MovimientoAbajo();
             Bloque unBloque = new Bloque(movAbajo);

@@ -4,6 +4,8 @@ import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoPararRepetir3Veces;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.scene.control.Button;
 
+import java.util.ArrayList;
+
 public class BotonMovimientoPararRepetir3Veces extends Button {
 
     private HandlerBotonMovimientoPararRepetir3Veces accion;

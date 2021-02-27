@@ -12,6 +12,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 
+import java.util.ArrayList;
+
 public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent>{
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
@@ -19,15 +21,18 @@ public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent
     private Tablero unTablero;
     private BotonMovimientoIzquierda unBotonIzquierda;
     private int index;
+    private ArrayList listaDeVBox;
+
 
     public HandlerBotonMovimientoIzquierda(VboxBotonesSeleccionados vbox,Tablero unTablero,
                                            BotonMovimientoIzquierda botonIzquierda, int index,
-                                           VboxBotonesDisponibles vboxdisponibles){
+                                           VboxBotonesDisponibles vboxdisponibles, ArrayList listaDeVBox){
         this.vboxbotonesseleccionados = vbox;
         this.unTablero = unTablero;
         this.unBotonIzquierda = botonIzquierda;
         this.index = index;
         this.vboxBotonesDisponibles = vboxdisponibles;
+        this.listaDeVBox = listaDeVBox;
     }
 
     public int obtenerIndice(){
@@ -38,7 +43,7 @@ public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonIzquierda)){
             this.index = (this.vboxbotonesseleccionados.getChildren()).size();
             BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(this.vboxbotonesseleccionados,
-                    this.unTablero,this.index, this.vboxBotonesDisponibles);
+                    this.unTablero,this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
 
             this.vboxbotonesseleccionados.getChildren().add(botonIzquierda);
             MovimientoIzquierda movIzquierda = new MovimientoIzquierda();

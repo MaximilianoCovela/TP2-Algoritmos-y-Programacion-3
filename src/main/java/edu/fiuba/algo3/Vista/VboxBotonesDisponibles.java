@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Vista;
 
+import edu.fiuba.algo3.modelo.Movimiento;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
@@ -8,8 +9,11 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
+import java.util.ArrayList;
+
 public class VboxBotonesDisponibles extends VBox{
     private VboxBotonesSeleccionados vbs;
+    private ArrayList<VBox> listaDeVBox = new ArrayList<>();
 
     public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxbotonesseleccionados,
                                   PersonajeView vistaPersonaje, Tablero unTablero){
@@ -21,32 +25,38 @@ public class VboxBotonesDisponibles extends VBox{
         //Botones simples
 
         BotonMovimientoArriba botonArriba =
-                new BotonMovimientoArriba(vboxbotonesseleccionados, unTablero, index, this);
+                new BotonMovimientoArriba(vboxbotonesseleccionados, unTablero, index, this,
+                        listaDeVBox);
 
         BotonMovimientoAbajo botonAbajo =
-                new BotonMovimientoAbajo(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoAbajo(vboxbotonesseleccionados, unTablero,index, this,
+                        listaDeVBox);
 
         BotonMovimientoDerecha botonDerecha =
-                new BotonMovimientoDerecha(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoDerecha(vboxbotonesseleccionados, unTablero,index, this,
+                        listaDeVBox);
 
         BotonMovimientoIzquierda botonIzquierda =
-                new BotonMovimientoIzquierda(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoIzquierda(vboxbotonesseleccionados, unTablero,index, this,
+                        listaDeVBox);
 
 
         //Botones mas complejos
 
         BotonMovimientoRepetir2Veces botonRepetir2Veces =
-                new BotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero,index, this,
+                        listaDeVBox);
 
         BotonMovimientoPararRepetir2Veces botonPararRepetir2Veces =
-                new BotonMovimientoPararRepetir2Veces(vboxbotonesseleccionados, unTablero,index);
+                new BotonMovimientoPararRepetir2Veces(vboxbotonesseleccionados, unTablero,index,
+                        listaDeVBox);
 
 
         BotonMovimientoRepetir3Veces botonRepetir3Veces =
                 new BotonMovimientoRepetir3Veces(vboxbotonesseleccionados, unTablero,index,this);
 
         BotonMovimientoPararRepetir2Veces botonPararRepetir3Veces =
-                new BotonMovimientoPararRepetir2Veces(vboxbotonesseleccionados, unTablero,index);
+                new BotonMovimientoPararRepetir2Veces(vboxbotonesseleccionados, unTablero,index, listaDeVBox);
 
 
         //Invertir
