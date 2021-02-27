@@ -37,14 +37,12 @@ public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<Ac
                     this.unTablero,this.index);
             this.vboxbotonesseleccionados.getChildren().add(botonParar);
 
-            MovimientoLapizArriba movimientoLapizArriba = new MovimientoLapizArriba();
-            Bloque unBloque = new Bloque(movimientoLapizArriba);
-
-            this.unTablero.agregarBloque(unBloque);
         }else{
-            this.vboxbotonesseleccionados.getChildren().remove(this.unBotonPararRepetir);
-            this.vboxbotonesseleccionados.actualizarVista(this.index);
-            this.unTablero.eliminarBloques(this.index);
+            // por ahora esto funciona como si fuera una x para borrar la vbox que se creo con botones repetir
+            this.vboxbotonesseleccionados.getChildren().clear();
+            //this.vboxbotonesseleccionados.getChildren().remove(this.unBotonPararRepetir);
+            //this.vboxbotonesseleccionados.actualizarVista(this.index);
+            //this.unTablero.eliminarBloques(this.index);
         }
     }
 

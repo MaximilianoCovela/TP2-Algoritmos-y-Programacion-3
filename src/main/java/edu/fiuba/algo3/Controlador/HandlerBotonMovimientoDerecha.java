@@ -27,6 +27,7 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
         this.unBotonDerecha = botonDerecha;
         this.index = index;
         this.vboxBotonesDisponibles = vboxdisponibles;
+
     }
 
     public int obtenerIndice(){
@@ -44,6 +45,7 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
             MovimientoDerecha movDerecha = new MovimientoDerecha();
             Bloque unBloque = new Bloque(movDerecha);
             this.unTablero.agregarBloque(unBloque);
+            System.out.println("indice:"+ index);
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonDerecha);
             this.vboxbotonesseleccionados.actualizarVista(this.index);

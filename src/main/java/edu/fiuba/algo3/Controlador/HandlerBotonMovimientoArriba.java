@@ -47,6 +47,7 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
             MovimientoArriba movArriba = new MovimientoArriba();
             Bloque unBloque = new Bloque(movArriba);
             this.unTablero.agregarBloque(unBloque);
+            System.out.println("indice:"+ index);
         }else{
             this.vboxbotonesseleccionados.getChildren().remove(this.unBotonArriba);
             this.vboxbotonesseleccionados.actualizarVista(this.index);

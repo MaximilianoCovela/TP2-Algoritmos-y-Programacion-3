@@ -26,6 +26,7 @@ public class HandlerBotonMovimientoRepetir2Veces implements EventHandler<ActionE
         this.index = index;
         this.vboxBotonesDisponibles = vboxdisponibles;
         this.vBoxDeRepetir = new VBoxMovimientoRepetir2Veces();
+
     }
 
     public void handle(ActionEvent event) {
@@ -35,11 +36,14 @@ public class HandlerBotonMovimientoRepetir2Veces implements EventHandler<ActionE
             BotonMovimientoRepetir2Veces botonMovimientoRepetir2Veces = new BotonMovimientoRepetir2Veces(this.vboxbotonesseleccionados,
                     this.unTablero, this.index, vboxBotonesDisponibles);
             this.vboxbotonesseleccionados.getChildren().add(vBoxDeRepetir);
+            System.out.println("indice:"+ index);
 
         }else{
+            this.vBoxDeRepetir.eliminarContenido();
             this.vboxbotonesseleccionados.getChildren().remove(this.vBoxDeRepetir);
             this.vboxbotonesseleccionados.actualizarVista(this.index);
             this.vBoxDeRepetir.actualizarTablero();
+            System.out.println("Tamaño de Vbox Selecc: "+this.vboxbotonesseleccionados.getChildren().size());
         }
         vboxBotonesDisponibles.verificar();
 
