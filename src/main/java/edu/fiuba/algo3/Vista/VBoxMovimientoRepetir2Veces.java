@@ -15,6 +15,12 @@ public class VBoxMovimientoRepetir2Veces extends VBox {
 
     }
 
+    public void actualizarTablero() {
+
+        // esto deberia borrar el movimiento repetir del tablero
+
+    }
+
     //public Movimiento agregarMovimientoATablero(){
 
 

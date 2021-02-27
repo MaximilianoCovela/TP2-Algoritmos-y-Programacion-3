@@ -13,7 +13,7 @@ public class HandlerBotonMovimientoPararRepetir2Veces {
 
     private VboxBotonesSeleccionados vboxbotonesseleccionados;
     private Tablero unTablero;
-    private BotonMovimientoLapizArriba unBotonPararRepetir;
+    private BotonMovimientoPararRepetir2Veces unBotonPararRepetir;
     private int index;
 
     public HandlerBotonMovimientoPararRepetir2Veces(VboxBotonesSeleccionados vbox, Tablero unTablero,
