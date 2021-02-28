@@ -13,13 +13,13 @@ import java.util.ArrayList;
 
 public class VboxBotonesDisponibles extends VBox{
 
-    private VboxBotonesSeleccionados vbs;
+    private VboxBotonesSeleccionados vBoxSeleccionados;
 
     private ArrayList<VBox> listaDeVBox = new ArrayList<>();
 
     public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxBotonesSeleccionados,
                                   PersonajeView vistaPersonaje, Tablero unTablero){
-        this.vbs = vboxBotonesSeleccionados;
+        this.vBoxSeleccionados = vboxBotonesSeleccionados;
         // aca agregamos al array la vbox principal
         this.listaDeVBox.add(vboxBotonesSeleccionados);
 
@@ -99,11 +99,17 @@ public class VboxBotonesDisponibles extends VBox{
 
     public void verificar() {
         int tamanio_vbdisponibles = this.getChildren().size();
-        if (vbs.getChildren().size() >= 1) {
+        if (vBoxSeleccionados.getChildren().size() >= 1) {
             this.getChildren().get(tamanio_vbdisponibles - 1).setDisable(false);
             return;
         }
         this.getChildren().get(tamanio_vbdisponibles - 1).setDisable(true);
     }
 
+    public void vaciarListaVBox() {
+
+        this.listaDeVBox.clear();
+        this.listaDeVBox.add(this.vBoxSeleccionados);
+
+    }
 }
