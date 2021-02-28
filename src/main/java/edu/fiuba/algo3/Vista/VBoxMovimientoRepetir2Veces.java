@@ -54,11 +54,6 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
 
     }
 
-    //public Movimiento agregarMovimientoATablero(){
-
-
-    //}
-
     public void actualizarVista(int index){
         while(index < this.getChildren().size()){
             this.getChildren().remove(index);

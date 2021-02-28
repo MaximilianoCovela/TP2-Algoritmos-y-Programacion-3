@@ -10,14 +10,14 @@ public class BotonMovimientoPararRepetir3Veces extends Button {
 
     private HandlerBotonMovimientoPararRepetir3Veces accion;
 
-    public BotonMovimientoPararRepetir3Veces(VboxBotonesSeleccionados vboxbotonesseleccionados,
-                                             Tablero unTablero, int index){
+    public BotonMovimientoPararRepetir3Veces(VBoxBotones vBoxBotones,
+                                             Tablero unTablero, int index, ArrayList<VBoxBotones> listaDeVBox){
         super();
         this.setText("Parar (Repetir x3)");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
-        this.accion = new HandlerBotonMovimientoPararRepetir3Veces(vboxbotonesseleccionados,
-                unTablero, this, index);
+        this.accion = new HandlerBotonMovimientoPararRepetir3Veces(vBoxBotones,
+                unTablero, this, index, listaDeVBox);
         this.setOnAction(accion);
     }
 }

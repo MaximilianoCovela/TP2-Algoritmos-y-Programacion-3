@@ -15,7 +15,7 @@ public class VboxBotonesDisponibles extends VBox{
 
     private VboxBotonesSeleccionados vBoxSeleccionados;
 
-    private ArrayList<VBox> listaDeVBox = new ArrayList<>();
+    private ArrayList<VBoxBotones> listaDeVBox = new ArrayList<>();
 
     public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxBotonesSeleccionados,
                                   PersonajeView vistaPersonaje, Tablero unTablero){
@@ -59,10 +59,12 @@ public class VboxBotonesDisponibles extends VBox{
 
 
         BotonMovimientoRepetir3Veces botonRepetir3Veces =
-                new BotonMovimientoRepetir3Veces(vboxBotonesSeleccionados, unTablero,index,this);
+                new BotonMovimientoRepetir3Veces(vboxBotonesSeleccionados, unTablero,index, this,
+                        listaDeVBox);
 
-        BotonMovimientoPararRepetir2Veces botonPararRepetir3Veces =
-                new BotonMovimientoPararRepetir2Veces(vboxBotonesSeleccionados, unTablero,index, listaDeVBox);
+        BotonMovimientoPararRepetir3Veces botonPararRepetir3Veces =
+                new BotonMovimientoPararRepetir3Veces(vboxBotonesSeleccionados, unTablero,index,
+                        listaDeVBox);
 
 
         //Invertir
