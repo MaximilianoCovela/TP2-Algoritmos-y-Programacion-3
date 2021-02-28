@@ -47,7 +47,7 @@ public class VboxBotonesDisponibles extends VBox{
                         listaDeVBox);
 
 
-        //Botones mas complejos
+        //Botones Invertir
 
         BotonMovimientoRepetir2Veces botonRepetir2Veces =
                 new BotonMovimientoRepetir2Veces(vboxBotonesSeleccionados, unTablero,index, this,
@@ -70,7 +70,11 @@ public class VboxBotonesDisponibles extends VBox{
         //Invertir
 
         BotonMovimientoInvertir botonInvertir =
-                new BotonMovimientoInvertir(vboxBotonesSeleccionados, unTablero);
+                new BotonMovimientoInvertir(vboxBotonesSeleccionados, unTablero,index, this,
+                        listaDeVBox);
+
+        BotonMovimientoPararInvertir botonPararInvertir = new BotonMovimientoPararInvertir(vboxBotonesSeleccionados, unTablero,index,
+                        listaDeVBox);
 
 
         //Guardar algoritmo
@@ -90,7 +94,7 @@ public class VboxBotonesDisponibles extends VBox{
 
         botonGuardarAlgoritmo.setDisable(true); /* Se deshabilita cuando no hay nada en el vbox seleccionados.*/
         this.getChildren().addAll(botonArriba, botonAbajo, botonDerecha, botonIzquierda, botonRepetir2Veces,
-                botonPararRepetir2Veces, botonRepetir3Veces, botonPararRepetir3Veces, botonInvertir, botonLapizAbajo,
+                botonPararRepetir2Veces, botonRepetir3Veces, botonPararRepetir3Veces, botonInvertir, botonPararInvertir, botonLapizAbajo,
                 botonLapizArriba, botonGuardarAlgoritmo);
 
         this.setPrefHeight(500);

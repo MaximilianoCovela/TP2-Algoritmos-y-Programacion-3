@@ -1,22 +1,17 @@
 package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.modelo.Bloque;
-import edu.fiuba.algo3.modelo.Movimiento;
-import edu.fiuba.algo3.modelo.MovimientoRepetir;
-import edu.fiuba.algo3.modelo.Tablero;
+import edu.fiuba.algo3.modelo.*;
 import javafx.geometry.Insets;
-
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
-
-public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
+public class VboxMovimientoInvertir extends VBoxBotones {
 
     private Tablero tablero;
 
-    public VBoxMovimientoRepetir2Veces(Tablero unTablero){
+    public VboxMovimientoInvertir(Tablero unTablero){
 
         this.setPadding(new Insets(10, 0, 0, 10));
         this.setSpacing(5);
@@ -26,25 +21,25 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
 
     }
 
-    private MovimientoRepetir movimientoRepetir = new MovimientoRepetir(2);
+    private MovimientoInvertir movimientoInvertir = new MovimientoInvertir();
 
     public void guardarMovimiento(Movimiento unMovimiento){
 
-        movimientoRepetir.agregarMovimiento(unMovimiento);
+        movimientoInvertir.agregarMovimiento(unMovimiento);
 
     }
 
     // agrega un bloque complejo al tablero
     public void agregarBloqueATablero() {
 
-        Bloque unBloqueNuevo = new Bloque(this.movimientoRepetir);
+        Bloque unBloqueNuevo = new Bloque(this.movimientoInvertir);
 
         this.tablero.agregarBloque(unBloqueNuevo);
 
     }
 
     public Movimiento devolverMovimientos(){
-        return this.movimientoRepetir;
+        return this.movimientoInvertir;
     }
 
     public void eliminarContenido() {
