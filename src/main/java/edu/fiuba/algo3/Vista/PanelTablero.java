@@ -36,11 +36,16 @@ public class PanelTablero extends Pane {
         BotonReiniciar botonReiniciar = new BotonReiniciar(unTablero, panelBloquesSeleccionados.obtenerVBoxBotones(),
                 vistaPersonaje, panelBloquesDisponibles.obtenerVBox());
 
+        //creo boton borrar bloque
+        BotonBorrarBloque botonBorrarBloque = new BotonBorrarBloque();
+
         this.getChildren().add(botonPlay);
         this.getChildren().add(botonReiniciar);
 
         this.getChildren().add(botonSubirBloque);
         this.getChildren().add(botonBajarBloque);
+
+        this.getChildren().add(botonBorrarBloque);
 
         this.getChildren().add(sectorDibujoView);
         this.getChildren().add(panelBloquesDisponibles);
