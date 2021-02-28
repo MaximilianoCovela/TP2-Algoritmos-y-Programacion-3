@@ -19,12 +19,12 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
     private Tablero unTablero;
     private BotonMovimientoAbajo unBotonAbajo;
     private int index;
-    private ArrayList listaDeVBox;
+    private ArrayList<VBoxBotones> listaDeVBox;
 
 
     public HandlerBotonMovimientoAbajo(VBoxBotones vBoxBotones,
                                        Tablero unTablero, BotonMovimientoAbajo botonAbajo, int index,
-                                       VboxBotonesDisponibles vboxdisponibles, ArrayList listaDeVBox){
+                                       VboxBotonesDisponibles vboxdisponibles, ArrayList<VBoxBotones> listaDeVBox){
 
         this.vBoxBotones = vBoxBotones;
         this.unTablero = unTablero;

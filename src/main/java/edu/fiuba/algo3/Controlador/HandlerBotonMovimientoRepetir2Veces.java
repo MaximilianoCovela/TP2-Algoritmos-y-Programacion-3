@@ -15,23 +15,24 @@ public class HandlerBotonMovimientoRepetir2Veces implements EventHandler<ActionE
     private BotonMovimientoRepetir2Veces unBotonRepetir2Veces;
     private int index;
     private VBoxMovimientoRepetir2Veces vBoxDeRepetir;
-    private ArrayList listaDeVBox;
+    private ArrayList<VBoxBotones> listaDeVBox;
 
 
     public HandlerBotonMovimientoRepetir2Veces(VBoxBotones vbox,
                                                Tablero unTablero, BotonMovimientoRepetir2Veces botonRepetir2Veces, int index,
-                                               VboxBotonesDisponibles vboxdisponibles, ArrayList listaDeVBox){
+                                               VboxBotonesDisponibles vboxdisponibles, ArrayList<VBoxBotones> listaDeVBox){
         this.vBoxBotones = vbox;
         this.unTablero = unTablero;
         this.unBotonRepetir2Veces = botonRepetir2Veces;
         this.index = index;
         this.vboxBotonesDisponibles = vboxdisponibles;
-        this.vBoxDeRepetir = new VBoxMovimientoRepetir2Veces(unTablero);
         this.listaDeVBox = listaDeVBox;
 
     }
 
     public void handle(ActionEvent event) {
+
+        VBoxMovimientoRepetir2Veces vBoxDeRepetir = new VBoxMovimientoRepetir2Veces(this.unTablero);
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonRepetir2Veces)){
             this.index = (this.vBoxBotones.getChildren()).size();
