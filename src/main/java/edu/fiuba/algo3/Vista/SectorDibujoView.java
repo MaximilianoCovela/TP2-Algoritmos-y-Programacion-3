@@ -14,7 +14,7 @@ import javafx.util.Duration;
 public class SectorDibujoView extends GridPane implements Observer {
 
     public SectorDibujoView(){
-        this.setLayoutX(22.0);
+        this.setLayoutX(12.0); // era 22.0 SectorDibujoView
         this.setLayoutY(21.0);
         this.setPrefHeight(503.0);
         this.setPrefWidth(456.0);
@@ -52,7 +52,7 @@ public class SectorDibujoView extends GridPane implements Observer {
 
         this.getChildren().clear();
 
-        this.setLayoutX(22.0);
+        this.setLayoutX(12.0); //era 22.0
         this.setLayoutY(21.0);
         this.setPrefHeight(503.0);
         this.setPrefWidth(456.0);
