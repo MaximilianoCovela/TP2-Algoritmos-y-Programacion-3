@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Vista;
 
+import edu.fiuba.algo3.modelo.Movimiento;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
@@ -8,64 +9,93 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-public class VboxBotonesDisponibles extends VBox{
-    private VboxBotonesSeleccionados vbs;
+import java.util.ArrayList;
 
-    public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxbotonesseleccionados,
+public class VboxBotonesDisponibles extends VBox{
+
+    private VboxBotonesSeleccionados vBoxSeleccionados;
+
+    private ArrayList<VBoxBotones> listaDeVBox = new ArrayList<>();
+
+    public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxBotonesSeleccionados,
                                   PersonajeView vistaPersonaje, Tablero unTablero){
-        this.vbs = vboxbotonesseleccionados;
+        this.vBoxSeleccionados = vboxBotonesSeleccionados;
+        // aca agregamos al array la vbox principal
+        this.listaDeVBox.add(vboxBotonesSeleccionados);
+
         this.setPadding(new Insets(10, 0, 0, 10));
         this.setSpacing(10);
         int index = 0;
+
+        //Botones simples
+
+        // despues solo le vamos a pasar el array, y la posicion 0 en listaDeVBox va a ser Vbox botones disponibles
         BotonMovimientoArriba botonArriba =
-                new BotonMovimientoArriba(vboxbotonesseleccionados, unTablero, index, this);
+                new BotonMovimientoArriba(vboxBotonesSeleccionados, unTablero, index, this,
+                        listaDeVBox);
 
         BotonMovimientoAbajo botonAbajo =
-                new BotonMovimientoAbajo(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this,
+                        listaDeVBox);
 
         BotonMovimientoDerecha botonDerecha =
-                new BotonMovimientoDerecha(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoDerecha(vboxBotonesSeleccionados, unTablero,index, this,
+                        listaDeVBox);
 
         BotonMovimientoIzquierda botonIzquierda =
-                new BotonMovimientoIzquierda(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoIzquierda(vboxBotonesSeleccionados, unTablero,index, this,
+                        listaDeVBox);
+
+
+        //Botones Invertir
 
         BotonMovimientoRepetir2Veces botonRepetir2Veces =
-                new BotonMovimientoRepetir2Veces(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoRepetir2Veces(vboxBotonesSeleccionados, unTablero,index, this,
+                        listaDeVBox);
+
+        BotonMovimientoPararRepetir2Veces botonPararRepetir2Veces =
+                new BotonMovimientoPararRepetir2Veces(vboxBotonesSeleccionados, unTablero,index,
+                        listaDeVBox);
+
 
         BotonMovimientoRepetir3Veces botonRepetir3Veces =
-                new BotonMovimientoRepetir3Veces(vboxbotonesseleccionados, unTablero);
-        /*
-        BotonMovimientoLapizArriba botonLapizArriba =
-                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero,index);
-                Cerrar repetir
-         */
+                new BotonMovimientoRepetir3Veces(vboxBotonesSeleccionados, unTablero,index, this,
+                        listaDeVBox);
+
+        BotonMovimientoPararRepetir3Veces botonPararRepetir3Veces =
+                new BotonMovimientoPararRepetir3Veces(vboxBotonesSeleccionados, unTablero,index,
+                        listaDeVBox);
+
+
+        //Invertir
 
         BotonMovimientoInvertir botonInvertir =
-                new BotonMovimientoInvertir(vboxbotonesseleccionados, unTablero);
+                new BotonMovimientoInvertir(vboxBotonesSeleccionados, unTablero,index, this,
+                        listaDeVBox);
 
-        /*
-        BotonMovimientoLapizArriba botonLapizArriba =
-                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero,index);
-                Cerrar Invertir
-         */
+        BotonMovimientoPararInvertir botonPararInvertir = new BotonMovimientoPararInvertir(vboxBotonesSeleccionados, unTablero,index,
+                        listaDeVBox);
+
+
+        //Guardar algoritmo
 
         BotonGuardarAlgoritmo botonGuardarAlgoritmo =
-                new BotonGuardarAlgoritmo(vboxbotonesseleccionados, this, unTablero, index);
-        /*
-        BotonMovimientoLapizArriba botonLapizArriba =
-                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero,index);
-                Cerrar Personalizado
-         */
+                new BotonGuardarAlgoritmo(vboxBotonesSeleccionados, this, unTablero, index);
+
+        //Lapiz
 
         BotonMovimientoLapizAbajo botonLapizAbajo =
-                new BotonMovimientoLapizAbajo(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoLapizAbajo(vboxBotonesSeleccionados, unTablero,index, this);
 
         BotonMovimientoLapizArriba botonLapizArriba =
-                new BotonMovimientoLapizArriba(vboxbotonesseleccionados, unTablero,index, this);
+                new BotonMovimientoLapizArriba(vboxBotonesSeleccionados, unTablero,index, this);
+
+
 
         botonGuardarAlgoritmo.setDisable(true); /* Se deshabilita cuando no hay nada en el vbox seleccionados.*/
-        this.getChildren().addAll(botonArriba, botonAbajo, botonDerecha, botonIzquierda, botonRepetir2Veces, botonRepetir3Veces,
-                botonInvertir, botonLapizAbajo, botonLapizArriba, botonGuardarAlgoritmo);
+        this.getChildren().addAll(botonArriba, botonAbajo, botonDerecha, botonIzquierda, botonRepetir2Veces,
+                botonPararRepetir2Veces, botonRepetir3Veces, botonPararRepetir3Veces, botonInvertir, botonPararInvertir, botonLapizAbajo,
+                botonLapizArriba, botonGuardarAlgoritmo);
 
         this.setPrefHeight(500);
         this.setPrefWidth(172);
@@ -75,11 +105,17 @@ public class VboxBotonesDisponibles extends VBox{
 
     public void verificar() {
         int tamanio_vbdisponibles = this.getChildren().size();
-        if (vbs.getChildren().size() >= 1) {
+        if (vBoxSeleccionados.getChildren().size() >= 1) {
             this.getChildren().get(tamanio_vbdisponibles - 1).setDisable(false);
             return;
         }
         this.getChildren().get(tamanio_vbdisponibles - 1).setDisable(true);
     }
 
+    public void vaciarListaVBox() {
+
+        this.listaDeVBox.clear();
+        this.listaDeVBox.add(this.vBoxSeleccionados);
+
+    }
 }

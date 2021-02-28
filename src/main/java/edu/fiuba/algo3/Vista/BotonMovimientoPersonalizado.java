@@ -18,4 +18,5 @@ public class BotonMovimientoPersonalizado extends Button {
         this.setOnAction(new HandlerBotonMovimientoPersonalizado(vboxbotonesseleccionados, unTablero, this,
         index, vbd, nombre, unMovPersonalizado));
     }
+
 }

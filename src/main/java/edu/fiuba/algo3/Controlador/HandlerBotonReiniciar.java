@@ -27,6 +27,7 @@ public class HandlerBotonReiniciar implements EventHandler<ActionEvent>{
         vboxBotones.vaciarBotonesSeleccionados();
         unTablero.reiniciarTablero();
         vistaPersonaje.reiniciarVistaPersonaje();
+        vboxBotonesDisponibles.vaciarListaVBox();
         this.vboxBotonesDisponibles.verificar();
     }
 

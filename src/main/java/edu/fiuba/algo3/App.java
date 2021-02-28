@@ -25,7 +25,7 @@ public class App extends Application {
 
         PersonajeView vistaPersonaje = new PersonajeView(sectorDibujoView);
 
-        VboxBotonesSeleccionados vb2 = new VboxBotonesSeleccionados();
+        VboxBotonesSeleccionados vb2 = new VboxBotonesSeleccionados(this.unTablero);
 
         PanelBloquesSeleccionados panelBloquesSeleccionados = new PanelBloquesSeleccionados(vb2);
 
