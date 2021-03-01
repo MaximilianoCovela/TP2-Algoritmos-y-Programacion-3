@@ -55,6 +55,7 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
     }
 
     public void actualizarVista(int index){
+        System.out.println("El indice del bloque a borrar que le llega es: "+ index);
         while(index < this.getChildren().size()){
             this.getChildren().remove(index);
         }

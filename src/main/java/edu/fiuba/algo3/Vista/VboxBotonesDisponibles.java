@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.modelo.Movimiento;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
@@ -39,8 +38,7 @@ public class VboxBotonesDisponibles extends VBox{
                         listaDeVBox);
         System.out.println("Verifico que entro dentro de vbox botones disponibles");
         BotonMovimientoAbajo botonAbajo =
-                new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this, listaDeVBox,
-                        this.botonSeleccionado);
+                new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this, listaDeVBox);
 
         BotonMovimientoDerecha botonDerecha =
                 new BotonMovimientoDerecha(vboxBotonesSeleccionados, unTablero,index, this,

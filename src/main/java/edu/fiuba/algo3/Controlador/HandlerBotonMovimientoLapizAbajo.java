@@ -32,38 +32,16 @@ public class HandlerBotonMovimientoLapizAbajo implements EventHandler<ActionEven
 
     public void handle(ActionEvent event) {
 
-        VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
-
         VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonLapizAbajo)){
 
             MovimientoLapizAbajo movimientoLapizAbajo = new MovimientoLapizAbajo();
 
-            if(this.listaDeVBox.size() == 1){
-
-                this.index = (actualVBox.getChildren()).size(); // le estamos mandando la vbox de seleccionados
-                BotonMovimientoLapizAbajo botonLapizAbajo = new BotonMovimientoLapizAbajo(primerVBox ,
-                        this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-
-                primerVBox.getChildren().add(botonLapizAbajo);
-
-                Bloque unBloque = new Bloque(movimientoLapizAbajo);
-                this.unTablero.agregarBloque(unBloque);
-                return;
-
-            }
-            /*
-            actualVBox.guardarMovimiento(movIzquierda);
-            BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(actualVBox,
-                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-            actualVBox.getChildren().add(botonIzquierda);
-            */
-
             actualVBox.guardarMovimiento(movimientoLapizAbajo);
             this.index = (actualVBox.getChildren().size());
 
-            BotonMovimientoLapizAbajo botonLapizAbajo = new BotonMovimientoLapizAbajo(primerVBox ,
+            BotonMovimientoLapizAbajo botonLapizAbajo = new BotonMovimientoLapizAbajo(actualVBox ,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(botonLapizAbajo);
 

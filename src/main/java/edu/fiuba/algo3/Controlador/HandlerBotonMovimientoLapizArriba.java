@@ -36,41 +36,18 @@ public class HandlerBotonMovimientoLapizArriba implements EventHandler<ActionEve
 
     public void handle(ActionEvent event) {
 
-        VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
-
         VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonLapizArriba)){
 
             MovimientoLapizArriba movimientoLapizArriba = new MovimientoLapizArriba();
 
-            if(this.listaDeVBox.size() == 1){
-
-                this.index = (actualVBox.getChildren()).size(); // le estamos mandando la vbox de seleccionados
-                BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba(primerVBox ,
-                        this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-
-                primerVBox.getChildren().add(botonLapizArriba);
-
-                Bloque unBloque = new Bloque(movimientoLapizArriba);
-                this.unTablero.agregarBloque(unBloque);
-                return;
-
-            }
-            /*
-            actualVBox.guardarMovimiento(movIzquierda);
-            BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(actualVBox,
-                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-            actualVBox.getChildren().add(botonIzquierda);
-            */
-
             actualVBox.guardarMovimiento(movimientoLapizArriba);
             this.index = (actualVBox.getChildren().size());
 
-            BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba(primerVBox ,
+            BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba(actualVBox ,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(botonLapizArriba);
-
 
         }else{
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonLapizArriba);

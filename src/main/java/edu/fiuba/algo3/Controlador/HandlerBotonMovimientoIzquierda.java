@@ -35,33 +35,10 @@ public class HandlerBotonMovimientoIzquierda implements EventHandler<ActionEvent
 
     public void handle(ActionEvent event) {
 
-        VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
-
         VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonIzquierda)){
-
             MovimientoIzquierda movIzquierda = new MovimientoIzquierda();
-
-            if(this.listaDeVBox.size() == 1){
-
-                this.index = (this.vBoxBotones.getChildren()).size(); // le estamos mandando la vbox de seleccionados
-                BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(primerVBox ,
-                        this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-
-                primerVBox.getChildren().add(botonIzquierda);
-
-                Bloque unBloque = new Bloque(movIzquierda);
-                this.unTablero.agregarBloque(unBloque);
-                return;
-
-            }
-            /*
-            actualVBox.guardarMovimiento(movIzquierda);
-            BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(actualVBox,
-                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-            actualVBox.getChildren().add(botonIzquierda);
-            */
 
             actualVBox.guardarMovimiento(movIzquierda);
             this.index = (actualVBox.getChildren().size());

@@ -1,9 +1,6 @@
 package edu.fiuba.algo3.Controlador;
 import edu.fiuba.algo3.Vista.*;
-import edu.fiuba.algo3.modelo.Bloque;
-import edu.fiuba.algo3.modelo.MovimientoAbajo;
-import edu.fiuba.algo3.modelo.MovimientoDerecha;
-import edu.fiuba.algo3.modelo.Tablero;
+import edu.fiuba.algo3.modelo.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
@@ -38,31 +35,10 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
 
     public void handle(ActionEvent event) {
 
-        VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
-
         VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonDerecha)){
             MovimientoDerecha movDerecha = new MovimientoDerecha();
-
-            if(this.listaDeVBox.size() == 1){
-
-                this.index = (this.vBoxBotones.getChildren()).size(); // le estamos mandando la vbox de seleccionados
-                BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(primerVBox ,
-                        this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-
-                primerVBox.getChildren().add(botonDerecha);
-
-                Bloque unBloque = new Bloque(movDerecha);
-                this.unTablero.agregarBloque(unBloque);
-                return;
-            }
-            /*
-            actualVBox.guardarMovimiento(movDerecha);
-            BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(actualVBox,
-                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-            actualVBox.getChildren().add(botonDerecha);
-            */
 
             actualVBox.guardarMovimiento(movDerecha);
             this.index = (actualVBox.getChildren().size());
@@ -70,6 +46,7 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
             BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(botonDerecha);
+
 
 
         }else{
