@@ -39,6 +39,15 @@ public class MovimientoInvertir implements Movimiento{
 
         }else{
 
+            Movimiento movimientoABajar = this.listaDeMovimientos.get(index);
+            Movimiento movimientoASubir = this.listaDeMovimientos.get(index + 1);
+
+            this.listaDeMovimientos.remove(index + 1);
+            this.listaDeMovimientos.remove(index);
+
+            this.listaDeMovimientos.add(index,movimientoASubir);
+            this.listaDeMovimientos.add(index + 1,movimientoABajar);
+
         }
     }
 }
