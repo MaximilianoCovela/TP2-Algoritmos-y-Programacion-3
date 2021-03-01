@@ -8,22 +8,26 @@ import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+import java.util.ArrayList;
+
 public class HandlerBotonMovimientoLapizArriba implements EventHandler<ActionEvent>{
 
-    private VboxBotonesSeleccionados vboxbotonesseleccionados;
+    private VBoxBotones vboxbotonesseleccionados;
     private VboxBotonesDisponibles vboxBotonesDisponibles;
     private Tablero unTablero;
     private BotonMovimientoLapizArriba unBotonLapizArriba;
     private int index;
+    private ArrayList<VBoxBotones> listaDeVBox;
 
-    public HandlerBotonMovimientoLapizArriba(VboxBotonesSeleccionados vbox,Tablero unTablero,
-                                             BotonMovimientoLapizArriba botonLapizAbajo,int index,
-                                             VboxBotonesDisponibles vboxdisponibles){
+    public HandlerBotonMovimientoLapizArriba(VBoxBotones vbox,Tablero unTablero,
+                                             BotonMovimientoLapizArriba botonLapizArriba, int index,
+                                             VboxBotonesDisponibles vboxdisponibles, ArrayList<VBoxBotones> listaDeVBox){
         this.vboxbotonesseleccionados = vbox;
         this.unTablero = unTablero;
-        this.unBotonLapizArriba = botonLapizAbajo;
+        this.unBotonLapizArriba = botonLapizArriba;
         this.index = index;
         this.vboxBotonesDisponibles = vboxdisponibles;
+        this.listaDeVBox = listaDeVBox;
     }
 
     public int obtenerIndice(){
@@ -32,20 +36,44 @@ public class HandlerBotonMovimientoLapizArriba implements EventHandler<ActionEve
 
     public void handle(ActionEvent event) {
 
+        VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
+
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonLapizArriba)){
-            this.index = (this.vboxbotonesseleccionados.getChildren()).size();
-            BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba(this.vboxbotonesseleccionados,
-                    this.unTablero,this.index, this.vboxBotonesDisponibles);
-            this.vboxbotonesseleccionados.getChildren().add(botonLapizArriba);
 
             MovimientoLapizArriba movimientoLapizArriba = new MovimientoLapizArriba();
-            Bloque unBloque = new Bloque(movimientoLapizArriba);
 
-            this.unTablero.agregarBloque(unBloque);
+            if(this.listaDeVBox.size() == 1){
+
+                this.index = (actualVBox.getChildren()).size(); // le estamos mandando la vbox de seleccionados
+                BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba(primerVBox ,
+                        this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
+
+                primerVBox.getChildren().add(botonLapizArriba);
+
+                Bloque unBloque = new Bloque(movimientoLapizArriba);
+                this.unTablero.agregarBloque(unBloque);
+                return;
+
+            }
+            /*
+            actualVBox.guardarMovimiento(movIzquierda);
+            BotonMovimientoIzquierda botonIzquierda = new BotonMovimientoIzquierda(actualVBox,
+                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
+            actualVBox.getChildren().add(botonIzquierda);
+            */
+
+            actualVBox.guardarMovimiento(movimientoLapizArriba);
+            this.index = (actualVBox.getChildren().size());
+
+            BotonMovimientoLapizArriba botonLapizArriba = new BotonMovimientoLapizArriba(primerVBox ,
+                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
+            actualVBox.getChildren().add(botonLapizArriba);
+
+
         }else{
-            this.vboxbotonesseleccionados.getChildren().remove(this.unBotonLapizArriba);
-            this.vboxbotonesseleccionados.actualizarVista(this.index);
-            this.unTablero.eliminarBloques(this.index);
+            this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonLapizArriba);
         }
         vboxBotonesDisponibles.verificar();
     }

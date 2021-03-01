@@ -41,13 +41,14 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
     }
 
     public void handle(ActionEvent event) {
-        if(!this.vBoxBotones.getChildren().contains(this.unBotonAbajo) && this.botonSeleccionado == null){ //quizas n haga falta
+
+        VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
+
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+
+        if(!this.vBoxBotones.getChildren().contains(this.unBotonAbajo)){ //quizas n haga falta
 
             MovimientoAbajo movAbajo = new MovimientoAbajo();
-
-            VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
-
-            VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
             if(this.listaDeVBox.size() == 1){
 
