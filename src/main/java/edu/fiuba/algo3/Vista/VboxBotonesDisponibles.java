@@ -40,7 +40,7 @@ public class VboxBotonesDisponibles extends VBox{
         System.out.println("a VER CUANTAS VECES ENTRA ACA");
         BotonMovimientoAbajo botonAbajo =
                 new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this, listaDeVBox,
-                        botonSeleccionado);
+                        this.botonSeleccionado);
 
         BotonMovimientoDerecha botonDerecha =
                 new BotonMovimientoDerecha(vboxBotonesSeleccionados, unTablero,index, this,

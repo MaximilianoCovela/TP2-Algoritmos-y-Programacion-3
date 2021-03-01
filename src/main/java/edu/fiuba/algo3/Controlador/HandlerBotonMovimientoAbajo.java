@@ -85,9 +85,10 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
             this.botonSeleccionado = this.unBotonAbajo;
 
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonAbajo);
+            // aca el un boton abajo devcuelve bien el nombre y
+            System.out.println("mi nombrecito es :"+this.vboxBotonesDisponibles.getBotonSeleccionado().getNombre());
 
             System.out.println("Entro aca al handle de size 1");
-
 
 
 

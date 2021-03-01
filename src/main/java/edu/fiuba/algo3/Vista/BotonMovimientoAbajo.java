@@ -34,4 +34,11 @@ public class BotonMovimientoAbajo extends Boton {
         return this;
     }
 
+
+    public String getNombre(){
+
+        return "Funciono wei u-u no soy nulito";
+
+    }
+
 }

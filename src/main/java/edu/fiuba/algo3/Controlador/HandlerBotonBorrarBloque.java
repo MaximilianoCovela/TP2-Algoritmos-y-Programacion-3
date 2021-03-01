@@ -10,19 +10,22 @@ import java.util.ArrayList;
 
 public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
 
-    private final Boton botonSeleccionado;
+    private Boton botonSeleccionado;
     private final PanelTablero panelTablero;
     private VBoxBotones vBoxActual;
-    private VboxBotonesDisponibles vboxBotonesDisponibles;
     private Tablero unTablero;
     private BotonBorrarBloque unBotonBorrarBloque;
+    private VboxBotonesDisponibles vboxBotonesDisponibles;
+
     private ArrayList<VBoxBotones> listaDeVBox;
 
     // esto es lo que vamos a empezar a hacer
 
     public HandlerBotonBorrarBloque(VBoxBotones vBoxBotones,
             Tablero unTablero, ArrayList<VBoxBotones> arrayVbox, Boton botonSeleccionado,
-                                    PanelTablero panelTablero, BotonBorrarBloque botonBorrarBloque) {
+                                    PanelTablero panelTablero, BotonBorrarBloque botonBorrarBloque,
+                                    VboxBotonesDisponibles vboxBotonesDisponibles) {
+        this.vboxBotonesDisponibles = vboxBotonesDisponibles;
 
         this.listaDeVBox = arrayVbox;
         this.unTablero = unTablero;
@@ -30,12 +33,15 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
         this.vBoxActual = vBoxBotones; // usar la del array mejor xd
         this.panelTablero = panelTablero;
         this.unBotonBorrarBloque = botonBorrarBloque;
+
      }
 
 
     public void handle(ActionEvent event) {
 
-        if(this.botonSeleccionado == null){
+        Boton botonSeleccionado = this.vboxBotonesDisponibles.getBotonSeleccionado();
+
+        if(botonSeleccionado == null){
              System.out.println("Aun es nulo el puntero al botón");
             return; //para no dejarlo vacio
 
@@ -47,6 +53,8 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
             this.vBoxActual.actualizarVista(indexBotonABorrar);
             this.unTablero.eliminarBloques(indexBotonABorrar);
             System.out.println("jamas entra aca");
+            this.botonSeleccionado = null;
+
         }
 
     }
