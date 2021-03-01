@@ -42,8 +42,8 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
         Boton botonSeleccionado = this.vboxBotonesDisponibles.getBotonSeleccionado();
 
         if(botonSeleccionado == null){
-             System.out.println("Aun es nulo el puntero al botón");
-            return; //para no dejarlo vacio
+            System.out.println("Aun es nulo el puntero al botón");
+
 
         } else {
 
@@ -53,7 +53,9 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
             this.vBoxActual.actualizarVista(indexBotonABorrar);
             this.unTablero.eliminarBloques(indexBotonABorrar);
             System.out.println("jamas entra aca");
-            this.botonSeleccionado = null;
+            //this.botonSeleccionado = null;
+
+            this.vboxBotonesDisponibles.cambiarBotonSeleccionado(null);
 
         }
 
