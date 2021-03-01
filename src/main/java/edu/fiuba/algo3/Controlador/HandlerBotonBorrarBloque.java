@@ -56,8 +56,6 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
 
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(null);
             VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
-            primerVBox.refrescarVista();
-
         }
 
     }

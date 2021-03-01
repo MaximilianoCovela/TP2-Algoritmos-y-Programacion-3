@@ -60,14 +60,4 @@ public class VboxMovimientoInvertir extends VBoxBotones {
         this.movimientoInvertir.quitarMovimientos(index);
     }
 
-    public void refrescarVista() {
-        int tamanio_vbdisponibles = this.getChildren().size();
-        int i = 0;
-        int j = 0;
-
-        while(j < tamanio_vbdisponibles){
-            this.getChildren().add(this.getChildren().get(i));
-            j++;
-        }
-    }
 }

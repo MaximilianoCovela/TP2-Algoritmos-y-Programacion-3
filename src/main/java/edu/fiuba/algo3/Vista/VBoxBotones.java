@@ -11,5 +11,4 @@ public abstract class VBoxBotones extends VBox {
     public abstract void guardarMovimiento(Movimiento unMovimiento);
     public abstract void actualizarVista(int index);
     public abstract void eliminarMovimiento(int index); //falta implementar que cuando ya se haya cerrado no se pueda borrar
-    public abstract void refrescarVista();
 }

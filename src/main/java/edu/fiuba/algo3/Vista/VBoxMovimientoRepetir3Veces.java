@@ -68,16 +68,4 @@ public class VBoxMovimientoRepetir3Veces extends VBoxBotones{
         this.movimientoRepetir.quitarMovimientos(index);
     }
 
-    public void refrescarVista() {
-        int xd = 8;
-        int tamanio_vbdisponibles = this.getChildren().size();
-        int i = 0;
-        int j = 0;
-
-        while(j < tamanio_vbdisponibles){
-            this.getChildren().add(this.getChildren().get(i));
-            j++;
-        }
-    }
-
 }

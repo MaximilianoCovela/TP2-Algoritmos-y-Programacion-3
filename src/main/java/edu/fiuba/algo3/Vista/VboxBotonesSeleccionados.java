@@ -55,25 +55,4 @@ public class VboxBotonesSeleccionados extends VBoxBotones {
 
     }
 
-    public void refrescarVista() {
-        int tamanio_vbdisponibles = this.getChildren().size();
-        int i = 0;
-        int j = 0;
-
-        VboxBotonesSeleccionados vibo = new VboxBotonesSeleccionados(this.unTablero);
-
-        while(j < tamanio_vbdisponibles){
-            vibo.getChildren().add(this.getChildren().get(j));
-            j++;
-        }
-
-        this.actualizarVista(0);
-
-        while(i < (tamanio_vbdisponibles - 1)){
-            this.getChildren().add(vibo.getChildren().get(i));
-            i++;
-        }
-
-    }
-
 }
