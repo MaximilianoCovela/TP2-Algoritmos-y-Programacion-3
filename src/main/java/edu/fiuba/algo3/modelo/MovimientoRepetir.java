@@ -27,4 +27,10 @@ public class MovimientoRepetir implements Movimiento{
                 forEach(x -> (this.listaDeMovimientos.get(x)).invertirMovimiento(unPersonaje));
     }
 
+    public void quitarMovimientos(int index) {
+
+        while(index < this.listaDeMovimientos.size()) {
+            this.listaDeMovimientos.remove(index);
+        }
+    }
 }

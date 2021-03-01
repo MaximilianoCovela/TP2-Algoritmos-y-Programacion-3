@@ -47,4 +47,11 @@ public class VboxBotonesSeleccionados extends VBoxBotones {
     public Boton getBotonSeleccionado(){
         return null;
     }
+
+    public void eliminarMovimiento(int index){
+
+        this.unTablero.eliminarBloques(index); //esto deberia funcionar ya que si esta en esta vbox no esta en un bloque complejo
+
+    }
+
 }

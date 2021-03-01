@@ -46,11 +46,13 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
 
         } else {
 
+            VBoxBotones vBoxActual = this.listaDeVBox.get(listaDeVBox.size()-1);
             int indexBotonABorrar = botonSeleccionado.getIndex();
             System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su indice es : " +indexBotonABorrar);
-            this.vBoxActual.getChildren().remove(botonSeleccionado.getButton());
-            this.vBoxActual.actualizarVista(indexBotonABorrar);
-            this.unTablero.eliminarBloques(indexBotonABorrar); // esto hay que tener en cuenta que puede estar adentro de alguna wea
+            vBoxActual.getChildren().remove(botonSeleccionado.getButton());
+            vBoxActual.eliminarMovimiento(indexBotonABorrar);
+            vBoxActual.actualizarVista(indexBotonABorrar); //cambie esto recien
+            //this.unTablero.eliminarBloques(indexBotonABorrar);  esto hay que tener en cuenta que puede estar adentro de alguna wea
 
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(null);
 

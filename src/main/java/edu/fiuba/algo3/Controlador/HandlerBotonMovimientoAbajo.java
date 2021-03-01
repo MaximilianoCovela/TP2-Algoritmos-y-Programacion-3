@@ -31,7 +31,6 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
         this.vBoxBotones = vBoxBotones;
         this.unTablero = unTablero;
         this.unBotonAbajo = botonAbajo;
-        this.index = index;
         this.vboxBotonesDisponibles = vboxdisponibles;
         this.listaDeVBox = listaDeVBox;
         this.botonSeleccionado = botonSeleccionado;
@@ -64,7 +63,11 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
                 return;
 
             }
+             //agregue esto, se borra lo de la posc 0
+
             actualVBox.guardarMovimiento(movAbajo);
+            this.index = (actualVBox.getChildren().size()) - 1;
+            System.out.println("Indice del objeto: "+ this.index);
             BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox, botonSeleccionado);
             actualVBox.getChildren().add(botonAbajo);

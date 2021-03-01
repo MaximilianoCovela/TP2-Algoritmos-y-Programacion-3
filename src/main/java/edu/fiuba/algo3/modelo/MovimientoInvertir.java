@@ -16,4 +16,10 @@ public class MovimientoInvertir implements Movimiento{
         this.listaDeMovimientos.forEach((movimiento) -> movimiento.aplicarMovimiento(unPersonaje));
     }
 
+    public void quitarMovimientos(int index) {
+
+        while(index < this.listaDeMovimientos.size()) {
+            this.listaDeMovimientos.remove(index);
+        }
+    }
 }

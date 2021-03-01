@@ -53,7 +53,9 @@ public class VboxMovimientoInvertir extends VBoxBotones {
             this.getChildren().remove(index);
         }
     }
-    public Boton getBotonSeleccionado(){
-        return null;
+
+    public void eliminarMovimiento(int index){
+
+        this.movimientoInvertir.quitarMovimientos(index);
     }
 }

@@ -61,4 +61,10 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
     public Boton getBotonSeleccionado(){
         return null;
     }
+
+    public void eliminarMovimiento(int index){
+
+        this.movimientoRepetir.quitarMovimientos(index);
+
+    }
 }
