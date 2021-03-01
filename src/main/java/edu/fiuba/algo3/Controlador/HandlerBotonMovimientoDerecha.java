@@ -56,10 +56,20 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
                 this.unTablero.agregarBloque(unBloque);
                 return;
             }
+            /*
             actualVBox.guardarMovimiento(movDerecha);
             BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(botonDerecha);
+            */
+
+            actualVBox.guardarMovimiento(movDerecha);
+            this.index = (actualVBox.getChildren().size());
+            System.out.println("Indice del objeto: "+ this.index);
+            BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(actualVBox,
+                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
+            actualVBox.getChildren().add(botonDerecha);
+
 
         }else{
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonDerecha);

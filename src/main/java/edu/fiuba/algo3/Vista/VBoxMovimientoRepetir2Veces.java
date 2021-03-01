@@ -58,6 +58,7 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
             this.getChildren().remove(index);
         }
     }
+
     public Boton getBotonSeleccionado(){
         return null;
     }
