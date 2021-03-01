@@ -32,6 +32,8 @@ public class PersonajeView implements Observer {
 
         Posicion posicionInicial = new Posicion();
 
+        this.actualizarImagen(new Image("https://i.imgur.com/rcT26Fo.png"));
+
         this.sectorDibujo.borrarCaminosRealizados(imagenPersonaje);
 
         this.sectorDibujo.actualizarVistaPersonajeEnSectorDibujo(posicionInicial.getValorHorizontal(),
@@ -50,23 +52,22 @@ public class PersonajeView implements Observer {
 
         Posicion nuevaPosicion = unDibujo.getPosicionFinal();
 
-        /*
-        switch(){
-            case(){
 
-            }
-            case(){
-
-            }
-            case(){
-
-            }
-            case(){
-
-            }
-
+        if(nuevaPosicion.getValorHorizontal() > this.posicionHorizontal){
+            //this.imagenPersonaje = new ImageView(new Image("https://imgur.com/awfzRqc.png"));
+            Image imagenDerecha = new Image("https://i.imgur.com/awfzRqc.png");
+            this.actualizarImagen(imagenDerecha);
+        }else if(nuevaPosicion.getValorHorizontal() < this.posicionHorizontal){
+            Image imagenIzquierda = new Image("https://imgur.com/npbSGMe.png");
+            this.actualizarImagen(imagenIzquierda);
+        }else if(nuevaPosicion.getValorVertical() > this.posicionVertical){
+            Image imagenAbajo = new Image("https://i.imgur.com/rcT26Fo.png");
+            this.actualizarImagen(imagenAbajo);
+        }else if(nuevaPosicion.getValorVertical() < this.posicionVertical){
+            Image imagenArriba = new Image("https://i.imgur.com/N3gBRlL.png");
+            this.actualizarImagen(imagenArriba);
         }
-        */
+
 
         System.out.println("Posicion Horizontal:" + nuevaPosicion.getValorHorizontal());
         System.out.println("Posicion Vertical:" + nuevaPosicion.getValorVertical());
