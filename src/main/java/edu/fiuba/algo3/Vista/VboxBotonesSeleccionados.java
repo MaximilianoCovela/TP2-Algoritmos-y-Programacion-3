@@ -43,4 +43,8 @@ public class VboxBotonesSeleccionados extends VBoxBotones {
        Bloque unBloque = new Bloque(unMovimiento);
        this.unTablero.agregarBloque(unBloque);
     }
+
+    public Boton getBotonSeleccionado(){
+        return null;
+    }
 }

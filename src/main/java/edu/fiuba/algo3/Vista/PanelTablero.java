@@ -1,15 +1,24 @@
 package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.modelo.Tablero;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.layout.Pane;
 
+import java.util.ArrayList;
+
 public class PanelTablero extends Pane {
+
 
     public PanelTablero(PanelBloquesDisponibles panelBloquesDisponibles, PanelBloquesSeleccionados panelBloquesSeleccionados,
                         SectorDibujoView sectorDibujoView, Tablero unTablero, PersonajeView vistaPersonaje,
-                        BotonBajarBloque botonBajarBloque, BotonSubirBloque botonSubirBloque){
+                        BotonBajarBloque botonBajarBloque, BotonSubirBloque botonSubirBloque,
+                        ArrayList<VBoxBotones> arrayVBox, VBoxBotones vBoxActual, Boton botonSeleccionado,
+                        VboxBotonesDisponibles vboxBotonesDisponibles){
+
+        // no se si hacer que sea Button o Boton
+
         this.setPrefHeight(604.0);
         this.setPrefWidth(996.0); // era 946.0
         this.setStyle("-fx-background-color: lightblue");
@@ -36,8 +45,14 @@ public class PanelTablero extends Pane {
         BotonReiniciar botonReiniciar = new BotonReiniciar(unTablero, panelBloquesSeleccionados.obtenerVBoxBotones(),
                 vistaPersonaje, panelBloquesDisponibles.obtenerVBox());
 
-        //creo boton borrar bloque
-        BotonBorrarBloque botonBorrarBloque = new BotonBorrarBloque();
+        System.out.println("Quiero ver si aca llega el boton cargado desde antes, o no.");
+
+        Boton botonabajito = new BotonMovimientoAbajo(vBoxActual, unTablero, 0, vboxBotonesDisponibles, arrayVBox, null);
+
+        Boton botonMovAbAjo = new BotonMovimientoAbajo(vBoxActual, unTablero, 0, vboxBotonesDisponibles, arrayVBox, botonabajito);
+
+        BotonBorrarBloque botonBorrarBloque = new BotonBorrarBloque(vBoxActual, unTablero, arrayVBox,
+                this, botonMovAbAjo);
 
         this.getChildren().add(botonPlay);
         this.getChildren().add(botonReiniciar);
@@ -51,6 +66,5 @@ public class PanelTablero extends Pane {
         this.getChildren().add(panelBloquesDisponibles);
         this.getChildren().add(panelBloquesSeleccionados);
     }
-
 
 }

@@ -57,4 +57,8 @@ public class VBoxMovimientoRepetir3Veces extends VBoxBotones{
         }
     }
 
+    public Boton getBotonSeleccionado(){
+        return null;
+    }
+
 }

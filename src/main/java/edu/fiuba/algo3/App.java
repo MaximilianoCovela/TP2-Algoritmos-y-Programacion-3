@@ -4,6 +4,7 @@ import edu.fiuba.algo3.Vista.*;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -20,6 +21,7 @@ public class App extends Application {
     public void start(Stage stage) {
 
         stage.setTitle("AlgoBlocks");
+
 
         SectorDibujoView sectorDibujoView = new SectorDibujoView();
 
@@ -39,7 +41,8 @@ public class App extends Application {
         BotonSubirBloque botonSubirBloque = new BotonSubirBloque();
 
         PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados,
-                sectorDibujoView, unTablero, vistaPersonaje,botonBajarBloque, botonSubirBloque);
+                sectorDibujoView, unTablero, vistaPersonaje,botonBajarBloque, botonSubirBloque, vb.getListaVBox(),
+                vb.getVBoxActual(), (Boton) vb.getBotonSeleccionado(),vb); // no entiendo por que el cast
 
         PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles,
                 panelBloquesSeleccionados, sectorDibujoView);

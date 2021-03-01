@@ -15,6 +15,8 @@ public class VboxBotonesDisponibles extends VBox{
 
     private VboxBotonesSeleccionados vBoxSeleccionados;
 
+    private Boton botonSeleccionado;
+
     private ArrayList<VBoxBotones> listaDeVBox = new ArrayList<>();
 
     public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxBotonesSeleccionados,
@@ -22,6 +24,8 @@ public class VboxBotonesDisponibles extends VBox{
         this.vBoxSeleccionados = vboxBotonesSeleccionados;
         // aca agregamos al array la vbox principal
         this.listaDeVBox.add(vboxBotonesSeleccionados);
+
+        this.botonSeleccionado = null;
 
         this.setPadding(new Insets(10, 0, 0, 10));
         this.setSpacing(10);
@@ -33,10 +37,10 @@ public class VboxBotonesDisponibles extends VBox{
         BotonMovimientoArriba botonArriba =
                 new BotonMovimientoArriba(vboxBotonesSeleccionados, unTablero, index, this,
                         listaDeVBox);
-
+        System.out.println("a VER CUANTAS VECES ENTRA ACA");
         BotonMovimientoAbajo botonAbajo =
-                new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this,
-                        listaDeVBox);
+                new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this, listaDeVBox,
+                        botonSeleccionado);
 
         BotonMovimientoDerecha botonDerecha =
                 new BotonMovimientoDerecha(vboxBotonesSeleccionados, unTablero,index, this,
@@ -116,6 +120,39 @@ public class VboxBotonesDisponibles extends VBox{
 
         this.listaDeVBox.clear();
         this.listaDeVBox.add(this.vBoxSeleccionados);
+
+    }
+    //esto borrar y refactorizar, pasa que el borrar esta en Tablero, y la lista de VBox la contiene esta clase
+    public ArrayList<VBoxBotones> getListaVBox(){
+
+        return listaDeVBox;
+
+    }
+
+    public VBoxBotones getVBoxActual(){
+        // no se si esto va a funcionar, por el cast mas que nada, ver arriba que onda
+        return (VBoxBotones) vBoxSeleccionados;
+
+    }
+
+    public void cambiarBotonSeleccionado(Boton nuevoBotonSeleccionado){
+
+        this.botonSeleccionado = nuevoBotonSeleccionado;
+
+        System.out.println("Quiero ver si aca llega el boton cargado desde antes, o no.");
+
+        if(nuevoBotonSeleccionado != null){
+
+            System.out.println("Boton Selecc index en botones disponibles:"+nuevoBotonSeleccionado.getIndex());
+
+        }
+
+
+    }
+
+    public Boton getBotonSeleccionado() {
+
+        return this.botonSeleccionado;
 
     }
 }

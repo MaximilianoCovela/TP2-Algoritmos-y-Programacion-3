@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
+    private Boton botonSeleccionado;
     private VBoxBotones vBoxBotones;
     private VboxBotonesDisponibles vboxBotonesDisponibles;
     private Tablero unTablero;
@@ -24,7 +25,8 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
     public HandlerBotonMovimientoAbajo(VBoxBotones vBoxBotones,
                                        Tablero unTablero, BotonMovimientoAbajo botonAbajo, int index,
-                                       VboxBotonesDisponibles vboxdisponibles, ArrayList<VBoxBotones> listaDeVBox){
+                                       VboxBotonesDisponibles vboxdisponibles, ArrayList<VBoxBotones> listaDeVBox,
+                                       Boton botonSeleccionado){
 
         this.vBoxBotones = vBoxBotones;
         this.unTablero = unTablero;
@@ -32,6 +34,7 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
         this.index = index;
         this.vboxBotonesDisponibles = vboxdisponibles;
         this.listaDeVBox = listaDeVBox;
+        this.botonSeleccionado = botonSeleccionado;
     }
 
     public int obtenerIndice(){
@@ -39,7 +42,7 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
     }
 
     public void handle(ActionEvent event) {
-        if(!this.vBoxBotones.getChildren().contains(this.unBotonAbajo)){
+        if(!this.vBoxBotones.getChildren().contains(this.unBotonAbajo) && this.botonSeleccionado == null){ //quizas n haga falta
 
             MovimientoAbajo movAbajo = new MovimientoAbajo();
 
@@ -51,13 +54,17 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
                 this.index = (this.vBoxBotones.getChildren()).size(); // le estamos mandando la vbox de seleccionados
                 BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(primerVBox ,
-                        this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
+                        this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox,  botonSeleccionado);
 
                 primerVBox.getChildren().add(botonAbajo);
 
                 //tablero
                 Bloque unBloque = new Bloque(movAbajo);
                 this.unTablero.agregarBloque(unBloque);
+
+                System.out.println("indice:"+ index);
+                this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonAbajo);
+                System.out.println("index boton:"+ this.unBotonAbajo.getIndex());
                 return;
 
             }
@@ -66,22 +73,25 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
             VBoxBotones vbox;
             vbox = (VBoxMovimientoRepetir2Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
             */
-
+            // creo que todavia no tiene el index si estaba adentro de una VBox distinta, seria copiar y pegar lo de arriba
             actualVBox.guardarMovimiento(movAbajo);
             BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(actualVBox,
-                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
+                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox, botonSeleccionado);
             actualVBox.getChildren().add(botonAbajo);
 
-            System.out.println("indice:"+ index);
 
         }else{
-            System.out.println("Todavia no esta hecho esto padre :D");
-            // vamos a tener que chequear esto, para que se borre de la vbox correspondiente
-            /*
-            this.vBoxBotones.getChildren().remove(this.unBotonAbajo);
-            this.vBoxBotones.actualizarVista(this.index);
-            this.unTablero.eliminarBloques(this.index);
-            */
+
+            this.botonSeleccionado = this.unBotonAbajo;
+
+            this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonAbajo);
+
+            System.out.println("Entro aca al handle de size 1");
+
+
+
+
+
         }
         vboxBotonesDisponibles.verificar();
     }

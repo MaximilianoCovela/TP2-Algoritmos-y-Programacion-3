@@ -8,4 +8,6 @@ public abstract class VBoxBotones extends VBox {
     public abstract void agregarBloqueATablero();
     public abstract void guardarMovimiento(Movimiento unMovimiento);
     public abstract void actualizarVista(int index);
+    public abstract Boton getBotonSeleccionado();
+
 }
