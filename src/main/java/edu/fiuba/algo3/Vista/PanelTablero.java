@@ -13,7 +13,6 @@ public class PanelTablero extends Pane {
 
     public PanelTablero(PanelBloquesDisponibles panelBloquesDisponibles, PanelBloquesSeleccionados panelBloquesSeleccionados,
                         SectorDibujoView sectorDibujoView, Tablero unTablero, PersonajeView vistaPersonaje,
-                        BotonBajarBloque botonBajarBloque, BotonSubirBloque botonSubirBloque,
                         ArrayList<VBoxBotones> arrayVBox, VBoxBotones vBoxActual,
                         VboxBotonesDisponibles vboxBotonesDisponibles){
 
@@ -47,9 +46,11 @@ public class PanelTablero extends Pane {
 
         System.out.println("Quiero ver si aca llega el boton cargado desde antes, o no.");
 
-        //Boton botonabajito = new BotonMovimientoAbajo(vBoxActual, unTablero, 0, vboxBotonesDisponibles, arrayVBox, null);
+        BotonSubirBloque botonSubirBloque = new BotonSubirBloque(vBoxActual, unTablero, arrayVBox,
+                        this, vboxBotonesDisponibles);
 
-        //Boton botonMovAbAjo = new BotonMovimientoAbajo(vBoxActual, unTablero, 0, vboxBotonesDisponibles, arrayVBox, botonabajito);
+        BotonBajarBloque botonBajarBloque = new BotonBajarBloque(vBoxActual, unTablero, arrayVBox,
+                        this, vboxBotonesDisponibles);
 
         BotonBorrarBloque botonBorrarBloque = new BotonBorrarBloque(vBoxActual, unTablero, arrayVBox,
                 this, vboxBotonesDisponibles);

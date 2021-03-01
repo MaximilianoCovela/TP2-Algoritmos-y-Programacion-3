@@ -36,4 +36,8 @@ public class BotonMovimientoDerecha extends Boton{
         return "UWU";
     }
 
+    public void setIndex(int i){
+        this.index = i;
+    }
+
 }

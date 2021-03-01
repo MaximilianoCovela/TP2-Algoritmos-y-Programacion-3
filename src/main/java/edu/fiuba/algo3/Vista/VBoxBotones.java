@@ -25,4 +25,5 @@ public abstract class VBoxBotones extends VBox {
         this.indexVBox = indexVBox;
     }
 
+    public abstract void actualizarMovimientos(int indexBotonASubir, int i);
 }

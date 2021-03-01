@@ -48,6 +48,9 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
             actualVBox.guardarMovimiento(movAbajo); //aca se crea el bloque si es la de seleccionados
             this.index = (actualVBox.getChildren().size());
+
+            this.unBotonAbajo.setIndex(this.index);
+
             System.out.println("Indice del objeto: "+ this.index);
             BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);

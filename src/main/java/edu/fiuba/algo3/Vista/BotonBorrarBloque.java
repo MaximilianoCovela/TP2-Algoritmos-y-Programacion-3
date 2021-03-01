@@ -18,6 +18,5 @@ public class BotonBorrarBloque extends Button {
         this.setOnAction(new HandlerBotonBorrarBloque(vBoxActual, unTablero, arrayVbox, panelTablero, this,
                  vboxBotonesDisponibles));
 
-
     }
 }

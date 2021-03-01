@@ -60,4 +60,8 @@ public class VboxMovimientoInvertir extends VBoxBotones {
         this.movimientoInvertir.quitarMovimientos(index);
     }
 
+    public void actualizarMovimientos(int index, int i) {
+        this.movimientoInvertir.swapMovimientos(index,i);
+    }
+
 }

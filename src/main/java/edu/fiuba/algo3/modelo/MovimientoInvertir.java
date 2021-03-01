@@ -22,4 +22,23 @@ public class MovimientoInvertir implements Movimiento{
             this.listaDeMovimientos.remove(index);
         }
     }
+
+    public void swapMovimientos(int index, int numero){
+        Movimiento primerMovimiento;
+        Movimiento segundoMovimiento;
+
+        if(numero == 1){
+            segundoMovimiento = this.listaDeMovimientos.get(index);
+            primerMovimiento = this.listaDeMovimientos.get(index - 1);
+
+            this.listaDeMovimientos.remove(index);
+            this.listaDeMovimientos.remove(index - 1);
+
+            this.listaDeMovimientos.add(index - 1,segundoMovimiento);
+            this.listaDeMovimientos.add(index ,primerMovimiento);
+
+        }else{
+
+        }
+    }
 }

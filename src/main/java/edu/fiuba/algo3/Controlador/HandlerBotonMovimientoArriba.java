@@ -44,6 +44,9 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
 
             actualVBox.guardarMovimiento(movArriba);
             this.index = (actualVBox.getChildren().size());
+
+            this.unBotonArriba.setIndex(this.index);
+
             System.out.println("Indice del objeto: "+ this.index);
             BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);

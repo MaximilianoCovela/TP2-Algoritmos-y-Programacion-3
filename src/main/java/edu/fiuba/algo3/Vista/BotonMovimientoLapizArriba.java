@@ -37,4 +37,8 @@ public class BotonMovimientoLapizArriba extends Boton {
         return "OWO";
     }
 
+    public void setIndex(int i){
+        this.index = i;
+    }
+
 }

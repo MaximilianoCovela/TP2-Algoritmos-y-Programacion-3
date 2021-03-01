@@ -36,11 +36,9 @@ public class App extends Application {
 
         unTablero.mostrarSectorDibujo().addObserver(vistaPersonaje);
 
-        BotonBajarBloque botonBajarBloque = new BotonBajarBloque();
-        BotonSubirBloque botonSubirBloque = new BotonSubirBloque();
 
         PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados,
-                sectorDibujoView, unTablero, vistaPersonaje,botonBajarBloque, botonSubirBloque, vb.getListaVBox(),
+                sectorDibujoView, unTablero, vistaPersonaje, vb.getListaVBox(),
                 vb.getVBoxActual(),vb); // no entiendo por que el cast
 
         PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles,

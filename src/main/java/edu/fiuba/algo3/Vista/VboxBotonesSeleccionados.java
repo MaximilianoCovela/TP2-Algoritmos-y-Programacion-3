@@ -55,4 +55,7 @@ public class VboxBotonesSeleccionados extends VBoxBotones {
 
     }
 
+    public void actualizarMovimientos(int indexBotonASubir, int i){
+        this.unTablero.swapBloques(indexBotonASubir,i);
+    }
 }

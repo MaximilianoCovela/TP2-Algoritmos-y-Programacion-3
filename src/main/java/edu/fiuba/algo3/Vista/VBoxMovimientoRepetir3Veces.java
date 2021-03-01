@@ -68,4 +68,8 @@ public class VBoxMovimientoRepetir3Veces extends VBoxBotones{
         this.movimientoRepetir.quitarMovimientos(index);
     }
 
+    public void actualizarMovimientos(int index, int i) {
+        this.movimientoRepetir.swapMovimientos(index,i);
+    }
+
 }
