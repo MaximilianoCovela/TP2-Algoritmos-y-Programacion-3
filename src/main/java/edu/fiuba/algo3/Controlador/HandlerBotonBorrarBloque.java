@@ -45,15 +45,20 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
             System.out.println("Aun es nulo el puntero al botón");
 
         } else {
-
             VBoxBotones vBoxActual = this.listaDeVBox.get(listaDeVBox.size()-1);
+
+            if(!vBoxActual.getChildren().contains(botonSeleccionado)){
+                return;
+            }
+
             int indexBotonABorrar = botonSeleccionado.getIndex();
             System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su indice es : " +indexBotonABorrar);
             vBoxActual.eliminarMovimiento(indexBotonABorrar);
             vBoxActual.actualizarVista(indexBotonABorrar); //cambie esto recien
 
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(null);
-            VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
+
+
         }
 
     }
