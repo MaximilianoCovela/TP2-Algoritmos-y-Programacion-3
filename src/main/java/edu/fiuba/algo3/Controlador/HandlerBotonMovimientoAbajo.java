@@ -46,9 +46,9 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
             MovimientoAbajo movAbajo = new MovimientoAbajo();
 
-            VBoxBotones primerVBox = (VBoxBotones) this.listaDeVBox.get(0); // es bloques seleccionados
+            VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
 
-            VBoxBotones actualVBox = (VBoxBotones) this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+            VBoxBotones actualVBox =this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
             if(this.listaDeVBox.size() == 1){
 
@@ -62,18 +62,11 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
                 Bloque unBloque = new Bloque(movAbajo);
                 this.unTablero.agregarBloque(unBloque);
 
-                System.out.println("indice:"+ index);
-                this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonAbajo);
-                System.out.println("index boton:"+ this.unBotonAbajo.getIndex());
                 return;
+
 
             }
 
-            /*
-            VBoxBotones vbox;
-            vbox = (VBoxMovimientoRepetir2Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
-            */
-            // creo que todavia no tiene el index si estaba adentro de una VBox distinta, seria copiar y pegar lo de arriba
             actualVBox.guardarMovimiento(movAbajo);
             BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox, botonSeleccionado);
@@ -89,8 +82,6 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
             System.out.println("mi nombrecito es :"+this.vboxBotonesDisponibles.getBotonSeleccionado().getNombre());
 
             System.out.println("Entro aca al handle de size 1");
-
-
 
 
         }

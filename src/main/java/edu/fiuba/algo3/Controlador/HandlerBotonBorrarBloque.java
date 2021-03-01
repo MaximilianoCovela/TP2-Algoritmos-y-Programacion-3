@@ -51,7 +51,7 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
             System.out.println("Indice del boton que quiero borrar: " +indexBotonABorrar);
             this.vBoxActual.getChildren().remove(botonSeleccionado.getButton());
             this.vBoxActual.actualizarVista(indexBotonABorrar);
-            this.unTablero.eliminarBloques(indexBotonABorrar);
+            this.unTablero.eliminarBloques(indexBotonABorrar); // esto hay que tener en cuenta que puede estar adentro de alguna wea
             System.out.println("jamas entra aca");
             //this.botonSeleccionado = null;
 
