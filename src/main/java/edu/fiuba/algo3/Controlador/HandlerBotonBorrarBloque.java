@@ -44,16 +44,13 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
         if(botonSeleccionado == null){
             System.out.println("Aun es nulo el puntero al botón");
 
-
         } else {
 
             int indexBotonABorrar = botonSeleccionado.getIndex();
-            System.out.println("Indice del boton que quiero borrar: " +indexBotonABorrar);
+            System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su indice es : " +indexBotonABorrar);
             this.vBoxActual.getChildren().remove(botonSeleccionado.getButton());
             this.vBoxActual.actualizarVista(indexBotonABorrar);
             this.unTablero.eliminarBloques(indexBotonABorrar); // esto hay que tener en cuenta que puede estar adentro de alguna wea
-            System.out.println("jamas entra aca");
-            //this.botonSeleccionado = null;
 
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(null);
 

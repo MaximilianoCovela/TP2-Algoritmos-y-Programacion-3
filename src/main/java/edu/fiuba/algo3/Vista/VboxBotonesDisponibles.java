@@ -37,7 +37,7 @@ public class VboxBotonesDisponibles extends VBox{
         BotonMovimientoArriba botonArriba =
                 new BotonMovimientoArriba(vboxBotonesSeleccionados, unTablero, index, this,
                         listaDeVBox);
-        System.out.println("a VER CUANTAS VECES ENTRA ACA");
+        System.out.println("Verifico que entro dentro de vbox botones disponibles");
         BotonMovimientoAbajo botonAbajo =
                 new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this, listaDeVBox,
                         this.botonSeleccionado);
@@ -131,7 +131,7 @@ public class VboxBotonesDisponibles extends VBox{
 
     public VBoxBotones getVBoxActual(){
         // no se si esto va a funcionar, por el cast mas que nada, ver arriba que onda
-        return (VBoxBotones) vBoxSeleccionados;
+        return vBoxSeleccionados;
 
     }
 
@@ -139,11 +139,11 @@ public class VboxBotonesDisponibles extends VBox{
 
         this.botonSeleccionado = nuevoBotonSeleccionado;
 
-        System.out.println("Quiero ver si aca llega el boton cargado desde antes, o no.");
+        System.out.println("Chequeo que entro al cambiar boton seleccionado");
 
         if(nuevoBotonSeleccionado != null){
 
-            System.out.println("Boton Selecc index en botones disponibles:"+nuevoBotonSeleccionado.getIndex());
+            System.out.println("hequeo que entro al cambiar boton seleccionado dentro del if y veo el index del nuevobotonseleccionado:"+nuevoBotonSeleccionado.getIndex());
 
         }
 

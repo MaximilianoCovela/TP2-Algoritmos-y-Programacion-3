@@ -17,12 +17,12 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
     private Tablero unTablero;
     private BotonMovimientoDerecha unBotonDerecha;
     private int index;
-    private ArrayList listaDeVBox;
+    private ArrayList<VBoxBotones> listaDeVBox;
 
 
     public HandlerBotonMovimientoDerecha(VBoxBotones vbox,
                                          Tablero unTablero, BotonMovimientoDerecha botonDerecha, int index,
-                                         VboxBotonesDisponibles vboxdisponibles, ArrayList listaDeVBox){
+                                         VboxBotonesDisponibles vboxdisponibles, ArrayList<VBoxBotones> listaDeVBox){
         this.vBoxBotones = vbox;
         this.unTablero = unTablero;
         this.unBotonDerecha = botonDerecha;
@@ -40,9 +40,9 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
         if(!this.vBoxBotones.getChildren().contains(this.unBotonDerecha)){
             MovimientoDerecha movDerecha = new MovimientoDerecha();
 
-            VBoxBotones primerVBox = (VBoxBotones) this.listaDeVBox.get(0); // es bloques seleccionados
+            VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
 
-            VBoxBotones actualVBox = (VBoxBotones) this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+            VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
             if(this.listaDeVBox.size() == 1){
 
@@ -52,25 +52,17 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
 
                 primerVBox.getChildren().add(botonDerecha);
 
-                //tablero
                 Bloque unBloque = new Bloque(movDerecha);
                 this.unTablero.agregarBloque(unBloque);
                 return;
-
             }
-
-
             actualVBox.guardarMovimiento(movDerecha);
             BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(botonDerecha);
 
-            System.out.println("indice:"+ index);
-
         }else{
-            this.vBoxBotones.getChildren().remove(this.unBotonDerecha);
-            this.vBoxBotones.actualizarVista(this.index);
-            this.unTablero.eliminarBloques(this.index);
+            this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonDerecha);
         }
         vboxBotonesDisponibles.verificar();
     }

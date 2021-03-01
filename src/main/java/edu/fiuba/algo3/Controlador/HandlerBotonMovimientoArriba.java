@@ -20,12 +20,12 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
     private Tablero unTablero;
     private BotonMovimientoArriba unBotonArriba;
     private int index;
-    private ArrayList listaDeVBox;
+    private ArrayList<VBoxBotones> listaDeVBox;
 
 
     public HandlerBotonMovimientoArriba(VBoxBotones vbox,
                                         Tablero unTablero, BotonMovimientoArriba botonArriba,int index,
-                                        VboxBotonesDisponibles vboxdisponibles, ArrayList listaDeVBox){
+                                        VboxBotonesDisponibles vboxdisponibles, ArrayList<VBoxBotones> listaDeVBox){
         this.vBoxBotones = vbox;
         this.unTablero = unTablero;
         this.unBotonArriba = botonArriba;
@@ -43,9 +43,9 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
         if(!this.vBoxBotones.getChildren().contains(this.unBotonArriba)){
             MovimientoArriba movArriba = new MovimientoArriba();
 
-            VBoxBotones primerVBox = (VBoxBotones) this.listaDeVBox.get(0); // es bloques seleccionados
+            VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
 
-            VBoxBotones actualVBox = (VBoxBotones) this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+            VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
             if(this.listaDeVBox.size() == 1){
 
@@ -55,7 +55,6 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
 
                 primerVBox.getChildren().add(botonArriba);
 
-                //tablero
                 Bloque unBloque = new Bloque(movArriba);
                 this.unTablero.agregarBloque(unBloque);
                 return;
@@ -67,12 +66,8 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(botonArriba);
 
-
-            System.out.println("indice:"+ index);
         }else{
-            this.vBoxBotones.getChildren().remove(this.unBotonArriba);
-            this.vBoxBotones.actualizarVista(this.index);
-            this.unTablero.eliminarBloques(this.index);
+            this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonArriba);
         }
         vboxBotonesDisponibles.verificar();
     }

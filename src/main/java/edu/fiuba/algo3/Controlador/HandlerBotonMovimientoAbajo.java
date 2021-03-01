@@ -48,7 +48,7 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
             VBoxBotones primerVBox = this.listaDeVBox.get(0); // es bloques seleccionados
 
-            VBoxBotones actualVBox =this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+            VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
             if(this.listaDeVBox.size() == 1){
 
@@ -61,12 +61,9 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
                 //tablero
                 Bloque unBloque = new Bloque(movAbajo);
                 this.unTablero.agregarBloque(unBloque);
-
                 return;
 
-
             }
-
             actualVBox.guardarMovimiento(movAbajo);
             BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox, botonSeleccionado);
@@ -74,16 +71,7 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
 
         }else{
-
-            this.botonSeleccionado = this.unBotonAbajo;
-
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonAbajo);
-            // aca el un boton abajo devcuelve bien el nombre y
-            System.out.println("mi nombrecito es :"+this.vboxBotonesDisponibles.getBotonSeleccionado().getNombre());
-
-            System.out.println("Entro aca al handle de size 1");
-
-
         }
         vboxBotonesDisponibles.verificar();
     }
