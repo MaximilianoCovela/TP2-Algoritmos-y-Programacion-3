@@ -22,7 +22,6 @@ public class App extends Application {
 
         stage.setTitle("AlgoBlocks");
 
-
         SectorDibujoView sectorDibujoView = new SectorDibujoView();
 
         PersonajeView vistaPersonaje = new PersonajeView(sectorDibujoView);
@@ -42,7 +41,7 @@ public class App extends Application {
 
         PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados,
                 sectorDibujoView, unTablero, vistaPersonaje,botonBajarBloque, botonSubirBloque, vb.getListaVBox(),
-                vb.getVBoxActual(), (Boton) vb.getBotonSeleccionado(),vb); // no entiendo por que el cast
+                vb.getVBoxActual(),vb); // no entiendo por que el cast
 
         PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles,
                 panelBloquesSeleccionados, sectorDibujoView);

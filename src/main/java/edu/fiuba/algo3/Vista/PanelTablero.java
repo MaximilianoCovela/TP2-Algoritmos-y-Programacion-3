@@ -14,7 +14,7 @@ public class PanelTablero extends Pane {
     public PanelTablero(PanelBloquesDisponibles panelBloquesDisponibles, PanelBloquesSeleccionados panelBloquesSeleccionados,
                         SectorDibujoView sectorDibujoView, Tablero unTablero, PersonajeView vistaPersonaje,
                         BotonBajarBloque botonBajarBloque, BotonSubirBloque botonSubirBloque,
-                        ArrayList<VBoxBotones> arrayVBox, VBoxBotones vBoxActual, Boton botonSeleccionado,
+                        ArrayList<VBoxBotones> arrayVBox, VBoxBotones vBoxActual,
                         VboxBotonesDisponibles vboxBotonesDisponibles){
 
         // no se si hacer que sea Button o Boton
@@ -52,7 +52,7 @@ public class PanelTablero extends Pane {
         //Boton botonMovAbAjo = new BotonMovimientoAbajo(vBoxActual, unTablero, 0, vboxBotonesDisponibles, arrayVBox, botonabajito);
 
         BotonBorrarBloque botonBorrarBloque = new BotonBorrarBloque(vBoxActual, unTablero, arrayVBox,
-                this, botonSeleccionado, vboxBotonesDisponibles);
+                this, vboxBotonesDisponibles);
 
         this.getChildren().add(botonPlay);
         this.getChildren().add(botonReiniciar);

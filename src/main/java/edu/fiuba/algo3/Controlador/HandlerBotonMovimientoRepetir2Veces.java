@@ -46,16 +46,8 @@ public class HandlerBotonMovimientoRepetir2Veces implements EventHandler<ActionE
 
             System.out.println("indice:"+ index);
 
-        }else{
-            /*
-            this.vBoxDeRepetir.eliminarContenido();
-            this.vBoxBotones.getChildren().remove(this.vBoxDeRepetir);
-            this.vBoxBotones.actualizarVista(this.index);
-            this.vBoxDeRepetir.actualizarTablero();
-
-             */
-            System.out.println("adios");
         }
+
         vboxBotonesDisponibles.verificar();
 
     }

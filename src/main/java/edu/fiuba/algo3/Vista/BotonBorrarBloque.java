@@ -9,13 +9,13 @@ import java.util.ArrayList;
 public class BotonBorrarBloque extends Button {
 
     public BotonBorrarBloque(VBoxBotones vBoxActual, Tablero unTablero,
-                             ArrayList<VBoxBotones> arrayVbox, PanelTablero panelTablero, Boton botonSeleccionado,
+                             ArrayList<VBoxBotones> arrayVbox, PanelTablero panelTablero,
                              VboxBotonesDisponibles vboxBotonesDisponibles){
         super();
         this.setText("X");
         this.setLayoutX(905.0); // 921.0
         this.setLayoutY(450.0);
-        this.setOnAction(new HandlerBotonBorrarBloque(vBoxActual, unTablero, arrayVbox, botonSeleccionado, panelTablero, this,
+        this.setOnAction(new HandlerBotonBorrarBloque(vBoxActual, unTablero, arrayVbox, panelTablero, this,
                  vboxBotonesDisponibles));
 
 
