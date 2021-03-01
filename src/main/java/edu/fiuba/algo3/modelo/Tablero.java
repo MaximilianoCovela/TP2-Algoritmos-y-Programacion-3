@@ -67,6 +67,25 @@ public class Tablero {
 
         }else{
 
+            Bloque bloqueABajar = this.secuenciaAEjecutar.get(index);
+            Bloque bloqueASubir = this.secuenciaAEjecutar.get(index+1);
+
+            this.secuenciaAEjecutar.remove(index);
+            this.secuenciaAEjecutar.remove(index + 1);
+
+            this.secuenciaAEjecutar.add(index,bloqueASubir);
+            this.secuenciaAEjecutar.add(index + 1,bloqueABajar);
+
+            /*
+            segundoBloque = this.secuenciaAEjecutar.get(index);
+            primerBloque = this.secuenciaAEjecutar.get(index - 1);
+
+            this.secuenciaAEjecutar.remove(index);
+            this.secuenciaAEjecutar.remove(index - 1);
+
+            this.secuenciaAEjecutar.add(index - 1,primerBloque);
+            this.secuenciaAEjecutar.add(index ,segundoBloque);
+            */
         }
     }
 
