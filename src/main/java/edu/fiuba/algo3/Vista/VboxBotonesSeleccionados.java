@@ -14,6 +14,7 @@ public class VboxBotonesSeleccionados extends VBoxBotones {
 
     Tablero unTablero;
 
+
     public VboxBotonesSeleccionados(Tablero unTablero){
         this.setPrefHeight(438.0);
         this.setPrefWidth(172);
@@ -51,6 +52,27 @@ public class VboxBotonesSeleccionados extends VBoxBotones {
     public void eliminarMovimiento(int index){
 
         this.unTablero.eliminarBloques(index); //esto deberia funcionar ya que si esta en esta vbox no esta en un bloque complejo
+
+    }
+
+    public void refrescarVista() {
+        int tamanio_vbdisponibles = this.getChildren().size();
+        int i = 0;
+        int j = 0;
+
+        VboxBotonesSeleccionados vibo = new VboxBotonesSeleccionados(this.unTablero);
+
+        while(j < tamanio_vbdisponibles){
+            vibo.getChildren().add(this.getChildren().get(j));
+            j++;
+        }
+
+        this.actualizarVista(0);
+
+        while(i < (tamanio_vbdisponibles - 1)){
+            this.getChildren().add(vibo.getChildren().get(i));
+            i++;
+        }
 
     }
 

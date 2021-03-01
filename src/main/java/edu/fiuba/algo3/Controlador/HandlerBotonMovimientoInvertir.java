@@ -34,11 +34,13 @@ public class HandlerBotonMovimientoInvertir implements EventHandler<ActionEvent>
 
         VboxMovimientoInvertir vBoxDeInvertir = new VboxMovimientoInvertir(this.unTablero);
 
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+
         if(!this.vBoxBotones.getChildren().contains(this.unBotonInvertir)){
-            this.index = (this.vBoxBotones.getChildren()).size();
+            this.index = (actualVBox.getChildren()).size();
             BotonMovimientoInvertir BotonMovimientoInvertir = new BotonMovimientoInvertir(this.vBoxBotones,
                     this.unTablero, this.index, vboxBotonesDisponibles, this.listaDeVBox);
-            this.vBoxBotones.getChildren().add(vBoxDeInvertir);
+            actualVBox.getChildren().add(vBoxDeInvertir);
 
             this.listaDeVBox.add(vBoxDeInvertir);
 

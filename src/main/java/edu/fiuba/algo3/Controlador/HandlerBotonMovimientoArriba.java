@@ -22,7 +22,6 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
     private int index;
     private ArrayList<VBoxBotones> listaDeVBox;
 
-
     public HandlerBotonMovimientoArriba(VBoxBotones vbox,
                                         Tablero unTablero, BotonMovimientoArriba botonArriba,int index,
                                         VboxBotonesDisponibles vboxdisponibles, ArrayList<VBoxBotones> listaDeVBox){
@@ -52,7 +51,6 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
                 this.index = (this.vBoxBotones.getChildren()).size(); // le estamos mandando la vbox de seleccionados
                 BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(primerVBox ,
                         this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-
                 primerVBox.getChildren().add(botonArriba);
 
                 Bloque unBloque = new Bloque(movArriba);

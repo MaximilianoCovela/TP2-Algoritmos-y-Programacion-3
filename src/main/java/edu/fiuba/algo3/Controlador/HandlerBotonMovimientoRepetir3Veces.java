@@ -34,11 +34,13 @@ public class HandlerBotonMovimientoRepetir3Veces implements EventHandler<ActionE
 
         VBoxMovimientoRepetir3Veces vBoxDeRepetir = new VBoxMovimientoRepetir3Veces(this.unTablero);
 
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+
         if(!this.vBoxBotones.getChildren().contains(this.unBotonRepetir3Veces)){
-            this.index = (this.vBoxBotones.getChildren()).size();
+            this.index = (actualVBox.getChildren()).size();
             BotonMovimientoRepetir3Veces botonMovimientoRepetir3Veces = new BotonMovimientoRepetir3Veces(this.vBoxBotones,
                     this.unTablero, this.index, vboxBotonesDisponibles, this.listaDeVBox);
-            this.vBoxBotones.getChildren().add(vBoxDeRepetir);
+            actualVBox.getChildren().add(vBoxDeRepetir);
 
             this.listaDeVBox.add(vBoxDeRepetir);
 

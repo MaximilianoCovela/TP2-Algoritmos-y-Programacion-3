@@ -7,6 +7,8 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
+import java.util.ArrayList;
+
 public class VboxMovimientoInvertir extends VBoxBotones {
 
     private Tablero tablero;
@@ -18,7 +20,6 @@ public class VboxMovimientoInvertir extends VBoxBotones {
         this.setBackground(new Background(new BackgroundFill(Color.HOTPINK, CornerRadii.EMPTY, Insets.EMPTY)));
 
         this.tablero = unTablero;
-
     }
 
     private MovimientoInvertir movimientoInvertir = new MovimientoInvertir();
@@ -57,5 +58,16 @@ public class VboxMovimientoInvertir extends VBoxBotones {
     public void eliminarMovimiento(int index){
 
         this.movimientoInvertir.quitarMovimientos(index);
+    }
+
+    public void refrescarVista() {
+        int tamanio_vbdisponibles = this.getChildren().size();
+        int i = 0;
+        int j = 0;
+
+        while(j < tamanio_vbdisponibles){
+            this.getChildren().add(this.getChildren().get(i));
+            j++;
+        }
     }
 }

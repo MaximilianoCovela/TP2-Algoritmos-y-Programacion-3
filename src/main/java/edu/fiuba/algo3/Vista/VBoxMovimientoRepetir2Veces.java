@@ -11,6 +11,8 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
+import java.util.ArrayList;
+
 
 public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
 
@@ -68,4 +70,16 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
         this.movimientoRepetir.quitarMovimientos(index);
 
     }
+
+    public void refrescarVista() {
+        int tamanio_vbdisponibles = this.getChildren().size();
+        int i = 0;
+        int j = 0;
+
+        while(j < tamanio_vbdisponibles){
+            this.getChildren().add(this.getChildren().get(i));
+            j++;
+        }
+    }
+
 }
