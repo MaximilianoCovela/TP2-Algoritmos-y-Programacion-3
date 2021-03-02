@@ -54,7 +54,6 @@ public class PersonajeView implements Observer {
 
 
         if(nuevaPosicion.getValorHorizontal() > this.posicionHorizontal){
-            //this.imagenPersonaje = new ImageView(new Image("https://imgur.com/awfzRqc.png"));
             Image imagenDerecha = new Image("https://i.imgur.com/awfzRqc.png");
             this.actualizarImagen(imagenDerecha);
         }else if(nuevaPosicion.getValorHorizontal() < this.posicionHorizontal){

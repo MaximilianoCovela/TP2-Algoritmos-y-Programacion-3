@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.Tablero;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -49,6 +50,8 @@ public class App extends Application {
         stage.setScene(scene);
 
         stage.setResizable(false);
+
+        stage.getIcons().add(new Image("https://i.imgur.com/xRLYTnS.png"));
 
         stage.show();
     }
