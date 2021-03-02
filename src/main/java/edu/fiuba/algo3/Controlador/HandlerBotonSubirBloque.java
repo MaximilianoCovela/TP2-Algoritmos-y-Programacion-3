@@ -44,14 +44,25 @@ public class HandlerBotonSubirBloque implements EventHandler<ActionEvent> {
             System.out.println("Aun es nulo el puntero al botón");
 
         } else {
+
             VBoxBotones vBoxActual = this.listaDeVBox.get(listaDeVBox.size()-1);
             int indexBotonASubir = botonSeleccionado.getIndex();
 
             if(!vBoxActual.getChildren().contains(botonSeleccionado) || indexBotonASubir == 0){
                 return;
             }
+            Boton botonAnterior;
 
-            Boton botonAnterior = (Boton) vBoxActual.getChildren().get(indexBotonASubir - 1);
+            try{
+               botonAnterior = (Boton) vBoxActual.getChildren().get(indexBotonASubir - 1);
+
+            }catch(Exception e){
+
+                System.out.println("No se puede subir un botón cuando lo anterior es una VBox >:V");
+                return;
+
+            }
+
 
             System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su indice antes del swap es : " + indexBotonASubir);
 

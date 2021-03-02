@@ -47,12 +47,22 @@ public class HandlerBotonBajarBloque implements EventHandler<ActionEvent> {
             VBoxBotones vBoxActual = this.listaDeVBox.get(listaDeVBox.size()-1);
             int indexBotonABajar = botonSeleccionado.getIndex();
 
+
             if(!vBoxActual.getChildren().contains(botonSeleccionado) ||
                     (indexBotonABajar == vBoxActual.getChildren().size()-1)){
                 return;
             }
 
-            Boton botonASubir = (Boton) vBoxActual.getChildren().get(indexBotonABajar + 1);
+            Boton botonASubir;
+            try{
+                botonASubir = (Boton) vBoxActual.getChildren().get(indexBotonABajar + 1);
+
+            }catch(Exception e){
+
+                System.out.println("No se puede bajar un botón cuando lo siguiente es una VBox >:V");
+                return;
+
+            }
 
             System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su indice antes del swap es : " + indexBotonABajar);
 
