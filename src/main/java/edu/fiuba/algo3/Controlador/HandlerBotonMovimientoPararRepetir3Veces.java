@@ -68,12 +68,6 @@ public class HandlerBotonMovimientoPararRepetir3Veces implements EventHandler<Ac
 
             }
 
-        }else{
-            // por ahora esto funciona como si fuera una x para borrar la vbox que se creo con botones repetir
-            this.vBoxBotones.getChildren().clear();
-            //this.vBoxBotones.getChildren().remove(this.unBotonPararRepetir);
-            //this.vBoxBotones.actualizarVista(this.index);
-            //this.unTablero.eliminarBloques(this.index);
         }
     }
 

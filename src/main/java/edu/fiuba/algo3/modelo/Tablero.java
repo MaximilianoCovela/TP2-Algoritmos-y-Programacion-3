@@ -51,6 +51,34 @@ public class Tablero {
         this.unPersonaje.obtenerDibujos().clear();
     }
 
+    public void swapBloques(int index, int numero){
+        Bloque primerBloque;
+        Bloque segundoBloque;
+
+        if(numero == 1){
+            segundoBloque = this.secuenciaAEjecutar.get(index);
+            primerBloque = this.secuenciaAEjecutar.get(index - 1);
+
+            this.secuenciaAEjecutar.remove(index);
+            this.secuenciaAEjecutar.remove(index - 1);
+
+            this.secuenciaAEjecutar.add(index - 1,segundoBloque);
+            this.secuenciaAEjecutar.add(index ,primerBloque);
+
+        }else {
+
+            Bloque bloqueABajar = this.secuenciaAEjecutar.get(index);
+            Bloque bloqueASubir = this.secuenciaAEjecutar.get(index + 1);
+
+            this.secuenciaAEjecutar.remove(index + 1);
+            this.secuenciaAEjecutar.remove(index);
+
+            this.secuenciaAEjecutar.add(index,bloqueASubir);
+            this.secuenciaAEjecutar.add(index + 1,bloqueABajar);
+
+        }
+    }
+
     public Personaje getPersonaje(){
         return unPersonaje;
     }

@@ -7,18 +7,39 @@ import javafx.scene.control.Button;
 
 import java.util.ArrayList;
 
-public class BotonMovimientoArriba extends Button {
+public class BotonMovimientoArriba extends Boton {
     private HandlerBotonMovimientoArriba accion;
+    private int index;
 
     public BotonMovimientoArriba(VBoxBotones vBoxBotones, Tablero unTablero,
-                                 int index, VboxBotonesDisponibles vbd, ArrayList listaDeVBox){
+                                 int index, VboxBotonesDisponibles vbd, ArrayList<VBoxBotones> listaDeVBox){
         super();
         this.setText("Arriba");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
+        this.index = index;
         this.accion = new HandlerBotonMovimientoArriba(vBoxBotones,
                 unTablero, this,index, vbd, listaDeVBox);
         this.setOnAction(accion);
     }
 
+    public int getIndex() {
+        return index;
+    }
+
+
+    public Button getButton() {
+        return this;
+    }
+
+    public String getNombre() {
+        return "UWU";
+    }
+
+    public void setIndex(int i){
+        System.out.println("Indice viejo " + this.index);
+        System.out.println("Indice por parametro " + i);
+        this.index = i;
+        System.out.println("Indice nuevo " + this.index);
+    }
 }

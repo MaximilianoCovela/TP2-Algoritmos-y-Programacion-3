@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.modelo.Movimiento;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
@@ -15,6 +14,8 @@ public class VboxBotonesDisponibles extends VBox{
 
     private VboxBotonesSeleccionados vBoxSeleccionados;
 
+    private Boton botonSeleccionado;
+
     private ArrayList<VBoxBotones> listaDeVBox = new ArrayList<>();
 
     public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxBotonesSeleccionados,
@@ -22,6 +23,8 @@ public class VboxBotonesDisponibles extends VBox{
         this.vBoxSeleccionados = vboxBotonesSeleccionados;
         // aca agregamos al array la vbox principal
         this.listaDeVBox.add(vboxBotonesSeleccionados);
+
+        this.botonSeleccionado = null;
 
         this.setPadding(new Insets(10, 0, 0, 10));
         this.setSpacing(10);
@@ -33,10 +36,9 @@ public class VboxBotonesDisponibles extends VBox{
         BotonMovimientoArriba botonArriba =
                 new BotonMovimientoArriba(vboxBotonesSeleccionados, unTablero, index, this,
                         listaDeVBox);
-
+        System.out.println("Verifico que entro dentro de vbox botones disponibles");
         BotonMovimientoAbajo botonAbajo =
-                new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this,
-                        listaDeVBox);
+                new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this, listaDeVBox);
 
         BotonMovimientoDerecha botonDerecha =
                 new BotonMovimientoDerecha(vboxBotonesSeleccionados, unTablero,index, this,
@@ -85,10 +87,12 @@ public class VboxBotonesDisponibles extends VBox{
         //Lapiz
 
         BotonMovimientoLapizAbajo botonLapizAbajo =
-                new BotonMovimientoLapizAbajo(vboxBotonesSeleccionados, unTablero,index, this);
+                new BotonMovimientoLapizAbajo(vboxBotonesSeleccionados, unTablero,index, this,
+                        listaDeVBox);
 
         BotonMovimientoLapizArriba botonLapizArriba =
-                new BotonMovimientoLapizArriba(vboxBotonesSeleccionados, unTablero,index, this);
+                new BotonMovimientoLapizArriba(vboxBotonesSeleccionados, unTablero,index, this,
+                        listaDeVBox);
 
 
 
@@ -116,6 +120,39 @@ public class VboxBotonesDisponibles extends VBox{
 
         this.listaDeVBox.clear();
         this.listaDeVBox.add(this.vBoxSeleccionados);
+
+    }
+    //esto borrar y refactorizar, pasa que el borrar esta en Tablero, y la lista de VBox la contiene esta clase
+    public ArrayList<VBoxBotones> getListaVBox(){
+
+        return listaDeVBox;
+
+    }
+
+    public VBoxBotones getVBoxActual(){
+        // no se si esto va a funcionar, por el cast mas que nada, ver arriba que onda
+        return vBoxSeleccionados;
+
+    }
+
+    public void cambiarBotonSeleccionado(Boton nuevoBotonSeleccionado){
+
+        this.botonSeleccionado = nuevoBotonSeleccionado;
+
+        System.out.println("Chequeo que entro al cambiar boton seleccionado");
+
+        if(nuevoBotonSeleccionado != null){
+
+            System.out.println("hequeo que entro al cambiar boton seleccionado dentro del if y veo el index del nuevobotonseleccionado:"+nuevoBotonSeleccionado.getIndex());
+
+        }
+
+
+    }
+
+    public Boton getBotonSeleccionado() {
+
+        return this.botonSeleccionado;
 
     }
 }

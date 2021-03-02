@@ -14,6 +14,7 @@ public class VboxBotonesSeleccionados extends VBoxBotones {
 
     Tablero unTablero;
 
+
     public VboxBotonesSeleccionados(Tablero unTablero){
         this.setPrefHeight(438.0);
         this.setPrefWidth(172);
@@ -42,5 +43,19 @@ public class VboxBotonesSeleccionados extends VBoxBotones {
     public void guardarMovimiento(Movimiento unMovimiento){
        Bloque unBloque = new Bloque(unMovimiento);
        this.unTablero.agregarBloque(unBloque);
+    }
+
+    public Boton getBotonSeleccionado(){
+        return null;
+    }
+
+    public void eliminarMovimiento(int index){
+
+        this.unTablero.eliminarBloques(index); //esto deberia funcionar ya que si esta en esta vbox no esta en un bloque complejo
+
+    }
+
+    public void actualizarMovimientos(int indexBotonASubir, int i){
+        this.unTablero.swapBloques(indexBotonASubir,i);
     }
 }

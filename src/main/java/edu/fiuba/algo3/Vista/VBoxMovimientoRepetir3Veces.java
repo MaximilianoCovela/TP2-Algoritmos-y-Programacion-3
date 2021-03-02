@@ -10,6 +10,8 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
+import java.util.ArrayList;
+
 
 public class VBoxMovimientoRepetir3Veces extends VBoxBotones{
     private Tablero tablero;
@@ -55,6 +57,19 @@ public class VBoxMovimientoRepetir3Veces extends VBoxBotones{
         while(index < this.getChildren().size()){
             this.getChildren().remove(index);
         }
+    }
+
+    public Boton getBotonSeleccionado(){
+        return null;
+    }
+
+    public void eliminarMovimiento(int index){
+
+        this.movimientoRepetir.quitarMovimientos(index);
+    }
+
+    public void actualizarMovimientos(int index, int i) {
+        this.movimientoRepetir.swapMovimientos(index,i);
     }
 
 }

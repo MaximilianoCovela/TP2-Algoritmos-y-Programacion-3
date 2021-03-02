@@ -6,10 +6,10 @@ import edu.fiuba.algo3.modelo.MovimientoRepetir;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
 
 
 public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
@@ -21,7 +21,8 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
         this.setPadding(new Insets(10, 0, 0, 10));
         this.setSpacing(5);
         this.setBackground(new Background(new BackgroundFill(Color.HOTPINK, CornerRadii.EMPTY, Insets.EMPTY)));
-
+        this.setBorder(new Border(new BorderStroke(Color.BLACK,
+                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         this.tablero = unTablero;
 
     }
@@ -54,9 +55,24 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
     }
 
     public void actualizarVista(int index){
+        System.out.println("El indice del bloque a borrar que le llega es: "+ index);
         while(index < this.getChildren().size()){
             this.getChildren().remove(index);
         }
     }
 
+    public Boton getBotonSeleccionado(){
+        return null;
+    }
+
+    public void eliminarMovimiento(int index){
+
+        this.movimientoRepetir.quitarMovimientos(index);
+
+    }
+
+
+    public void actualizarMovimientos(int index, int i) {
+        this.movimientoRepetir.swapMovimientos(index,i);
+    }
 }

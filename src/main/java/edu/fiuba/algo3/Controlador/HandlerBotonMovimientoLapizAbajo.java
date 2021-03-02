@@ -1,28 +1,29 @@
 package edu.fiuba.algo3.Controlador;
 import edu.fiuba.algo3.Vista.*;
-import edu.fiuba.algo3.modelo.Bloque;
-import edu.fiuba.algo3.modelo.MovimientoAbajo;
-import edu.fiuba.algo3.modelo.MovimientoLapizAbajo;
-import edu.fiuba.algo3.modelo.Tablero;
+import edu.fiuba.algo3.modelo.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+import java.util.ArrayList;
+
 public class HandlerBotonMovimientoLapizAbajo implements EventHandler<ActionEvent>{
 
-    private VboxBotonesSeleccionados vboxbotonesseleccionados;
+    private VBoxBotones vboxbotonesseleccionados;
     private VboxBotonesDisponibles vboxBotonesDisponibles;
     private Tablero unTablero;
     private BotonMovimientoLapizAbajo unBotonLapizAbajo;
     private int index;
+    private ArrayList<VBoxBotones> listaDeVBox;
 
-    public HandlerBotonMovimientoLapizAbajo(VboxBotonesSeleccionados vbox,Tablero unTablero,
-                                            BotonMovimientoLapizAbajo botonLapizAbajo,int index,
-                                            VboxBotonesDisponibles vboxdisponibles){
+    public HandlerBotonMovimientoLapizAbajo(VBoxBotones vbox,Tablero unTablero,
+                                            BotonMovimientoLapizAbajo botonLapizAbajo, int index,
+                                            VboxBotonesDisponibles vboxdisponibles, ArrayList<VBoxBotones> listaDeVBox){
         this.vboxbotonesseleccionados = vbox;
         this.unTablero = unTablero;
         this.unBotonLapizAbajo = botonLapizAbajo;
         this.index = index;
         this.vboxBotonesDisponibles = vboxdisponibles;
+        this.listaDeVBox = listaDeVBox;
     }
 
     public int obtenerIndice(){
@@ -31,20 +32,22 @@ public class HandlerBotonMovimientoLapizAbajo implements EventHandler<ActionEven
 
     public void handle(ActionEvent event) {
 
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonLapizAbajo)){
-            this.index = (this.vboxbotonesseleccionados.getChildren()).size();
-            BotonMovimientoLapizAbajo botonLapizAbajo = new BotonMovimientoLapizAbajo(this.vboxbotonesseleccionados,
-                    this.unTablero,this.index, this.vboxBotonesDisponibles);
-            this.vboxbotonesseleccionados.getChildren().add(botonLapizAbajo);
 
             MovimientoLapizAbajo movimientoLapizAbajo = new MovimientoLapizAbajo();
-            Bloque unBloque = new Bloque(movimientoLapizAbajo);
 
-            this.unTablero.agregarBloque(unBloque);
+            actualVBox.guardarMovimiento(movimientoLapizAbajo);
+            this.index = (actualVBox.getChildren().size());
+
+            BotonMovimientoLapizAbajo botonLapizAbajo = new BotonMovimientoLapizAbajo(actualVBox ,
+                    this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
+            actualVBox.getChildren().add(botonLapizAbajo);
+
+
         }else{
-            this.vboxbotonesseleccionados.getChildren().remove(this.unBotonLapizAbajo);
-            this.vboxbotonesseleccionados.actualizarVista(this.index);
-            this.unTablero.eliminarBloques(this.index);
+            this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonLapizAbajo);
         }
         vboxBotonesDisponibles.verificar();
     }

@@ -2,13 +2,10 @@
 package edu.fiuba.algo3.Controlador;
 
 import edu.fiuba.algo3.Vista.*;
-import edu.fiuba.algo3.modelo.Bloque;
-import edu.fiuba.algo3.modelo.MovimientoAbajo;
 import edu.fiuba.algo3.modelo.MovimientoArriba;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
-import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 
@@ -20,12 +17,11 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
     private Tablero unTablero;
     private BotonMovimientoArriba unBotonArriba;
     private int index;
-    private ArrayList listaDeVBox;
-
+    private ArrayList<VBoxBotones> listaDeVBox;
 
     public HandlerBotonMovimientoArriba(VBoxBotones vbox,
                                         Tablero unTablero, BotonMovimientoArriba botonArriba,int index,
-                                        VboxBotonesDisponibles vboxdisponibles, ArrayList listaDeVBox){
+                                        VboxBotonesDisponibles vboxdisponibles, ArrayList<VBoxBotones> listaDeVBox){
         this.vBoxBotones = vbox;
         this.unTablero = unTablero;
         this.unBotonArriba = botonArriba;
@@ -38,41 +34,27 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
         return this.index;
     }
 
+
     public void handle(ActionEvent event) {
+
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonArriba)){
             MovimientoArriba movArriba = new MovimientoArriba();
 
-            VBoxBotones primerVBox = (VBoxBotones) this.listaDeVBox.get(0); // es bloques seleccionados
-
-            VBoxBotones actualVBox = (VBoxBotones) this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
-
-            if(this.listaDeVBox.size() == 1){
-
-                this.index = (this.vBoxBotones.getChildren()).size(); // le estamos mandando la vbox de seleccionados
-                BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(primerVBox ,
-                        this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
-
-                primerVBox.getChildren().add(botonArriba);
-
-                //tablero
-                Bloque unBloque = new Bloque(movArriba);
-                this.unTablero.agregarBloque(unBloque);
-                return;
-
-            }
-
             actualVBox.guardarMovimiento(movArriba);
+            this.index = (actualVBox.getChildren().size());
+
+            this.unBotonArriba.setIndex(this.index);
+
+            System.out.println("Indice del objeto: "+ this.index);
             BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(botonArriba);
 
 
-            System.out.println("indice:"+ index);
         }else{
-            this.vBoxBotones.getChildren().remove(this.unBotonArriba);
-            this.vBoxBotones.actualizarVista(this.index);
-            this.unTablero.eliminarBloques(this.index);
+            this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonArriba);
         }
         vboxBotonesDisponibles.verificar();
     }
