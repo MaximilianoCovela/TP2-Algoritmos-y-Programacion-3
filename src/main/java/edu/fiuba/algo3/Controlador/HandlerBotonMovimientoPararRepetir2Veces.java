@@ -34,17 +34,11 @@ public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<Ac
 
     public void handle(ActionEvent event) {
 
-        VBoxBotones actualVBox = (VBoxBotones) this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
-
         VBoxMovimientoRepetir2Veces vbox;
         vbox = (VBoxMovimientoRepetir2Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonPararRepetir)){
             this.index = (this.vBoxBotones.getChildren()).size();
-
-            //BotonMovimientoPararRepetir2Veces botonParar = new BotonMovimientoPararRepetir2Veces(this.vBoxBotones,
-            //       this.unTablero,this.index, this.listaDeVBox);
-            // suponiendo que existe una vbox
 
             if(this.listaDeVBox.size() == 1){
 
@@ -58,13 +52,9 @@ public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<Ac
 
             }
 
-            if(listaDeVBox.size() > 1){ //era 0 hasta hace un ratin
+            if(listaDeVBox.size() > 1){
 
-                //VBoxMovimientoRepetir2Veces vbox;
-                //vbox = (VBoxMovimientoRepetir2Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
-                //vbox.agregarBloqueATablero();
-
-                this.listaDeVBox.remove(listaDeVBox.size()-1); // la borramos del array, no de la vista la vbox
+                this.listaDeVBox.remove(listaDeVBox.size()-1);
 
             }
 

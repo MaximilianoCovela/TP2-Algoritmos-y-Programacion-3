@@ -15,21 +15,19 @@ public class HandlerBotonBajarBloque implements EventHandler<ActionEvent> {
 
     private Boton botonSeleccionado;
     private final PanelTablero panelTablero;
-    private VBoxBotones vBoxActual;
     private Tablero unTablero;
     private BotonBajarBloque unBotonBajarBloque;
     private VboxBotonesDisponibles vboxBotonesDisponibles;
     private ArrayList<VBoxBotones> listaDeVBox;
 
-    public HandlerBotonBajarBloque(VBoxBotones vBoxBotones,
-                                    Tablero unTablero, ArrayList<VBoxBotones> arrayVbox,
+    public HandlerBotonBajarBloque( Tablero unTablero, ArrayList<VBoxBotones> arrayVbox,
                                     PanelTablero panelTablero, BotonBajarBloque botonBajarBloque,
                                     VboxBotonesDisponibles vboxBotonesDisponibles) {
         this.vboxBotonesDisponibles = vboxBotonesDisponibles;
 
         this.listaDeVBox = arrayVbox;
         this.unTablero = unTablero;
-        this.vBoxActual = vBoxBotones; // usar la del array mejor xd
+       // usar la del array mejor xd
         this.panelTablero = panelTablero;
         this.unBotonBajarBloque = botonBajarBloque;
 

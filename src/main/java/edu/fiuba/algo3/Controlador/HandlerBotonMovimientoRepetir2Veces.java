@@ -34,7 +34,7 @@ public class HandlerBotonMovimientoRepetir2Veces implements EventHandler<ActionE
 
         VBoxMovimientoRepetir2Veces vBoxDeRepetir = new VBoxMovimientoRepetir2Veces(this.unTablero);
 
-        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1);
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonRepetir2Veces)){
             this.index = (actualVBox.getChildren()).size();
@@ -43,8 +43,6 @@ public class HandlerBotonMovimientoRepetir2Veces implements EventHandler<ActionE
             actualVBox.getChildren().add(vBoxDeRepetir);
 
             this.listaDeVBox.add(vBoxDeRepetir);
-
-            System.out.println("indice:"+ index);
 
         }
 

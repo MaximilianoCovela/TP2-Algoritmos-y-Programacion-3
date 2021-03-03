@@ -9,13 +9,13 @@ import java.util.ArrayList;
 
 public class BotonSubirBloque extends Button {
 
-    public BotonSubirBloque(VBoxBotones vBoxActual, Tablero unTablero,
+    public BotonSubirBloque(Tablero unTablero,
                             ArrayList<VBoxBotones> arrayVbox, PanelTablero panelTablero,
                             VboxBotonesDisponibles vboxBotonesDisponibles){
         this.setText("↑");
         this.setLayoutX(905.0); // 921.0
         this.setLayoutY(232.0);
-        this.setOnAction(new HandlerBotonSubirBloque(vBoxActual, unTablero, arrayVbox, panelTablero, this,
+        this.setOnAction(new HandlerBotonSubirBloque(unTablero, arrayVbox, panelTablero, this,
                          vboxBotonesDisponibles));
 
 

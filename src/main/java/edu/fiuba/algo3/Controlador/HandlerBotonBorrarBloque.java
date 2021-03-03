@@ -10,9 +10,7 @@ import java.util.ArrayList;
 
 public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
 
-    private Boton botonSeleccionado;
     private final PanelTablero panelTablero;
-    private VBoxBotones vBoxActual;
     private Tablero unTablero;
     private BotonBorrarBloque unBotonBorrarBloque;
     private VboxBotonesDisponibles vboxBotonesDisponibles;
@@ -21,15 +19,13 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
 
     // esto es lo que vamos a empezar a hacer
 
-    public HandlerBotonBorrarBloque(VBoxBotones vBoxBotones,
-                                    Tablero unTablero, ArrayList<VBoxBotones> arrayVbox,
+    public HandlerBotonBorrarBloque(Tablero unTablero, ArrayList<VBoxBotones> arrayVbox,
                                     PanelTablero panelTablero, BotonBorrarBloque botonBorrarBloque,
                                     VboxBotonesDisponibles vboxBotonesDisponibles) {
         this.vboxBotonesDisponibles = vboxBotonesDisponibles;
 
         this.listaDeVBox = arrayVbox;
         this.unTablero = unTablero;
-        this.vBoxActual = vBoxBotones; // usar la del array mejor xd
         this.panelTablero = panelTablero;
         this.unBotonBorrarBloque = botonBorrarBloque;
 

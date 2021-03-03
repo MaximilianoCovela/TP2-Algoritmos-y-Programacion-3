@@ -44,13 +44,13 @@ public class PanelTablero extends Pane {
 
         System.out.println("Quiero ver si aca llega el boton cargado desde antes, o no.");
 
-        BotonSubirBloque botonSubirBloque = new BotonSubirBloque(vBoxActual, unTablero, arrayVBox,
+        BotonSubirBloque botonSubirBloque = new BotonSubirBloque(unTablero, arrayVBox,
                         this, vboxBotonesDisponibles);
 
-        BotonBajarBloque botonBajarBloque = new BotonBajarBloque(vBoxActual, unTablero, arrayVBox,
+        BotonBajarBloque botonBajarBloque = new BotonBajarBloque(unTablero, arrayVBox,
                         this, vboxBotonesDisponibles);
 
-        BotonBorrarBloque botonBorrarBloque = new BotonBorrarBloque(vBoxActual, unTablero, arrayVBox,
+        BotonBorrarBloque botonBorrarBloque = new BotonBorrarBloque(unTablero, arrayVBox,
                 this, vboxBotonesDisponibles);
 
         BotonJugar botonPlay = new BotonJugar(unTablero, vistaPersonaje,botonReiniciar);

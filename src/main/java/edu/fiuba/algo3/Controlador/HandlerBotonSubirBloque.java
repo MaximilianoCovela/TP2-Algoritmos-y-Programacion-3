@@ -13,24 +13,19 @@ import java.util.Collections;
 
 public class HandlerBotonSubirBloque implements EventHandler<ActionEvent> {
 
-    private Boton botonSeleccionado;
     private final PanelTablero panelTablero;
-    private VBoxBotones vBoxActual;
     private Tablero unTablero;
     private BotonSubirBloque unBotonSubirBloque;
     private VboxBotonesDisponibles vboxBotonesDisponibles;
     private ArrayList<VBoxBotones> listaDeVBox;
 
-    public HandlerBotonSubirBloque(VBoxBotones vBoxBotones,
-                                   Tablero unTablero, ArrayList<VBoxBotones> arrayVbox,
+    public HandlerBotonSubirBloque(Tablero unTablero, ArrayList<VBoxBotones> arrayVbox,
                                    PanelTablero panelTablero, BotonSubirBloque botonSubirBloque,
                                    VboxBotonesDisponibles vboxBotonesDisponibles) {
         this.vboxBotonesDisponibles = vboxBotonesDisponibles;
 
         this.listaDeVBox = arrayVbox;
         this.unTablero = unTablero;
-        this.botonSeleccionado = botonSeleccionado;
-        this.vBoxActual = vBoxBotones; // usar la del array mejor xd
         this.panelTablero = panelTablero;
         this.unBotonSubirBloque = botonSubirBloque;
 
@@ -41,6 +36,7 @@ public class HandlerBotonSubirBloque implements EventHandler<ActionEvent> {
         Boton botonSeleccionado = this.vboxBotonesDisponibles.getBotonSeleccionado();
 
         if(botonSeleccionado == null){
+
             System.out.println("Aun es nulo el puntero al botón");
 
         } else {
@@ -63,26 +59,17 @@ public class HandlerBotonSubirBloque implements EventHandler<ActionEvent> {
 
             }
 
-
-            System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su indice antes del swap es : " + indexBotonASubir);
-
             ObservableList<Node> workingCollection = FXCollections.observableArrayList(vBoxActual.getChildren());
             Collections.swap(workingCollection, indexBotonASubir - 1, indexBotonASubir);
             vBoxActual.getChildren().setAll(workingCollection);
 
             vBoxActual.actualizarMovimientos(indexBotonASubir,1);
 
-            System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su indice despues del swap es : " + indexBotonASubir);
-
-
             int indexBotonSubido = indexBotonASubir - 1;
             int indexBotonBajado = indexBotonASubir;
 
             botonAnterior.setIndex(indexBotonBajado);
             botonSeleccionado.setIndex(indexBotonSubido);
-
-            indexBotonASubir = botonSeleccionado.getIndex();
-            System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su  NUEVOOOOOOOO indice es : " + indexBotonASubir);
 
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(null);
 
