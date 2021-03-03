@@ -38,8 +38,7 @@ public class HandlerBotonMovimientoRepetir2Veces implements EventHandler<ActionE
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonRepetir2Veces)){
             this.index = (actualVBox.getChildren()).size();
-            BotonMovimientoRepetir2Veces botonMovimientoRepetir2Veces = new BotonMovimientoRepetir2Veces(this.vBoxBotones,
-                    this.unTablero, this.index, vboxBotonesDisponibles, this.listaDeVBox);
+
             actualVBox.getChildren().add(vBoxDeRepetir);
 
             this.listaDeVBox.add(vBoxDeRepetir);

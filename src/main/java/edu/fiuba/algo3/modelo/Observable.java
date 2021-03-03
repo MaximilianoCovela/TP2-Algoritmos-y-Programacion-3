@@ -5,4 +5,5 @@ public interface Observable {
     void addObserver(Observer observador);
 
     void notifyObservers(Dibujo unDibujo);
+
 }

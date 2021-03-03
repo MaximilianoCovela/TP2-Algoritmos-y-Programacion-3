@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.Controlador;
 
-import edu.fiuba.algo3.Vista.Boton;
 import edu.fiuba.algo3.Vista.BotonJugar;
 import edu.fiuba.algo3.Vista.BotonReiniciar;
 import edu.fiuba.algo3.Vista.PersonajeView;

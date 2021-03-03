@@ -52,7 +52,6 @@ public class PersonajeView implements Observer {
 
         Posicion nuevaPosicion = unDibujo.getPosicionFinal();
 
-
         if(nuevaPosicion.getValorHorizontal() > this.posicionHorizontal){
             Image imagenDerecha = new Image("https://i.imgur.com/awfzRqc.png");
             this.actualizarImagen(imagenDerecha);
@@ -66,10 +65,6 @@ public class PersonajeView implements Observer {
             Image imagenArriba = new Image("https://i.imgur.com/N3gBRlL.png");
             this.actualizarImagen(imagenArriba);
         }
-
-
-        System.out.println("Posicion Horizontal:" + nuevaPosicion.getValorHorizontal());
-        System.out.println("Posicion Vertical:" + nuevaPosicion.getValorVertical());
 
         this.sectorDibujo.marcarCelda(this.posicionHorizontal, this.posicionVertical,unDibujo);
 

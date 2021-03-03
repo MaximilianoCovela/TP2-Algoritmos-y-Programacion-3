@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoPersonalizado;
-import edu.fiuba.algo3.modelo.Movimiento;
 import edu.fiuba.algo3.modelo.MovimientoPersonalizado;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.scene.control.Button;

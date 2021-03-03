@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoAbajo;
 import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoRepetir2Veces;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.scene.control.Button;
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 public class BotonMovimientoRepetir2Veces extends Button {
 
     public BotonMovimientoRepetir2Veces(VBoxBotones vBoxBotones, Tablero unTablero,
-                                        int index, VboxBotonesDisponibles vbd, ArrayList listaDeVBox){
+                                        int index, VboxBotonesDisponibles vbd, ArrayList<VBoxBotones> listaDeVBox){
         super();
         this.setText("Repetir x2");
         this.setPrefHeight(70.0);

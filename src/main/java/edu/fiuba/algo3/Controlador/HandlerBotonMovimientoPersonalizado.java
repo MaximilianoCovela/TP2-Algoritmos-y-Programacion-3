@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.Controlador;
 
-import edu.fiuba.algo3.Vista.BotonMovimientoDerecha;
 import edu.fiuba.algo3.Vista.BotonMovimientoPersonalizado;
 import edu.fiuba.algo3.Vista.VboxBotonesDisponibles;
 import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;

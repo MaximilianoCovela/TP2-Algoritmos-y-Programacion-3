@@ -10,11 +10,10 @@ import java.util.ArrayList;
 public class HandlerBotonMovimientoRepetir3Veces implements EventHandler<ActionEvent>{
 
     private final VBoxBotones vBoxBotones;
-    private VboxBotonesDisponibles vboxBotonesDisponibles;
-    private Tablero unTablero;
-    private BotonMovimientoRepetir3Veces unBotonRepetir3Veces;
+    private final VboxBotonesDisponibles vboxBotonesDisponibles;
+    private final Tablero unTablero;
+    private final BotonMovimientoRepetir3Veces unBotonRepetir3Veces;
     private int index;
-    private VBoxMovimientoRepetir3Veces vBoxDeRepetir;
     private ArrayList<VBoxBotones> listaDeVBox;
 
 
@@ -38,8 +37,7 @@ public class HandlerBotonMovimientoRepetir3Veces implements EventHandler<ActionE
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonRepetir3Veces)){
             this.index = (actualVBox.getChildren()).size();
-            BotonMovimientoRepetir3Veces botonMovimientoRepetir3Veces = new BotonMovimientoRepetir3Veces(this.vBoxBotones,
-                    this.unTablero, this.index, vboxBotonesDisponibles, this.listaDeVBox);
+
             actualVBox.getChildren().add(vBoxDeRepetir);
 
             this.listaDeVBox.add(vBoxDeRepetir);
