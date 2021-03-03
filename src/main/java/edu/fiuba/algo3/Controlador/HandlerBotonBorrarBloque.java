@@ -29,7 +29,6 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
 
         this.listaDeVBox = arrayVbox;
         this.unTablero = unTablero;
-        this.botonSeleccionado = botonSeleccionado;
         this.vBoxActual = vBoxBotones; // usar la del array mejor xd
         this.panelTablero = panelTablero;
         this.unBotonBorrarBloque = botonBorrarBloque;
@@ -60,6 +59,6 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
 
 
         }
-
+        vboxBotonesDisponibles.verificar();
     }
 }
