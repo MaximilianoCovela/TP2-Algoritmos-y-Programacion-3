@@ -69,7 +69,7 @@ public class VboxBotonesDisponibles extends VBox{
 
 
         BotonGuardarAlgoritmo botonGuardarAlgoritmo =
-                new BotonGuardarAlgoritmo(vboxBotonesSeleccionados, this, unTablero, index);
+                new BotonGuardarAlgoritmo(vboxBotonesSeleccionados, this, unTablero, index, listaDeVBox);
 
 
         BotonMovimientoLapizAbajo botonLapizAbajo =

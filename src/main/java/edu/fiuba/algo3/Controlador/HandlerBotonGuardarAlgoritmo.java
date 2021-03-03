@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Controlador;
 
 import edu.fiuba.algo3.Vista.BotonMovimientoPersonalizado;
+import edu.fiuba.algo3.Vista.VBoxBotones;
 import edu.fiuba.algo3.Vista.VboxBotonesDisponibles;
 import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
 import edu.fiuba.algo3.modelo.Bloque;
@@ -11,6 +12,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class HandlerBotonGuardarAlgoritmo implements EventHandler<ActionEvent>{
@@ -19,13 +21,16 @@ public class HandlerBotonGuardarAlgoritmo implements EventHandler<ActionEvent>{
     private VboxBotonesDisponibles vboxBotonesDisponibles;
     private VboxBotonesSeleccionados vboxBotonesSeleccionados;
     private int index;
+    private ArrayList<VBoxBotones> listaDeVbox;
+
 
     public HandlerBotonGuardarAlgoritmo(Tablero unTablero, VboxBotonesDisponibles vbd, VboxBotonesSeleccionados vbs,
-    int index) {
+    int index, ArrayList<VBoxBotones> listaDeVbox) {
         this.tablero = unTablero;
         this.vboxBotonesDisponibles = vbd;
         this.vboxBotonesSeleccionados = vbs;
         this.index = index;
+        this.listaDeVbox = listaDeVbox;
     }
 
     public void handle(ActionEvent event) {
@@ -53,7 +58,7 @@ public class HandlerBotonGuardarAlgoritmo implements EventHandler<ActionEvent>{
             MovimientoPersonalizado unMovPersonalizado = new MovimientoPersonalizado();
             unMovPersonalizado.guardarAlgoritmo(this.tablero, nombreIngresado);
             BotonMovimientoPersonalizado botonPersonalizado = new BotonMovimientoPersonalizado(this.vboxBotonesSeleccionados,
-                    this.tablero, this.index, this.vboxBotonesDisponibles, nombreIngresado, unMovPersonalizado);
+                    this.tablero, this.index, this.vboxBotonesDisponibles, nombreIngresado, unMovPersonalizado,  listaDeVbox);
             botonPersonalizado.setText(nombreIngresado);
             int indiceAAgregar = vboxBotonesDisponibles.getChildren().size() - 1;
             vboxBotonesDisponibles.getChildren().add(indiceAAgregar, botonPersonalizado);

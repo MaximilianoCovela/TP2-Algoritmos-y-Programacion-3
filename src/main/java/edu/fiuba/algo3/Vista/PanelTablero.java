@@ -51,6 +51,8 @@ public class PanelTablero extends Pane {
 
         BotonJugar botonPlay = new BotonJugar(unTablero, vistaPersonaje,botonReiniciar);
 
+        BotonMenu botonMenu = new BotonMenu();
+
         unTablero.mostrarSectorDibujo().addObserver(botonReiniciar);
         unTablero.mostrarSectorDibujo().addObserver(botonSubirBloque);
         unTablero.mostrarSectorDibujo().addObserver(botonBajarBloque);
@@ -65,6 +67,7 @@ public class PanelTablero extends Pane {
         this.getChildren().add(botonBajarBloque);
 
         this.getChildren().add(botonBorrarBloque);
+        this.getChildren().add(botonMenu);
 
         this.getChildren().add(sectorDibujoView);
         this.getChildren().add(panelBloquesDisponibles);

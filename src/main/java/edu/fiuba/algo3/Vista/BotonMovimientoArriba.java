@@ -32,10 +32,6 @@ public class BotonMovimientoArriba extends Boton {
         return this;
     }
 
-    public String getNombre() {
-        return "UWU";
-    }
-
     public void setIndex(int i){
 
         this.index = i;

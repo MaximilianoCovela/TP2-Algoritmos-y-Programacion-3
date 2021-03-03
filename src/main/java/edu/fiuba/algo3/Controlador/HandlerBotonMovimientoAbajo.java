@@ -40,18 +40,17 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
     public void handle(ActionEvent event) {
 
-        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1);
 
-        if(!this.vBoxBotones.getChildren().contains(this.unBotonAbajo)){ //quizas n haga falta
+        if(!this.vBoxBotones.getChildren().contains(this.unBotonAbajo)){
 
             MovimientoAbajo movAbajo = new MovimientoAbajo();
 
-            actualVBox.guardarMovimiento(movAbajo); //aca se crea el bloque si es la de seleccionados
+            actualVBox.guardarMovimiento(movAbajo);
             this.index = (actualVBox.getChildren().size());
 
             this.unBotonAbajo.setIndex(this.index);
 
-            System.out.println("Indice del objeto: "+ this.index);
             BotonMovimientoAbajo botonAbajo = new BotonMovimientoAbajo(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(botonAbajo);
