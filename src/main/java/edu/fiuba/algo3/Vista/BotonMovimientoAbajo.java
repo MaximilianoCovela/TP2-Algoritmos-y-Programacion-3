@@ -34,6 +34,7 @@ public class BotonMovimientoAbajo extends Boton {
     }
 
 
+
     public void setIndex(int i){
 
         this.index = i;

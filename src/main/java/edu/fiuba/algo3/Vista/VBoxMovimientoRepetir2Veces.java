@@ -16,7 +16,7 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
 
     public VBoxMovimientoRepetir2Veces(Tablero unTablero){
 
-        this.setPadding(new Insets(10, 0, 0, 10));
+        this.setPadding(new Insets(10, 0, 10, 10));
         this.setSpacing(5);
         this.setBackground(new Background(new BackgroundFill(Color.HOTPINK, CornerRadii.EMPTY, Insets.EMPTY)));
         this.setBorder(new Border(new BorderStroke(Color.BLACK,

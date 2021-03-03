@@ -4,7 +4,6 @@ import edu.fiuba.algo3.Vista.BotonMovimientoPersonalizado;
 import edu.fiuba.algo3.Vista.VBoxBotones;
 import edu.fiuba.algo3.Vista.VboxBotonesDisponibles;
 import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
-import edu.fiuba.algo3.modelo.Bloque;
 import edu.fiuba.algo3.modelo.MovimientoPersonalizado;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
