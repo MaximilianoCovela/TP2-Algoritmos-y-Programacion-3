@@ -30,7 +30,6 @@ public class VboxMovimientoInvertir extends VBoxBotones {
 
     }
 
-    // agrega un bloque complejo al tablero
     public void agregarBloqueATablero() {
 
         Bloque unBloqueNuevo = new Bloque(this.movimientoInvertir);
@@ -43,11 +42,6 @@ public class VboxMovimientoInvertir extends VBoxBotones {
         return this.movimientoInvertir;
     }
 
-    public void eliminarContenido() {
-
-        this.getChildren().clear();
-
-    }
 
     public void actualizarVista(int index){
         while(index < this.getChildren().size()){

@@ -10,8 +10,6 @@ import javafx.stage.Stage;
 
 public class App extends Application {
 
-    private SectorDibujoView sectorDibujoView;
-    private PersonajeView personajeView;
     private Tablero unTablero = new Tablero();
 
     public static void main(String[] args) {
@@ -31,16 +29,14 @@ public class App extends Application {
 
         PanelBloquesSeleccionados panelBloquesSeleccionados = new PanelBloquesSeleccionados(vb2);
 
-        VboxBotonesDisponibles vb = new VboxBotonesDisponibles(vb2, vistaPersonaje, unTablero);
+        VboxBotonesDisponibles vb = new VboxBotonesDisponibles(vb2, unTablero);
 
         PanelBloquesDisponibles panelBloquesDisponibles = new PanelBloquesDisponibles(vb);
 
         unTablero.mostrarSectorDibujo().addObserver(vistaPersonaje);
 
-
         PanelTablero panelTablero = new PanelTablero(panelBloquesDisponibles,panelBloquesSeleccionados,
-                sectorDibujoView, unTablero, vistaPersonaje, vb.getListaVBox(),
-                vb.getVBoxActual(),vb); // no entiendo por que el cast
+                sectorDibujoView, unTablero, vistaPersonaje, vb.getListaVBox(),vb);
 
         PanelJuego panelJuego = new PanelJuego(panelTablero, panelBloquesDisponibles,
                 panelBloquesSeleccionados, sectorDibujoView);

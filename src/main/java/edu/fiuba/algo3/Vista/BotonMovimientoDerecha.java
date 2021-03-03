@@ -27,13 +27,8 @@ public class BotonMovimientoDerecha extends Boton{
         return index;
     }
 
-
     public Button getButton() {
         return this;
-    }
-
-    public String getNombre() {
-        return "UWU";
     }
 
     public void setIndex(int i){

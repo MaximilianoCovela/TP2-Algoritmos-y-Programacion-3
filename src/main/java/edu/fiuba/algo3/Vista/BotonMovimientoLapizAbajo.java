@@ -36,10 +36,6 @@ public class BotonMovimientoLapizAbajo extends Boton {
         return this;
     }
 
-    public String getNombre() {
-        return "OWO";
-    }
-
     public void setIndex(int i){
         this.index = i;
     }

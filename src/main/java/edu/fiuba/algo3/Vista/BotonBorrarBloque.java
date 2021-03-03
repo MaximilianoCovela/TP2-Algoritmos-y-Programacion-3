@@ -13,7 +13,7 @@ public class BotonBorrarBloque extends Button {
                              VboxBotonesDisponibles vboxBotonesDisponibles){
         super();
         this.setText("X");
-        this.setLayoutX(905.0); // 921.0
+        this.setLayoutX(905.0);
         this.setLayoutY(450.0);
         this.setOnAction(new HandlerBotonBorrarBloque(unTablero, arrayVbox, panelTablero, this,
                  vboxBotonesDisponibles));

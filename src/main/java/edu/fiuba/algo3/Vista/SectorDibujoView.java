@@ -52,7 +52,7 @@ public class SectorDibujoView extends GridPane {
 
         this.getChildren().clear();
 
-        this.setLayoutX(12.0); //era 22.0
+        this.setLayoutX(12.0);
         this.setLayoutY(21.0);
         this.setPrefHeight(503.0);
         this.setPrefWidth(456.0);

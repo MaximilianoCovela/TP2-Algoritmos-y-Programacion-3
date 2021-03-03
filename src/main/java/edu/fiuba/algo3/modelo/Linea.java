@@ -12,7 +12,6 @@ public class Linea implements Dibujo{
 
     public Posicion getPosicionFinal(){
 
-        Posicion nuevaPosicion = this.posicionFinal;
         return this.posicionFinal;
     }
 

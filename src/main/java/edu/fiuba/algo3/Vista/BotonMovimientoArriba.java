@@ -37,9 +37,8 @@ public class BotonMovimientoArriba extends Boton {
     }
 
     public void setIndex(int i){
-        System.out.println("Indice viejo " + this.index);
-        System.out.println("Indice por parametro " + i);
+
         this.index = i;
-        System.out.println("Indice nuevo " + this.index);
+
     }
 }

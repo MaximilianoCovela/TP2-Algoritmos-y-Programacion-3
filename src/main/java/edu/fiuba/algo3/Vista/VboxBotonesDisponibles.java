@@ -18,10 +18,8 @@ public class VboxBotonesDisponibles extends VBox{
 
     private ArrayList<VBoxBotones> listaDeVBox = new ArrayList<>();
 
-    public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxBotonesSeleccionados,
-                                  PersonajeView vistaPersonaje, Tablero unTablero){
+    public VboxBotonesDisponibles(VboxBotonesSeleccionados vboxBotonesSeleccionados, Tablero unTablero){
         this.vBoxSeleccionados = vboxBotonesSeleccionados;
-        // aca agregamos al array la vbox principal
         this.listaDeVBox.add(vboxBotonesSeleccionados);
 
         this.botonSeleccionado = null;
@@ -30,13 +28,9 @@ public class VboxBotonesDisponibles extends VBox{
         this.setSpacing(10);
         int index = 0;
 
-        //Botones simples
-
-        // despues solo le vamos a pasar el array, y la posicion 0 en listaDeVBox va a ser Vbox botones disponibles
         BotonMovimientoArriba botonArriba =
                 new BotonMovimientoArriba(vboxBotonesSeleccionados, unTablero, index, this,
                         listaDeVBox);
-        System.out.println("Verifico que entro dentro de vbox botones disponibles");
         BotonMovimientoAbajo botonAbajo =
                 new BotonMovimientoAbajo(vboxBotonesSeleccionados, unTablero,index, this, listaDeVBox);
 
@@ -49,8 +43,6 @@ public class VboxBotonesDisponibles extends VBox{
                         listaDeVBox);
 
 
-        //Botones Invertir
-
         BotonMovimientoRepetir2Veces botonRepetir2Veces =
                 new BotonMovimientoRepetir2Veces(vboxBotonesSeleccionados, unTablero,index, this,
                         listaDeVBox);
@@ -58,7 +50,6 @@ public class VboxBotonesDisponibles extends VBox{
         BotonMovimientoPararRepetir2Veces botonPararRepetir2Veces =
                 new BotonMovimientoPararRepetir2Veces(vboxBotonesSeleccionados, unTablero,index,
                         listaDeVBox);
-
 
         BotonMovimientoRepetir3Veces botonRepetir3Veces =
                 new BotonMovimientoRepetir3Veces(vboxBotonesSeleccionados, unTablero,index, this,
@@ -69,8 +60,6 @@ public class VboxBotonesDisponibles extends VBox{
                         listaDeVBox);
 
 
-        //Invertir
-
         BotonMovimientoInvertir botonInvertir =
                 new BotonMovimientoInvertir(vboxBotonesSeleccionados, unTablero,index, this,
                         listaDeVBox);
@@ -79,12 +68,9 @@ public class VboxBotonesDisponibles extends VBox{
                         listaDeVBox);
 
 
-        //Guardar algoritmo
-
         BotonGuardarAlgoritmo botonGuardarAlgoritmo =
                 new BotonGuardarAlgoritmo(vboxBotonesSeleccionados, this, unTablero, index);
 
-        //Lapiz
 
         BotonMovimientoLapizAbajo botonLapizAbajo =
                 new BotonMovimientoLapizAbajo(vboxBotonesSeleccionados, unTablero,index, this,
@@ -94,9 +80,7 @@ public class VboxBotonesDisponibles extends VBox{
                 new BotonMovimientoLapizArriba(vboxBotonesSeleccionados, unTablero,index, this,
                         listaDeVBox);
 
-
-
-        botonGuardarAlgoritmo.setDisable(true); /* Se deshabilita cuando no hay nada en el vbox seleccionados.*/
+        botonGuardarAlgoritmo.setDisable(true);
         this.getChildren().addAll(botonArriba, botonAbajo, botonDerecha, botonIzquierda, botonRepetir2Veces,
                 botonPararRepetir2Veces, botonRepetir3Veces, botonPararRepetir3Veces, botonInvertir, botonPararInvertir, botonLapizAbajo,
                 botonLapizArriba, botonGuardarAlgoritmo);
@@ -122,31 +106,17 @@ public class VboxBotonesDisponibles extends VBox{
         this.listaDeVBox.add(this.vBoxSeleccionados);
 
     }
-    //esto borrar y refactorizar, pasa que el borrar esta en Tablero, y la lista de VBox la contiene esta clase
+
     public ArrayList<VBoxBotones> getListaVBox(){
 
         return listaDeVBox;
 
     }
 
-    public VBoxBotones getVBoxActual(){
-        // no se si esto va a funcionar, por el cast mas que nada, ver arriba que onda
-        return vBoxSeleccionados;
-
-    }
 
     public void cambiarBotonSeleccionado(Boton nuevoBotonSeleccionado){
 
         this.botonSeleccionado = nuevoBotonSeleccionado;
-
-        System.out.println("Chequeo que entro al cambiar boton seleccionado");
-
-        if(nuevoBotonSeleccionado != null){
-
-            System.out.println("hequeo que entro al cambiar boton seleccionado dentro del if y veo el index del nuevobotonseleccionado:"+nuevoBotonSeleccionado.getIndex());
-
-        }
-
 
     }
 

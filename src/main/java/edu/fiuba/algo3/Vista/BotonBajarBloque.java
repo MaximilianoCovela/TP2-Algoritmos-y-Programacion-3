@@ -11,9 +11,9 @@ public class BotonBajarBloque extends Button {
 
     public BotonBajarBloque(Tablero unTablero,
                             ArrayList<VBoxBotones> arrayVbox, PanelTablero panelTablero,
-                            VboxBotonesDisponibles vboxBotonesDisponibles){ // despues vemos que necesita recibir
+                            VboxBotonesDisponibles vboxBotonesDisponibles){
         this.setText("↓");
-        this.setLayoutX(905.0); //<Button layoutX="921.0" layoutY="287.0" mnemonicParsing="false" text="↓" />
+        this.setLayoutX(905.0);
         this.setLayoutY(287.0);
         this.setOnAction(new HandlerBotonBajarBloque(unTablero, arrayVbox, panelTablero, this,
                          vboxBotonesDisponibles));

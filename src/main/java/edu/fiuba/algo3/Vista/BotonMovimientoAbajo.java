@@ -10,16 +10,16 @@ public class BotonMovimientoAbajo extends Boton {
 
     private HandlerBotonMovimientoAbajo accion;
     private int index;
-// antes decia VboxBotonesSeleccionados vboxbotonesseleccionados en el 1er parametro
+
     public BotonMovimientoAbajo(VBoxBotones vBoxBotones, Tablero unTablero,
-                                int index, VboxBotonesDisponibles vboxbotonesdisponibles, ArrayList listaDeVBox){
+                                int index, VboxBotonesDisponibles vboxbotonesdisponibles, ArrayList<VBoxBotones> listaDeVBox){
         super();
         this.setText("Abajo");
         this.setPrefHeight(70.0);
         this.setPrefWidth(140.0);
         this.accion = new HandlerBotonMovimientoAbajo(vBoxBotones,
                 unTablero, this, index, vboxbotonesdisponibles, listaDeVBox );
-        this.index = index; //hay que ver si esto funciona, no me acuerdo como lo hicimos antes XXXX
+        this.index = index;
         this.setOnAction(accion);
     }
 

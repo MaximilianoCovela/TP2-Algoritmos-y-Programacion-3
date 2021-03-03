@@ -25,8 +25,7 @@ public class SectorDibujo implements Observable{
     }
 
     public void ejecutarMovimientosDelPersonaje(Personaje unPersonaje){
-        System.out.println("Modelo : SectorDibujo EjecutarMov");
-        System.out.println("Modelo : Con una lista de " + this.listaDeDibujos.size());
+
         int i = 1;
 
         for( Dibujo unDibujo : listaDeDibujos){

@@ -8,7 +8,7 @@ public class PanelBloquesSeleccionados extends ScrollPane {
     VboxBotonesSeleccionados bloquesSeleccionados;
 
     public PanelBloquesSeleccionados(VboxBotonesSeleccionados bloquesSeleccionados){
-        this.setLayoutX(713.0); // era 738.0 PanelBloquesSeleccionados
+        this.setLayoutX(713.0);
         this.setLayoutY(48.0);
         this.setMaxSize(172, 438);
         this.setContent(bloquesSeleccionados);

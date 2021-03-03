@@ -35,7 +35,6 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
 
     }
 
-    // agrega un bloque complejo al tablero
     public void agregarBloqueATablero() {
 
         Bloque unBloqueNuevo = new Bloque(this.movimientoRepetir);
@@ -48,21 +47,12 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
         return this.movimientoRepetir;
     }
 
-    public void eliminarContenido() {
-
-        this.getChildren().clear();
-
-    }
 
     public void actualizarVista(int index){
-        System.out.println("El indice del bloque a borrar que le llega es: "+ index);
+
         while(index < this.getChildren().size()){
             this.getChildren().remove(index);
         }
-    }
-
-    public Boton getBotonSeleccionado(){
-        return null;
     }
 
     public void eliminarMovimiento(int index){
@@ -70,7 +60,6 @@ public class VBoxMovimientoRepetir2Veces extends VBoxBotones {
         this.movimientoRepetir.quitarMovimientos(index);
 
     }
-
 
     public void actualizarMovimientos(int index, int i) {
         this.movimientoRepetir.swapMovimientos(index,i);

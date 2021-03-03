@@ -34,7 +34,6 @@ public class VBoxMovimientoRepetir3Veces extends VBoxBotones{
 
     }
 
-    // agrega un bloque complejo al tablero
     public void agregarBloqueATablero() {
 
         Bloque unBloqueNuevo = new Bloque(this.movimientoRepetir);
@@ -47,20 +46,10 @@ public class VBoxMovimientoRepetir3Veces extends VBoxBotones{
         return this.movimientoRepetir;
     }
 
-    public void eliminarContenido() {
-
-        this.getChildren().clear();
-
-    }
-
     public void actualizarVista(int index){
         while(index < this.getChildren().size()){
             this.getChildren().remove(index);
         }
-    }
-
-    public Boton getBotonSeleccionado(){
-        return null;
     }
 
     public void eliminarMovimiento(int index){
