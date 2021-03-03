@@ -3,7 +3,6 @@ package edu.fiuba.algo3.Vista;
 import edu.fiuba.algo3.Controlador.HandlerBotonGuardarAlgoritmo;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
 
 import java.util.ArrayList;
 

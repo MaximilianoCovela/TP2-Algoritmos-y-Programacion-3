@@ -21,8 +21,6 @@ public class BotonJugar extends Button implements Observer{
 
     public void update(Dibujo unDibujo, Boolean unEstado){
         this.setDisable(unEstado);
-
-        System.out.println("El estado actual del boton es: " + unEstado);
     }
 
 }

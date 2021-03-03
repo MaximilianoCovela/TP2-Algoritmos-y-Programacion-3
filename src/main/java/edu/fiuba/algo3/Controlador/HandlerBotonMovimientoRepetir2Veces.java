@@ -14,7 +14,6 @@ public class HandlerBotonMovimientoRepetir2Veces implements EventHandler<ActionE
     private Tablero unTablero;
     private BotonMovimientoRepetir2Veces unBotonRepetir2Veces;
     private int index;
-    private VBoxMovimientoRepetir2Veces vBoxDeRepetir;
     private ArrayList<VBoxBotones> listaDeVBox;
 
 

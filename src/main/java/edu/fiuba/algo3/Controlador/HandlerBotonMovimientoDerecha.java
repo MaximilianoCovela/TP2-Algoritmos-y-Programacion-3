@@ -28,21 +28,16 @@ public class HandlerBotonMovimientoDerecha implements EventHandler<ActionEvent>{
         this.listaDeVBox = listaDeVBox;
     }
 
-    public int obtenerIndice(){
-        return this.index;
-    }
-
 
     public void handle(ActionEvent event) {
 
-        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1);
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonDerecha)){
             MovimientoDerecha movDerecha = new MovimientoDerecha();
 
             actualVBox.guardarMovimiento(movDerecha);
             this.index = (actualVBox.getChildren().size());
-            System.out.println("Indice del objeto: "+ this.index);
             BotonMovimientoDerecha botonDerecha = new BotonMovimientoDerecha(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(botonDerecha);

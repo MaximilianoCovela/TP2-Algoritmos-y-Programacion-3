@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
 
-    private Boton botonSeleccionado;
     private VBoxBotones vBoxBotones;
     private VboxBotonesDisponibles vboxBotonesDisponibles;
     private Tablero unTablero;
@@ -32,10 +31,6 @@ public class HandlerBotonMovimientoAbajo implements EventHandler<ActionEvent>{
         this.unBotonAbajo = botonAbajo;
         this.vboxBotonesDisponibles = vboxdisponibles;
         this.listaDeVBox = listaDeVBox;
-    }
-
-    public int obtenerIndice(){
-        return this.index;
     }
 
     public void handle(ActionEvent event) {

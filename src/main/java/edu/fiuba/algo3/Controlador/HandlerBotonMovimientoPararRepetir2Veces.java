@@ -28,10 +28,6 @@ public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<Ac
         this.listaDeVBox = listaDeVBox;
     }
 
-    public int obtenerIndice(){
-        return this.index;
-    }
-
     public void handle(ActionEvent event) {
 
         VBoxMovimientoRepetir2Veces vbox;
@@ -41,7 +37,6 @@ public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<Ac
 
         }catch(Exception e){
 
-            System.out.println("No se puede cerrar un repetirx2 si no se abrió un repetirx2");
             return;
 
         }
@@ -56,7 +51,7 @@ public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<Ac
 
             }else{
 
-                VBoxBotones vBoxAnteUltima = (VBoxBotones) this.listaDeVBox.get(listaDeVBox.size()-2);
+                VBoxBotones vBoxAnteUltima = this.listaDeVBox.get(listaDeVBox.size()-2);
 
                 vBoxAnteUltima.guardarMovimiento(vbox.devolverMovimientos());
 

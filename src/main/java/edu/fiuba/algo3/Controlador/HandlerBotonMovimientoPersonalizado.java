@@ -3,7 +3,6 @@ package edu.fiuba.algo3.Controlador;
 import edu.fiuba.algo3.Vista.BotonMovimientoPersonalizado;
 import edu.fiuba.algo3.Vista.VBoxBotones;
 import edu.fiuba.algo3.Vista.VboxBotonesDisponibles;
-import edu.fiuba.algo3.Vista.VboxBotonesSeleccionados;
 import edu.fiuba.algo3.modelo.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -45,14 +44,14 @@ public class HandlerBotonMovimientoPersonalizado implements EventHandler<ActionE
 
 
             vBoxActual.guardarMovimiento(unMovimientoPersonalizado);
-            this.index = (vBoxActual.getChildren().size()); // esto lo agregue recien
+            this.index = (vBoxActual.getChildren().size());
             BotonMovimientoPersonalizado botonPersonalizado = new BotonMovimientoPersonalizado(vBoxActual,
                     this.unTablero,this.index, this.vboxBotonesDisponibles, this.nombre, this.unMovimientoPersonalizado,
                     this.listaDeVbox);
             vBoxActual.getChildren().add(botonPersonalizado);
 
         }else{
-            this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonPersonalizado); // estoy cambiando
+            this.vboxBotonesDisponibles.cambiarBotonSeleccionado(this.unBotonPersonalizado);
 
         }
         vboxBotonesDisponibles.verificar();

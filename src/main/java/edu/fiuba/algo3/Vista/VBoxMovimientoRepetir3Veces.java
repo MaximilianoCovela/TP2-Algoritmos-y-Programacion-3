@@ -10,8 +10,6 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
-import java.util.ArrayList;
-
 
 public class VBoxMovimientoRepetir3Veces extends VBoxBotones{
     private Tablero tablero;

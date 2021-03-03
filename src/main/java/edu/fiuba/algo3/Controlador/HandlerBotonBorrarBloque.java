@@ -34,10 +34,8 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
 
         Boton botonSeleccionado = this.vboxBotonesDisponibles.getBotonSeleccionado();
 
-        if(botonSeleccionado == null){
-            System.out.println("Aun es nulo el puntero al botón");
+        if(botonSeleccionado != null){
 
-        } else {
             VBoxBotones vBoxActual = this.listaDeVBox.get(listaDeVBox.size()-1);
 
             if(!vBoxActual.getChildren().contains(botonSeleccionado)){

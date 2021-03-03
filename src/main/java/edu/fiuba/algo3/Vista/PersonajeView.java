@@ -1,13 +1,10 @@
 package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.modelo.Observer;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import edu.fiuba.algo3.modelo.Dibujo;
 import edu.fiuba.algo3.modelo.Posicion;
-import javafx.util.Duration;
 
 public class PersonajeView implements Observer {
 

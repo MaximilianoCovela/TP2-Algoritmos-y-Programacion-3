@@ -14,7 +14,6 @@ public class HandlerBotonMovimientoInvertir implements EventHandler<ActionEvent>
     private Tablero unTablero;
     private BotonMovimientoInvertir unBotonInvertir;
     private int index;
-    private VBoxMovimientoRepetir2Veces vBoxDeRepetir;
     private ArrayList<VBoxBotones> listaDeVBox;
 
 
@@ -24,7 +23,6 @@ public class HandlerBotonMovimientoInvertir implements EventHandler<ActionEvent>
         this.vBoxBotones = vbox;
         this.unTablero = unTablero;
         this.unBotonInvertir = botonInvertir;
-        this.index = index;
         this.vboxBotonesDisponibles = vboxdisponibles;
         this.listaDeVBox = listaDeVBox;
 
@@ -34,28 +32,16 @@ public class HandlerBotonMovimientoInvertir implements EventHandler<ActionEvent>
 
         VboxMovimientoInvertir vBoxDeInvertir = new VboxMovimientoInvertir(this.unTablero);
 
-        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1);
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonInvertir)){
             this.index = (actualVBox.getChildren()).size();
-            BotonMovimientoInvertir BotonMovimientoInvertir = new BotonMovimientoInvertir(this.vBoxBotones,
-                    this.unTablero, this.index, vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(vBoxDeInvertir);
 
             this.listaDeVBox.add(vBoxDeInvertir);
 
-            System.out.println("indice:"+ index);
-
-        }else{
-            /*
-            this.vBoxDeRepetir.eliminarContenido();
-            this.vBoxBotones.getChildren().remove(this.vBoxDeRepetir);
-            this.vBoxBotones.actualizarVista(this.index);
-            this.vBoxDeRepetir.actualizarTablero();
-
-             */
-            System.out.println("adios");
         }
+
         vboxBotonesDisponibles.verificar();
 
     }

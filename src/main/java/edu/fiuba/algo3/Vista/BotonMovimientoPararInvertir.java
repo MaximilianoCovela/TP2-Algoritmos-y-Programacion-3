@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoPararInvertir;
-import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoPararRepetir3Veces;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.scene.control.Button;
 

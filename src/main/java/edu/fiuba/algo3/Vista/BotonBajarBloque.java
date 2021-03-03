@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.Controlador.HandlerBotonBajarBloque;
-import edu.fiuba.algo3.Controlador.HandlerBotonReiniciar;
 import edu.fiuba.algo3.modelo.Dibujo;
 import edu.fiuba.algo3.modelo.Observer;
 import edu.fiuba.algo3.modelo.Tablero;

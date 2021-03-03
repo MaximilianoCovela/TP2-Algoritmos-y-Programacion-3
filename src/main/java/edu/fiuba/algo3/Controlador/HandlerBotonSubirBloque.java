@@ -35,11 +35,7 @@ public class HandlerBotonSubirBloque implements EventHandler<ActionEvent> {
 
         Boton botonSeleccionado = this.vboxBotonesDisponibles.getBotonSeleccionado();
 
-        if(botonSeleccionado == null){
-
-            System.out.println("Aun es nulo el puntero al botón");
-
-        } else {
+        if(botonSeleccionado != null){
 
             VBoxBotones vBoxActual = this.listaDeVBox.get(listaDeVBox.size()-1);
             int indexBotonASubir = botonSeleccionado.getIndex();
@@ -54,7 +50,6 @@ public class HandlerBotonSubirBloque implements EventHandler<ActionEvent> {
 
             }catch(Exception e){
 
-                System.out.println("No se puede subir un botón cuando lo anterior es una VBox >:V");
                 return;
 
             }

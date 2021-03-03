@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.modelo.Tablero;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.layout.Pane;

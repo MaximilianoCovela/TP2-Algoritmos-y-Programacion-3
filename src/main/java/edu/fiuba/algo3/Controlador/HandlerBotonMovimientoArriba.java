@@ -30,14 +30,10 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
         this.listaDeVBox = listaDeVBox;
     }
 
-    public int obtenerIndice(){
-        return this.index;
-    }
-
 
     public void handle(ActionEvent event) {
 
-        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1);
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonArriba)){
             MovimientoArriba movArriba = new MovimientoArriba();
@@ -47,7 +43,6 @@ public class HandlerBotonMovimientoArriba implements EventHandler<ActionEvent>{
 
             this.unBotonArriba.setIndex(this.index);
 
-            System.out.println("Indice del objeto: "+ this.index);
             BotonMovimientoArriba botonArriba = new BotonMovimientoArriba(actualVBox,
                     this.unTablero, this.index, this.vboxBotonesDisponibles, this.listaDeVBox);
             actualVBox.getChildren().add(botonArriba);

@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoIzquierda;
 import edu.fiuba.algo3.Controlador.HandlerBotonMovimientoLapizAbajo;
 
 import edu.fiuba.algo3.modelo.Tablero;

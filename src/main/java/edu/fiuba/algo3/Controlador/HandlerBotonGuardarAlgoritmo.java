@@ -39,9 +39,7 @@ public class HandlerBotonGuardarAlgoritmo implements EventHandler<ActionEvent>{
         tid.setTitle("Nombre del algoritmo");
         tid.setContentText("Por favor introduzca un nombre para el algoritmo");
         Optional<String> texto = tid.showAndWait();
-        /*
-        Si selecciona Aceptar sin haber ingresado un nombre lanza alerta.
-        */
+
         if (texto.isPresent() && texto.get().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -50,9 +48,6 @@ public class HandlerBotonGuardarAlgoritmo implements EventHandler<ActionEvent>{
             alert.showAndWait();
         }
 
-        /*
-        Si pone un nombre y selecciona aceptar se guarda el algoritmo en un bloque personalizado.
-        */
         else if (texto.isPresent()) {
             String nombreIngresado = texto.get();
             MovimientoPersonalizado unMovPersonalizado = new MovimientoPersonalizado();

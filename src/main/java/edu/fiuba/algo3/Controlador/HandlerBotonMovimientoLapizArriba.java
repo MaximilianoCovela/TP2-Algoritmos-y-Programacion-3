@@ -30,13 +30,9 @@ public class HandlerBotonMovimientoLapizArriba implements EventHandler<ActionEve
         this.listaDeVBox = listaDeVBox;
     }
 
-    public int obtenerIndice(){
-        return this.index;
-    }
-
     public void handle(ActionEvent event) {
 
-        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1);
 
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonLapizArriba)){
 

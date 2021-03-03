@@ -26,13 +26,7 @@ public class HandlerBotonMovimientoPararInvertir implements EventHandler<ActionE
         this.listaDeVBox = listaDeVBox;
     }
 
-    public int obtenerIndice(){
-        return this.index;
-    }
-
     public void handle(ActionEvent event) {
-
-        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1);
 
         VboxMovimientoInvertir vbox;
 
@@ -41,7 +35,6 @@ public class HandlerBotonMovimientoPararInvertir implements EventHandler<ActionE
 
         }catch(Exception e){
 
-            System.out.println("No se puede cerrar un invertir si no se abrió un invertir");
             return;
 
         }

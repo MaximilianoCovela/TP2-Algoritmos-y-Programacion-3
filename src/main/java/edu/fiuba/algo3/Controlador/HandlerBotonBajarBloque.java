@@ -13,7 +13,6 @@ import java.util.Collections;
 
 public class HandlerBotonBajarBloque implements EventHandler<ActionEvent> {
 
-    private Boton botonSeleccionado;
     private final PanelTablero panelTablero;
     private Tablero unTablero;
     private BotonBajarBloque unBotonBajarBloque;
@@ -36,11 +35,8 @@ public class HandlerBotonBajarBloque implements EventHandler<ActionEvent> {
 
         Boton botonSeleccionado = this.vboxBotonesDisponibles.getBotonSeleccionado();
 
-        if(botonSeleccionado == null){
+        if(botonSeleccionado != null){
 
-            System.out.println("Aun es nulo el puntero al botón");
-
-        } else {
             VBoxBotones vBoxActual = this.listaDeVBox.get(listaDeVBox.size()-1);
             int indexBotonABajar = botonSeleccionado.getIndex();
 
@@ -56,7 +52,6 @@ public class HandlerBotonBajarBloque implements EventHandler<ActionEvent> {
 
             }catch(Exception e){
 
-                System.out.println("No se puede bajar un botón cuando lo siguiente es una VBox >:V");
                 return;
 
             }

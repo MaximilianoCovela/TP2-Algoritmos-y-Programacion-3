@@ -28,10 +28,6 @@ public class HandlerBotonMovimientoPararRepetir3Veces implements EventHandler<Ac
         this.listaDeVBox = listaDeVBox;
     }
 
-    public int obtenerIndice(){
-        return this.index;
-    }
-
     public void handle(ActionEvent event) {
 
         VBoxMovimientoRepetir3Veces vbox;
@@ -41,7 +37,6 @@ public class HandlerBotonMovimientoPararRepetir3Veces implements EventHandler<Ac
 
         }catch(Exception e){
 
-            System.out.println("No se puede cerrar un repetirx3 si no se abrió un repetirx3");
             return;
 
         }

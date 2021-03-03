@@ -32,7 +32,7 @@ public class HandlerBotonMovimientoLapizAbajo implements EventHandler<ActionEven
 
     public void handle(ActionEvent event) {
 
-        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
+        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1);
 
         if(!this.vboxbotonesseleccionados.getChildren().contains(this.unBotonLapizAbajo)){
 

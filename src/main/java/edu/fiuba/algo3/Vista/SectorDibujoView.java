@@ -1,20 +1,16 @@
 package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.modelo.Observer;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import edu.fiuba.algo3.modelo.Dibujo;
-import javafx.util.Duration;
 
 public class SectorDibujoView extends GridPane {
 
     public SectorDibujoView(){
-        this.setLayoutX(12.0); // era 22.0 SectorDibujoView
+        this.setLayoutX(12.0);
         this.setLayoutY(21.0);
         this.setPrefHeight(503.0);
         this.setPrefWidth(456.0);
@@ -41,9 +37,6 @@ public class SectorDibujoView extends GridPane {
         if (unDibujo.mostrarDibujo()){
             this.add(imagen, posicionHorizontal, posicionVertical);
 
-            System.out.println(posicionHorizontal);
-            System.out.println(posicionVertical);
-            System.out.println("entró a este if");
         }
 
     }

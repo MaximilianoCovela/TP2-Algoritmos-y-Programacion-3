@@ -22,8 +22,6 @@ public class HandlerBotonJugar implements EventHandler<ActionEvent> {
         }
         public void handle(ActionEvent event) {
             this.unavistaPersonaje.reiniciarVistaPersonaje();
-            /*this.unBotonJugar.setDisable(true);
-            this.BotonReset.setDisable(true);*/
             unTablero.ejecutarSecuencia();
         }
 }
