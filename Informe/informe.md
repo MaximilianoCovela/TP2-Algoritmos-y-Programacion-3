@@ -6,6 +6,9 @@ ue a[![Build Status](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2.svg?bra
 
 Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
+
+![Imagen_De_Presentación](https://i.imgur.com/UPhL64r.png)
+
 ## Grupo 4
 
 * **Chacón Irina Ailén** - 104416 - [integrante1](https://github.com/iruchita)
@@ -28,33 +31,138 @@ Una vez armado el algoritmo, el jugador podrá elegir “ejecutar” el mismo.
 En ese caso, cada bloque se irá procesando en forma secuencial, haciendo que el personaje realice la acción correspondiente.
 
 
-## Supuestos para las Entregas 0 y 1
+## Supuestos Entrega 4
 
-- Posicion: Inicialmente se crea con valorHorizontal = 5 y valorVertical = 5.
- Ya que empezaría en la mitad de la matriz si esta tiene 10 filas y 10 columnas.
+Se trabajó con los siguientes supuestos:
 
--  Dibujar dentro de LapizArriba y LapizAbajo, lo que hace es crear una Figura cuyos métodos no implementamos; estas figuras las
- almacenará el SectorDibujo en la segunda entrega.
- 
-- El Dibujo abstrae si la figura que contiene una posición determinada, 
-puede ser dibujada o no, en base al estado del lápiz.
+- La vista del personaje en una matriz de 9x9 empieza en el centro, es decir en la
+posición (4,4).
+- Los bloques complejos Repetirx2, Repetirx3 e Invertir, son creados
+como VBox dentro de la VBox a la que se le asignan los botones con
+  los bloques simples seleccionados (todos los demás).
+  - Estas VBox tienen la particularidad de que no se pueden mover
+ de lugar, ni borrar.
+  - Si se desea borrar una VBOX con bloques dentro, se debe proceder
+ a borrar el bloque simple anterior si es que existía uno, o a presionar
+    el boton Reiniciar, lo que vaciará la VBox con los bloques
+    seleccionados.
+  - Para poner la VBOX en otra posición se recomienda Reiniciar
+   e ingresar la secuencia de bloques deseada y luego el bloque 
+   complejo en el lugar indicado.
+- Se pueden ingresar la cantidad de bloques complejos, combinandolos
+como sea necesario.
+- Cuando se abre un Repetirx2 luego de terminar de ingresar todos 
+los bloques (simples o complejos) que se desee a su interior, se debe
+seleccionar el botón que dice Parar (Repetirx2) para poder seguir
+  agregando bloques a continuación o poder Iniciar la ejecución
+  del programa al presionar el botón Ejecutar.
+  
+## Excepciones
 
-## Supuestos para la Entrega 2
+## Detalles de implementación
 
-- En Dibujo, Vacío y Linea tienen un método booleano para poder 
-comprobar si se actualiza el estado del lápiz correctamente.
+- Se utilizó el patrón Strategy para conectar los controladores
+con el modelo, en cuanto a la interacción del usuario con la 
+creación de bloques en el sector de bloques a ejecutar.
+- Se utilizó también el patrón Observer para conectar la vista con el 
+modelo, donde hubo varios observadores, los botones y la clase
+VistaPersonaje que contenía un VistaSectorDibujo.
+El patrón se aplicó en la clase SectorDibujo, donde se tenía un
+arreglo de Dibujos que poseen la posición inicial del personaje y 
+  la final luego de haberse ejecutado 1 movimiento en particular, así como 
+  si el personaje tenía el lapiz con estado arriba u abajo, lo 
+  que devolvía un booleano y luego en la vista esto era interpretado
+  para dibujar cesped en las posiciones donde se deba marcar
+  que el lapiz estaba abajo, también para los botones, se creó 
+  un booleano que informaba si habia terminado de ejecutarse
+  la secuencia de dibujos enviada, o no, para deshabilitar y habilitar
+  los botones Iniciar, MoverArriba, MoverAbajo, Reiniciar y Eliminar.
+  
+- En el modelo a la hora de tener movimientos que tengan 
+dentro otros movimientos, (movimientos complejos) se utilizó 
+  el patrón _____________, para poder tratar a cada movimiento 
+  con el método aplicar, que lo que hace es delegar en cada uno
+  la acción que deba realizarse (en movimiento lapiz arriba, 
+  subir el lapiz, en movimiento derecha, hacer que el personaje
+  del modelo se mueva un casillero hacia la derecha, etc). Todo esto
+  se pudo lograr gracias a la interfaz de Movimiento con su método
+  aplicarMovimiento.
+  
+- Se utilizaron interfaces y herencia para englobar comportamientos
+que debían realizar varias clases. Una de ellas es la clase
+  Boton, donde cada botón sabía como crear su propio movimiento.
+  
+- Para la representación de los movimientos Repetir e Invertir en la
+vista, se utilizaron VBox de JavaFx donde le son ingresados
+  botones de los movimientos simples cuando el usuario 
+  hace click en los botones de la lista de botones disponibles,
+  y a su vez otras Vbox creadas por movimientos complejos, para ello, se creo una clase
+  VBoxBotones.
+  
+- Se creó un botón Menú de Ayuda, en el que se explican 
+comportamientos importantes del programa, que el usuario debe
+  tener en cuenta a la hora de querer ejecutar el programa, en él
+  se muestra un resúmen de los supuestos que son detallados
+  con anterioridad en este informe en el apartado de Supuestos.
+  
+- Para la creación de la vista sector dibujo, que es el 
+recuadro verde con grillas que se muestra a la izquierda de 
+  la interfaz gráfica, se utilizó un GridPane en la vista.
+  No se utilizó una doble matriz (es decir una matriz en el 
+  modelo y otra matriz en la vista), ya que se podía resolver
+  directamente en la vista debido al array de Dibujos que se 
+  cargan luego de ejecutar cada movimiento (simple o complejo)
+  que el usuario desea. 
 
-## Diagramas
+- Para borrar, subir bloque y bajar bloque, se utilizaron 
+3 handlers donde se realiza la lógica correspondiente a cada botón 
+  (se borra, se mueve hacia arriba un lugar, o hacia abajo un lugar).
+  El usuario selecciona un bloque con movimiento de la secuencia
+  de bloques 
+  seleccionados y luego presiona (↓, ↑ o X) y se ejecuta la lógica
+  correspondiente al botón presionado (↓, ↑ o X).
+  
 
-![Diagrama de clases general](https://i.imgur.com/RqHMnS8.png)
+  
+
+
+
+  
+
+
+
+## Diagramas De Clase
+
+![Diagrama de clases general](https://i.imgur.com/zFC1Gbi.png)
 Diagrama general de clases.
 
-![Diagrama de clase del Estado Lapiz](https://i.imgur.com/hshDPBr.png)
+![Diagrama de clase del Estado Lapiz](https://i.imgur.com/YvFnfyP.png)
 Diagrama de clase del Estado Lapiz.
 
-![Diagrama de clase de los Movimientos](https://i.imgur.com/aGoYEV0.png)
+![Diagrama de clase de los Movimientos](https://i.imgur.com/tyGxePD.png)
 Diagrama de clase de los Movimientos.
 
-![Diagrama de Secuencia Movimiento a Derecha](https://i.imgur.com/vyozdGs.png)
+## Diagramas De Secuencia
+
+![Diagrama de Secuencia Movimiento a Derecha]()
 Diagrama de secuencia MovimientoADerecha.
+
+![Diagrama de Secuencia Bloque Invierte Movimientos Simples](https://i.imgur.com/sPvfvtW.png)
+Diagrama de secuencia Bloque Invierte Movimientos Simples.
+
+![Diagrama de Secuencia Movimiento de Personaje y Creación De Dibujos](https://i.imgur.com/TrU3xWU.png)
+Diagrama de secuencia Movimiento de Personaje y Creación de Dibujos según el estao del lápiz.
+
+![Diagrama de Secuencia Movimiento Invertir Invierte los Movimientos](https://i.imgur.com/sPvfvtW.png)
+Diagrama de secuencia Movimiento Invertir Invierte los Movimientos.
+
+![Diagrama de Secuencia Creacion Y Ejecución de Movimiento Personalizado](https://i.imgur.com/KpScFY5.png)
+Diagrama de secuencia Creacion Y Ejecución de Movimiento Personalizado.
+
+## Diagrama De Paquetes
+
+
+## Diagramas De Estado
+
+
 
