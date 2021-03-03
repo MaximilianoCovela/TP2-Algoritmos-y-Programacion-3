@@ -4,6 +4,6 @@ public interface Observable {
 
     void addObserver(Observer observador);
 
-    void notifyObservers(Dibujo unDibujo);
+    void notifyObservers(Dibujo unDibujo, Boolean estado);
 
 }

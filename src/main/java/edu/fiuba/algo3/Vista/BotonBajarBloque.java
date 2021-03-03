@@ -2,12 +2,14 @@ package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.Controlador.HandlerBotonBajarBloque;
 import edu.fiuba.algo3.Controlador.HandlerBotonReiniciar;
+import edu.fiuba.algo3.modelo.Dibujo;
+import edu.fiuba.algo3.modelo.Observer;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.scene.control.Button;
 
 import java.util.ArrayList;
 
-public class BotonBajarBloque extends Button {
+public class BotonBajarBloque extends Button implements Observer {
 
     public BotonBajarBloque(Tablero unTablero,
                             ArrayList<VBoxBotones> arrayVbox, PanelTablero panelTablero,
@@ -20,5 +22,8 @@ public class BotonBajarBloque extends Button {
 
     }
 
+    public void update(Dibujo unDibujo, Boolean unEstado){
+        this.setDisable(unEstado);
+    }
 
 }

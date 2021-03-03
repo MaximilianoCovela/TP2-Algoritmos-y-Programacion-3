@@ -1,12 +1,14 @@
 package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.Controlador.HandlerBotonBorrarBloque;
+import edu.fiuba.algo3.modelo.Dibujo;
+import edu.fiuba.algo3.modelo.Observer;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.scene.control.Button;
 
 import java.util.ArrayList;
 
-public class BotonBorrarBloque extends Button {
+public class BotonBorrarBloque extends Button implements Observer {
 
     public BotonBorrarBloque(Tablero unTablero,
                              ArrayList<VBoxBotones> arrayVbox, PanelTablero panelTablero,
@@ -18,5 +20,9 @@ public class BotonBorrarBloque extends Button {
         this.setOnAction(new HandlerBotonBorrarBloque(unTablero, arrayVbox, panelTablero, this,
                  vboxBotonesDisponibles));
 
+    }
+
+    public void update(Dibujo unDibujo, Boolean unEstado){
+        this.setDisable(unEstado);
     }
 }

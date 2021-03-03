@@ -17,8 +17,6 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
 
     private ArrayList<VBoxBotones> listaDeVBox;
 
-    // esto es lo que vamos a empezar a hacer
-
     public HandlerBotonBorrarBloque(Tablero unTablero, ArrayList<VBoxBotones> arrayVbox,
                                     PanelTablero panelTablero, BotonBorrarBloque botonBorrarBloque,
                                     VboxBotonesDisponibles vboxBotonesDisponibles) {
@@ -47,9 +45,9 @@ public class HandlerBotonBorrarBloque implements EventHandler<ActionEvent> {
             }
 
             int indexBotonABorrar = botonSeleccionado.getIndex();
-            System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su indice es : " +indexBotonABorrar);
+
             vBoxActual.eliminarMovimiento(indexBotonABorrar);
-            vBoxActual.actualizarVista(indexBotonABorrar); //cambie esto recien
+            vBoxActual.actualizarVista(indexBotonABorrar);
 
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(null);
 

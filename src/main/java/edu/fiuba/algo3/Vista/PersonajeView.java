@@ -48,7 +48,11 @@ public class PersonajeView implements Observer {
     }
 
     @Override
-    public void update(Dibujo unDibujo) {
+    public void update(Dibujo unDibujo, Boolean unEstado) {
+
+        if(unDibujo == null){
+            return;
+        }
 
         Posicion nuevaPosicion = unDibujo.getPosicionFinal();
 

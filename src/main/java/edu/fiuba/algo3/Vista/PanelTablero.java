@@ -50,6 +50,14 @@ public class PanelTablero extends Pane {
                 this, vboxBotonesDisponibles);
 
         BotonJugar botonPlay = new BotonJugar(unTablero, vistaPersonaje,botonReiniciar);
+
+        unTablero.mostrarSectorDibujo().addObserver(botonReiniciar);
+        unTablero.mostrarSectorDibujo().addObserver(botonSubirBloque);
+        unTablero.mostrarSectorDibujo().addObserver(botonBajarBloque);
+        unTablero.mostrarSectorDibujo().addObserver(botonPlay);
+        unTablero.mostrarSectorDibujo().addObserver(botonBorrarBloque);
+
+
         this.getChildren().add(botonPlay);
         this.getChildren().add(botonReiniciar);
 

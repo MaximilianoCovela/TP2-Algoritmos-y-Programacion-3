@@ -9,29 +9,33 @@ import java.util.ArrayList;
 public class SectorDibujo implements Observable{
     private ArrayList<Observer> observers = new ArrayList<>();
     private ArrayList<Dibujo> listaDeDibujos = new ArrayList<>();
+    private Boolean unEstado;
 
-    public ArrayList<Dibujo> mostrarDibujos(){
-        return this.listaDeDibujos;
-    }
 
     public void addObserver(Observer observador) { this.observers.add(observador); }
 
-    public void notifyObservers(Dibujo unDibujo){
-        this.observers.forEach(observer -> observer.update(unDibujo));
+    public void notifyObservers(Dibujo unDibujo, Boolean estado){
+        this.observers.forEach(observer -> observer.update(unDibujo, estado));
     }
 
     public void actualizarDibujos(ArrayList<Dibujo> unaListaDeDibujos){
         this.listaDeDibujos = unaListaDeDibujos;
     }
 
-    public void ejecutarMovimientosDelPersonaje(Personaje unPersonaje){
+    public void ejecutarMovimientosDelPersonaje(){
 
         int i = 1;
 
+        this.unEstado = true;
+
         for( Dibujo unDibujo : listaDeDibujos){
-            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(i), actionEvent -> notifyObservers(unDibujo)));
+
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(i), actionEvent -> notifyObservers(unDibujo, this.unEstado)));
             timeline.play();
             i++;
         }
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(i), actionEvent -> notifyObservers(null, false)));
+        timeline.play();
+
     }
 }
