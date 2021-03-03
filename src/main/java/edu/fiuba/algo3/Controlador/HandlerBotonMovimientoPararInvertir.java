@@ -35,7 +35,16 @@ public class HandlerBotonMovimientoPararInvertir implements EventHandler<ActionE
         VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1);
 
         VboxMovimientoInvertir vbox;
-        vbox = (VboxMovimientoInvertir) this.listaDeVBox.get(listaDeVBox.size()-1); // aca iria un try catch
+
+        try{
+            vbox = (VboxMovimientoInvertir) this.listaDeVBox.get(listaDeVBox.size()-1);
+
+        }catch(Exception e){
+
+            System.out.println("No se puede cerrar un invertir si no se abrió un invertir");
+            return;
+
+        }
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonPararInvertir)){
             this.index = (this.vBoxBotones.getChildren()).size();

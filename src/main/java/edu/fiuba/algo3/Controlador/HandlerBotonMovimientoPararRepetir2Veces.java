@@ -35,7 +35,17 @@ public class HandlerBotonMovimientoPararRepetir2Veces implements EventHandler<Ac
     public void handle(ActionEvent event) {
 
         VBoxMovimientoRepetir2Veces vbox;
-        vbox = (VBoxMovimientoRepetir2Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
+
+        try{
+            vbox = (VBoxMovimientoRepetir2Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
+
+        }catch(Exception e){
+
+            System.out.println("No se puede cerrar un repetirx2 si no se abrió un repetirx2");
+            return;
+
+        }
+
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonPararRepetir)){
             this.index = (this.vBoxBotones.getChildren()).size();

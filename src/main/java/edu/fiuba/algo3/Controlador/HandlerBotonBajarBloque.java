@@ -27,7 +27,6 @@ public class HandlerBotonBajarBloque implements EventHandler<ActionEvent> {
 
         this.listaDeVBox = arrayVbox;
         this.unTablero = unTablero;
-       // usar la del array mejor xd
         this.panelTablero = panelTablero;
         this.unBotonBajarBloque = botonBajarBloque;
 
@@ -62,25 +61,14 @@ public class HandlerBotonBajarBloque implements EventHandler<ActionEvent> {
 
             }
 
-            System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su indice antes del swap es : " + indexBotonABajar);
-
             ObservableList<Node> workingCollection = FXCollections.observableArrayList(vBoxActual.getChildren());
             Collections.swap(workingCollection, indexBotonABajar + 1, indexBotonABajar);
             vBoxActual.getChildren().setAll(workingCollection);
 
             vBoxActual.actualizarMovimientos(indexBotonABajar,-1);
 
-            System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su indice despues del swap es : " + indexBotonABajar);
-
-
-            int indexBotonSubido = indexBotonABajar + 1;
-            int indexBotonBajado = indexBotonABajar;
-
             botonASubir.setIndex(indexBotonABajar);
             botonSeleccionado.setIndex(indexBotonABajar + 1);
-
-            indexBotonABajar = botonSeleccionado.getIndex();
-            System.out.println("Dentro del handlerbotonborrar el boton no es nulo y su  NUEVOOOOOOOO indice es : " + indexBotonABajar);
 
             this.vboxBotonesDisponibles.cambiarBotonSeleccionado(null);
 

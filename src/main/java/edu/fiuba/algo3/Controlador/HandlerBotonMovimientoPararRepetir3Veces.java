@@ -34,17 +34,20 @@ public class HandlerBotonMovimientoPararRepetir3Veces implements EventHandler<Ac
 
     public void handle(ActionEvent event) {
 
-        VBoxBotones actualVBox = this.listaDeVBox.get(listaDeVBox.size()-1); // es la ultima creada o selecc
-
         VBoxMovimientoRepetir3Veces vbox;
-        vbox = (VBoxMovimientoRepetir3Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
+
+        try{
+            vbox = (VBoxMovimientoRepetir3Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
+
+        }catch(Exception e){
+
+            System.out.println("No se puede cerrar un repetirx3 si no se abrió un repetirx3");
+            return;
+
+        }
 
         if(!this.vBoxBotones.getChildren().contains(this.unBotonPararRepetir)){
             this.index = (this.vBoxBotones.getChildren()).size();
-
-            //BotonMovimientoPararRepetir3Veces botonParar = new BotonMovimientoPararRepetir3Veces(this.vBoxBotones,
-            //       this.unTablero,this.index, this.listaDeVBox);
-            // suponiendo que existe una vbox
 
             if(this.listaDeVBox.size() == 1){
 
@@ -60,12 +63,7 @@ public class HandlerBotonMovimientoPararRepetir3Veces implements EventHandler<Ac
 
             if(listaDeVBox.size() > 0){
 
-                //VBoxMovimientoRepetir3Veces vbox;
-                //vbox = (VBoxMovimientoRepetir3Veces) this.listaDeVBox.get(listaDeVBox.size()-1);
-                //vbox.agregarBloqueATablero();
-
-                this.listaDeVBox.remove(listaDeVBox.size()-1); // la borramos del array, no de la vista la vbox
-
+                this.listaDeVBox.remove(listaDeVBox.size()-1);
             }
 
         }
