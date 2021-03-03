@@ -89,13 +89,13 @@ public class MovimientosTest {
         Posicion posicionInicial = new Posicion(4, 4);
         Personaje unPersonaje = new Personaje(posicionInicial);
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
-        Movimiento movimientoDerecha = new MovimientoDerecha();
+        Movimiento movimientoArriba1 = new MovimientoArriba();
         Movimiento movimientoArriba = new MovimientoArriba();
 
-        Posicion posicionEsperada = new Posicion(4, 3);
+        Posicion posicionEsperada = new Posicion(3, 2);
 
         unMovimientoPersonalizado.agregarMovimiento(movimientoIzquierda);
-        unMovimientoPersonalizado.agregarMovimiento(movimientoDerecha);
+        unMovimientoPersonalizado.agregarMovimiento(movimientoArriba1);
         unMovimientoPersonalizado.agregarMovimiento(movimientoArriba);
 
         unMovimientoPersonalizado.aplicarMovimiento(unPersonaje);
