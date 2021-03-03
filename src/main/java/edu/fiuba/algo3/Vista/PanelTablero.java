@@ -39,8 +39,6 @@ public class PanelTablero extends Pane {
         textoDescriptivoMovimientosDisponibles.setText("Movimientos Disponibles");
         this.getChildren().add(textoDescriptivoMovimientosDisponibles);
 
-        BotonJugar botonPlay = new BotonJugar(unTablero, vistaPersonaje);
-
         BotonReiniciar botonReiniciar = new BotonReiniciar(unTablero, panelBloquesSeleccionados.obtenerVBoxBotones(),
                 vistaPersonaje, panelBloquesDisponibles.obtenerVBox());
 
@@ -55,6 +53,7 @@ public class PanelTablero extends Pane {
         BotonBorrarBloque botonBorrarBloque = new BotonBorrarBloque(vBoxActual, unTablero, arrayVBox,
                 this, vboxBotonesDisponibles);
 
+        BotonJugar botonPlay = new BotonJugar(unTablero, vistaPersonaje,botonReiniciar);
         this.getChildren().add(botonPlay);
         this.getChildren().add(botonReiniciar);
 

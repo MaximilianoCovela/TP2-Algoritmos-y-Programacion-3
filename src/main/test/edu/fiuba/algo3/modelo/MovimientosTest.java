@@ -11,9 +11,9 @@ public class MovimientosTest {
     public void testCreoUnMovimientoAbajoYMueveAlPersonajeAbajo(){
 
         Movimiento movimientoAbajo = new MovimientoAbajo();
-        Posicion posicionInicial = new Posicion(5, 5);
+        Posicion posicionInicial = new Posicion(4, 4);
         Personaje unPersonaje = new Personaje(posicionInicial);
-        Posicion posicionEsperada = new Posicion(5, 4);
+        Posicion posicionEsperada = new Posicion(4, 5);
 
         movimientoAbajo.aplicarMovimiento(unPersonaje);
 
@@ -26,10 +26,10 @@ public class MovimientosTest {
     public void testCreoUnMovimientoArribaYMueveAlPersonajeArriba(){
 
         Movimiento movimientoArriba = new MovimientoArriba();
-        Posicion posicionInicial = new Posicion(5, 5);
+        Posicion posicionInicial = new Posicion(4, 4);
         Personaje unPersonaje = new Personaje(posicionInicial);
 
-        Posicion posicionEsperada = new Posicion(5, 6);
+        Posicion posicionEsperada = new Posicion(4, 3);
 
         movimientoArriba.aplicarMovimiento(unPersonaje);
 
@@ -65,13 +65,13 @@ public class MovimientosTest {
     @Test
     public void testCreoUnMovimientoRepetirDosVecesYRepiteLaSecuenciaDosVeces(){
         MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
-        Posicion posicionInicial = new Posicion(5, 5);
+        Posicion posicionInicial = new Posicion(4, 4);
         Personaje unPersonaje = new Personaje(posicionInicial);
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
         Movimiento movimientoDerecha = new MovimientoDerecha();
         Movimiento movimientoArriba = new MovimientoArriba();
 
-        Posicion posicionEsperada = new Posicion(5, 7);
+        Posicion posicionEsperada = new Posicion(4, 2);
 
         unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
         unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
@@ -86,13 +86,13 @@ public class MovimientosTest {
     @Test
     public void testCreoUnMovimientoPersonalizadoConMovimientosSimplesYSeMueveCorrectamenteElPersonaje(){
         MovimientoPersonalizado unMovimientoPersonalizado = new MovimientoPersonalizado();
-        Posicion posicionInicial = new Posicion(5, 5);
+        Posicion posicionInicial = new Posicion(4, 4);
         Personaje unPersonaje = new Personaje(posicionInicial);
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
         Movimiento movimientoDerecha = new MovimientoDerecha();
         Movimiento movimientoArriba = new MovimientoArriba();
 
-        Posicion posicionEsperada = new Posicion(5, 6);
+        Posicion posicionEsperada = new Posicion(4, 3);
 
         unMovimientoPersonalizado.agregarMovimiento(movimientoIzquierda);
         unMovimientoPersonalizado.agregarMovimiento(movimientoDerecha);
@@ -109,7 +109,7 @@ public class MovimientosTest {
         MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
         MovimientoInvertir unMovimientoInvertir = new MovimientoInvertir();
         MovimientoPersonalizado unMovimientoPersonalizado = new MovimientoPersonalizado();
-        Posicion posicionInicial = new Posicion(5, 5);
+        Posicion posicionInicial = new Posicion(4, 4);
         Personaje unPersonaje = new Personaje(posicionInicial);
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
         Movimiento movimientoDerecha = new MovimientoDerecha();
@@ -118,7 +118,7 @@ public class MovimientosTest {
         Movimiento movimientoArriba = new MovimientoArriba();
         Movimiento otroMovimientoArriba = new MovimientoArriba();
 
-        Posicion posicionEsperada = new Posicion(8, 4);
+        Posicion posicionEsperada = new Posicion(7, 5);
 
         unMovimientoInvertir.agregarMovimiento(movimientoIzquierda);
         unMovimientoInvertir.agregarMovimiento(movimientoDerecha);

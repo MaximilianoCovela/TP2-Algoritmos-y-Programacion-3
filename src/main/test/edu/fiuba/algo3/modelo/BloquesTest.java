@@ -14,7 +14,7 @@ public class BloquesTest {
         Posicion posicionInicial = new Posicion(5, 5);
         Personaje unPersonaje = new Personaje(posicionInicial);
 
-        Posicion posicionEsperada = new Posicion(5, 4);
+        Posicion posicionEsperada = new Posicion(5, 6);
 
         bloqueAbajo.aplicarMovimiento(unPersonaje);
 
@@ -28,7 +28,7 @@ public class BloquesTest {
         Posicion posicionInicial = new Posicion(5, 5);
         Personaje unPersonaje = new Personaje(posicionInicial);
 
-        Posicion posicionEsperada = new Posicion(5, 6);
+        Posicion posicionEsperada = new Posicion(5, 4);
 
         bloqueArriba.aplicarMovimiento(unPersonaje);
 
@@ -100,7 +100,7 @@ public class BloquesTest {
         unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
         unMovimientoRepetir.agregarMovimiento(movimientoArriba);
 
-        Posicion posicionEsperada = new Posicion(5, 7);
+        Posicion posicionEsperada = new Posicion(5, 3);
 
         Bloque bloqueRepetir = new Bloque( unMovimientoRepetir);
 
@@ -123,7 +123,7 @@ public class BloquesTest {
         unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
         unMovimientoRepetir.agregarMovimiento(movimientoArriba);
 
-        Posicion posicionEsperada = new Posicion(5, 8);
+        Posicion posicionEsperada = new Posicion(5, 2);
 
         Bloque bloqueRepetir = new Bloque( unMovimientoRepetir);
 
@@ -146,7 +146,7 @@ public class BloquesTest {
         unMovimientoInvertir.agregarMovimiento(movimientoDerecha);
         unMovimientoInvertir.agregarMovimiento(movimientoArriba);
 
-        Posicion posicionEsperada = new Posicion(5, 4);
+        Posicion posicionEsperada = new Posicion(5, 6);
 
         Bloque bloqueInvertir = new Bloque(unMovimientoInvertir);
         bloqueInvertir.aplicarMovimiento(unPersonaje);
@@ -172,7 +172,7 @@ public class BloquesTest {
         unMovimientoInvertir.agregarMovimiento(movimientoArriba);
 
         otroMovimientoInvertir.agregarMovimiento(unMovimientoInvertir);
-        Posicion posicionEsperada =  new Posicion(4, 6);
+        Posicion posicionEsperada =  new Posicion(4, 4);
 
         Bloque bloqueInvertir = new Bloque(otroMovimientoInvertir);
         bloqueInvertir.aplicarMovimiento(unPersonaje);
@@ -198,7 +198,7 @@ public class BloquesTest {
         unMovimientoInvertir.agregarMovimiento(movimientoArriba);
 
         unMovimientoRepetir.agregarMovimiento(unMovimientoInvertir);
-        Posicion posicionEsperada =  new Posicion(7, 3);
+        Posicion posicionEsperada =  new Posicion(7, 7);
 
         Bloque bloqueRepetir = new Bloque(unMovimientoRepetir);
         bloqueRepetir.aplicarMovimiento(unPersonaje);
@@ -253,7 +253,7 @@ public class BloquesTest {
         unMovimientoPersonalizado.agregarMovimiento(otroMovimientoIzquierda);
         unMovimientoPersonalizado.agregarMovimiento(movimientoArriba);
 
-        Posicion posicionEsperada =  new Posicion(4, 6);
+        Posicion posicionEsperada =  new Posicion(4, 4);
 
         Bloque bloquePersonalizado = new Bloque(unMovimientoPersonalizado);
         bloquePersonalizado.aplicarMovimiento(unPersonaje);
@@ -287,7 +287,7 @@ public class BloquesTest {
         unMovimientoPersonalizado.agregarMovimiento(otroMovimientoArriba);
         unMovimientoPersonalizado.agregarMovimiento(unMovimientoRepetir);
 
-        Posicion posicionEsperada =  new Posicion(8, 4);
+        Posicion posicionEsperada =  new Posicion(8, 6);
 
         Bloque bloquePersonalizado = new Bloque(unMovimientoPersonalizado);
         bloquePersonalizado.aplicarMovimiento(unPersonaje);

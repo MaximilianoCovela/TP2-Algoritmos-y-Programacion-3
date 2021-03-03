@@ -11,7 +11,7 @@ import javafx.scene.shape.Rectangle;
 import edu.fiuba.algo3.modelo.Dibujo;
 import javafx.util.Duration;
 
-public class SectorDibujoView extends GridPane implements Observer {
+public class SectorDibujoView extends GridPane {
 
     public SectorDibujoView(){
         this.setLayoutX(12.0); // era 22.0 SectorDibujoView
@@ -78,7 +78,5 @@ public class SectorDibujoView extends GridPane implements Observer {
         setColumnIndex(imagenPersonaje, posicionHorizontal);
 
     }
-    public void update(Dibujo unDibujo){
 
-    }
 }

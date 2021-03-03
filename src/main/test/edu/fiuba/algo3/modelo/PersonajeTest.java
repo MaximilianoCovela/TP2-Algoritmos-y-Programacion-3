@@ -85,7 +85,7 @@ public class PersonajeTest {
     @Test
     public void testSeMuevePersonajeConMovimientosDeRepeticionYSeChequeaQueSeMuevaCorrectamente(){
         MovimientoRepetir unMovimientoRepetir = new MovimientoRepetir(2);
-        Posicion posicionInicial = new Posicion(5, 5);
+        Posicion posicionInicial = new Posicion(4, 4);
         Personaje unPersonaje = new Personaje(posicionInicial);
         Movimiento movimientoIzquierda = new MovimientoIzquierda();
         Movimiento movimientoDerecha = new MovimientoDerecha();
@@ -93,7 +93,7 @@ public class PersonajeTest {
         Movimiento movimientoLapizAbajo = new MovimientoLapizAbajo();
         Movimiento otroMovimientoArriba = new MovimientoArriba();
 
-        Posicion posicionEsperada = new Posicion(5, 8);
+        Posicion posicionEsperada = new Posicion(4, 1);
 
         unMovimientoRepetir.agregarMovimiento(movimientoIzquierda);
         unMovimientoRepetir.agregarMovimiento(movimientoDerecha);
